@@ -68,8 +68,7 @@ int OnInit()
 //---
 
   
- ticket = OrderSend(Sym, OP_SELLSTOP, Lot, Price, 0, SL, TP);
- CloseAll();
+ 
    
 /*   if(xazz_Buy_signal_Last < xazz_Sell_signal_Last-Tolerance)
    {
@@ -114,7 +113,7 @@ void OnTick()
    xazz_Sell_signal_Now = iCustom(NULL,0,"Strategy2/xaZZ", xaZZSell_indicator, 1); //
    xazz_Buy_signal_Now = iCustom(NULL,0,"Strategy2/xaZZ", xaZZBuy_indicator, 1); //
 
-   if(xazz_Buy_signal_Now != 2147483647)
+  if(xazz_Buy_signal_Now != 2147483647)
    {
       xazz_Buy_signal_Last= xazz_Buy_signal_Now; 
       buySignalTime=Time[THIS_BAR];
@@ -161,7 +160,7 @@ void OnTick()
     { 
       // Print(first_condition);
       Print("order ",Bid);
-      trade();
+      ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
       order_complete= true;
       //setup_complete=false;
       //lastTradeTime = Time[THIS_BAR]; 
@@ -218,34 +217,6 @@ for(int trade=OrdersTotal()-1;trade>=0;trade--)
 }
 return(true);
 }
-
-int trade()
-{
-
-    
-    if(didProfit() ) ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
-    
-    if(!didProfit() )
-    {
-      ticket = OrderSend(Sym, OP_SELLSTOP, Lot, Bid, 0, TP, SL);
-    }
-    
-    return(0);
-
-}
-
-bool didProfit()
-{
-
-  int trade=OrdersHistoryTotal()-1;
-  OrderSelect(trade,SELECT_BY_POS,MODE_HISTORY);
-  
-  if(OrderType()==OP_BUY && OrderProfit()>= 0)return(true);
-  else if(OrderType()==OP_SELL && OrderProfit() < 0 ) return(true);
-  else return(false);
-  
-}
-
 
 
 int CloseAll(){
