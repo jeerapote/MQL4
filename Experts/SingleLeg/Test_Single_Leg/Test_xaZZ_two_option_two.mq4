@@ -252,3 +252,46 @@ int total = OrdersTotal();
   
   return(0);
 }
+
+
+int ConsecutiveWins(int no){
+
+int total = OrdersTotal();
+  
+  string last;
+for(int i=OrdersHistoryTotal()-1,i>=0,i--)
+ {
+   OrderSelect(i, SELECT_BY_POS,MODE_HISTORY);
+   
+       if(OrderType()==OP_BUY && OrderProfit()>0) last="profit";
+       if(OrderType()==OP_BUY && OrderProfit()<0) last="loss";
+       break; 
+    }
+ }
+    int type   = OrderType();
+
+    bool result = false;
+    
+    switch(type)
+    {
+      //Close opened long positions
+      case OP_BUY       : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_BID), 5, Red );
+                          break;
+      
+      //Close opened short positions
+      case OP_SELL      : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_ASK), 5, Red );
+                          break;
+      
+      case OP_BUYSTOP   : result = OrderDelete(OrderTicket());
+                          
+    }
+    
+    if(result == false)
+    {
+      Alert("Order " , OrderTicket() , " failed to close. Error:" , GetLastError() );
+      Sleep(3000);
+    }  
+  }
+  
+  return(0);
+}

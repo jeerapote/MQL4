@@ -26,6 +26,8 @@
    datetime sellSignalTime;
    
    extern double  Tolerance = 0.0010;
+   extern double  USD = 100;
+   extern double  Profit = 2;
    
    bool setup_complete= false;
    bool order_complete= false;
@@ -38,6 +40,7 @@
     double   Percent5 = -1;
    
     int ticket;
+    int ticket2;
    
     double fib0;
     double fib100;
@@ -68,8 +71,8 @@ int OnInit()
 //---
 
   
- ticket = OrderSend(Sym, OP_SELLSTOP, Lot, Price, 0, SL, TP);
- CloseAll();
+// ticket = OrderSend(Sym, OP_SELLSTOP, Lot, Price, 0, SL, TP);
+// CloseAll();
    
 /*   if(xazz_Buy_signal_Last < xazz_Sell_signal_Last-Tolerance)
    {
@@ -140,11 +143,15 @@ void OnTick()
        fib200 = NormalizeDouble(fib0-(fib0-fib100)*Percent4,Digits);
        fib_100 =  NormalizeDouble(fib0-(fib0-fib100)*Percent5,Digits);
       
-       
-       Lot = 0.1;
+      
+      
        Price = fib0;
        SL = fib51;
        TP = fib_100;
+       
+       double DiffPips = MathAbs(NormalizeDouble(Price-SL,Digits)/Point);
+       Lot = USD/DiffPips;
+       Lot = CheckLots(Lot);
       
        setup_complete=true;
        lastTradeTime = Time[THIS_BAR];
@@ -179,12 +186,8 @@ void OnTick()
       
     }
     
-    if(OrdersTotal() < 1 )
-    {
-     // order_complete=false;
-     // setup_complete=false;  
-     
-    } 
+    
+    
     if(buySignalTime>sellSignalTime)
     {
        order_complete=false;
@@ -192,6 +195,9 @@ void OnTick()
        if( OrdersTotal()>=1)CloseAll();
     }
 
+
+
+   checkProfit();
 
 
 //---
@@ -219,20 +225,51 @@ for(int trade=OrdersTotal()-1;trade>=0;trade--)
 return(true);
 }
 
+
+
 int trade()
 {
 
     
-    if(didProfit() ) ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
+   // if(didProfit() ) ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
     
-    if(!didProfit() )
-    {
-      ticket = OrderSend(Sym, OP_SELLSTOP, Lot, Bid, 0, TP, SL);
-    }
+   // if(!didProfit() ) ticket = OrderSend(Sym, OP_SELLSTOP, Lot/3, Bid, 0, TP, SL);
+   ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
+    
     
     return(0);
 
 }
+
+
+double CheckLots(double Lots)
+{
+
+   string Symb   =Symbol();                    // Symbol
+   double One_Lot=MarketInfo(Symb,MODE_MARGINREQUIRED);//!-lot cost
+   double Min_Lot=MarketInfo(Symb,MODE_MINLOT);// Min. amount of lots
+   double Step   =MarketInfo(Symb,MODE_LOTSTEP);//Step in volume changing
+   double Free   =AccountFreeMargin();         // Free margin
+   double Lots_New;
+//----------------------------------------------------------------------------- 3 --
+   if (Lots>0)                                 // Volume is explicitly set..
+     {                                         // ..check it
+      double Money=Lots*One_Lot;               // Order cost
+      if(Money<=AccountFreeMargin())           // Free margin covers it..
+         Lots_New=Lots;                        // ..accept the set one
+      else                                     // If free margin is not enough..
+         Lots_New=MathFloor(Free/One_Lot/Step)*Step;// Calculate lots
+     }
+//----------------------------------------------------------------------------- 4 --
+ 
+//----------------------------------------------------------------------------- 5 --
+   if (Lots_New < Min_Lot)                     // If it is less than allowed..
+      Lots_New=Min_Lot;                        // .. then minimum
+     
+   return(Lots_New);
+}
+
+
 
 bool didProfit()
 {
@@ -240,11 +277,55 @@ bool didProfit()
   int trade=OrdersHistoryTotal()-1;
   OrderSelect(trade,SELECT_BY_POS,MODE_HISTORY);
   
-  if(OrderType()==OP_BUY && OrderProfit()>= 0)return(true);
-  else if(OrderType()==OP_SELL && OrderProfit() < 0 ) return(true);
-  else return(false);
   
+  if(OrderType()==OP_BUY && OrderProfit() < 0 ) return(false);
+  else if (OrderType()==OP_SELL && OrderProfit() > 0 ) return(false);
+ 
+  return true;
 }
+
+int checkProfit()
+{
+
+   if(OrdersTotal() < 3 )
+   {
+
+       int pos = OrdersTotal()-1;
+   
+         if(OrderSelect(pos, SELECT_BY_POS)==true)
+         {
+   
+            // MoveStopToBreakeven();
+   
+            if(OrderProfit()>=Profit )
+            {
+              // Print(pos);
+              // Print("Profit for the order 10 ",OrderProfit());
+              int order_type=OrderType();     
+       
+              if(order_type==OP_BUY)
+               {
+              
+                  if(iVolume(NULL,0,0)==1);
+                  
+                  ticket2 = OrderSend(Sym, OP_BUY, 3*Lot, Ask , 0, SL, TP);
+               }
+              else 
+               {
+                  if(iVolume(NULL,0,0)==1);                        
+    
+                  ticket2 = OrderSend(Sym, OP_SELL, 3*Lot/3, Bid, 0, TP, SL);
+               }
+         
+            }
+            
+        }
+    } 
+    
+    return(0);
+}    
+
+
 
 
 
@@ -269,6 +350,11 @@ int total = OrdersTotal();
                           break;
       
       case OP_BUYSTOP   : result = OrderDelete(OrderTicket());
+                          break;
+                          
+      case OP_SELLSTOP  : result = OrderDelete(OrderTicket());
+      
+      
                           
     }
     
@@ -281,3 +367,5 @@ int total = OrdersTotal();
   
   return(0);
 }
+
+
