@@ -1,0 +1,10 @@
+0	17:06:24.593	xaZZ EURUSD,H1: uninit reason 9
+0	17:06:24.736	Custom indicator xaZZ EURUSD,H1: removed
+0	17:06:33.753	Custom indicator Strategy2\xaZZ EURUSD,H1: loaded successfully
+0	17:06:33.756	xaZZ EURUSD,H1: initialized
+0	18:55:33.705	xaZZ EURUSD,H1: uninit reason 4
+0	18:55:33.706	Custom indicator xaZZ EURUSD,H1: removed
+0	18:55:40.913	Expert CenterOG\COG_test EURUSD,H1: loaded successfully
+0	18:55:43.451	Custom indicator Market/Center of Gravity EURUSD,H1: loaded successfully
+0	18:55:43.454	Center of Gravity EURUSD,H1: initialized
+0	18:55:43.460	COG_test EURUSD,H1: initialized

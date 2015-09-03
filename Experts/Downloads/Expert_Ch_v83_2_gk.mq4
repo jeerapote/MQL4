@@ -335,7 +335,7 @@ int q,w;
 // Block of position opening conditions.   This is just an example  +
 // and it should not be deemed a recommendation for use!!+          
 // ---------------------------------------------------------------+
-  if(OrdersTotal()< =1) // trade one position  
+  if(OrdersTotal()<=1) // trade one position  
    {
    // - 16- SELL ---
  	  if(Extrem==1 &&        // two upper datum points

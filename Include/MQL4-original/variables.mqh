@@ -3,15 +3,17 @@
 // The code should be used for educational purpose only.
 //----------------------------------------------------------------------- 1 --
 // Description of global variables
+
+
 extern double Lots    = .05;// Amount of lots
 extern int Percent    = 90;  // Allocated funds percentage
-extern int StopLoss   =200; // StopLoss for new orders (in points) 
-extern int TakeProfit =500;  // TakeProfit for new orders (in points)
-extern int TralingStop=500; // TralingStop for market orders (in points)
+//extern int StopLoss   =200; // StopLoss for new orders (in points) 
+//extern int TakeProfit =500;  // TakeProfit for new orders (in points)
+//extern int TralingStop=500; // TralingStop for market orders (in points)
 int MaxOrders = 0;
 double Last_Stoploss;
 double Last_TakeProfit;
-extern bool trailing = false;
+//extern bool trailing = false;
 //----------------------------------------------------------------------- 2 --
 int 
    Level_new,           // New value of the minimum distance

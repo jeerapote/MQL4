@@ -37,9 +37,21 @@ extern   double MaxSpreadPips           = 4.5;
 
 double SymSpread;
 
+bool trailing = false;
+int StopLoss   =200; // StopLoss for new orders (in points) 
+int TakeProfit =500;  // TakeProfit for new orders (in points)
+int TralingStop=500; // TralingStop for market orders (in points)
 
 
+int buy=0;
+int sell = 1;
+int lastTrade;
 
+ double COG_upper_green;
+   double COG_blue ;
+   double COG_lower_green ;
+     double COG_lower_brown; 
+      double COG_upper_brown ;
   
 
 
@@ -64,7 +76,7 @@ int Criterion()                        // Пользовательская функция
    
    
    double
-buy,sell,buy2,sell2;
+buy2,sell2;
    
    bool morningHours   = (Hour() >  1 && Hour() < 2),
      afternoonHours =  Hour() > 14 && Hour() < 24,
@@ -79,12 +91,12 @@ buy,sell,buy2,sell2;
  sell = iCustom(NULL,0,"Downloads/ReversalFractals",false, 1,2 );
  sell2 = iCustom(NULL,0,"Downloads/ReversalFractals",false, 1,3 );*/
 
-   double COG_upper_green = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 1, 0); 
-   double COG_blue = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 0, 0);
-   double COG_lower_green = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 2, 0);
+    COG_upper_green = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 1, 0); 
+   COG_blue = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 0, 0);
+   COG_lower_green = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 2, 0);
    
-     double COG_lower_brown = iCustom(NULL,0,"Market/Center of Gravity",BarsBack,4, 0);
-    double COG_upper_brown = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 3, 0);
+    COG_lower_brown = iCustom(NULL,0,"Market/Center of Gravity",BarsBack,4, 0);
+    COG_upper_brown = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 3, 0);
     
      TVI = iCustom(NULL,0,"TVI_v2",5,5,5, 4, 0); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
       TVI_Down_Neg = iCustom(NULL,0,"TVI_v2",5,5,5, 3, 1); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
@@ -93,12 +105,23 @@ buy,sell,buy2,sell2;
          TVI_Down_Pos = iCustom(NULL,0,"TVI_v2",5,5,5, 2, 1); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
       TVI_Up_Pos = iCustom(NULL,0,"TVI_v2",5,5,5, 0, 1); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
       
-      StopLoss=StopLossFactor*10*10000*(COG_upper_brown-COG_upper_green);
       
-      if(StopLoss<300)return(0);
-      if(StopLoss>800)return(0);
+      if(COG_upper_green-COG_lower_green != 0)
+      StopLoss=StopLossFactor*10*10000*(COG_upper_green-COG_lower_green);
       
-      TakeProfit = TakeProfitFactor*10*0.75*10000*(COG_upper_green-COG_blue);
+      Print(COG_upper_green);
+     
+    // StopLoss = 100;
+    // TakeProfit = 75;
+      
+      
+      
+      //if(StopLoss<50 && StopLoss != 0) StopLoss = 50;
+     // if(StopLoss>800)return(0);
+      
+     // TakeProfit = TakeProfitFactor*10*10000*(COG_upper_green-COG_blue);
+     
+     TakeProfit = TakeProfitFactor * StopLoss;
  
 //--------------------------------------------------------------- 5 --
   
@@ -127,28 +150,30 @@ if (iPos >= 0) {
    }
    else {
       // do whatever after a bad trade
-      WaitTime=10; //12 hours
+      WaitTime=0;//10/40; //12 hours
    }   
 }
   
        if(  TimeCurrent() >= TimeSent  + (WaitTime*60) ) {
-         if( bullish   && OrdersTotal() <=1)
+         if( bullish   && OrdersTotal() <=1 && lastTrade == sell )
          {
-                
+                lastTrade = buy;
          TimeSent = TimeCurrent();
             return(10);                      // Открытие Buy 
                
          }   
          
             
-         if( bearish && OrdersTotal() <=1){
+         if( bearish && OrdersTotal() <=1  && lastTrade == buy){
+         
+         lastTrade = sell;
          
                TimeSent = TimeCurrent();  
                 return(20);                      // Открытие Sell    
-                }         
+         }         
       }
       
-     if (OrdersTotal() >= 1 && Bid == COG_blue)CloseAll();
+    // if (OrdersTotal() >= 1 && Bid == COG_blue)CloseAll();
              
 //--------------------------------------------------------------- 6 --
    return(0);                          // Выход из пользов. функции

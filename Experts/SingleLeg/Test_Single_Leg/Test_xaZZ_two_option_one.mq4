@@ -231,10 +231,12 @@ int trade()
 {
 
     
-   // if(didProfit() ) ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
-    
-   // if(!didProfit() ) ticket = OrderSend(Sym, OP_SELLSTOP, Lot/3, Bid, 0, TP, SL);
-   ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
+   if(didProfit() && OrdersTotal() < 1 ) ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
+   if(!didProfit()&& OrdersTotal() < 1 ) ticket = OrderSend(Sym, OP_SELLSTOP, Lot/3, Bid, 0, TP*0.999, SL*0.999);
+   
+   //Print(TP, " ", TP*1.001);
+  // Print(SL, " ", SL*0.999);
+ // ticket = OrderSend(Sym, OP_BUYSTOP, Lot, Price, 0, SL, TP);
     
     
     return(0);
@@ -256,9 +258,9 @@ double CheckLots(double Lots)
      {                                         // ..check it
       double Money=Lots*One_Lot;               // Order cost
       if(Money<=AccountFreeMargin())           // Free margin covers it..
-         Lots_New=Lots;                        // ..accept the set one
+         Lots_New=Lots/6;                        // ..accept the set one
       else                                     // If free margin is not enough..
-         Lots_New=MathFloor(Free/One_Lot/Step)*Step;// Calculate lots
+         Lots_New=MathFloor(Free/One_Lot/6/Step)*Step;// Calculate lots
      }
 //----------------------------------------------------------------------------- 4 --
  
@@ -287,7 +289,26 @@ bool didProfit()
 int checkProfit()
 {
 
-   if(OrdersTotal() < 3 )
+
+
+
+   /*    int pos = OrdersTotal()-1;
+   
+         if(OrderSelect(pos, SELECT_BY_POS)==true)
+         {
+   
+            // MoveStopToBreakeven();
+   
+            if(OrderProfit()<= -4*Profit )
+            {
+             CloseAll();
+         
+            }
+         }  
+        */
+    
+
+   if(OrdersTotal() < 2 )
    {
 
        int pos = OrdersTotal()-1;
@@ -314,7 +335,8 @@ int checkProfit()
                {
                   if(iVolume(NULL,0,0)==1);                        
     
-                  ticket2 = OrderSend(Sym, OP_SELL, 3*Lot/3, Bid, 0, TP, SL);
+                  ticket2 = OrderSend(Sym, OP_SELL, 3*Lot/3, Bid, 0, TP*0.999, SL*0.999);
+                  
                }
          
             }
