@@ -1,44 +1,45 @@
 //+------------------------------------------------------------------+
 //|                                            Ashi_EA.mq4    |
-//|                                          
+//|                                            Date 09/2015   |
 //|                                            By Murat Aka   |
 //+------------------------------------------------------------------+
 
-extern int    MagicNumber = 2011;
+extern int     MagicNumber             = 2011;
 
-extern double TakeProfit              = 100000;
-extern double Lots                    = 0.25;
+extern double  Lots                    = 0.25;
+
+extern double  MultiLotsMultiple       = 2;
+
+extern int     TakeProfit              = 10000;  // In pips
+extern int     StopLoss                = 10000;
            
-extern bool   EachTickMode            = True;
+bool           EachTickMode            = True;
 
-extern int StopLoss = 10000;
+extern int     BreakEvenProfit         = 100;    // In £GBP 
 
-extern int ProfitMargin = 100;
+extern int     MultiLotBreakEvenRatio  = 3;      // BreakEvenProfit/MultilotBreakEvenRatio = BreakEvenProfit  for Multilots;
 
-extern int LossMargin = 200;
-
-
-
+extern int     MultiLotStopLoss        = 40;     // In pips
 
 
 
 //=================================Initialization=======================================//
            
-bool newbuy=true;
-bool newsell=false;           
+bool           newbuy                  = true;  // locks
+bool           newsell                 = false;           
 
-int digit=0;
 
-int BarCount;
+int            BarCount;
 
-int Current;
-bool TickCheck = False;
+int            Current;
+   
 
-double   mPoint                     = 0.0001;
+double         mPoint                  = 0.0001;
 
-int ticket2;
+int            ticket2;
 
 int init() {
+
    BarCount = Bars;
 
    if (EachTickMode) Current = -1; //else Current = -1;
@@ -56,7 +57,6 @@ int deinit() {
 
 
 //=====================================Trade Session=====================================//
-
 
 
 //======================================Time Control=====================================//
@@ -181,13 +181,16 @@ double HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Curren
               }
             }
    }
+   
+   checkProfit();
+   MoveStopToBreakeven();
+   
+   
    return(0);
   }
   
 //========================================Broker Digit Conversion=============================//
 
-
-  
   
 double GetPoint(string symbol = "") //5 digit broker conversion ---  Copyright "Coders Guru" 
 {
@@ -222,7 +225,7 @@ int checkProfit()
    
             // MoveStopToBreakeven();
    
-            if(OrderProfit()>=ProfitMargin )
+            if(OrderProfit()>=BreakEvenProfit )
             {
 
               int order_type=OrderType();     
@@ -232,14 +235,14 @@ int checkProfit()
               
                   if(iVolume(NULL,0,0)==1);
                   
-                  ticket2 = OrderSend(Symbol(), OP_BUY, 2*Lots, Ask , 0, Ask-LossMargin*Point, 0);
+                  ticket2 = OrderSend(Symbol(), OP_BUY, MultiLotsMultiple*Lots, Ask , 0, Ask-MultiLotStopLoss*Point, 0);
                }
                
               else 
                {
                   if(iVolume(NULL,0,0)==1);                        
     
-                  ticket2 = OrderSend(Symbol(), OP_SELL, 2*Lots, Bid, 0, Bid+LossMargin*Point, 0);
+                  ticket2 = OrderSend(Symbol(), OP_SELL, MultiLotsMultiple*Lots, Bid, 0, Bid+MultiLotStopLoss*Point, 0);
                   
                }
          
@@ -250,3 +253,65 @@ int checkProfit()
     
     return(0);
 }  
+
+//===================================== Move to Breakeven ==================================//
+
+bool MoveStopToBreakeven() {
+
+   bool retVal = true;
+   double sl;
+ 
+
+   // select the Order
+   for(int i = 0; i < OrdersTotal(); i++) {
+      OrderSelect(i, SELECT_BY_POS, MODE_TRADES);
+      
+      if(OrderSymbol() == Symbol()) {       
+      
+      
+         if( OrderType() == OP_BUY  && OrderLots() == 2*Lots && OrderProfit() >= BreakEvenProfit/MultiLotBreakEvenRatio ){
+         
+                 
+              sl = OrderOpenPrice() + 10*Point;
+              
+            
+              retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Blue) ;
+              
+         }  
+         
+         if( OrderType() == OP_SELL && OrderLots() == 2*Lots && OrderProfit() >= BreakEvenProfit/MultiLotBreakEvenRatio ) {
+       
+             
+               sl = OrderOpenPrice() - 10*Point;
+               
+               
+                  retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Red) ;
+               
+         }
+         
+         if(  OrderType() == OP_BUY && OrderProfit() >= BreakEvenProfit ){
+         
+                 
+              sl = OrderOpenPrice() + 10*Point;
+              
+            
+              retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Blue) ;
+              
+         }
+        
+        if(OrderType() == OP_SELL && OrderProfit() >= BreakEvenProfit ) {
+       
+             
+               sl = OrderOpenPrice() - 10*Point;
+               
+               
+                  retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Red) ;
+               
+        }
+         
+      }
+   }
+   
+   
+   return(retVal);
+}
