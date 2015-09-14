@@ -1,0 +1,44 @@
+0	15:30:17.643	Heiken_Ashi_Smoothed EURUSD,M5: uninit reason 3
+0	15:30:17.643	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	15:30:22.219	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 3
+0	15:30:22.253	Heiken_Ashi_Smoothed EURUSD,M30: initialized
+0	15:30:23.450	Heiken_Ashi_Smoothed EURUSD,M30: uninit reason 3
+0	15:30:23.480	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:30:27.666	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 3
+0	15:30:27.687	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	15:30:31.203	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 3
+0	15:30:31.277	Heiken_Ashi_Smoothed EURUSD,Daily: initialized
+0	15:30:40.108	Heiken_Ashi_Smoothed EURUSD,Daily: uninit reason 3
+0	15:30:40.124	Heiken_Ashi_Smoothed EURUSD,Weekly: initialized
+0	15:30:41.834	Heiken_Ashi_Smoothed EURUSD,Weekly: uninit reason 3
+0	15:30:41.834	Heiken_Ashi_Smoothed EURUSD,Daily: initialized
+0	15:30:45.434	Heiken_Ashi_Smoothed EURUSD,Daily: uninit reason 3
+0	15:30:45.435	Heiken_Ashi_Smoothed EURUSD,Weekly: initialized
+0	15:30:54.539	Heiken_Ashi_Smoothed EURUSD,Weekly: uninit reason 3
+0	15:30:54.557	Heiken_Ashi_Smoothed EURUSD,Monthly: initialized
+0	15:31:05.202	Heiken_Ashi_Smoothed EURUSD,Monthly: uninit reason 3
+0	15:31:05.203	Heiken_Ashi_Smoothed EURUSD,Weekly: initialized
+0	15:31:07.329	Heiken_Ashi_Smoothed EURUSD,Weekly: uninit reason 3
+0	15:31:07.329	Heiken_Ashi_Smoothed EURUSD,Daily: initialized
+0	15:31:08.465	Heiken_Ashi_Smoothed EURUSD,Daily: uninit reason 3
+0	15:31:08.465	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	15:31:20.960	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 3
+0	15:31:20.960	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:11:10.447	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 3
+0	16:11:10.447	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	16:11:15.969	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 3
+0	16:11:15.969	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	17:13:56.886	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 2
+0	17:13:56.887	Custom indicator Heiken_Ashi_Smoothed EURUSD,M15: removed
+0	17:13:56.889	Custom indicator Heiken_Ashi_Smoothed EURUSD,M15: loaded successfully
+0	17:13:56.891	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	19:26:31.054	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 3
+0	19:26:31.133	Heiken_Ashi_Smoothed EURUSD,M5: initialized
+0	19:39:55.877	Heiken_Ashi_Smoothed EURUSD,M5: uninit reason 3
+0	19:39:55.877	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	19:40:02.887	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 3
+0	19:40:02.950	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	19:40:42.542	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 3
+0	19:40:42.589	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	19:41:36.798	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 3
+0	19:41:36.798	Heiken_Ashi_Smoothed EURUSD,M5: initialized
