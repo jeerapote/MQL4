@@ -38,6 +38,13 @@ double         mPoint                  = 0.0001;
 
 int            ticket2;
 
+
+double         InitialBalance;    
+double         Balance;      
+double         LotsFactor;
+double         InitialLots;
+double         Multilot;
+
 int init() {
 
    BarCount = Bars;
@@ -45,6 +52,11 @@ int init() {
    if (EachTickMode) Current = -1; //else Current = -1;
    
    mPoint = Point*10;
+   
+   InitialBalance = AccountBalance();
+   
+   InitialLots = Lots;
+   
 
    return(0);
 }
@@ -69,6 +81,12 @@ datetime newbar;
 int start()
   {
 
+   Balance = AccountBalance();
+   
+   LotsFactor = Balance/InitialBalance;
+   
+   Lots = InitialLots * LotsFactor; 
+   
    int cnt, ticket, total;
    
    if(Bars<100)
@@ -228,21 +246,23 @@ int checkProfit()
             if(OrderProfit()>=BreakEvenProfit )
             {
 
-              int order_type=OrderType();     
+              int order_type = OrderType();     
        
               if(order_type==OP_BUY)
                {
               
                   if(iVolume(NULL,0,0)==1);
                   
-                  ticket2 = OrderSend(Symbol(), OP_BUY, MultiLotsMultiple*Lots, Ask , 0, Ask-MultiLotStopLoss*Point, 0);
+                  
+                  Multilot = MultiLotsMultiple*Lots;
+                  ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, Ask-MultiLotStopLoss*Point, 0);
                }
                
               else 
                {
                   if(iVolume(NULL,0,0)==1);                        
-    
-                  ticket2 = OrderSend(Symbol(), OP_SELL, MultiLotsMultiple*Lots, Bid, 0, Bid+MultiLotStopLoss*Point, 0);
+                  Multilot = MultiLotsMultiple*Lots;
+                  ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid, 0, Bid+MultiLotStopLoss*Point, 0);
                   
                }
          
@@ -269,7 +289,7 @@ bool MoveStopToBreakeven() {
       if(OrderSymbol() == Symbol()) {       
       
       
-         if( OrderType() == OP_BUY  && OrderLots() == 2*Lots && OrderProfit() >= BreakEvenProfit/MultiLotBreakEvenRatio ){
+         if( OrderType() == OP_BUY  && OrderLots() == Multilot && OrderProfit() >= BreakEvenProfit/MultiLotBreakEvenRatio ){
          
                  
               sl = OrderOpenPrice() + 10*Point;
@@ -279,7 +299,7 @@ bool MoveStopToBreakeven() {
               
          }  
          
-         if( OrderType() == OP_SELL && OrderLots() == 2*Lots && OrderProfit() >= BreakEvenProfit/MultiLotBreakEvenRatio ) {
+         if( OrderType() == OP_SELL && OrderLots() == Multilot && OrderProfit() >= BreakEvenProfit/MultiLotBreakEvenRatio ) {
        
              
                sl = OrderOpenPrice() - 10*Point;
@@ -308,6 +328,8 @@ bool MoveStopToBreakeven() {
                   retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Red) ;
                
         }
+        
+        if(!retVal)Print("Error order modify : ",GetLastError());
          
       }
    }
