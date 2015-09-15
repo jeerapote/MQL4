@@ -41,7 +41,6 @@ int Criterion()                        // Пользовательская функция
    TVI, TVI_Last, TVI_Last_Later, TVI_Last_Previous;
 
 //--------------------------------------------------------------- 4 --
- 
       double xazz_Sell_signal_Last = iCustom(NULL,0,"Strategy2/xaZZ", xaZZSell_indicator, 1); //
       double xazz_Buy_signal_Last  = iCustom(NULL,0,"Strategy2/xaZZ", xaZZBuy_indicator, 1); //
       double xazz_Sell_signal_Now = iCustom(NULL,0,"Strategy2/xaZZ", xaZZSell_indicator, 0); //

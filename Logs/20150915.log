@@ -1,1 +1,454 @@
 0	16:13:54.901	Compiling 'TVI_v2'
+0	16:16:36.944	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,H1: loaded successfully
+0	16:16:38.356	Gadi_OBV_v2.2 for EA EURUSD,H1: initialized
+0	16:16:39.873	Gadi_OBV_v2.2 for EA EURUSD,H1: uninit reason 3
+0	16:16:39.875	Gadi_OBV_v2.2 for EA EURUSD,M15: initialized
+0	16:25:25.087	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,M15: loaded successfully
+0	16:25:26.403	OBV, TVI, Price_Div_EA EURUSD,M15: initialized
+0	16:25:26.407	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:25:26.407	TVI_v2 EURUSD,M15: initialized
+0	16:28:20.274	OBV, TVI, Price_Div_EA EURUSD,M15: uninit reason 2
+0	16:28:20.274	TVI_v2 EURUSD,M15: uninit reason 1
+0	16:28:20.274	Custom indicator TVI_v2 EURUSD,M15: removed
+0	16:28:20.274	Expert OBV, TVI, Price_Div_EA EURUSD,M15: removed
+0	16:28:20.276	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,M15: loaded successfully
+0	16:28:20.279	OBV, TVI, Price_Div_EA EURUSD,M15: initialized
+0	16:28:20.638	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:28:20.650	TVI_v2 EURUSD,M15: initialized
+0	16:28:20.658	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:28:20.666	TVI_v2 EURUSD,M15: initialized
+0	16:28:53.457	OBV, TVI, Price_Div_EA EURUSD,M15: uninit reason 2
+0	16:28:53.457	TVI_v2 EURUSD,M15: uninit reason 1
+0	16:28:53.457	Custom indicator TVI_v2 EURUSD,M15: removed
+0	16:28:53.457	TVI_v2 EURUSD,M15: uninit reason 1
+0	16:28:53.457	Custom indicator TVI_v2 EURUSD,M15: removed
+0	16:28:53.457	Expert OBV, TVI, Price_Div_EA EURUSD,M15: removed
+0	16:28:53.457	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,M15: loaded successfully
+0	16:28:53.461	OBV, TVI, Price_Div_EA EURUSD,M15: initialized
+0	16:28:53.549	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:28:53.557	TVI_v2 EURUSD,M15: initialized
+0	16:28:53.565	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:28:53.573	TVI_v2 EURUSD,M15: initialized
+0	16:29:03.386	OBV, TVI, Price_Div_EA EURUSD,M15: uninit reason 2
+0	16:29:03.386	TVI_v2 EURUSD,M15: uninit reason 1
+0	16:29:03.386	Custom indicator TVI_v2 EURUSD,M15: removed
+0	16:29:03.386	TVI_v2 EURUSD,M15: uninit reason 1
+0	16:29:03.386	Custom indicator TVI_v2 EURUSD,M15: removed
+0	16:29:03.386	Expert OBV, TVI, Price_Div_EA EURUSD,M15: removed
+0	16:29:03.388	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,M15: loaded successfully
+0	16:29:03.390	OBV, TVI, Price_Div_EA EURUSD,M15: initialized
+0	16:29:06.311	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:29:06.319	TVI_v2 EURUSD,M15: initialized
+0	16:29:06.323	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:29:06.331	TVI_v2 EURUSD,M15: initialized
+0	16:30:22.659	OBV, TVI, Price_Div_EA EURUSD,M15: uninit reason 2
+0	16:30:22.659	TVI_v2 EURUSD,M15: uninit reason 1
+0	16:30:22.659	Custom indicator TVI_v2 EURUSD,M15: removed
+0	16:30:22.659	TVI_v2 EURUSD,M15: uninit reason 1
+0	16:30:22.659	Custom indicator TVI_v2 EURUSD,M15: removed
+0	16:30:22.659	Expert OBV, TVI, Price_Div_EA EURUSD,M15: removed
+0	16:30:22.659	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,M15: loaded successfully
+0	16:30:22.663	OBV, TVI, Price_Div_EA EURUSD,M15: initialized
+0	16:30:22.843	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M15: loaded successfully
+0	16:30:22.847	Gadi_OBV_v2.2 for EA EURUSD,M15: initialized
+0	16:30:22.863	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:30:22.867	TVI_v2 EURUSD,M15: initialized
+0	16:30:30.466	OBV, TVI, Price_Div_EA EURUSD,M15: uninit reason 2
+0	16:30:30.466	TVI_v2 EURUSD,M15: uninit reason 1
+0	16:30:30.466	Custom indicator TVI_v2 EURUSD,M15: removed
+0	16:30:30.466	Gadi_OBV_v2.2 for EA EURUSD,M15: uninit reason 1
+0	16:30:30.466	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M15: removed
+0	16:30:30.466	Expert OBV, TVI, Price_Div_EA EURUSD,M15: removed
+0	16:30:30.466	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,M15: loaded successfully
+0	16:30:30.470	OBV, TVI, Price_Div_EA EURUSD,M15: initialized
+0	16:30:30.590	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M15: loaded successfully
+0	16:30:30.594	Gadi_OBV_v2.2 for EA EURUSD,M15: initialized
+0	16:30:30.610	Custom indicator TVI_v2 EURUSD,M15: loaded successfully
+0	16:30:30.622	TVI_v2 EURUSD,M15: initialized
+0	16:36:30.636	Custom indicator FX5_Divergence_V2.1 EURUSD,M15: loaded successfully
+0	16:36:32.104	FX5_Divergence_V2.1 EURUSD,M15: initialized
+0	16:36:40.504	Gadi_OBV_v2.2 for EA EURUSD,M15: uninit reason 1
+0	16:36:40.504	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M15: removed
+0	16:46:45.287	FX5_Divergence_V2.1 EURUSD,M15: uninit reason 1
+0	16:46:45.287	Custom indicator FX5_Divergence_V2.1 EURUSD,M15: removed
+0	16:48:20.962	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M15: loaded successfully
+0	16:48:23.075	Gadi_OBV_v2.2 for EA EURUSD,M15: initialized
+0	16:50:05.985	OBV, TVI, Price_Div_EA EURUSD,M15: uninit reason 3
+0	16:50:05.989	Gadi_OBV_v2.2 for EA EURUSD,M15: uninit reason 3
+0	16:50:05.993	Gadi_OBV_v2.2 for EA EURUSD,M1: initialized
+0	16:50:06.009	OBV, TVI, Price_Div_EA EURUSD,M1: initialized
+0	16:50:08.037	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M1: loaded successfully
+0	16:50:08.041	Gadi_OBV_v2.2 for EA EURUSD,M1: initialized
+0	16:50:08.053	Custom indicator TVI_v2 EURUSD,M1: loaded successfully
+0	16:50:08.057	TVI_v2 EURUSD,M1: initialized
+0	16:50:09.943	Automated trading enabled
+0	16:50:20.486	OBV, TVI, Price_Div_EA EURUSD,M1: uninit reason 3
+0	16:50:20.490	Gadi_OBV_v2.2 for EA EURUSD,M1: uninit reason 3
+0	16:50:20.490	Gadi_OBV_v2.2 for EA EURUSD,M5: initialized
+0	16:50:20.502	OBV, TVI, Price_Div_EA EURUSD,M5: initialized
+0	16:50:21.046	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M5: loaded successfully
+0	16:50:21.050	Gadi_OBV_v2.2 for EA EURUSD,M5: initialized
+0	16:50:21.058	Custom indicator TVI_v2 EURUSD,M5: loaded successfully
+0	16:50:21.062	TVI_v2 EURUSD,M5: initialized
+0	16:50:28.469	OBV, TVI, Price_Div_EA EURUSD,M5: uninit reason 3
+0	16:50:28.473	Gadi_OBV_v2.2 for EA EURUSD,M5: uninit reason 3
+0	16:50:28.473	Gadi_OBV_v2.2 for EA EURUSD,M15: initialized
+0	16:50:28.481	OBV, TVI, Price_Div_EA EURUSD,M15: initialized
+0	16:50:36.166	OBV, TVI, Price_Div_EA EURUSD,M15: uninit reason 3
+0	16:50:36.168	Gadi_OBV_v2.2 for EA EURUSD,M15: uninit reason 3
+0	16:50:36.168	Gadi_OBV_v2.2 for EA EURUSD,H1: initialized
+0	16:50:36.172	OBV, TVI, Price_Div_EA EURUSD,H1: initialized
+0	16:50:38.692	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,H1: loaded successfully
+0	16:50:38.695	Gadi_OBV_v2.2 for EA EURUSD,H1: initialized
+0	16:50:38.699	Custom indicator TVI_v2 EURUSD,H1: loaded successfully
+0	16:50:38.702	TVI_v2 EURUSD,H1: initialized
+0	16:50:43.439	OBV, TVI, Price_Div_EA EURUSD,H1: uninit reason 3
+0	16:50:43.439	Gadi_OBV_v2.2 for EA EURUSD,H1: uninit reason 3
+0	16:50:43.439	Gadi_OBV_v2.2 for EA EURUSD,M1: initialized
+0	16:50:43.455	OBV, TVI, Price_Div_EA EURUSD,M1: initialized
+0	16:50:46.120	OBV, TVI, Price_Div_EA EURUSD,M1: uninit reason 3
+0	16:50:46.120	Gadi_OBV_v2.2 for EA EURUSD,M1: uninit reason 3
+0	16:50:46.120	Gadi_OBV_v2.2 for EA EURUSD,M15: initialized
+0	16:50:46.124	OBV, TVI, Price_Div_EA EURUSD,M15: initialized
+0	17:04:13.313	Compiling 'GannHiLo-Histo'
+0	22:13:01.616	OBV, TVI, Price_Div_EA EURUSD,M15: uninit reason 1
+0	22:13:01.647	TVI_v2 EURUSD,H1: uninit reason 1
+0	22:13:01.647	Custom indicator TVI_v2 EURUSD,H1: removed
+0	22:13:01.647	Gadi_OBV_v2.2 for EA EURUSD,H1: uninit reason 1
+0	22:13:01.647	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,H1: removed
+0	22:13:01.647	TVI_v2 EURUSD,M5: uninit reason 1
+0	22:13:01.647	Custom indicator TVI_v2 EURUSD,M5: removed
+0	22:13:01.647	Gadi_OBV_v2.2 for EA EURUSD,M5: uninit reason 1
+0	22:13:01.647	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M5: removed
+0	22:13:01.647	TVI_v2 EURUSD,M1: uninit reason 1
+0	22:13:01.647	Custom indicator TVI_v2 EURUSD,M1: removed
+0	22:13:01.647	Gadi_OBV_v2.2 for EA EURUSD,M1: uninit reason 1
+0	22:13:01.647	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M1: removed
+0	22:13:01.647	TVI_v2 EURUSD,M15: uninit reason 1
+0	22:13:01.647	Custom indicator TVI_v2 EURUSD,M15: removed
+0	22:13:01.647	Gadi_OBV_v2.2 for EA EURUSD,M15: uninit reason 1
+0	22:13:01.647	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M15: removed
+0	22:13:01.647	Expert OBV, TVI, Price_Div_EA EURUSD,M15: removed
+0	22:13:01.647	Expert Test\objectcreatekea EURUSD,M15: loaded successfully
+0	22:13:03.969	objectcreatekea EURUSD,M15: initialized
+0	22:13:12.878	objectcreatekea EURUSD,M15: uninit reason 3
+0	22:13:12.893	Gadi_OBV_v2.2 for EA EURUSD,M15: uninit reason 3
+0	22:13:12.893	Gadi_OBV_v2.2 for EA EURUSD,M5: initialized
+0	22:13:12.909	objectcreatekea EURUSD,M5: initialized
+0	22:14:35.591	objectcreatekea EURUSD,M5: uninit reason 2
+0	22:14:35.591	Expert objectcreatekea EURUSD,M5: removed
+0	22:14:35.591	Expert Test\objectcreatekea EURUSD,M5: loaded successfully
+0	22:14:35.604	objectcreatekea EURUSD,M5: initialized
+0	22:14:41.337	objectcreatekea EURUSD,M5: uninit reason 2
+0	22:14:41.337	Expert objectcreatekea EURUSD,M5: removed
+0	22:14:41.337	Expert Test\objectcreatekea EURUSD,M5: loaded successfully
+0	22:14:41.337	objectcreatekea EURUSD,M5: initialized
+0	22:14:47.438	objectcreatekea EURUSD,M5: uninit reason 3
+0	22:14:47.438	Gadi_OBV_v2.2 for EA EURUSD,M5: uninit reason 3
+0	22:14:47.438	Gadi_OBV_v2.2 for EA EURUSD,M1: initialized
+0	22:14:47.470	objectcreatekea EURUSD,M1: initialized
+0	22:14:51.246	objectcreatekea EURUSD,M1: uninit reason 3
+0	22:14:51.246	Gadi_OBV_v2.2 for EA EURUSD,M1: uninit reason 3
+0	22:14:51.246	Gadi_OBV_v2.2 for EA EURUSD,M5: initialized
+0	22:14:51.261	objectcreatekea EURUSD,M5: initialized
+0	22:15:41.014	objectcreatekea EURUSD,M5: uninit reason 2
+0	22:15:41.014	Expert objectcreatekea EURUSD,M5: removed
+0	22:15:41.014	Expert Test\objectcreatekea EURUSD,M5: loaded successfully
+0	22:15:41.014	objectcreatekea EURUSD,M5: initialized
+0	22:29:42.823	objectcreatekea EURUSD,M5: uninit reason 3
+0	22:29:42.839	Gadi_OBV_v2.2 for EA EURUSD,M5: uninit reason 3
+0	22:29:42.839	Gadi_OBV_v2.2 for EA EURUSD,M1: initialized
+0	22:29:42.854	objectcreatekea EURUSD,M1: initialized
+0	23:14:29.172	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:14:29.172	Expert objectcreatekea EURUSD,M1: removed
+0	23:14:29.172	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:14:29.172	objectcreatekea EURUSD,M1: initialized
+0	23:14:46.126	objectcreatekea EURUSD,M1: uninit reason 3
+0	23:14:46.126	Gadi_OBV_v2.2 for EA EURUSD,M1: uninit reason 3
+0	23:14:46.126	Gadi_OBV_v2.2 for EA EURUSD,M5: initialized
+0	23:14:46.141	objectcreatekea EURUSD,M5: initialized
+0	23:14:47.682	objectcreatekea EURUSD,M5: uninit reason 3
+0	23:14:47.682	Gadi_OBV_v2.2 for EA EURUSD,M5: uninit reason 3
+0	23:14:47.682	Gadi_OBV_v2.2 for EA EURUSD,M1: initialized
+0	23:14:47.714	objectcreatekea EURUSD,M1: initialized
+0	23:14:53.001	objectcreatekea EURUSD,M1: uninit reason 3
+0	23:14:53.001	Gadi_OBV_v2.2 for EA EURUSD,M1: uninit reason 3
+0	23:14:53.001	Gadi_OBV_v2.2 for EA EURUSD,M5: initialized
+0	23:14:53.016	objectcreatekea EURUSD,M5: initialized
+0	23:14:53.713	objectcreatekea EURUSD,M5: uninit reason 3
+0	23:14:53.728	Gadi_OBV_v2.2 for EA EURUSD,M5: uninit reason 3
+0	23:14:53.728	Gadi_OBV_v2.2 for EA EURUSD,M15: initialized
+0	23:14:53.744	objectcreatekea EURUSD,M15: initialized
+0	23:14:55.126	objectcreatekea EURUSD,M15: uninit reason 3
+0	23:14:55.126	Gadi_OBV_v2.2 for EA EURUSD,M15: uninit reason 3
+0	23:14:55.126	Gadi_OBV_v2.2 for EA EURUSD,M1: initialized
+0	23:14:55.142	objectcreatekea EURUSD,M1: initialized
+0	23:16:26.299	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:16:26.302	objectcreatekea EURUSD,M1: initialized
+0	23:16:26.313	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=1; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:16:29.844	objectcreatekea EURUSD,M1: uninit reason 3
+0	23:16:29.844	Gadi_OBV_v2.2 for EA EURUSD,M1: uninit reason 3
+0	23:16:29.875	Gadi_OBV_v2.2 for EA EURUSD,Monthly: initialized
+0	23:16:30.000	objectcreatekea EURUSD,Monthly: initialized
+0	23:16:38.757	objectcreatekea EURUSD,Monthly: uninit reason 3
+0	23:16:38.757	Gadi_OBV_v2.2 for EA EURUSD,Monthly: uninit reason 3
+0	23:16:38.788	Gadi_OBV_v2.2 for EA EURUSD,Weekly: initialized
+0	23:16:38.913	objectcreatekea EURUSD,Weekly: initialized
+0	23:16:54.072	objectcreatekea EURUSD,Weekly: uninit reason 5
+0	23:16:54.072	objectcreatekea EURUSD,Weekly inputs: InpName=VLine; InpDate=90; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:16:54.088	objectcreatekea EURUSD,Weekly: initialized
+0	23:17:42.683	objectcreatekea EURUSD,Weekly: uninit reason 2
+0	23:17:42.683	Expert objectcreatekea EURUSD,Weekly: removed
+0	23:17:42.683	Expert Test\objectcreatekea EURUSD,Weekly: loaded successfully
+0	23:17:42.683	objectcreatekea EURUSD,Weekly: initialized
+0	23:17:49.158	objectcreatekea EURUSD,Weekly: uninit reason 3
+0	23:17:49.174	Gadi_OBV_v2.2 for EA EURUSD,Weekly: uninit reason 3
+0	23:17:49.174	Gadi_OBV_v2.2 for EA EURUSD,M1: initialized
+0	23:17:49.205	objectcreatekea EURUSD,M1: initialized
+0	23:18:53.330	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:18:53.330	Expert objectcreatekea EURUSD,M1: removed
+0	23:18:53.330	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:18:53.330	objectcreatekea EURUSD,M1: initialized
+0	23:20:49.080	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:20:49.080	Expert objectcreatekea EURUSD,M1: removed
+0	23:20:49.080	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:20:49.080	objectcreatekea EURUSD,M1: initialized
+0	23:21:28.218	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:21:28.218	Expert objectcreatekea EURUSD,M1: removed
+0	23:21:28.218	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:21:28.218	objectcreatekea EURUSD,M1: initialized
+0	23:22:50.891	Compiling 'Test\charts'
+0	23:22:52.478	Compiling 'Test\grafobjects'
+0	23:22:53.953	Compiling 'Test\strings'
+0	23:22:55.579	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:22:55.579	Expert objectcreatekea EURUSD,M1: removed
+0	23:22:55.579	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:22:55.579	objectcreatekea EURUSD,M1: initialized
+3	23:22:55.664	'Test\objectcreatekea' is not expert and cannot be executed
+0	23:23:00.818	Expert Test\moveobjects EURUSD,H1: loaded successfully
+0	23:23:06.991	moveobjects EURUSD,H1 inputs: Len_Cn=50; Col_Cn=42495; 
+0	23:23:07.007	moveobjects EURUSD,H1: initialized
+0	23:23:16.379	moveobjects EURUSD,H1: uninit reason 4
+0	23:23:40.760	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:23:40.760	Expert objectcreatekea EURUSD,M1: removed
+0	23:23:40.760	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:23:40.760	objectcreatekea EURUSD,M1: initialized
+0	23:23:42.950	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:23:42.950	Expert objectcreatekea EURUSD,M1: removed
+0	23:23:42.950	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:23:42.950	objectcreatekea EURUSD,M1: initialized
+3	23:23:43.013	'Test\objectcreatekea' is not expert and cannot be executed
+0	23:24:12.836	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:24:12.836	Expert objectcreatekea EURUSD,M1: removed
+0	23:24:12.836	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:24:12.836	objectcreatekea EURUSD,M1: initialized
+0	23:24:15.168	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:24:15.168	Expert objectcreatekea EURUSD,M1: removed
+0	23:24:15.168	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:24:15.168	objectcreatekea EURUSD,M1: initialized
+3	23:24:15.231	'Test\objectcreatekea' is not expert and cannot be executed
+0	23:24:59.510	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:24:59.510	Expert objectcreatekea EURUSD,M1: removed
+0	23:24:59.510	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:24:59.510	objectcreatekea EURUSD,M1: initialized
+0	23:25:02.371	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:25:02.371	Expert objectcreatekea EURUSD,M1: removed
+0	23:25:02.371	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:25:02.371	objectcreatekea EURUSD,M1: initialized
+0	23:25:02.433	Expert Test\objectcreatekea EURUSD,H1: loaded successfully
+0	23:25:34.054	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:25:34.054	Expert objectcreatekea EURUSD,M1: removed
+0	23:25:34.054	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:25:34.054	objectcreatekea EURUSD,M1: initialized
+0	23:25:35.509	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:25:35.509	Expert objectcreatekea EURUSD,M1: removed
+0	23:25:35.509	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:25:35.509	objectcreatekea EURUSD,M1: initialized
+3	23:25:35.572	'Test\objectcreatekea' is not expert and cannot be executed
+0	23:25:39.384	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:25:39.384	Expert objectcreatekea EURUSD,M1: removed
+0	23:25:39.384	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:25:39.384	objectcreatekea EURUSD,M1: initialized
+3	23:25:39.431	'Test\objectcreatekea' is not expert and cannot be executed
+0	23:25:41.735	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:25:41.735	Expert objectcreatekea EURUSD,M1: removed
+0	23:25:41.735	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:25:41.735	objectcreatekea EURUSD,M1: initialized
+3	23:25:41.797	'Test\objectcreatekea' is not expert and cannot be executed
+0	23:25:57.017	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:25:57.017	Expert objectcreatekea EURUSD,M1: removed
+0	23:25:57.017	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:25:57.017	objectcreatekea EURUSD,M1: initialized
+3	23:25:57.064	'Test\objectcreatekea' is not expert and cannot be executed
+0	23:26:04.966	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:26:04.966	Expert objectcreatekea EURUSD,M1: removed
+0	23:26:04.966	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:26:04.966	objectcreatekea EURUSD,M1: initialized
+0	23:26:05.029	Expert Test\objectcreatekea EURUSD,H1: loaded successfully
+0	23:26:26.872	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:26:26.872	Expert objectcreatekea EURUSD,M1: removed
+0	23:26:26.872	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:26:26.872	objectcreatekea EURUSD,M1: initialized
+0	23:26:26.934	Expert Test\objectcreatekea EURUSD,H1: loaded successfully
+0	23:26:35.124	objectcreatekea EURUSD,H1 inputs: InpName=VLine; InpDate=25; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:26:35.124	objectcreatekea EURUSD,H1: initialized
+0	23:26:40.844	objectcreatekea EURUSD,H1: uninit reason 3
+0	23:26:40.860	objectcreatekea EURUSD,M1: initialized
+0	23:26:54.375	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:26:54.375	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=50; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:26:54.391	objectcreatekea EURUSD,M1: initialized
+0	23:26:59.923	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:00.533	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:03.221	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:07.331	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:18.218	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:27:18.218	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=25; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:27:18.234	objectcreatekea EURUSD,M1: initialized
+0	23:27:35.649	objectcreatekea EURUSD,M1: uninit reason 4
+0	23:27:38.626	objectcreatekea EURUSD,M1: uninit reason 2
+0	23:27:38.626	Expert objectcreatekea EURUSD,M1: removed
+0	23:27:38.626	Expert Test\objectcreatekea EURUSD,M1: loaded successfully
+0	23:27:38.626	objectcreatekea EURUSD,M1: initialized
+0	23:27:38.719	Expert Test\objectcreatekea EURUSD,H1: loaded successfully
+0	23:27:39.905	objectcreatekea EURUSD,H1 inputs: InpName=VLine; InpDate=25; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:27:39.905	objectcreatekea EURUSD,H1: initialized
+0	23:27:46.922	objectcreatekea EURUSD,H1: uninit reason 3
+0	23:27:46.937	objectcreatekea EURUSD,M1: initialized
+0	23:29:15.588	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:29:15.594	objectcreatekea EURUSD,M1: initialized
+0	23:29:15.595	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=40; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:29:42.215	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:29:42.215	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=50; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:29:42.230	objectcreatekea EURUSD,M1: initialized
+0	23:29:52.376	objectcreatekea EURUSD,M1: uninit reason 3
+0	23:29:52.392	objectcreatekea EURUSD,M5: initialized
+0	23:29:53.376	objectcreatekea EURUSD,M5: uninit reason 3
+0	23:29:53.392	objectcreatekea EURUSD,M15: initialized
+0	23:29:56.096	objectcreatekea EURUSD,M15: uninit reason 3
+0	23:29:56.112	objectcreatekea EURUSD,M1: initialized
+0	23:29:59.730	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:00.324	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:15.467	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:30:15.467	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=25; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:30:15.483	objectcreatekea EURUSD,M1: initialized
+0	23:30:19.140	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:19.840	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:33.538	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:30:33.538	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=75; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:30:33.554	objectcreatekea EURUSD,M1: initialized
+0	23:30:38.907	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:52.486	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:30:52.502	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=0; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:30:52.517	objectcreatekea EURUSD,M1: initialized
+0	23:31:08.656	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:08.859	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:10.713	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:12.316	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:12.519	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:12.707	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:12.941	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:19.701	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+1	23:31:26.204	debugging terminated
+0	23:31:26.204	objectcreatekea EURUSD,M1: uninit reason 4
+0	23:31:27.679	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:37.417	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:37.603	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:37.623	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:37.795	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:11.462	Expert Test\grafobjects EURUSD,H1: loaded successfully
+0	23:32:15.080	grafobjects EURUSD,H1: initialized
+0	23:32:18.784	grafobjects EURUSD,H1: uninit reason 3
+0	23:32:18.799	grafobjects EURUSD,M1: initialized
+0	23:32:20.506	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:45.330	grafobjects EURUSD,M1: uninit reason 4
+0	23:32:50.138	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:33:00.109	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:33:00.313	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:33:54.212	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:34:38.118	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:34:38.345	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:34:38.548	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:01.978	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:02.391	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:34.835	Expert Test\moveobjects EURUSD,H1: loaded successfully
+0	23:35:36.718	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:36.921	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:37.030	moveobjects EURUSD,H1 inputs: Len_Cn=50; Col_Cn=42495; 
+0	23:35:37.030	moveobjects EURUSD,H1: initialized
+0	23:35:37.421	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:37.821	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:12.164	moveobjects EURUSD,H1: uninit reason 4
+0	23:36:14.212	Expert Test\moveobjects EURUSD,H1: loaded successfully
+0	23:36:15.501	moveobjects EURUSD,H1 inputs: Len_Cn=50; Col_Cn=42495; 
+0	23:36:15.501	moveobjects EURUSD,H1: initialized
+0	23:36:24.115	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:24.521	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:24.787	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:25.098	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:26.529	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:27.467	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:34.501	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:36.539	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:40.752	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:41.564	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:46.719	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:50.323	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:12.212	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:12.422	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:52.121	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:52.517	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:52.737	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:52.971	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:53.346	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:53.549	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:53.746	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:57.489	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:37:59.719	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:00.516	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:03.195	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:04.422	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:05.942	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:07.730	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:38.269	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:38.659	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:39.265	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:39.484	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:39.705	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:51.517	moveobjects EURUSD,H1: uninit reason 4
+0	23:38:53.177	Expert Test\moveobjects EURUSD,H1: loaded successfully
+0	23:38:54.340	moveobjects EURUSD,H1 inputs: Len_Cn=50; Col_Cn=42495; 
+0	23:38:54.340	moveobjects EURUSD,H1: initialized
+0	23:38:56.856	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:57.325	moveobjects EURUSD,H1: uninit reason 4
+0	23:39:06.513	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:20.653	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:39:20.653	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=90; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:39:20.669	objectcreatekea EURUSD,M1: initialized
+0	23:39:32.381	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+3	23:41:12.212	'Test\terendline' is not expert and cannot be executed
+0	23:41:25.033	Expert Test\terendline EURUSD,H1: loaded successfully
+0	23:41:29.998	terendline EURUSD,H1 inputs: InpName=Trend; InpDate1=35; InpPrice1=60; InpDate2=65; InpPrice2=40; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpRayRight=false; InpHidden=true; InpZOrder=0; 
+0	23:41:29.998	terendline EURUSD,H1: initialized
+0	23:41:33.019	terendline EURUSD,H1: uninit reason 3
+0	23:41:33.050	terendline EURUSD,M1: initialized
+0	23:43:09.003	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:44:25.688	terendline EURUSD,M1: uninit reason 5
+0	23:44:25.688	terendline EURUSD,M1 inputs: InpName=Trend; InpDate1=35; InpPrice1=60; InpDate2=65; InpPrice2=40; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpRayRight=false; InpHidden=true; InpZOrder=0; 
+0	23:44:25.704	terendline EURUSD,M1: initialized
+0	23:44:40.329	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:45:09.452	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:45:09.679	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:45:53.328	terendline EURUSD,M1: uninit reason 4
+0	23:46:07.652	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:46:13.715	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:46:13.939	objectcreatekea EURUSD,M1: uninit reason 5
+0	23:46:13.939	objectcreatekea EURUSD,M1 inputs: InpName=VLine; InpDate=50; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	23:46:13.955	objectcreatekea EURUSD,M1: initialized
+0	23:47:01.197	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:47:03.032	objectcreatekea EURUSD,M1: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:47:16.301	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 9
+0	23:47:16.317	objectcreatekea EURUSD,M1: uninit reason 9
+0	23:47:16.332	Gadi_OBV_v2.2 for EA EURUSD,M1: uninit reason 9
+0	23:47:16.442	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: removed
+0	23:47:16.504	Expert objectcreatekea EURUSD,M1: removed
+0	23:47:16.504	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M1: removed
