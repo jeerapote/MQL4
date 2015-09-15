@@ -279,6 +279,7 @@ int checkProfit()
                   
                   
                   Multilot = MultiLotsMultiple*Lots;
+                  Multilot = Lot(Multilot);
                   ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, Ask-MultiLotStopLoss*Point, 0);
                }
                
@@ -286,6 +287,7 @@ int checkProfit()
                {
                   if(iVolume(NULL,0,0)==1);                        
                   Multilot = MultiLotsMultiple*Lots;
+                  Multilot = Lot(Multilot);
                   ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid, 0, Bid+MultiLotStopLoss*Point, 0);
                   
                }
@@ -369,3 +371,34 @@ bool MoveStopToBreakeven() {
    
    return(retVal);
 }
+
+
+//===================================== Lot Size ==================================//
+
+
+double Lot(double dLots)                                     // User-defined function
+  {
+  
+   double Lots_New;
+   string Symb   =Symbol();                    // Symbol
+   double One_Lot=MarketInfo(Symb,MODE_MARGINREQUIRED);//!-lot cost
+   double Min_Lot=MarketInfo(Symb,MODE_MINLOT);// Min. amount of lots
+   double Step   =MarketInfo(Symb,MODE_LOTSTEP);//Step in volume changing
+   double Free   =AccountFreeMargin();         // Free margin
+//----------------------------------------------------------------------------- 3 --
+   if (dLots>0)                                 // Volume is explicitly set..
+     {                                         // ..check it
+      double Money=dLots*One_Lot;               // Order cost
+      if(Money<=AccountFreeMargin())           // Free margin covers it..
+         Lots_New=dLots;                        // ..accept the set one
+      else                                     // If free margin is not enough..
+         Lots_New=MathFloor(Free/One_Lot/Step)*Step;// Calculate lots
+     }
+//----------------------------------------------------------------------------- 4 --
+
+//----------------------------------------------------------------------------- 5 --
+   if (Lots_New < Min_Lot)                     // If it is less than allowed..
+      Lots_New=Min_Lot;                        // .. then minimum
+   
+   return Lots_New;                               // Exit user-defined function
+  }

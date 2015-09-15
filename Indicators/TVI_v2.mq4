@@ -1,4 +1,3 @@
-
 //+------------------------------------------------------------------+
 //|                                         Tick Volume Indicator v2 |
 //|                                         Copyright © William Blau |
@@ -36,11 +35,11 @@ extern string  AlertEmailSubject = "";
 //+------------------------------------------------------------------+
 //---- globalscape
 datetime       LastAlertTime     = -999999;
-string         AlertUp          = "TVI change: UP";
-string         AlertDn          = "TVI change: DOWN";
+string         AlertUps          = "TVI change: UP";
+string         AlertDns          = "TVI change: DOWN";
 int            Precision         = 5;
 datetime       OldTime;
-string         ShortName;
+string         ShortNames;
 //+------------------------------------------------------------------+
 //---- buffers
 double UpPos[], DnPos[], UpNeg[], DnNeg[];
@@ -86,7 +85,7 @@ int init()
    //---- reset bar counter  
    OldTime = Time[0];
    //---- collect indi name
-   ShortName = "TVI v2 (" + r + "," + s + "," + u + ") Trend is ";
+   ShortNames = "TVI v2 (" + r + "," + s + "," + u + ") Trend is ";
    //---- end init
    return(0);
    }
@@ -99,7 +98,6 @@ int start()
    if (counted_bars < 0) return (-1);
    if (counted_bars > 0) counted_bars--;
    int limit = MathMin(BarCount, Bars - counted_bars) - 1;
-      
    //---- resize/shift extra buffers on first and every next bar
    if (Time[0] != OldTime) SyncExtraBuffers(BarCount);
    //---- calculate ticks
@@ -147,8 +145,8 @@ int start()
          }
       }
    //---- trend display update
-   if (Trend[0] == 1) string t = "UP"; else t = "DOWN";
-   IndicatorShortName(ShortName + t);
+   if (Trend[0] == 1) string ts = "UP"; else ts = "DOWN";
+   IndicatorShortName(ShortNames + ts);
    //---- do alerts
    ProcessAlerts();
    //---- end of loop
@@ -182,17 +180,17 @@ void ProcessAlerts()
       //---- alert UP
       if (Trend[AlertCandle] == 1 &&  Trend[AlertCandle + 1] != 1)
          {
-         string AlertText = Symbol() + "," + TFToStr(Period()) + ": " + AlertUp;
-         if (PopupAlerts) Alert(AlertText);
-         if (AlertEmailSubject > "") SendMail(AlertEmailSubject, AlertText);
+         string AlertTexts = Symbol() + "," + TFToStr(Period()) + ": " + AlertUps;
+         if (PopupAlerts) Alert(AlertTexts);
+         if (AlertEmailSubject > "") SendMail(AlertEmailSubject, AlertTexts);
          LastAlertTime = Time[0]; 
          }
       //---- alert DOWN
       if (Trend[AlertCandle] == - 1  &&  Trend[AlertCandle + 1] != -1)
          {
-         AlertText = Symbol() + "," + TFToStr(Period()) + ": " + AlertDn;
-         if (PopupAlerts) Alert(AlertText);
-         if (AlertEmailSubject > "") SendMail(AlertEmailSubject, AlertText);
+         AlertTexts = Symbol() + "," + TFToStr(Period()) + ": " + AlertDns;
+         if (PopupAlerts) Alert(AlertTexts);
+         if (AlertEmailSubject > "") SendMail(AlertEmailSubject, AlertTexts);
          LastAlertTime = Time[0]; 
          }
       }
@@ -212,3 +210,4 @@ string TFToStr(int tf)
    if (tf >=     1)    return("M1"); 
    return("");
    }        
+
