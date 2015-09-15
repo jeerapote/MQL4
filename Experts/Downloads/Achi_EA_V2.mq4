@@ -1,5 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                            Ashi_EA.mq4    |
+//|                                            Version 2      | 
 //|                                            Date 09/2015   |
 //|                                            By Murat Aka   |
 //+------------------------------------------------------------------+
@@ -49,11 +50,18 @@ datetime       lastTradeTime;
 
 #define        THIS_BAR 0
 
+
+double         HAOpen3;
+double         HAClose3;
+
+double         HAOpen4;
+double         HAClose4;
+
 int init() {
 
    BarCount = Bars;
 
-   if (EachTickMode) Current = -1; //else Current = -1;
+   if (EachTickMode) Current = 0; //else Current = -1;
    
    mPoint = Point*10;
    
@@ -105,19 +113,19 @@ int start()
       return(0); 
      }
      
-//========================================Variables=======================================//
 
-double HAOpen3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 1);
-double HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 1);
-
-double HAOpen4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 1);
-double HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 1);
 
 //====================================Begin Placing Orders================================//
 
    newbar = 
   
    total=OrdersTotal(); 
+   
+         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 1);
+         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 1);
+
+         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 1);
+         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 1);
 
    if(total<1 && lastTradeTime != Time[THIS_BAR]) 
      {
@@ -127,6 +135,15 @@ double HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Curren
          Print("We have no money. Free Margin = ", AccountFreeMargin());
          return(0);  
         }
+        
+        //========================================Variables=======================================//
+
+         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 1);
+         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 1);
+
+         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 1);
+         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 1);
+         
       // check for long position (BUY) possibility
       if(( HAOpen3 < HAClose3 )&& (newbuy)  )
         {
