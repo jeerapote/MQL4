@@ -163,7 +163,7 @@ int Criterion()                        // Пользовательская функция
 //---------------- condition 1, sell --------------------------------
  // if((p4 <= p2+Tolerance && p4>= p2-Tolerance) && p2>p3 && xazz_Sell_signal_Now == p4 && xazz_Sell_signal_Now <= xazz_Sell_signal_Last+Tolerance && xazz_Sell_signal_Now >= xazz_Sell_signal_Last-Tolerance)
    if( p2>p3  && p4== xazz_Sell_signal_Now && (xazz_Sell_signal_Now <= xazz_Sell_signal_Last+Tolerance && xazz_Sell_signal_Now >= xazz_Sell_signal_Last-Tolerance)&&(Bid <= xazz_Sell_signal_Last+Tolerance && Bid >= xazz_Sell_signal_Last-Tolerance))
-     {
+   {
    
     TVI = iCustom(NULL,0,"TVI_v2",5,5,5, 0, 0); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
     if(TVI_Last_Previous > TVI_Last)TVI_Peak_Last= TVI_Last_Previous;

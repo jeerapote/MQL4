@@ -287,7 +287,7 @@ if(iHigh(Symbol(),tf,0)==iHigh(Symbol(),tf,iHighest(Symbol(),tf,2,LZ,0))){
    //Alert(Symbol(),"HiZ2: ",HiZ2);
 }
 
-if(iLow(Symbol(),tf,0)==iLow(Symbol(),tf,iLowest(Symbol(),tf,1,LZ,0))){
+if(iLow(Symbol(),tf,0)==iLow(Symbol(),tf,iLowest(Symbol(),tf,2,LZ,0))){
    LoZ2=iLow(Symbol(),tf,0); //HiZ2=0; 
    //Alert(Symbol(),"LoZ2: ",LoZ2);
 }
