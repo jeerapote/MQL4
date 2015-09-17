@@ -57,6 +57,11 @@ double         HAClose3;
 double         HAOpen4;
 double         HAClose4;
 
+
+bool             morningHours   = (Hour() >  7 && Hour() < 10),
+                 afternoonHours =  Hour() > 14 && Hour() < 18,
+                 tradingHours   = morningHours || afternoonHours;
+
 int init() {
 
    BarCount = Bars;
@@ -93,6 +98,12 @@ datetime newbar;
 int start()
   {
 
+
+           morningHours   = TimeHour(TimeGMT()) >  1 && TimeHour(TimeGMT()) < 12;
+                 afternoonHours =  TimeHour(TimeGMT()) > 14 && TimeHour(TimeGMT()) < 20;
+                 tradingHours   = morningHours || afternoonHours;
+
+
    Balance = AccountBalance();
    
    LotsFactor = Balance/InitialBalance;
@@ -126,8 +137,10 @@ int start()
 
          HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 1);
          HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 1);
+         
+         
 
-   if(total<1 && lastTradeTime != Time[THIS_BAR]) 
+   if(total<1 && lastTradeTime != Time[THIS_BAR] /*&& tradingHours*/) 
      {
   
       if(AccountFreeMargin()<(1000*Lots))
@@ -152,7 +165,7 @@ int start()
          newsell=true;
          
          ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,Ask-(StopLoss*mPoint/10),Ask+TakeProfit*mPoint/10,"LoneWolf",MagicNumber+1,0,Blue);
-         if(ticket>0)
+         if(ticket>0 )
            {
             lastTradeTime = Time[THIS_BAR];
             if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUY order opened : ",OrderOpenPrice());
@@ -201,6 +214,7 @@ int start()
   
    for(cnt=0;cnt<total;cnt++)
      {
+     
       OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
  
          if(OrderType()==OP_BUY)   // long position is opened
@@ -213,7 +227,7 @@ int start()
                  //return(0); // exit
                  
                 }
-			   }
+			  }
        
          if(OrderType()==OP_SELL) // go to short position
            {
@@ -223,8 +237,9 @@ int start()
                OrderClose(OrderTicket(),OrderLots(),Ask,3,Violet); // close position
              
               }
-            }
-   }
+           }
+            
+     }
    
    checkProfit();
    MoveStopToBreakeven();
@@ -259,7 +274,7 @@ double GetPoint(string symbol = "") //5 digit broker conversion ---  Copyright "
 int checkProfit()
 {
 
-   if(OrdersTotal() < 2 )
+   if(OrdersTotal() < 2 /*&& tradingHours*/)
    {
 
        int pos = OrdersTotal()-1;
@@ -267,6 +282,7 @@ int checkProfit()
          if(OrderSelect(pos, SELECT_BY_POS)==true)
          {
       
+            if(OrderProfit()<BreakEvenProfit/-1.5 )CloseAll();
             if(OrderProfit()>=BreakEvenProfit )
             {
 
@@ -280,7 +296,9 @@ int checkProfit()
                   
                   Multilot = MultiLotsMultiple*Lots;
                   Multilot = Lot(Multilot);
-                  ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, Ask-MultiLotStopLoss*Point, 0);
+                  MultiLotStopLoss=Low[2]-10*Point;
+                 // ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, Ask-MultiLotStopLoss*Point, 0);
+                  ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, MultiLotStopLoss, 0);
                }
                
               else 
@@ -288,14 +306,16 @@ int checkProfit()
                   if(iVolume(NULL,0,0)==1);                        
                   Multilot = MultiLotsMultiple*Lots;
                   Multilot = Lot(Multilot);
-                  ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid, 0, Bid+MultiLotStopLoss*Point, 0);
+                  MultiLotStopLoss=High[2]+10*Point;
+                 // ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid, 0, Bid+MultiLotStopLoss*Point, 0);
+                  ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid , 0, MultiLotStopLoss, 0);
                   
                }
          
             }
             
         }
-    } 
+   } 
     
     return(0);
 }  
@@ -320,7 +340,8 @@ bool MoveStopToBreakeven() {
          if( OrderType() == OP_BUY  && OrderLots() == Multilot && OrderProfit() >= BreakEvenProfit/MultiLotBreakEvenRatio ){
          
               tsl = OrderStopLoss();   
-              sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
+             // sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
+              sl = Low[2]-10*Point;
               
               if(tsl != sl)
               retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Blue) ;
@@ -330,8 +351,8 @@ bool MoveStopToBreakeven() {
          if( OrderType() == OP_SELL && OrderLots() == Multilot && OrderProfit() >= BreakEvenProfit/MultiLotBreakEvenRatio ) {
        
               tsl = OrderStopLoss();
-              sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
-               
+             // sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
+              sl = High[2]+10*Point; 
               if(tsl != sl) 
               retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Red) ;
                
@@ -341,8 +362,8 @@ bool MoveStopToBreakeven() {
          if(  OrderType() == OP_BUY && OrderProfit() >= BreakEvenProfit ){
          
               tsl = OrderStopLoss();   
-              sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
-              
+              //sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
+              sl = Low[2]-10*Point;
               if(tsl != sl)
               retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Blue) ;
               
@@ -351,8 +372,8 @@ bool MoveStopToBreakeven() {
         if(OrderType() == OP_SELL && OrderProfit() >= BreakEvenProfit ) {
        
               tsl = OrderStopLoss();
-              sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
-               
+              //sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
+              sl = High[2]+10*Point; 
               if(tsl != sl) 
               retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Red) ;
                
@@ -370,6 +391,38 @@ bool MoveStopToBreakeven() {
    
    
    return(retVal);
+}
+
+
+int CloseAll(){
+
+int total = OrdersTotal();
+  for(int i=total-1;i>=0;i--)
+  {
+    OrderSelect(i, SELECT_BY_POS);
+    int type   = OrderType();
+
+    bool result = false;
+    
+    switch(type)
+    {
+      //Close opened long positions
+      case OP_BUY       : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_BID), 5, Red );
+                          break;
+      
+      //Close opened short positions
+      case OP_SELL      : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_ASK), 5, Red );
+                          
+    }
+    
+    if(result == false)
+    {
+      Alert("Order " , OrderTicket() , " failed to close. Error:" , GetLastError() );
+      Sleep(3000);
+    }  
+  }
+  
+  return(0);
 }
 
 

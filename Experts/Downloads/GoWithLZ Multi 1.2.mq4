@@ -87,6 +87,7 @@ int equity = AccountEquity();
 bool morningHours   = (Hour() >  7 && Hour() < 10),
      afternoonHours =  Hour() > 14 && Hour() < 18,
      tradingHours   = morningHours || afternoonHours;
+     
 if (!tradingHours && equity >= balance){
 KillEverything();
 return 0;

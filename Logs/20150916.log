@@ -22466,3 +22466,635 @@
 0	22:19:35.159	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
 0	22:19:35.369	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
 0	22:19:40.078	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:19:59.689	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:20:57.074	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:21:00.372	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:21:01.294	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:21:25.178	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:21:37.914	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:21:48.516	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:22:03.905	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:22:46.376	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:22:56.795	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:22:56.983	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:22:57.295	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:22:57.718	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:23:05.063	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:24:38.080	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:26:18.975	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:26:19.179	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:30:54.467	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:30:56.858	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:31:20.071	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:31:42.162	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:31:43.884	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:31:54.156	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:31:54.577	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:34:56.290	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:35:05.584	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:35:06.661	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:35:20.260	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:35:20.482	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:35:20.682	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:35:22.645	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:35:26.363	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:38:32.282	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:38:39.701	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:38:40.703	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:38:41.806	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:38:43.751	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:38:49.255	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:39:49.291	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:39:52.893	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:39:58.085	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:39:58.291	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:39:58.488	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:39:59.131	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:39:59.337	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:40:13.791	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:40:22.130	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:40:31.486	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:40:32.061	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:40:50.564	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:43:27.484	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:43:29.569	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:43:29.761	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:43:31.715	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:09.876	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:15.088	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:15.271	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:15.470	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:15.672	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:16.282	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:34.237	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:34.423	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:44:38.404	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:20.164	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:20.570	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:41.670	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:41.897	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:42.084	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:43.688	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:47.488	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:50.774	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:51.339	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:51.535	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:51.863	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:53.361	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:53.781	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:54.407	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:54.605	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:55.075	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:55.904	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:56.372	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:45:56.603	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:46:02.403	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:46:06.488	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:46:10.410	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:46:10.757	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:46:14.762	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:46:15.593	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:01.514	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:02.182	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:04.372	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:04.870	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:05.074	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:05.274	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:06.290	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:06.490	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:08.265	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:09.117	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:09.314	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:09.884	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:10.709	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:10.921	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:11.109	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:11.309	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:11.916	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:12.167	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:12.577	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:12.773	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:12.979	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:13.179	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:13.383	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:13.586	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:13.792	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:14.199	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:14.403	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:14.604	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:14.668	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:14.867	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:15.069	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:17.082	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:17.706	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:18.733	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:19.348	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:19.546	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:20.078	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:20.896	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:37.101	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:37.267	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:39.122	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:42.145	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:42.173	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:47.772	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:50.078	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:49:57.015	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:06.787	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:06.984	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:07.485	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:12.085	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:14.403	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:14.884	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:16.779	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:21.313	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:23.817	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:53.894	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:54.911	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:55.112	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:55.312	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:55.514	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:55.720	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:55.920	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:56.125	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:56.327	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:58.514	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:58.716	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:51:59.943	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:01.866	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:02.101	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:02.505	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:03.333	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:04.673	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:05.282	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:09.149	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:09.525	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:09.572	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:10.002	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:10.196	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:10.408	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:10.604	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:10.836	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:11.036	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:11.464	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:14.421	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:15.113	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:15.374	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:15.576	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:16.001	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:52:17.501	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:54:50.971	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:19.473	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:19.739	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:20.139	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:20.344	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:20.548	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:20.753	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:21.749	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:21.967	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:22.357	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:23.622	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:23.822	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:24.044	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:25.837	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:26.035	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:27.754	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:27.940	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:29.643	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:29.863	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:30.063	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:33.782	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:35.714	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:35.913	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:36.132	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:36.336	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:37.660	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:37.784	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:38.003	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:39.666	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:39.858	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:40.062	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:41.690	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:41.934	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:42.090	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:43.546	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:43.748	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:43.947	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:45.557	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:45.778	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:45.974	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:46.182	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:46.366	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:46.589	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:47.394	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:55:47.555	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:56:28.757	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:56:31.841	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:57:51.097	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:57:53.960	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:57:55.569	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:15.159	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:17.547	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:23.476	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:23.662	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:23.864	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:24.482	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:24.737	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:25.349	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:31.477	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:36.958	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:41.338	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:43.349	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:48.016	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:48.216	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:48.417	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:50.155	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:50.606	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:51.070	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:58:52.757	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:59:27.545	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:59:29.313	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:59:47.360	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:59:51.801	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	22:59:55.548	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:12.101	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:14.813	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:16.858	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:17.354	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:19.184	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:19.382	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:20.550	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:23.487	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:23.686	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:24.298	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:26.231	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:26.450	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:27.760	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:28.388	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:29.197	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:29.397	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:29.946	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:35.562	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:35.967	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:36.167	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:00:56.745	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:01:03.878	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:01:26.607	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:01:44.500	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:01:47.536	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:01:47.742	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:01:48.351	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:01:55.745	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:02.872	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:15.152	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:24.650	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:24.874	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:25.086	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:40.609	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:40.816	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:41.014	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:53.272	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:02:54.556	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:03:39.068	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:04:15.069	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:04:15.271	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:04:15.475	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:04:15.677	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:04:16.491	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:04:18.246	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:04:18.843	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:05:26.393	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:05:27.862	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:05:30.153	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:05:38.550	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:05:38.734	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:05:39.158	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:05:52.161	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:05:52.588	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:06:17.474	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:06:17.689	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:06:17.905	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:06:18.107	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:06:57.177	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:06:57.375	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:06:57.589	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:07:59.355	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:07:59.555	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:08:05.265	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:08:05.483	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:08:16.581	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:08:49.947	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:08:54.938	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:10:30.958	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:10:31.158	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:10:32.278	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:10:44.166	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:10:44.390	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:10:45.070	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:10:45.276	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:10:54.090	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:04.373	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:17.710	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:35.773	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:36.395	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:40.373	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:40.581	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:47.771	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:47.990	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:48.002	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:11:48.383	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:12:01.686	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:12:01.893	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:12:29.500	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:12:58.764	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:12.166	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:12.621	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:12.820	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:13.038	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:19.792	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:34.974	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:35.582	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:55.082	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:13:55.302	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:01.107	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:02.259	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:20.406	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:20.602	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:21.416	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:35.175	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:39.368	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:39.574	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:14:39.789	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:01.168	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:03.645	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:06.139	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:06.760	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:06.955	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:07.155	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:25.379	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:35.764	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:35.982	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:36.188	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:46.767	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:47.263	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:47.478	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:48.386	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:55.797	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:15:59.209	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:02.571	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:02.785	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:07.263	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:22.386	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:25.082	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:30.088	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:30.290	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:33.222	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:36.589	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:36.994	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:37.168	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:37.574	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:38.390	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:41.952	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:42.130	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:45.205	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:45.405	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:46.270	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:47.807	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:51.082	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:52.114	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:53.875	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:16:54.077	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:17:03.972	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:17:07.464	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:17:20.395	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:17:25.561	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:17:25.777	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:17:25.979	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:17:37.006	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:17:44.607	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:17.370	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:17.582	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:17.789	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:17.991	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:20.595	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:32.172	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:37.616	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:37.818	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:38.618	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:47.006	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:47.064	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:47.487	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:52.778	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:52.979	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:54.009	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:18:54.213	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:19:41.798	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:19:42.013	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:20:00.607	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:20:00.826	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:20:06.143	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:21:14.100	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:25:24.406	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:25:52.384	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:26:48.604	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:26:55.108	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:26:55.510	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:26:55.522	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:26:55.914	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:26:56.116	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:48.508	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:48.707	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:49.131	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:49.327	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:49.531	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:50.011	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:50.608	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:52.590	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:52.796	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:53.001	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:59.605	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:27:59.667	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:28:00.077	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:28:00.279	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:28:03.918	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:28:09.601	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:29:11.032	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:29:11.236	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:29:11.834	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:29:34.986	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:29:53.694	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:01.872	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:03.121	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:04.378	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:07.704	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:07.905	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:08.313	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:08.920	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:09.188	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:09.352	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:09.555	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:09.570	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:09.774	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:15.082	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:15.286	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:15.690	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:15.904	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:16.122	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:16.331	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:16.874	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:17.292	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:30:50.898	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:00.724	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:01.442	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:15.501	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:15.705	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:15.909	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:16.107	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:20.618	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:20.829	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:21.234	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:23.300	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:31:24.458	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:00.008	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:00.834	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:13.189	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:16.436	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:19.365	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:23.286	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:23.481	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:23.497	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:23.686	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:23.889	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:39.583	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:57.995	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:32:58.211	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:33:11.048	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:34:09.008	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:34:25.402	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:32.888	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:33.088	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:36.097	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:36.502	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:36.720	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:37.111	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:39.695	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:39.920	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:40.721	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:35:40.955	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:16.643	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:16.846	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:17.049	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:25.640	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:42.914	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:43.142	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:44.358	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:36:57.876	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,H1: loaded successfully
+0	23:36:59.095	OBV, TVI, Price_Div_EA EURUSD,H1 inputs: Tolerance=0.0001; Tolerance2=0.0002; ProfitMargin=1.5; 
+0	23:36:59.095	Custom indicator Strategy2/xaZZ EURUSD,H1: loaded successfully
+0	23:36:59.095	xaZZ EURUSD,H1: initialized
+0	23:36:59.111	OBV, TVI, Price_Div_EA EURUSD,H1: initialized
+0	23:37:06.110	OBV, TVI, Price_Div_EA EURUSD,H1: uninit reason 3
+0	23:37:06.235	OBV, TVI, Price_Div_EA EURUSD,M1: initialized
+0	23:38:08.199	OBV, TVI, Price_Div_EA EURUSD,M1: uninit reason 4
+0	23:38:08.215	xaZZ EURUSD,H1: uninit reason 1
+0	23:38:08.215	Custom indicator xaZZ EURUSD,H1: removed
+0	23:38:36.591	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,H1: loaded successfully
+0	23:38:37.685	OBV, TVI, Price_Div_EA EURUSD,H1 inputs: Tolerance=0.0001; Tolerance2=0.0002; ProfitMargin=1.5; 
+0	23:38:37.685	Custom indicator Strategy2/xaZZ EURUSD,H1: loaded successfully
+0	23:38:37.685	xaZZ EURUSD,H1: initialized
+0	23:38:37.700	OBV, TVI, Price_Div_EA EURUSD,H1: initialized
+0	23:38:42.468	OBV, TVI, Price_Div_EA EURUSD,H1: uninit reason 3
+0	23:38:42.593	OBV, TVI, Price_Div_EA EURUSD,M1: initialized
+0	23:38:44.030	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:44.046	Custom indicator zigzag EURUSD,M1: loaded successfully
+0	23:38:44.046	zigzag EURUSD,M1: initialized
+0	23:38:44.077	Custom indicator TVI_v2 EURUSD,M1: loaded successfully
+0	23:38:44.077	TVI_v2 EURUSD,M1: initialized
+0	23:38:44.077	Custom indicator Strategy2/xaZZ EURUSD,M1: loaded successfully
+0	23:38:44.093	xaZZ EURUSD,M1: initialized
+0	23:38:46.028	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:46.044	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:46.235	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:51.251	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:38:53.651	Automated trading enabled
+0	23:38:59.909	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:01.127	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:01.314	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:07.299	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:10.250	Automated trading disabled
+0	23:39:24.719	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:25.389	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:31.537	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:31.751	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:36.798	OBV, TVI, Price_Div_EA EURUSD,M1: uninit reason 4
+0	23:39:36.829	xaZZ EURUSD,M1: uninit reason 1
+0	23:39:36.829	Custom indicator xaZZ EURUSD,M1: removed
+0	23:39:36.829	TVI_v2 EURUSD,M1: uninit reason 1
+0	23:39:36.829	Custom indicator TVI_v2 EURUSD,M1: removed
+0	23:39:36.829	zigzag EURUSD,M1: uninit reason 1
+0	23:39:36.829	Custom indicator zigzag EURUSD,M1: removed
+0	23:39:36.829	xaZZ EURUSD,H1: uninit reason 1
+0	23:39:36.829	Custom indicator xaZZ EURUSD,H1: removed
+0	23:39:45.512	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:39:45.706	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:40:16.536	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:40:16.738	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:40:31.113	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:40:31.532	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:40:31.547	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:40:32.595	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:40:48.097	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:40:50.471	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,H1: loaded successfully
+0	23:40:51.561	OBV, TVI, Price_Div_EA EURUSD,H1 inputs: Tolerance=0.0001; Tolerance2=0.0002; ProfitMargin=1.5; 
+0	23:40:51.577	Custom indicator Strategy2/xaZZ EURUSD,H1: loaded successfully
+0	23:40:51.577	xaZZ EURUSD,H1: initialized
+0	23:40:51.577	OBV, TVI, Price_Div_EA EURUSD,H1: initialized
+0	23:40:54.895	OBV, TVI, Price_Div_EA EURUSD,H1: uninit reason 3
+0	23:40:55.020	OBV, TVI, Price_Div_EA EURUSD,M1: initialized
+0	23:41:21.204	OBV, TVI, Price_Div_EA EURUSD,M1: uninit reason 4
+0	23:41:21.219	xaZZ EURUSD,H1: uninit reason 1
+0	23:41:21.219	Custom indicator xaZZ EURUSD,H1: removed
+0	23:41:21.593	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:41:31.314	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:41:47.930	Expert lOBV, TVI, Price Div\OBV, TVI, Price_Div_EA EURUSD,H1: loaded successfully
+0	23:41:49.220	OBV, TVI, Price_Div_EA EURUSD,H1 inputs: Tolerance=0.0001; Tolerance2=0.0002; ProfitMargin=1.5; 
+0	23:41:49.236	Custom indicator Strategy2/xaZZ EURUSD,H1: loaded successfully
+0	23:41:49.236	xaZZ EURUSD,H1: initialized
+0	23:41:49.252	OBV, TVI, Price_Div_EA EURUSD,H1: initialized
+0	23:41:53.578	OBV, TVI, Price_Div_EA EURUSD,H1: uninit reason 3
+0	23:41:53.711	OBV, TVI, Price_Div_EA EURUSD,M1: initialized
+0	23:42:38.229	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:42:38.229	Custom indicator zigzag EURUSD,M1: loaded successfully
+0	23:42:38.229	zigzag EURUSD,M1: initialized
+0	23:42:38.260	Custom indicator TVI_v2 EURUSD,M1: loaded successfully
+0	23:42:38.260	TVI_v2 EURUSD,M1: initialized
+0	23:42:38.260	Custom indicator Strategy2/xaZZ EURUSD,M1: loaded successfully
+0	23:42:38.260	xaZZ EURUSD,M1: initialized
+0	23:42:38.439	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:42:42.316	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:42:42.408	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:42:42.627	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:42:42.815	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:42:43.424	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:43:01.142	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:43:01.340	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:43:12.815	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:43:13.221	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:43:22.562	OBV, TVI, Price_Div_EA EURUSD,M1: uninit reason 4
+0	23:43:22.594	xaZZ EURUSD,M1: uninit reason 1
+0	23:43:22.594	Custom indicator xaZZ EURUSD,M1: removed
+0	23:43:22.594	TVI_v2 EURUSD,M1: uninit reason 1
+0	23:43:22.594	Custom indicator TVI_v2 EURUSD,M1: removed
+0	23:43:22.594	zigzag EURUSD,M1: uninit reason 1
+0	23:43:22.594	Custom indicator zigzag EURUSD,M1: removed
+0	23:43:22.594	xaZZ EURUSD,H1: uninit reason 1
+0	23:43:22.594	Custom indicator xaZZ EURUSD,H1: removed
+0	23:43:26.249	objectcreatekea EURUSD,M15: VLineCreate: failed to create a vertical line! Error code = 4200
+0	23:43:31.928	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 9
+0	23:43:31.950	objectcreatekea EURUSD,M15: uninit reason 9
+0	23:43:31.952	Gadi_OBV_v2.2 for EA EURUSD,M15: uninit reason 9
+0	23:43:31.953	TVI EURUSD,M15: uninit reason 9
+0	23:43:32.024	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: removed
+0	23:43:32.050	Expert objectcreatekea EURUSD,M15: removed
+0	23:43:32.052	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,M15: removed
+0	23:43:32.053	Custom indicator TVI EURUSD,M15: removed
