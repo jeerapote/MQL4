@@ -59,6 +59,7 @@ extern double ProfitMargin=1.5;
    
    bool closed;
    int count = 0;
+   int count2 = 1;
    bool zero = false;
    
    double  TVI_Last, TVI_Now;
@@ -86,8 +87,7 @@ extern double ProfitMargin=1.5;
 //--------------------------------------------------------------- 3 --
 int start()                      
   {
-    
-  
+
    int n, i, bar, bar4; 
    double p0, p1, p2, p3, p4, p5;
   
@@ -119,62 +119,67 @@ int start()
    //Comment(xazz_Sell_signal_Last," ",xazz_Sell_signal_Now);
 //----------------------------------------------------------------------------
 //---------------------------------------------------------------------------
+
   
-      
-  
-   if(TVI_Now > 0 && TVI_Now > TVI_Max2 ){
-   
+   if(TVI_Now != 2147483647 && TVI_Now > 0 && TVI_Now > TVI_Max2 ){
+     
       Price_Max2 = High[1];
       TVI_Max2 = TVI_Now;
       Max2_Time = iTime("EURUSD",PERIOD_M1,1);
       
+      
       OBV_Max2 = OBV_Now;
       zero = true;
-      
-   
+     
+    
    }
    
-   if(TVI_Now < -0.5 && zero){
    
-    
-    if(count==0) Max1_Time = iTime("EURUSD",PERIOD_M1,1);;
-      
+   if(TVI_Now < -0.5 && zero == true ){
+   
     if(count == 1){
-     
-      iMax2_Bar = iBarShift("EURUSD",PERIOD_M1,Max2_Time);
-      Print(iMax1_Bar);
-      
-      TVI_Max1 = TVI_Max2; 
-      OBV_Max1 = OBV_Max2; 
-      Price_Max1 = Price_Max2;
-      
-      TVI_Max2 = 0;
-      OBV_Max2 = 0;
-      Price_Max2 = 0;
-      count = 0;
+    
+     Print(count," ",Hour()," ",Minute());
+     Max1_Time = Max2_Time;
+     TVI_Max1 = TVI_Max2; 
+     OBV_Max1 = OBV_Max2;
+     Price_Max1 = Price_Max2;
       
     }
+         
+    if(count == 2){
     
-    zero = false;
-    count++;
-      
+     Print(count," ",Hour()," ",Minute()); 
+     iMax1_Bar = iBarShift("EURUSD",PERIOD_M1,Max1_Time);
+    
+     iMax2_Bar = iBarShift("EURUSD",PERIOD_M1,Max2_Time);   
+     dStopLoss = Bid-30*Point;
+     dTakeProfit = Bid+30*Point;
+     
+     Sell();
+     DrawLine(IntegerToString(count2),iMax1_Bar,iMax2_Bar);
+     count = 0;    
+     count2++;
+    }
+    
+     
+    
+     TVI_Max2 = 0;
+     OBV_Max2 = 0;
+     Price_Max2 = 0;
+    
+     count = count + 1;
+    
+     zero = false;  
+     
+    
    }
+ 
 
   // bool HigherHigh = p2 > p3 && xazz_Sell_signal_Last < xazz_Sell_signal_Now ;
   // bool LowerLow = p2 < p3 && xazz_Buy_signal_Last >  xazz_Buy_signal_Now ;
   
-   bool HigherHigh = TVI_Max2 < TVI_Max1 && Price_Max1 > Price_Max2 && OBV_Max2 < OBV_Max1 ;
-
-   if(HigherHigh && lastTradeTime != Time[THIS_BAR] && OrdersTotal() < 1){
-   
-       
-    lastTradeTime = Time[THIS_BAR];
-    dStopLoss = xazz_Sell_signal_Last;
-    dTakeProfit = xazz_Sell_signal_Now;
-    Buy();
-    DrawLine(IntegerToString(iTicket),iMax1_Bar,iMax2_Bar);
-    
-   }
+ 
   // if(LowerLow)Sell();
 
 
@@ -186,6 +191,21 @@ int start()
   
  
 //--------------------------------------------------------------- 7 -------------------------------------------+
+
+void Trader(){
+
+
+   bool HigherHigh = TVI_Max2 < TVI_Max1 && Price_Max1 > Price_Max2 /*&& OBV_Max2 < OBV_Max1*/ ;
+
+   if(HigherHigh && lastTradeTime != Time[THIS_BAR] && OrdersTotal() < 1){
+  
+    lastTradeTime = Time[THIS_BAR];
+    Sell();
+    
+   }
+
+
+}
 
 void DrawLine(string name, int bar, int bar4){
 
@@ -199,9 +219,16 @@ void DrawLine(string name, int bar, int bar4){
 
 void Buy(){
 
-   iTicket=OrderSend(Symbol(),OP_BUY,dLots,Ask,3,(dStopLoss-100*Point),(dTakeProfit+100*Point),"OBV,TVI",0,Red);
+   dStopLoss = NormalizeDouble(xazz_Buy_signal_Last-30*Point,Digits);
+   dTakeProfit = NormalizeDouble(xazz_Sell_signal_Last+30*Point,Digits);
+   
+     dStopLoss = NormalizeDouble(Bid-30*Point,Digits);
+     dTakeProfit = NormalizeDouble(Bid+30*Point,Digits);
+         
+   iTicket=OrderSend(Symbol(),OP_BUY,dLots,Ask,3,(dStopLoss),(dTakeProfit),"OBV,TVI",0,Red);
+   
    if(iTicket>0){
-      
+        
       if(OrderSelect(iTicket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUY order opened : ",OrderOpenPrice());
    }
    else Print("Error opening BUY order : ",GetLastError());
@@ -210,9 +237,15 @@ void Buy(){
 
 void Sell(){
 
-   iTicket=OrderSend(Symbol(),OP_SELL,dLots,Ask,3,(dStopLoss-100*Point),0,"OBV,TVI",0,Red);
-   if(iTicket>0){
+
+   dStopLoss = NormalizeDouble(xazz_Sell_signal_Last+30*Point,Digits);
+   dTakeProfit = NormalizeDouble(xazz_Buy_signal_Last-30*Point,Digits);
       
+   DrawLine(IntegerToString(iTicket),iMax1_Bar,iMax2_Bar);
+
+   iTicket=OrderSend(Symbol(),OP_SELL,dLots,Ask,3,(dStopLoss),dTakeProfit,"OBV,TVI",0,Red);
+   if(iTicket>0){
+   
       if(OrderSelect(iTicket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUY order opened : ",OrderOpenPrice());
    }
    else Print("Error opening BUY order : ",GetLastError());
