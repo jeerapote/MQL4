@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                       OBV, TVI, Price_Div_EA.mq4 |
-//|                                                        version 1 |
+//|                                                        version 2 |
 //|                                                     by Murat aka.|
 //|                                                                  |
 //+------------------------------------------------------------------+
@@ -57,6 +57,7 @@ extern double ProfitMargin=1.5;
    bool closed;
    
    double  TVI_Last, TVI_Now;
+   double  OBV_Last, OBV_Now;
    
    datetime       lastTradeTime;
 
@@ -76,8 +77,7 @@ extern double ProfitMargin=1.5;
 int start()                      
   {
     
-   DrawLine();
- 
+  
    int n, i, bar, bar4; 
    double p0, p1, p2, p3, p4, p5;
   
@@ -99,6 +99,9 @@ int start()
    xazz_Buy_signal_Last  = iCustom(NULL,0,"Strategy2/xaZZ", xaZZBuy_indicator, bar); //
    xazz_Sell_signal_Last  = iCustom(NULL,0,"Strategy2/xaZZ", xaZZSell_indicator, bar); //
    
+   OBV_Last = iCustom(NULL,0,"Gadi_OBV_v2.2 for EA", 0, bar);
+   OBV_Now = iCustom(NULL,0,"Gadi_OBV_v2.2 for EA", 0, bar4);
+   
    xazz_Sell_signal_Now = iCustom(NULL,0,"Strategy2/xaZZ", xaZZSell_indicator, bar4); //
    xazz_Buy_signal_Now = iCustom(NULL,0,"Strategy2/xaZZ", xaZZBuy_indicator, bar4); //
   
@@ -113,12 +116,13 @@ int start()
 
 
 
-   if(HigherHigh && TVI_Last > TVI_Now && lastTradeTime != Time[THIS_BAR] && OrdersTotal() < 1){
+   if(HigherHigh && TVI_Last > TVI_Now && TVI_Now > 0&& OBV_Last > OBV_Now && lastTradeTime != Time[THIS_BAR] && OrdersTotal() < 1){
    
     lastTradeTime = Time[THIS_BAR];
     dStopLoss = xazz_Sell_signal_Last;
     dTakeProfit = xazz_Sell_signal_Now;
     Buy();
+    DrawLine(IntegerToString(iTicket),bar,bar4);
     
    }
   // if(LowerLow)Sell();
@@ -133,15 +137,16 @@ int start()
  
 //--------------------------------------------------------------- 7 -------------------------------------------+
 
-void DrawLine(){
+void DrawLine(string name, int bar, int bar4){
 
-   ObjectCreate("ObjName", OBJ_TREND, 0, Time[50], High[50], Time[5], High[5] ); 
-   ObjectSet("ObjName", OBJPROP_WIDTH, 2);
-   ObjectSet("ObjName",OBJPROP_RAY,false);
-   ObjectSet("ObjName",OBJPROP_STYLE,STYLE_SOLID);
-   ObjectSet("ObjName",OBJPROP_COLOR,Red);
+   ObjectCreate("ObjName: "+name, OBJ_TREND, 0, Time[bar], High[bar], Time[bar4], High[bar4] ); 
+   ObjectSet("ObjName: "+name, OBJPROP_WIDTH, 2);
+   ObjectSet("ObjName: "+name,OBJPROP_RAY,false);
+   ObjectSet("ObjName: "+name,OBJPROP_STYLE,STYLE_SOLID);
+   ObjectSet("ObjName: "+name,OBJPROP_COLOR,Red);
    
 }
+
 void Buy(){
 
    iTicket=OrderSend(Symbol(),OP_BUY,dLots,Ask,3,(dStopLoss-100*Point),(dTakeProfit+100*Point),"OBV,TVI",0,Red);

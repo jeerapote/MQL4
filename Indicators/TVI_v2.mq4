@@ -25,7 +25,7 @@ extern int     r                 = 12;
 extern int     s                 = 12;
 extern int     u                 = 5;
 extern string  _n1               = "_Increase for more history";
-extern int     BarCount          = 500;
+extern int     BarCount          = 5000;
 extern string  _n2               = "_AlertCandle = 0: current";
 extern string  _n3               = "_AlertCandle = 1: closed";
 extern int     AlertCandle       = 1;

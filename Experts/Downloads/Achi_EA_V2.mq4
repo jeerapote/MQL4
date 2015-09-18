@@ -282,7 +282,7 @@ int checkProfit()
          if(OrderSelect(pos, SELECT_BY_POS)==true)
          {
       
-            if(OrderProfit()<BreakEvenProfit/-1.5 )CloseAll();
+            if(OrderProfit()< -15 )CloseAll();
             if(OrderProfit()>=BreakEvenProfit )
             {
 
@@ -296,9 +296,16 @@ int checkProfit()
                   
                   Multilot = MultiLotsMultiple*Lots;
                   Multilot = Lot(Multilot);
-                  MultiLotStopLoss=Low[2]-10*Point;
+                  MultiLotStopLoss=NormalizeDouble(Low[2]-10*Point,Digits);
+                  
                  // ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, Ask-MultiLotStopLoss*Point, 0);
                   ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, MultiLotStopLoss, 0);
+                  if(ticket2>0)
+                   {
+                      lastTradeTime = Time[THIS_BAR];
+                      if(OrderSelect(ticket2,SELECT_BY_TICKET,MODE_TRADES)) Print("BUY order opened : ",OrderOpenPrice());
+                   }
+                  else Print("Error opening SELL order : ",GetLastError());
                }
                
               else 
@@ -306,9 +313,15 @@ int checkProfit()
                   if(iVolume(NULL,0,0)==1);                        
                   Multilot = MultiLotsMultiple*Lots;
                   Multilot = Lot(Multilot);
-                  MultiLotStopLoss=High[2]+10*Point;
+                  MultiLotStopLoss=NormalizeDouble(High[2]+10*Point,Digits);
                  // ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid, 0, Bid+MultiLotStopLoss*Point, 0);
                   ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid , 0, MultiLotStopLoss, 0);
+                  if(ticket2>0)
+                  {
+                     lastTradeTime = Time[THIS_BAR];
+                     if(OrderSelect(ticket2,SELECT_BY_TICKET,MODE_TRADES)) Print("SELL order opened : ",OrderOpenPrice());
+                  }
+                  else Print("Error opening SELL order : ",GetLastError());
                   
                }
          
@@ -341,7 +354,8 @@ bool MoveStopToBreakeven() {
          
               tsl = OrderStopLoss();   
              // sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
-              sl = Low[2]-10*Point;
+           
+              sl = NormalizeDouble(Low[2]-10*Point,Digits);
               
               if(tsl != sl)
               retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Blue) ;
@@ -352,7 +366,7 @@ bool MoveStopToBreakeven() {
        
               tsl = OrderStopLoss();
              // sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
-              sl = High[2]+10*Point; 
+              sl = NormalizeDouble(High[2]+10*Point,Digits); 
               if(tsl != sl) 
               retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Red) ;
                
@@ -363,7 +377,7 @@ bool MoveStopToBreakeven() {
          
               tsl = OrderStopLoss();   
               //sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
-              sl = Low[2]-10*Point;
+              sl = NormalizeDouble(Low[2]-10*Point,Digits);
               if(tsl != sl)
               retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Blue) ;
               
@@ -373,7 +387,7 @@ bool MoveStopToBreakeven() {
        
               tsl = OrderStopLoss();
               //sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
-              sl = High[2]+10*Point; 
+              sl = NormalizeDouble(High[2]+10*Point,Digits); 
               if(tsl != sl) 
               retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Red) ;
                

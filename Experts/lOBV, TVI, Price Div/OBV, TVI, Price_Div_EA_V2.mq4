@@ -52,13 +52,24 @@ extern double ProfitMargin=1.5;
             
    int         iTicket;
    
-   int order;
+   int         order;
+   int         shift;
+   int         iMax1_Bar, iMax2_Bar;
+   
    
    bool closed;
+   int count = 0;
+   bool zero = false;
    
    double  TVI_Last, TVI_Now;
+   double  OBV_Last, OBV_Now;
+   double  TVI_Max1, TVI_Max2=0;
+   double  OBV_Max1, OBV_Max2=0;
+   double  Price_Max1, Price_Max2=0;
+   
    
    datetime       lastTradeTime;
+   datetime       Max1_Time, Max2_Time;
 
    #define        THIS_BAR 0
 
@@ -76,8 +87,7 @@ extern double ProfitMargin=1.5;
 int start()                      
   {
     
-   DrawLine();
- 
+  
    int n, i, bar, bar4; 
    double p0, p1, p2, p3, p4, p5;
   
@@ -94,10 +104,13 @@ int start()
       }
 
    TVI_Last = iCustom(NULL,0,"TVI_v2",5,5,5, 4, bar); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
-   TVI_Now = iCustom(NULL,0,"TVI_v2",5,5,5, 0, 0); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
+   TVI_Now = iCustom(NULL,0,"TVI_v2",5,5,5, 4, 1); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
      
    xazz_Buy_signal_Last  = iCustom(NULL,0,"Strategy2/xaZZ", xaZZBuy_indicator, bar); //
    xazz_Sell_signal_Last  = iCustom(NULL,0,"Strategy2/xaZZ", xaZZSell_indicator, bar); //
+   
+   OBV_Last = iCustom(NULL,0,"Gadi_OBV_v2.2 for EA", 0, bar);
+   OBV_Now = iCustom(NULL,0,"Gadi_OBV_v2.2 for EA", 0, 0);
    
    xazz_Sell_signal_Now = iCustom(NULL,0,"Strategy2/xaZZ", xaZZSell_indicator, bar4); //
    xazz_Buy_signal_Now = iCustom(NULL,0,"Strategy2/xaZZ", xaZZBuy_indicator, bar4); //
@@ -106,19 +119,60 @@ int start()
    //Comment(xazz_Sell_signal_Last," ",xazz_Sell_signal_Now);
 //----------------------------------------------------------------------------
 //---------------------------------------------------------------------------
-
-
-   bool HigherHigh = p2 > p3 && xazz_Sell_signal_Last < xazz_Sell_signal_Now ;
-   bool LowerLow = p2 < p3 && xazz_Buy_signal_Last >  xazz_Buy_signal_Now ;
-
-
-
-   if(HigherHigh && TVI_Last > TVI_Now && lastTradeTime != Time[THIS_BAR] && OrdersTotal() < 1){
+  
+      
+  
+   if(TVI_Now > 0 && TVI_Now > TVI_Max2 ){
    
+      Price_Max2 = High[1];
+      TVI_Max2 = TVI_Now;
+      Max2_Time = iTime("EURUSD",PERIOD_M1,1);
+      
+      OBV_Max2 = OBV_Now;
+      zero = true;
+      
+   
+   }
+   
+   if(TVI_Now < -0.5 && zero){
+   
+    
+    if(count==0) Max1_Time = iTime("EURUSD",PERIOD_M1,1);;
+      
+    if(count == 1){
+     
+      iMax2_Bar = iBarShift("EURUSD",PERIOD_M1,Max2_Time);
+      Print(iMax1_Bar);
+      
+      TVI_Max1 = TVI_Max2; 
+      OBV_Max1 = OBV_Max2; 
+      Price_Max1 = Price_Max2;
+      
+      TVI_Max2 = 0;
+      OBV_Max2 = 0;
+      Price_Max2 = 0;
+      count = 0;
+      
+    }
+    
+    zero = false;
+    count++;
+      
+   }
+
+  // bool HigherHigh = p2 > p3 && xazz_Sell_signal_Last < xazz_Sell_signal_Now ;
+  // bool LowerLow = p2 < p3 && xazz_Buy_signal_Last >  xazz_Buy_signal_Now ;
+  
+   bool HigherHigh = TVI_Max2 < TVI_Max1 && Price_Max1 > Price_Max2 && OBV_Max2 < OBV_Max1 ;
+
+   if(HigherHigh && lastTradeTime != Time[THIS_BAR] && OrdersTotal() < 1){
+   
+       
     lastTradeTime = Time[THIS_BAR];
     dStopLoss = xazz_Sell_signal_Last;
     dTakeProfit = xazz_Sell_signal_Now;
     Buy();
+    DrawLine(IntegerToString(iTicket),iMax1_Bar,iMax2_Bar);
     
    }
   // if(LowerLow)Sell();
@@ -133,15 +187,16 @@ int start()
  
 //--------------------------------------------------------------- 7 -------------------------------------------+
 
-void DrawLine(){
+void DrawLine(string name, int bar, int bar4){
 
-   ObjectCreate("ObjName", OBJ_TREND, 0, Time[50], High[50], Time[5], High[5] ); 
-   ObjectSet("ObjName", OBJPROP_WIDTH, 2);
-   ObjectSet("ObjName",OBJPROP_RAY,false);
-   ObjectSet("ObjName",OBJPROP_STYLE,STYLE_SOLID);
-   ObjectSet("ObjName",OBJPROP_COLOR,Red);
+   ObjectCreate("ObjName: "+name, OBJ_TREND, 0, Time[bar], High[bar], Time[bar4], High[bar4] ); 
+   ObjectSet("ObjName: "+name, OBJPROP_WIDTH, 2);
+   ObjectSet("ObjName: "+name,OBJPROP_RAY,false);
+   ObjectSet("ObjName: "+name,OBJPROP_STYLE,STYLE_SOLID);
+   ObjectSet("ObjName: "+name,OBJPROP_COLOR,Red);
    
 }
+
 void Buy(){
 
    iTicket=OrderSend(Symbol(),OP_BUY,dLots,Ask,3,(dStopLoss-100*Point),(dTakeProfit+100*Point),"OBV,TVI",0,Red);
