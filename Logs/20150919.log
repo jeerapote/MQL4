@@ -1,0 +1,17 @@
+0	00:43:44.127	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 9
+0	00:43:44.143	objectcreatekea EURUSD,H4: uninit reason 9
+0	00:43:44.159	Gadi_OBV_v2.2 for EA EURUSD,H4: uninit reason 9
+0	00:43:44.159	TVI EURUSD,H4: uninit reason 9
+0	00:43:44.221	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: removed
+0	00:43:44.237	Expert objectcreatekea EURUSD,H4: removed
+0	00:43:44.237	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,H4: removed
+0	00:43:44.252	Custom indicator TVI EURUSD,H4: removed
+0	13:13:43.519	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
+0	13:13:43.579	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	13:13:43.895	Custom indicator Gadi_OBV_v2.2 for EA EURUSD,H4: loaded successfully
+0	13:13:43.923	Custom indicator TVI EURUSD,H4: loaded successfully
+0	13:13:43.931	Expert Test\objectcreatekea EURUSD,H4: loaded successfully
+0	13:13:43.931	objectcreatekea EURUSD,H4 inputs: InpName=VLine; InpDate=50; InpColor=255; InpStyle=1; InpWidth=1; InpBack=false; InpSelection=true; InpHidden=true; InpZOrder=0; 
+0	13:13:43.939	Gadi_OBV_v2.2 for EA EURUSD,H4: initialized
+0	13:13:43.943	TVI EURUSD,H4: initialized
+0	13:13:47.267	objectcreatekea EURUSD,H4: initialized

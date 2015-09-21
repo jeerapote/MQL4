@@ -1,0 +1,26 @@
+0	18:03:13.095	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
+0	18:03:13.098	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	18:03:13.154	Custom indicator OBV ZigZag EURUSD,M1: loaded successfully
+0	18:03:13.156	Custom indicator TVI_v2 EURUSD,M1: loaded successfully
+0	18:03:13.164	OBV ZigZag EURUSD,M1: initialized
+0	18:03:13.167	TVI_v2 EURUSD,M1: initialized
+0	18:34:13.129	OBV ZigZag EURUSD,M1: uninit reason 4
+0	18:34:13.129	TVI_v2 EURUSD,M1: uninit reason 4
+0	18:34:13.130	Custom indicator OBV ZigZag EURUSD,M1: removed
+0	18:34:13.131	Custom indicator TVI_v2 EURUSD,M1: removed
+0	18:55:04.958	Expert Downloads\Expert_Ch_v83_2_gk NATGASUSD,M5: loaded successfully
+0	18:55:31.008	Expert_Ch_v83_2_gk NATGASUSD,M5 inputs: SL_B=200.0; TP_B=50.0; SL_S=200.0; TP_S=50.0; Lots=0.01; AllB=240; 
+0	18:55:31.012	Expert_Ch_v83_2_gk NATGASUSD,M5: initialized
+0	18:55:33.290	Automated trading enabled
+0	18:55:40.941	Expert_Ch_v83_2_gk NATGASUSD,M5: uninit reason 1
+0	18:55:40.957	Expert Expert_Ch_v83_2_gk NATGASUSD,M5: removed
+0	18:55:40.957	Expert Downloads\Expert_Ch_v83_2_gk NATGASUSD,M5: loaded successfully
+0	18:55:50.057	Expert Expert_Ch_v83_2_gk NATGASUSD,M5: removed
+0	18:56:13.199	Expert Downloads\Expert_Ch_v83_2_gk SUGARUSD,H1: loaded successfully
+0	18:56:15.249	Expert Expert_Ch_v83_2_gk SUGARUSD,H1: removed
+0	19:04:11.825	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 3
+0	19:04:11.829	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	19:05:54.640	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 3
+0	19:05:54.640	Heiken_Ashi_Smoothed EURUSD,M5: initialized
+0	19:08:54.153	Heiken_Ashi_Smoothed EURUSD,M5: uninit reason 3
+0	19:08:54.157	Heiken_Ashi_Smoothed EURUSD,M1: initialized
