@@ -5,19 +5,20 @@
 extern int       INCREMENT=50;
 extern double    LOTS=0.01;
 extern int       LEVELS=3; 
+extern int       CloseAtProfit=10;
 extern double    MAX_LOTS=99;
 extern int       MAGIC=1803;
 extern bool      CONTINUE=true;
-extern bool      MONEY_MANAGEMENT=false;
-extern int       RISK_RATIO=2;
+
+
 //+------------------------------------------------------------------+
 
-bool             UseProfitTarget=false;
-bool             UsePartialProfitTarget=false;
-int              Target_Increment = 50;
-int              First_Target = 20;
-bool             UseEntryTime=false;
-int              EntryTime=0;
+bool      UseProfitTarget=false;
+bool      UsePartialProfitTarget=false;
+int       Target_Increment = 50;
+int       First_Target = 20;
+bool      UseEntryTime=false;
+int       EntryTime=0;
 
 //+------------------------------------------------------------------+
 
@@ -49,11 +50,13 @@ int start()
   
    if(INCREMENT<MarketInfo(Symbol(),MODE_STOPLEVEL)+spread) INCREMENT=1+MarketInfo(Symbol(),MODE_STOPLEVEL)+spread;
 //   if(MONEY_MANAGEMENT) MAX_LOTS=OrdersTotal();
-   if(OrdersTotal()>128)
+  /* if(OrdersTotal()>128)
    {
       Comment("Not Enough Free Margin to begin");
       return(0);
    }
+   */
+   
    for(cpt=1;cpt<LEVELS;cpt++) PipsLot+=cpt*INCREMENT;
    for(cpt=0;cpt<OrdersTotal();cpt++)
    {
@@ -82,8 +85,11 @@ int start()
       BuyGoal=InitialPrice+(LEVELS+1)*INCREMENT*Point;
       for(cpt=1;cpt<=LEVELS;cpt++)
       {
-         OrderSend(Symbol(),OP_BUYSTOP,LOTS,InitialPrice+cpt*INCREMENT*Point,2,SellGoal-spread*Point,BuyGoal+spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
-         OrderSend(Symbol(),OP_SELLSTOP,LOTS,InitialPrice-cpt*INCREMENT*Point,2,BuyGoal+spread*Point,SellGoal-spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+         //OrderSend(Symbol(),OP_BUYSTOP,LOTS,InitialPrice+cpt*INCREMENT*Point,2,SellGoal-spread*Point,BuyGoal+spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+         //OrderSend(Symbol(),OP_SELLSTOP,LOTS,InitialPrice-cpt*INCREMENT*Point,2,BuyGoal+spread*Point,SellGoal-spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+         OrderSend(Symbol(),OP_BUYSTOP,LOTS,InitialPrice+cpt*INCREMENT*Point,2,0,0,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+         OrderSend(Symbol(),OP_SELLSTOP,LOTS,InitialPrice-cpt*INCREMENT*Point,2,0,0,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+     
       }
     } // initial setup done - all channels are set up
     else // We have open Orders
@@ -97,7 +103,7 @@ int start()
          OrderSelect(cpt,SELECT_BY_POS,MODE_HISTORY);
          if(OrderSymbol()==Symbol() && OrderMagicNumber()==MAGIC &&  StrToDouble(OrderComment())==InitialPrice){EndSession();return(0);}
       }
-      if(UseProfitTarget && CheckProfits(LOTS,OP_SELL,true,InitialPrice)>ProfitTarget) {EndSession();return(0);}
+      if(UseProfitTarget && CheckProfits(LOTS,OP_SELL,true,InitialPrice)>ProfitTarget) {/*EndSession();return(0);*/}
       BuyGoalProfit=CheckProfits(LOTS,OP_BUY,false,InitialPrice);
       SellGoalProfit=CheckProfits(LOTS,OP_SELL,false,InitialPrice);
       if(BuyGoalProfit<ProfitTarget)
@@ -107,7 +113,9 @@ int start()
          {
             if(Ask<=(InitialPrice+(cpt*INCREMENT-MarketInfo(Symbol(),MODE_STOPLEVEL))*Point))
             {
-               ticket=OrderSend(Symbol(),OP_BUYSTOP,LOTS,InitialPrice+cpt*INCREMENT*Point,2,SellGoal-spread*Point,BuyGoal+spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+              // ticket=OrderSend(Symbol(),OP_BUYSTOP,LOTS,InitialPrice+cpt*INCREMENT*Point,2,SellGoal-spread*Point,BuyGoal+spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+            
+             // ticket=OrderSend(Symbol(),OP_BUYSTOP,LOTS,InitialPrice+cpt*INCREMENT*Point,2,0,BuyGoal+spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
             }
             if(ticket>0) BuyGoalProfit+=LOTS*(BuyGoal+spread-InitialPrice-cpt*INCREMENT*Point)/Point;
          }
@@ -119,11 +127,21 @@ int start()
          {
             if(Bid>=(InitialPrice-(cpt*INCREMENT-MarketInfo(Symbol(),MODE_STOPLEVEL))*Point))
             {
-               ticket=OrderSend(Symbol(),OP_SELLSTOP,LOTS,InitialPrice-cpt*INCREMENT*Point,2,BuyGoal+spread*Point,SellGoal-spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+               //ticket=OrderSend(Symbol(),OP_SELLSTOP,LOTS,InitialPrice-cpt*INCREMENT*Point,2,BuyGoal+spread*Point,SellGoal-spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+                 //ticket=OrderSend(Symbol(),OP_SELLSTOP,LOTS,InitialPrice-cpt*INCREMENT*Point,2,0,SellGoal-spread*Point,DoubleToStr(InitialPrice,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
+            
+            
             }
             if(ticket>0) SellGoalProfit+=LOTS*(InitialPrice-cpt*INCREMENT*Point-SellGoal-spread*Point)/Point;
          }
       }
+   }
+   
+   
+   if(AccountEquity()>AccountBalance()+CloseAtProfit){
+      
+      EndSession();
+      return 0;
    }
 //+------------------------------------------------------------------+   
 
@@ -141,10 +159,30 @@ int start()
             "Increment=" + INCREMENT,"\n",
             "Lots:  ",LOTS,"\n",
             "Levels: " + LEVELS,"\n");
+            
+            
+            
    return(0);
+   
+   
+  
 }
 
 //+------------------------------------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int CheckProfits(double LOTS, int Goal, bool Current, double InitialPrice)
 {
