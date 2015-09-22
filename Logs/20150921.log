@@ -24,3 +24,17 @@
 0	19:05:54.640	Heiken_Ashi_Smoothed EURUSD,M5: initialized
 0	19:08:54.153	Heiken_Ashi_Smoothed EURUSD,M5: uninit reason 3
 0	19:08:54.157	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	23:47:08.470	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
+0	23:47:08.470	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	23:51:33.803	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 4
+0	23:51:33.811	Automated trading disabled
+3	23:51:33.811	Automated trading disabled because profile has been changed
+0	23:51:33.819	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: removed
+0	23:51:34.248	Expert CenterOG\COG_test EURUSD,H1: loaded successfully
+0	23:51:34.637	Custom indicator Market/Center of Gravity EURUSD,H1: loaded successfully
+0	23:51:34.640	Center of Gravity EURUSD,H1: initialized
+0	23:51:34.644	COG_test EURUSD,H1: initialized
+0	23:58:53.064	COG_test EURUSD,H1: uninit reason 9
+0	23:58:53.080	Center of Gravity EURUSD,H1: uninit reason 1
+0	23:58:53.080	Custom indicator Center of Gravity EURUSD,H1: removed
+0	23:58:53.346	Expert COG_test EURUSD,H1: removed
