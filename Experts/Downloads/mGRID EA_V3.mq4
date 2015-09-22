@@ -8,10 +8,11 @@
 
 //---- input parameters ---------------------------------------------+
 
-extern int       INCREMENT=50;
+extern int       INCREMENT=10;
+extern int       RETRACEMENT=5;
 extern double    LOTS=0.01;
-extern int       LEVELS=3; 
-extern int       CloseAtProfit=10;
+extern int       LEVELS=100; 
+extern int       CloseAtProfit=4;
 extern double    MAX_LOTS=99;
 extern int       MAGIC=1803;
 extern bool      CONTINUE=true;
@@ -153,8 +154,8 @@ int start()
    if(OrderSelect(pos, SELECT_BY_POS)==true){
       
     // if(Ask < OrderOpenPrice()-(5*INCREMENT*Point) ){
-    if(Ask > OrderOpenPrice()+ (5*INCREMENT*Point) /*&& OrderType() == OP_SELL*/ ){
-    // if(key){
+    if(Ask > OrderOpenPrice()+ (RETRACEMENT*INCREMENT*Point) ){
+   
       Print("buy_stop");
       Print(OrderType());
       double Initial = Ask;
@@ -167,12 +168,12 @@ int start()
         // OrderSend(Symbol(), OP_BUYSTOP, LOTS, NormalizeDouble(Initial+(cpt*(INCREMENT+1)*Point),Digits) , 1, 0, 0, "comment", MAGIC, 0, CLR_NONE);
      
          }
-         //key = false;
-      }
-     // }
+        
+    }
       
-     if(Ask < OrderOpenPrice()-(5*INCREMENT*Point) /*&& OrderType() == OP_BUY */){
+     if(Ask < OrderOpenPrice()-(RETRACEMENT*INCREMENT*Point)){
       Initial = Ask;
+     
       Print("sell_stop");
         Print(OrderType());
          for(cpt=1;cpt<=5;cpt++){
@@ -184,7 +185,8 @@ int start()
          OrderSend(Symbol(), OP_SELLSTOP, LOTS, Initial-cpt*INCREMENT*Point, 2, 0, 0, "comment", MAGIC, 0);
      
          }
-      }
+   
+     }
       
    }
    
@@ -292,10 +294,21 @@ bool EndSession()
       Sleep(3000);
       OrderSelect(cpt,SELECT_BY_POS,MODE_TRADES);
       if(OrderSymbol()==Symbol() && OrderType()>1) OrderDelete(OrderTicket());
+      else if(OrderSymbol()==Symbol() && OrderType()==OP_BUY && OrderProfit() > 0) OrderClose(OrderTicket(),OrderLots(),Bid,3);
+      else if(OrderSymbol()==Symbol() && OrderType()==OP_SELL && OrderProfit() > 0) OrderClose(OrderTicket(),OrderLots(),Ask,3);
+
+      
+   }
+   
+      for(cpt=0;cpt<total;cpt++)
+   {
+      Sleep(3000);
+      OrderSelect(cpt,SELECT_BY_POS,MODE_TRADES);
+      if(OrderSymbol()==Symbol() && OrderType()>1) OrderDelete(OrderTicket());
       else if(OrderSymbol()==Symbol() && OrderType()==OP_BUY) OrderClose(OrderTicket(),OrderLots(),Bid,3);
       else if(OrderSymbol()==Symbol() && OrderType()==OP_SELL) OrderClose(OrderTicket(),OrderLots(),Ask,3);
       
-      }
+   }
       if(!CONTINUE)  Enter=false;
       return(true);
 }
