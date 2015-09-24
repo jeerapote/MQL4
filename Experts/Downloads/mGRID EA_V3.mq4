@@ -28,6 +28,12 @@ int       Target_Increment = 50;
 int       First_Target = 20;
 bool      UseEntryTime=false;
 int       EntryTime=0;
+int       EquityOnMonday;
+int       EquityOnFriday;
+
+
+
+int Tally, LOrds, SOrds, PendBuy, PendSell;
 
 //+------------------------------------------------------------------+
 
@@ -53,6 +59,36 @@ int deinit()
 //+------------------------------------------------------------------+
 int start()
   {
+  
+  if(DayOfWeek()==1 && TimeHour(TimeGMT())==1)EquityOnMonday = AccountEquity();
+  if(DayOfWeek()==5 && TimeHour(TimeGMT())==16)EquityOnFriday = AccountEquity();
+  
+  
+  if(DayOfWeek()==5 && TimeHour(TimeGMT())> 16 && EquityOnMonday/EquityOnFriday<0.9){
+   
+   EndSession();
+   return(0);
+  
+  }
+  
+   // do not work on holidays.
+  if(DayOfWeek()==5 && TimeHour(TimeGMT())> 10 && AccountEquity() >= AccountBalance()){
+  
+   EndSession();
+   return(0);
+  
+  }
+  if(DayOfWeek()==5 && TimeHour(TimeGMT())> 15 && AccountEquity() > AccountBalance()-100){
+  
+   EndSession();
+   return(0);
+  
+  }
+  
+  
+  
+  
+  
    int ticket, cpt, profit, total=0, BuyGoalProfit, SellGoalProfit, PipsLot;
    double ProfitTarget=INCREMENT*2, BuyGoal=0, SellGoal=0, spread=(Ask-Bid)/Point, InitialPrice=0;
 //----
@@ -190,6 +226,7 @@ int start()
       
    }
    
+   PrintStats();
    
    if(AccountEquity()>AccountBalance()+CloseAtProfit){
       
@@ -211,7 +248,8 @@ int start()
             "Pip Spread:  ",MarketInfo("EURUSD",MODE_SPREAD),"\n",
             "Increment=" + INCREMENT,"\n",
             "Lots:  ",LOTS,"\n",
-            "Levels: " + LEVELS,"\n");
+            "Levels: " + LEVELS,"\n",
+            "Float: ",Tally," Longs: ",LOrds," Shorts: ",SOrds, " BuyStops: ",PendSell," SellStops: ",PendBuy);
             
             
             
@@ -310,6 +348,7 @@ bool EndSession()
       
    }
       if(!CONTINUE)  Enter=false;
+
       return(true);
 }
 
@@ -351,3 +390,49 @@ void takeProfit(int current_pips, int ticket)
    }
 }
 
+
+
+//========== FUNCTION PrintStats
+
+void PrintStats(){
+  int y, total;  
+    
+    Tally      =0;
+    LOrds      =0;
+    SOrds      =0;
+    PendBuy    =0;
+    PendSell   =0;
+    
+    total = OrdersTotal();  
+
+      for(y=0;y<total;y++) {
+         OrderSelect(y,SELECT_BY_POS);
+            if(OrderSymbol() == Symbol()){ 
+                            
+                               
+                               if(OrderType()==OP_BUY){
+                               LOrds++;
+                               Tally=Tally+OrderProfit();
+                               
+                               }
+                               if(OrderType()==OP_SELL){
+                               SOrds++;
+                               Tally=Tally+OrderProfit();
+                               
+                               }
+                               if(OrderType()==OP_SELLSTOP){
+                               PendSell++;
+                               
+                               }
+                               if(OrderType()==OP_BUYSTOP){
+                               PendBuy++;
+                               
+                               }
+                               
+        
+            }//Symbol
+       }//for loop
+       
+     //  Comment("Float: ",Tally," Longs: ",LOrds," Shorts: ",SOrds);
+
+}//void

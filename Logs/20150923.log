@@ -2,3 +2,19 @@
 0	00:41:04.720	Center of Gravity EURUSD,M1: uninit reason 1
 0	00:41:04.720	Custom indicator Center of Gravity EURUSD,M1: removed
 0	00:41:04.782	Expert COG_test EURUSD,M1: removed
+0	17:29:17.761	Expert CenterOG\COG_test EURUSD,M1: loaded successfully
+0	17:29:20.173	Custom indicator Market/Center of Gravity EURUSD,M1: loaded successfully
+0	17:29:20.173	Center of Gravity EURUSD,M1: initialized
+0	17:29:20.204	COG_test EURUSD,M1: initialized
+0	20:49:16.252	COG_test EURUSD,M1: uninit reason 9
+0	20:49:16.254	Center of Gravity EURUSD,M1: uninit reason 1
+0	20:49:16.254	Custom indicator Center of Gravity EURUSD,M1: removed
+0	20:49:16.333	Expert COG_test EURUSD,M1: removed
+0	21:28:47.720	Expert CenterOG\COG_test EURUSD,M1: loaded successfully
+0	21:28:50.389	Custom indicator Market/Center of Gravity EURUSD,M1: loaded successfully
+0	21:28:50.389	Center of Gravity EURUSD,M1: initialized
+0	21:28:50.471	COG_test EURUSD,M1: initialized
+0	23:57:01.657	COG_test EURUSD,M1: uninit reason 9
+0	23:57:01.673	Center of Gravity EURUSD,M1: uninit reason 1
+0	23:57:01.673	Custom indicator Center of Gravity EURUSD,M1: removed
+0	23:57:01.720	Expert COG_test EURUSD,M1: removed
