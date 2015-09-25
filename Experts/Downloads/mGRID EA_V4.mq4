@@ -10,6 +10,7 @@
 
 extern int       INCREMENT=10;
 extern int       RETRACEMENT=5;
+extern double    DIFFERENCE = 150;
 extern double    LOTS=0.01;
 extern int       LEVELS=100; 
 extern int       CloseAtProfit=4;
@@ -62,8 +63,12 @@ int deinit()
 int start()
   {
   
-
+  high = iHigh("EURUSD",PERIOD_M5,1);
+  low  = iLow("EURUSD",PERIOD_M5,1);
+  difference = MathAbs(high-low)/Point;
   
+  
+ 
   if(DayOfWeek()==1 && TimeHour(TimeGMT())==1)EquityOnMonday = AccountEquity();
   if(DayOfWeek()==5 && TimeHour(TimeGMT())==16)EquityOnFriday = AccountEquity();
   
@@ -121,15 +126,16 @@ int start()
          }
       }
    }
-   
-   
-   if(total<1 && Enter && (!UseEntryTime || (UseEntryTime && Hour()==EntryTime)))
+     
+  
+   if(total<1 &&  difference > DIFFERENCE && Enter && (!UseEntryTime || (UseEntryTime && Hour()==EntryTime)))
    {
-     /* if(OrdersTotal()>128)
+    /*  if(OrdersTotal()>128)
       {
          Print("Not enough free margin to begin");
          return(0);
-      }*/
+      }
+      */
       // - Open Check - Start Cycle
       InitialPrice=Ask;
       SellGoal=InitialPrice-(LEVELS+1)*INCREMENT*Point;
@@ -186,8 +192,8 @@ int start()
             if(ticket>0) SellGoalProfit+=LOTS*(InitialPrice-cpt*INCREMENT*Point-SellGoal-spread*Point)/Point;
          }
       }
-   }
-   
+     }
+       
    
    int pos = OrdersTotal()-1;
    
