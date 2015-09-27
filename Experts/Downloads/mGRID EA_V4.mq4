@@ -8,15 +8,18 @@
 
 //---- input parameters ---------------------------------------------+
 
-extern int       INCREMENT=10;
-extern int       RETRACEMENT=5;
-extern double    DIFFERENCE = 150;
-extern double    LOTS=0.01;
-extern int       LEVELS=100; 
-extern int       CloseAtProfit=4;
-extern double    MAX_LOTS=99;
-extern int       MAGIC=1803;
-extern bool      CONTINUE=true;
+extern int              INCREMENT=10;
+extern int              RETRACEMENT=5;
+extern ENUM_TIMEFRAMES  TIMEFRAME=PERIOD_M5;
+extern double           DIFFERENCE = 150;
+extern double           LOTS=0.01;
+extern int              LEVELS=100; 
+extern int              CloseAtProfit=4;
+extern double           MAX_LOTS=99;
+extern int              MAGIC=1803;
+extern bool             CONTINUE=true;
+
+
 
 bool key =true;
 
@@ -63,8 +66,9 @@ int deinit()
 int start()
   {
   
-  high = iHigh("EURUSD",PERIOD_M5,1);
-  low  = iLow("EURUSD",PERIOD_M5,1);
+  
+  high = iHigh("EURUSD",TIMEFRAME,1);
+  low  = iLow("EURUSD",TIMEFRAME,1);
   difference = MathAbs(high-low)/Point;
   
   

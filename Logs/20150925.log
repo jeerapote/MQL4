@@ -1,1 +1,48 @@
 0	13:48:45.825	Expert CenterOG\COG_test EURUSD,M1: loaded successfully
+0	13:48:48.436	Custom indicator Market/Center of Gravity EURUSD,M1: loaded successfully
+0	13:48:48.451	Center of Gravity EURUSD,M1: initialized
+0	13:48:48.498	COG_test EURUSD,M1: initialized
+0	17:53:10.877	COG_test EURUSD,M1: uninit reason 1
+0	17:53:10.908	Center of Gravity EURUSD,M1: uninit reason 1
+0	17:53:10.908	Custom indicator Center of Gravity EURUSD,M1: removed
+0	17:53:10.908	Expert COG_test EURUSD,M1: removed
+0	17:53:10.908	Expert Downloads\mGRID EA_V4 EURUSD,M1: loaded successfully
+0	17:53:13.433	mGRID EA_V4 EURUSD,M1 inputs: INCREMENT=10; RETRACEMENT=5; LOTS=0.01; LEVELS=100; CloseAtProfit=4; MAX_LOTS=99.0; MAGIC=1803; CONTINUE=true; 
+0	17:53:13.448	mGRID EA_V4 EURUSD,M1: initialized
+0	17:53:25.032	mGRID EA_V4 EURUSD,M1: uninit reason 3
+0	17:53:25.267	mGRID EA_V4 EURUSD,M5: initialized
+0	17:54:19.668	mGRID EA_V4 EURUSD,M5: uninit reason 2
+0	17:54:19.668	Expert mGRID EA_V4 EURUSD,M5: removed
+0	17:54:19.671	Expert Downloads\mGRID EA_V4 EURUSD,M5: loaded successfully
+0	17:54:19.674	mGRID EA_V4 EURUSD,M5: initialized
+0	17:54:31.080	mGRID EA_V4 EURUSD,M5: uninit reason 1
+0	17:54:31.096	Expert mGRID EA_V4 EURUSD,M5: removed
+0	17:54:31.096	Expert Downloads\mGRID EA_V4 EURUSD,M5: loaded successfully
+0	17:54:32.384	mGRID EA_V4 EURUSD,M5 inputs: INCREMENT=10; RETRACEMENT=5; LOTS=0.01; LEVELS=100; CloseAtProfit=4; MAX_LOTS=99.0; MAGIC=1803; CONTINUE=true; 
+0	17:54:32.389	mGRID EA_V4 EURUSD,M5: initialized
+0	17:55:18.920	mGRID EA_V4 EURUSD,M5: uninit reason 2
+0	17:55:18.920	Expert mGRID EA_V4 EURUSD,M5: removed
+0	17:55:18.922	Expert Downloads\mGRID EA_V4 EURUSD,M5: loaded successfully
+0	17:55:18.925	mGRID EA_V4 EURUSD,M5: initialized
+0	17:55:32.524	mGRID EA_V4 EURUSD,M5: uninit reason 2
+0	17:55:32.524	Expert mGRID EA_V4 EURUSD,M5: removed
+0	17:55:32.526	Expert Downloads\mGRID EA_V4 EURUSD,M5: loaded successfully
+0	17:55:32.530	mGRID EA_V4 EURUSD,M5: initialized
+0	17:57:09.845	mGRID EA_V4 EURUSD,M5: uninit reason 2
+0	17:57:09.845	Expert mGRID EA_V4 EURUSD,M5: removed
+0	17:57:09.848	Expert Downloads\mGRID EA_V4 EURUSD,M5: loaded successfully
+0	17:57:09.851	mGRID EA_V4 EURUSD,M5: initialized
+0	17:58:19.972	mGRID EA_V4 EURUSD,M5: uninit reason 2
+0	17:58:19.972	Expert mGRID EA_V4 EURUSD,M5: removed
+0	17:58:19.974	Expert Downloads\mGRID EA_V4 EURUSD,M5: loaded successfully
+0	17:58:19.978	mGRID EA_V4 EURUSD,M5: initialized
+0	17:58:29.473	mGRID EA_V4 EURUSD,M5: uninit reason 2
+0	17:58:29.473	Expert mGRID EA_V4 EURUSD,M5: removed
+0	17:58:29.475	Expert Downloads\mGRID EA_V4 EURUSD,M5: loaded successfully
+0	17:58:29.479	mGRID EA_V4 EURUSD,M5: initialized
+0	17:58:31.887	mGRID EA_V4 EURUSD,M5: uninit reason 2
+0	17:58:31.887	Expert mGRID EA_V4 EURUSD,M5: removed
+0	17:58:31.889	Expert Downloads\mGRID EA_V4 EURUSD,M5: loaded successfully
+0	17:58:31.893	mGRID EA_V4 EURUSD,M5: initialized
+0	17:58:52.238	mGRID EA_V4 EURUSD,M5: uninit reason 1
+0	17:58:52.242	Expert mGRID EA_V4 EURUSD,M5: removed

@@ -1,0 +1,6 @@
+0	16:40:01.452	Compiling 'Downloads\BarPriceAction EA_V1'
+0	22:06:37.330	Expert Downloads\BarPriceAction EA_V2 EURUSD,M1: loaded successfully
+0	22:06:38.898	BarPriceAction EA_V2 EURUSD,M1 inputs: MagicNumber=2011; Lots=0.25; TakeProfit=70; StopLoss=70; TrailingStop=70.0; DISTANCE=200.0; 
+0	22:06:38.918	BarPriceAction EA_V2 EURUSD,M1: initialized
+0	22:06:48.654	BarPriceAction EA_V2 EURUSD,M1: uninit reason 1
+0	22:06:48.658	Expert BarPriceAction EA_V2 EURUSD,M1: removed
