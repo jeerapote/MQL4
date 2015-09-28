@@ -15,6 +15,7 @@ extern double           DIFFERENCE = 150;
 extern double           LOTS=0.01;
 extern int              LEVELS=100; 
 extern int              CloseAtProfit=4;
+extern bool             EnableFridayClose=false;
 extern double           MAX_LOTS=99;
 extern int              MAGIC=1803;
 extern bool             CONTINUE=true;
@@ -73,31 +74,27 @@ int start()
   
   
  
-  if(DayOfWeek()==1 && TimeHour(TimeGMT())==1)EquityOnMonday = AccountEquity();
-  if(DayOfWeek()==5 && TimeHour(TimeGMT())==16)EquityOnFriday = AccountEquity();
+   if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)EquityOnMonday = AccountEquity();
+   if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())==16)EquityOnFriday = AccountEquity();
   
-  
-  if(DayOfWeek()==5 && TimeHour(TimeGMT())> 16 && EquityOnMonday/EquityOnFriday<0.9){
+   if(EnableFridayClose){
    
-   EndSession();
-   return(0);
+    if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> 16 && EquityOnMonday/EquityOnFriday<0.95){
+   
+     EndSession();
+     return(0);
   
-  }
+    }
   
-   // do not work on holidays.
-  if(DayOfWeek()==5 && TimeHour(TimeGMT())> 10 && AccountEquity() >= AccountBalance()){
+    // do not work on holidays.
+    if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> 10 && AccountEquity() >= AccountBalance()){
   
-   EndSession();
-   return(0);
+     EndSession();
+     return(0);
   
-  }
-  if(DayOfWeek()==5 && TimeHour(TimeGMT())> 15 && AccountEquity() > AccountBalance()-100){
-  
-   EndSession();
-   return(0);
-  
-  }
-  
+    }
+    
+   }
   
   
   

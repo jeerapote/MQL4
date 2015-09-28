@@ -26,6 +26,7 @@ extern double  BreakEvenProfit         = 100;    // In £GBP
 //=================================Initialization=======================================//
            
 bool           newbuy                  = true;  // locks
+
 bool           newsell                 = false;           
 
 

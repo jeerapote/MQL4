@@ -9,13 +9,21 @@ extern int     MagicNumber             = 2011;
 
 extern double  Lots                    = 0.25;
 
-extern int     TakeProfit              = 10000;  // In pips
+extern int     BreakEvenAt             = 100 ; //in points.
 
-extern int     StopLoss                = 10000;
+extern int     TakeProfit              = 120; // in points, 100 points = 10 pips;
+
+extern int     StopLoss                = 100; // in points;
+
+extern int     TrailingStop            = 70;   // in points;
+
+//extern int     LossMargin              = 30;
            
-bool           EachTickMode            = True;
+//bool           EachTickMode            = True;
 
-extern double  BreakEvenProfit         = 100;    // In £GBP 
+extern double  MultiLotsMultiple       = 2;
+
+extern double  MultiLotStart           = 100;    // In £GBP 
 
 
 
@@ -31,7 +39,7 @@ bool           newsell                 = false;
 
 int            BarCount;
 
-int            Current;
+int            Current=0;
    
 
 double         mPoint                  = 0.0001;
@@ -56,6 +64,8 @@ double         HAClose3;
 double         HAOpen4;
 double         HAClose4;
 
+int            Spread,StopLevel;
+
 
 bool             morningHours   = (Hour() >  7 && Hour() < 10),
                  afternoonHours =  Hour() > 14 && Hour() < 18,
@@ -65,7 +75,7 @@ int init() {
 
    BarCount = Bars;
 
-   if (EachTickMode) Current = 0; //else Current = -1;
+ //  if (EachTickMode) Current = 0; //else Current = -1;
    
    mPoint = Point*10;
    
@@ -102,6 +112,10 @@ int start()
                  afternoonHours =  TimeHour(TimeGMT()) > 14 && TimeHour(TimeGMT()) < 20;
                  tradingHours   = morningHours || afternoonHours;
 
+   Spread = MarketInfo(Symbol(),MODE_SPREAD);
+   StopLevel =MarketInfo(Symbol(), MODE_STOPLEVEL);
+
+
 
    Balance = AccountBalance();
    
@@ -112,18 +126,8 @@ int start()
    Lots = Lot(Lots);
    
    int cnt, ticket, total;
-   
-   if(Bars<100)
-     {
-      Print("bars less than 100");
-      return(0);  
-     }
      
-   if(TakeProfit<4)
-     {
-      Print("TakeProfit less than 4");
-      return(0); 
-     }
+
      
 
 
@@ -165,7 +169,8 @@ int start()
          newbuy=false;
          newsell=true;
          
-         ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,Ask-(StopLoss*mPoint/10),Ask+TakeProfit*mPoint/10,"LoneWolf",MagicNumber+1,0,Blue);
+         //ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,Ask-(StopLoss*mPoint/10),Ask+TakeProfit*mPoint/10,"LoneWolf",MagicNumber+1,0,Blue);
+         ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,0,0,"achi",MagicNumber+1,0,Blue);
          if(ticket>0 )
            {
             lastTradeTime = Time[THIS_BAR];
@@ -173,6 +178,7 @@ int start()
            }
          else Print("Error opening BUY order : ",GetLastError()); 
          
+         /*
          OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
             if(OrderType()==OP_SELL) // go to short position
             {
@@ -181,16 +187,18 @@ int start()
                    OrderClose(OrderTicket(),OrderLots(),Ask,3,Violet); // close position
 
             }
+            */
       
         }
       // check for short position (SELL) possibility
       if(( HAOpen3 > HAClose3 && (newsell)) )
         {
         
-        newsell = false;
-        newbuy = true;
+         newsell = false;
+         newbuy = true;
         
-         ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,Bid+(StopLoss*mPoint/10),Bid-TakeProfit*mPoint/10,"LoneWolf",MagicNumber+2,0,Red);
+        // ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,Bid+(StopLoss*mPoint/10),Bid-TakeProfit*mPoint/10,"LoneWolf",MagicNumber+2,0,Red);
+         ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,0,0,"achi",MagicNumber+2,0,Red);
          if(ticket>0)
            {
             lastTradeTime = Time[THIS_BAR];
@@ -198,6 +206,7 @@ int start()
            }
          else Print("Error opening SELL order : ",GetLastError()); 
          
+         /*
          OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
          if(OrderType()==OP_BUY)   // long position is opened
            {
@@ -205,7 +214,7 @@ int start()
            
                  OrderClose(OrderTicket(),OrderLots(),Bid,3,Violet); // close position
            }
-         
+         */
 
         }
 
@@ -243,7 +252,29 @@ int start()
      }
    
   
-   MoveStopToBreakeven();
+   BreakEven();
+   CheckProfit();
+   Multilot();
+   TrailingTakeProfit();
+   
+   
+   Comment("GRID BarPriceAction ver 3.0\n",
+            "FX Acc Server:",AccountServer(),"\n",
+            "Date: ",Month(),"-",Day(),"-",Year()," Server Time: ",Hour(),":",Minute(),":",Seconds(),"\n",
+            "Minimum Lot Sizing: ",MarketInfo(Symbol(),MODE_MINLOT),"\n",
+            "Account Balance:  $",AccountBalance(),"\n",
+            "FreeMargin: $",AccountFreeMargin(),"\n",
+            "Total Orders Open: ",OrdersTotal(),"\n",
+            "Total Orders History: ",OrdersHistoryTotal(),"\n",            
+            "Symbol: ", Symbol(),"\n",
+            "Price:  ",NormalizeDouble(Bid,4),"\n",
+            "Pip Spread:  ",MarketInfo(Symbol(),MODE_SPREAD),"\n",
+            "Lots:  ",Lots,"\n",
+            "StopLevel: ",MarketInfo(Symbol(), MODE_STOPLEVEL),"\n",
+            "Leverage: ",AccountLeverage(),"\n",
+            "Effective Leverage: ",AccountMargin()*AccountLeverage()/AccountEquity(),"\n",
+            "Point: ", Digits,"\n",
+            "Freezelevel: ",MarketInfo(Symbol(),MODE_FREEZELEVEL),"\n");
    
    
    return(0);
@@ -270,62 +301,195 @@ double GetPoint(string symbol = "") //5 digit broker conversion ---  Copyright "
    }
 }
 
+//===================================== Trailing Take Profit ==================================//
+int TrailingTakeProfit(){
+
+  int total = OrdersTotal();
+ 
+  double tsl;
+
+  double sl;
+
+  bool fine=true;
+
+  for(int i=total-1;i>=0;i--){
+  
+   if( OrderSelect(i, SELECT_BY_POS, MODE_TRADES) ) {
+    
+       if( OrderType()==OP_BUY && OrderOpenPrice()+ (TakeProfit+TrailingStop+Spread+StopLevel)*Point < Bid ) {
+         
+         
+         tsl = OrderStopLoss()+TrailingStop*Point;
+         sl  = NormalizeDouble(Bid-Point*(Spread+StopLevel+TakeProfit),Digits); 
+        
+         if(tsl < sl)
+         fine  = OrderModify(OrderTicket(),OrderOpenPrice(),sl,OrderTakeProfit(),0);
+         
+       }
+       else if( OrderType()==OP_SELL && OrderOpenPrice()-(TakeProfit+TrailingStop+Spread+StopLevel)*Point > Ask) {
+    
+         tsl = OrderStopLoss()-TrailingStop*Point; 
+         sl  = NormalizeDouble(Ask+Point*(Spread+StopLevel+TakeProfit),Digits); 
+       
+         if(tsl > sl)
+         fine = OrderModify(OrderTicket(),OrderOpenPrice(),sl,OrderTakeProfit(),0);
+       }
+    
+       if(!fine)
+       Print("Error in TrailingTakeProfit(). Error code=",GetLastError()); 
+   }   
+  }
+  
+  
+  return(0);
+}
+
+
+
 //===================================== CHECK PROFIT ==================================//
+int CheckProfit(){
+
+for(int i = 0; i < OrdersTotal(); i++) {
+  
+   if( OrderSelect(i, SELECT_BY_POS, MODE_TRADES) ) {
+      
+      int type   = OrderType();
+
+      bool result = true;
+    
+      switch(type)
+      {
+         //Close opened long positions
+         
+         case OP_BUY       : if(Bid<OrderOpenPrice()-(Spread+StopLevel+StopLoss)*Point){
+                             result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_BID), 5, Red );
+                             }
+                             break;
+      
+         //Close opened short positions
+         case OP_SELL      : if(Ask>OrderOpenPrice()+(Spread+StopLevel+StopLoss)*Point){
+                             result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_ASK), 5, Red );
+                             }
+                          
+      }
+    
+      if(result == false)
+      {
+       Alert("Order " , OrderTicket() , "CheckProfit(), failed to close. Error:" , GetLastError() );
+       Sleep(3000);
+      }  
+       
+   }
+  }
+  
+  return(0);
+}
+
+
 
 
 //===================================== Move to Breakeven ==================================//
 
-bool MoveStopToBreakeven() {
 
-   bool retVal = true;
-   double sl;
-   double tsl;
-   
- 
+int BreakEven(){
 
-   // select the Order
-   for(int i = 0; i < OrdersTotal(); i++) {
-      OrderSelect(i, SELECT_BY_POS, MODE_TRADES);
-      
-      if(OrderSymbol() == Symbol()) {       
-      
+double tsl;
+
+double sl;
+
+bool fine=true;
+
+for(int i = 0; i < OrdersTotal(); i++) {
+if( OrderSelect(i, SELECT_BY_POS, MODE_TRADES) ) {
+    if( OrderType()==OP_BUY && OrderOpenPrice()+ (Spread+BreakEvenAt+StopLevel)*Point < Bid && OrderStopLoss() < OrderOpenPrice()+(TakeProfit+Spread+StopLevel)*Point) {
          
+        tsl = OrderStopLoss();
+        sl  = NormalizeDouble(OrderOpenPrice()+Point*(Spread+StopLevel),Digits); 
         
-         if(  OrderType() == OP_BUY /*&& OrderProfit() >= BreakEvenProfit*/ ){
-         
-              tsl = OrderStopLoss();   
-              //sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
-              sl = NormalizeDouble(Low[2]-1*Point,Digits);
-              if(tsl != sl)
-              retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Brown) ;
-              
-         }
+        if(tsl < sl)
+        fine  = OrderModify(OrderTicket(),OrderOpenPrice(),sl,OrderTakeProfit(),0);
+    }
+    else if( OrderType()==OP_SELL && OrderOpenPrice()-(Spread+BreakEvenAt+StopLevel)*Point > Ask && OrderStopLoss() > OrderOpenPrice()-(TakeProfit+Spread+StopLevel)*Point) {
+    
+        tsl = OrderStopLoss(); 
+        sl  = NormalizeDouble(OrderOpenPrice()-Point*(Spread+StopLevel),Digits); 
         
-        if(OrderType() == OP_SELL /*&& OrderProfit() >= BreakEvenProfit*/ ) {
-       
-              tsl = OrderStopLoss();
-              //sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
-              sl = NormalizeDouble(High[2]+2*Point,Digits); 
-              if(tsl != sl) 
-              retVal = OrderModify(OrderTicket(),OrderOpenPrice(), sl,OrderTakeProfit(),0,Orange) ;
-               
-        }
-        
-        
-        if(!retVal)
-            Print("Error in OrderModify. Error code=",GetLastError());
-       /* else
-            Print("Order modified successfully.");*/
-        
-         
-      }
-   }
-   
-   
-   return(retVal);
+        if(tsl > sl)
+        fine = OrderModify(OrderTicket(),OrderOpenPrice(),sl,OrderTakeProfit(),0);
+    }
+    
+    if(!fine)
+    Print("Error in BreakEven(). Error code=",GetLastError());
+}
+
+}
 }
 
 
+//========================================MultiLot=============================//
+int Multilot()
+{
+
+   if(OrdersTotal() < 2 /*&& tradingHours*/)
+   {
+
+       int pos = OrdersTotal()-1;
+   
+         if(OrderSelect(pos, SELECT_BY_POS)==true)
+         {
+      
+            if(OrderProfit()< StopLoss*-1 )CloseAll();
+            if(OrderProfit()>=MultiLotStart )
+            {
+
+              int order_type = OrderType();     
+       
+              if(order_type==OP_BUY)
+               {
+              
+                  if(iVolume(NULL,0,0)==1);
+                  
+                  
+                  Multilot = MultiLotsMultiple*Lots;
+                  Multilot = Lot(Multilot);
+                 
+                  
+                 // ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, Ask-MultiLotStopLoss*Point, 0);
+                  ticket2 = OrderSend(Symbol(), OP_BUY, Multilot, Ask , 0, 0, 0);
+                  if(ticket2>0)
+                   {
+                      lastTradeTime = Time[THIS_BAR];
+                      if(OrderSelect(ticket2,SELECT_BY_TICKET,MODE_TRADES)) Print("BUY order opened : ",OrderOpenPrice());
+                   }
+                  else Print("Multilot(), Error opening BUY order : ",GetLastError());
+               }
+               
+              else 
+               {
+                  if(iVolume(NULL,0,0)==1);                        
+                  Multilot = MultiLotsMultiple*Lots;
+                  Multilot = Lot(Multilot);
+                  
+                 // ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid, 0, Bid+MultiLotStopLoss*Point, 0);
+                  ticket2 = OrderSend(Symbol(), OP_SELL, Multilot, Bid , 0, 0, 0);
+                  if(ticket2>0)
+                  {
+                     lastTradeTime = Time[THIS_BAR];
+                     if(OrderSelect(ticket2,SELECT_BY_TICKET,MODE_TRADES)) Print("SELL order opened : ",OrderOpenPrice());
+                  }
+                  else Print("MultiLot(), Error opening SELL order : ",GetLastError());
+                  
+               }
+         
+            }
+            
+        }
+   } 
+    
+    return(0);
+}  
+
+//========================================Close All=============================//
 int CloseAll(){
 
 int total = OrdersTotal();
@@ -349,7 +513,7 @@ int total = OrdersTotal();
     
     if(result == false)
     {
-      Alert("Order " , OrderTicket() , " failed to close. Error:" , GetLastError() );
+      Alert("Order " , OrderTicket() , "CloseAll(), failed to close. Error:" , GetLastError() );
       Sleep(3000);
     }  
   }

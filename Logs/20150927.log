@@ -121,3 +121,5 @@
 0	18:23:08.635	Compiling 'Downloads\BarPriceAction EA_V2'
 0	20:02:08.510	BarPriceAction EA_V3 SUGARUSD,H1: uninit reason 6
 0	20:02:08.541	BarPriceAction EA_V3 SUGARUSD,H1: initialized
+0	21:15:42.108	BarPriceAction EA_V3 SUGARUSD,H1: uninit reason 1
+0	21:15:42.112	Expert BarPriceAction EA_V3 SUGARUSD,H1: removed

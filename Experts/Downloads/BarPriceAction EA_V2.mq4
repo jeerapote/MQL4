@@ -101,8 +101,9 @@ int start()
    close = iClose(Symbol(),PERIOD_CURRENT,1);
    
   // difference = fabs(open-close)/Point;
+
   
-  difference = DISTANCE;
+   difference = DISTANCE;
   
  // TrailingStop = DISTANCE;
    
@@ -114,7 +115,9 @@ int start()
    
    Spread = MarketInfo(Symbol(),MODE_SPREAD);
    
-   if(TakeProfit < Spread)TakeProfit=Spread;
+   if(TakeProfit < Spread*2)TakeProfit=2*Spread+StopLevel;
+   
+   if(difference < Spread*2) difference = Spread*3;
   
    total=OrdersTotal(); 
    
@@ -181,10 +184,10 @@ bool fine;
 
 int pos = OrdersTotal()-1;
 if( OrderSelect(pos,SELECT_BY_POS) ) {
-    if( OrderType()==OP_BUY && OrderStopLoss()+DISTANCE*Point < Bid ) {
+    if( OrderType()==OP_BUY && OrderOpenPrice()+difference*Point < Bid ) {
         fine  = OrderModify(OrderTicket(),OrderOpenPrice(),Ask-Point*TrailingStop,OrderTakeProfit(),0);
     }
-    else if( OrderType()==OP_SELL && OrderStopLoss()-DISTANCE*Point > Bid) {
+    else if( OrderType()==OP_SELL && OrderOpenPrice()-difference*Point > Bid) {
         fine = OrderModify(OrderTicket(),OrderOpenPrice(),Bid+Point*TrailingStop,OrderTakeProfit(),0);
     }
     
@@ -202,10 +205,10 @@ bool fine;
 
 int pos = OrdersTotal()-1;
 if( OrderSelect(pos,SELECT_BY_POS) ) {
-    if( OrderType()==OP_BUY && OrderOpenPrice()+ (Spread+25)*Point < Bid ) {
+    if( OrderType()==OP_BUY && OrderOpenPrice()+ (Spread+StopLevel+10)*Point < Bid ) {
         fine  = OrderModify(OrderTicket(),OrderOpenPrice(),OrderOpenPrice()+Point*(Spread+5),OrderTakeProfit(),0);
     }
-    else if( OrderType()==OP_SELL && OrderOpenPrice()-(Spread+25)*Point > Ask) {
+    else if( OrderType()==OP_SELL && OrderOpenPrice()-(Spread+StopLevel+10)*Point > Ask) {
         fine = OrderModify(OrderTicket(),OrderOpenPrice(),OrderOpenPrice()-Point*(Spread+5),OrderTakeProfit(),0);
     }
     
