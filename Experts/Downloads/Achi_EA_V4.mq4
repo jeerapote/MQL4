@@ -13,9 +13,11 @@ extern int     BreakEvenAt             = 100 ; //in points.
 
 extern int     TakeProfit              = 120; // in points, 100 points = 10 pips;
 
-extern int     StopLoss                = 100; // in points;
+extern int     StopLoss                = 200; // in points;
 
-extern int     TrailingStop            = 70;   // in points;
+extern bool    AutoStopLoss            = true;
+
+extern int     TrailingStop            = 200;   // in points;
 
 //extern int     LossMargin              = 30;
            
@@ -23,7 +25,7 @@ extern int     TrailingStop            = 70;   // in points;
 
 extern double  MultiLotsMultiple       = 2;
 
-extern double  MultiLotStart           = 100;    // In £GBP 
+extern double  MultiLotStart           = 10000;    // In £GBP 
 
 
 
@@ -168,9 +170,9 @@ int start()
         
          newbuy=false;
          newsell=true;
-         
+         double slb = NormalizeDouble(Low[2]-10*Point,Digits);
          //ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,Ask-(StopLoss*mPoint/10),Ask+TakeProfit*mPoint/10,"LoneWolf",MagicNumber+1,0,Blue);
-         ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,0,0,"achi",MagicNumber+1,0,Blue);
+         ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,slb,0,"achi",MagicNumber+1,0,Blue);
          if(ticket>0 )
            {
             lastTradeTime = Time[THIS_BAR];
@@ -196,9 +198,9 @@ int start()
         
          newsell = false;
          newbuy = true;
-        
+         double sls = NormalizeDouble(High[2]+10*Point,Digits);
         // ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,Bid+(StopLoss*mPoint/10),Bid-TakeProfit*mPoint/10,"LoneWolf",MagicNumber+2,0,Red);
-         ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,0,0,"achi",MagicNumber+2,0,Red);
+         ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,sls,0,"achi",MagicNumber+2,0,Red);
          if(ticket>0)
            {
             lastTradeTime = Time[THIS_BAR];
@@ -253,7 +255,7 @@ int start()
    
   
    BreakEven();
-   CheckProfit();
+   if(!AutoStopLoss)CheckProfit();
    Multilot();
    TrailingTakeProfit();
    
@@ -401,21 +403,23 @@ bool fine=true;
 
 for(int i = 0; i < OrdersTotal(); i++) {
 if( OrderSelect(i, SELECT_BY_POS, MODE_TRADES) ) {
-    if( OrderType()==OP_BUY && OrderOpenPrice()+ (Spread+BreakEvenAt+StopLevel)*Point < Bid && OrderStopLoss() < OrderOpenPrice()+(TakeProfit+Spread+StopLevel)*Point) {
+    if( OrderType()==OP_BUY && OrderOpenPrice()+ (Spread+BreakEvenAt+StopLevel)*Point < Bid ) {
          
         tsl = OrderStopLoss();
         sl  = NormalizeDouble(OrderOpenPrice()+Point*(Spread+StopLevel),Digits); 
         
-        if(tsl < sl)
-        fine  = OrderModify(OrderTicket(),OrderOpenPrice(),sl,OrderTakeProfit(),0);
+        if(tsl < sl){ Print("breakeven buy", tsl);
+        fine  = OrderModify(OrderTicket(),OrderOpenPrice(),sl,OrderTakeProfit(),0);}
     }
-    else if( OrderType()==OP_SELL && OrderOpenPrice()-(Spread+BreakEvenAt+StopLevel)*Point > Ask && OrderStopLoss() > OrderOpenPrice()-(TakeProfit+Spread+StopLevel)*Point) {
+    
+    if( OrderType()==OP_SELL && OrderOpenPrice()-(Spread+BreakEvenAt+StopLevel)*Point > Ask ) {
     
         tsl = OrderStopLoss(); 
         sl  = NormalizeDouble(OrderOpenPrice()-Point*(Spread+StopLevel),Digits); 
         
-        if(tsl > sl)
-        fine = OrderModify(OrderTicket(),OrderOpenPrice(),sl,OrderTakeProfit(),0);
+       
+        if(tsl > sl || tsl == 0 ){ Print("breakeven sell",tsl);
+        fine = OrderModify(OrderTicket(),OrderOpenPrice(),sl,OrderTakeProfit(),0);}
     }
     
     if(!fine)

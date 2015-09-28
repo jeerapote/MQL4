@@ -20,3 +20,51 @@
 0	10:43:08.570	Heiken_Ashi_Smoothed EURUSD,Daily: initialized
 0	10:44:23.519	Heiken_Ashi_Smoothed EURUSD,Daily: uninit reason 3
 0	10:44:23.519	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	19:15:33.672	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 4
+0	19:15:33.687	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: removed
+0	19:35:54.479	Custom indicator Heiken_Ashi_Smoothed EURUSD,H1: loaded successfully
+0	19:35:55.651	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	19:35:59.589	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 3
+0	19:35:59.636	Heiken_Ashi_Smoothed EURUSD,Weekly: initialized
+0	19:36:02.902	Heiken_Ashi_Smoothed EURUSD,Weekly: uninit reason 3
+0	19:36:02.934	Heiken_Ashi_Smoothed EURUSD,Monthly: initialized
+0	19:36:23.726	Heiken_Ashi_Smoothed EURUSD,Monthly: uninit reason 3
+0	19:36:23.726	Heiken_Ashi_Smoothed EURUSD,Weekly: initialized
+0	19:37:00.502	Heiken_Ashi_Smoothed EURUSD,Weekly: uninit reason 3
+0	19:37:00.502	Heiken_Ashi_Smoothed EURUSD,Daily: initialized
+0	19:38:00.406	Heiken_Ashi_Smoothed EURUSD,Daily: uninit reason 3
+0	19:38:00.406	Heiken_Ashi_Smoothed EURUSD,Weekly: initialized
+0	19:38:01.470	Heiken_Ashi_Smoothed EURUSD,Weekly: uninit reason 3
+0	19:38:01.470	Heiken_Ashi_Smoothed EURUSD,Daily: initialized
+0	19:38:18.187	Custom indicator ATR EURUSD,Daily: loaded successfully
+0	19:38:19.233	ATR EURUSD,Daily: initialized
+0	19:38:32.001	ATR EURUSD,Daily: uninit reason 1
+0	19:38:32.001	Custom indicator ATR EURUSD,Daily: removed
+0	19:38:37.527	Custom indicator Accelerator EURUSD,Daily: loaded successfully
+0	19:38:38.715	Accelerator EURUSD,Daily: initialized
+0	19:38:54.264	Accelerator EURUSD,Daily: uninit reason 1
+0	19:38:54.264	Custom indicator Accelerator EURUSD,Daily: removed
+0	19:38:59.015	Custom indicator Strategy2\xaZZ EURUSD,Daily: loaded successfully
+0	19:39:00.156	Custom indicator xaZZ EURUSD,Daily: removed
+0	19:39:14.690	Custom indicator CCI EURUSD,Daily: loaded successfully
+0	19:39:15.909	CCI EURUSD,Daily: initialized
+0	19:39:33.836	CCI EURUSD,Daily: uninit reason 1
+0	19:39:33.836	Custom indicator CCI EURUSD,Daily: removed
+0	19:39:42.389	Custom indicator TVI_v2 EURUSD,Daily: loaded successfully
+0	19:39:43.455	TVI_v2 EURUSD,Daily: initialized
+0	19:54:00.325	Heiken_Ashi_Smoothed EURUSD,Daily: uninit reason 3
+0	19:54:00.325	TVI_v2 EURUSD,Daily: uninit reason 3
+0	19:54:00.325	Heiken_Ashi_Smoothed EURUSD,Weekly: initialized
+0	19:54:00.325	TVI_v2 EURUSD,Weekly: initialized
+0	19:54:07.547	Heiken_Ashi_Smoothed EURUSD,Weekly: uninit reason 3
+0	19:54:07.547	TVI_v2 EURUSD,Weekly: uninit reason 3
+0	19:54:07.547	Heiken_Ashi_Smoothed EURUSD,Monthly: initialized
+0	19:54:07.547	TVI_v2 EURUSD,Monthly: initialized
+0	19:54:28.591	Heiken_Ashi_Smoothed EURUSD,Monthly: uninit reason 3
+0	19:54:28.591	TVI_v2 EURUSD,Monthly: uninit reason 3
+0	19:54:28.591	Heiken_Ashi_Smoothed EURUSD,Weekly: initialized
+0	19:54:28.591	TVI_v2 EURUSD,Weekly: initialized
+0	19:54:29.607	Heiken_Ashi_Smoothed EURUSD,Weekly: uninit reason 3
+0	19:54:29.607	TVI_v2 EURUSD,Weekly: uninit reason 3
+0	19:54:29.607	Heiken_Ashi_Smoothed EURUSD,Daily: initialized
+0	19:54:29.607	TVI_v2 EURUSD,Daily: initialized
