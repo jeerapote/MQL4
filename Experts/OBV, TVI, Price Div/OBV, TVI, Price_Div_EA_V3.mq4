@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                       OBV, TVI, Price_Div_EA.mq4 |
-//|                                                        version 2 |
+//|                                    OBV, TVI, Price_Div_EA_V3.mq4 |
+//|                                                        version 3 |
 //|                                                     by Murat aka.|
 //|                                                                  |
 //+------------------------------------------------------------------+
@@ -13,10 +13,22 @@
 //+------------------------------------------------------------------+
 
 
+
+extern double  Lots                    = 0.5;
+extern double  TakeProfit              = 100;
+extern double  StopLoss                = 300;
+extern bool    RiskManagamentOn        = true;
+
+
+
 int OnInit()
   {
 //---
+   InitialBalance = AccountBalance();
    
+   InitialLots = Lots;
+   
+   if(RiskManagamentOn)InitialLots = InitialBalance/100000;
 //---
    return(INIT_SUCCEEDED);
   }
@@ -34,7 +46,7 @@ void OnDeinit(const int reason)
     
 
 //-------------------------------------------------------------------- 2 --
-int condition=3;
+
 
 
    int xaZZBuy_indicator=1;
@@ -57,12 +69,19 @@ int condition=3;
    int count2 = 1;
    bool zero = false;
    
+double         InitialBalance;    
+
+double         Balance;      
+
+double         InitialLots, LotsFactor;
+   
    double  TVI_Last, TVI_Now;
    double  OBV_Last, OBV_Now;
    double  TVI_Max1, TVI_Max2=0;
    double  OBV_Max1, OBV_Max2=0;
    double  Price_Max1, Price_Max2=0;
    double  dStop, dProfit;
+   double  Spread;
    
    
    datetime       lastTradeTime;
@@ -101,6 +120,16 @@ int start()
 
    dStop = p3;
    dProfit =p2;
+   
+   Spread = MarketInfo(Symbol(),MODE_SPREAD);
+   
+   Balance = AccountBalance();
+   
+   LotsFactor = Balance/InitialBalance;
+   
+   Lots = InitialLots * LotsFactor; 
+   
+   Lots = Lot(Lots);
 
    TVI_Last = iCustom(NULL,0,"TVI_v2",5,5,5, 4, bar); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
    TVI_Now = iCustom(NULL,0,"TVI_v2",5,5,5, 4, 1); //1 = upNEG, 0 = upPOS, 2 = downPOS  3= downNEG
@@ -157,7 +186,7 @@ int start()
      dTakeProfit = Bid+30*Point;
      
      Trader();
-   //  DrawLine(IntegerToString(count2),iMax1_Bar,iMax2_Bar);
+     //DrawLine(IntegerToString(count2),iMax1_Bar,iMax2_Bar);
      count = 0;    
      count2++;
     }
@@ -174,7 +203,26 @@ int start()
      
     
    }
-
+   
+   
+//----------------------------------------------------------------------------- 5 --
+    
+        Comment("GRID BarPriceAction ver 3.0\n",
+            "FX Acc Server:",AccountServer(),"\n",
+            "Date: ",Month(),"-",Day(),"-",Year()," Server Time: ",Hour(),":",Minute(),":",Seconds(),"\n",
+            "Minimum Lot Sizing: ",MarketInfo(Symbol(),MODE_MINLOT),"\n",
+            "Account Balance:  $",AccountBalance(),"\n",
+            "FreeMargin: $",AccountFreeMargin(),"\n",
+            "Total Orders Open: ",OrdersTotal(),"\n",
+            "Total Orders History: ",OrdersHistoryTotal(),"\n",            
+            "Symbol: ", Symbol(),"\n",
+            "Price:  ",NormalizeDouble(Bid,4),"\n",
+            "Pip Spread:  ",MarketInfo(Symbol(),MODE_SPREAD),"\n",
+            "Lots:  ",Lots,"\n",
+            "Leverage: ",AccountLeverage(),"\n",
+            "Effective Leverage: ",AccountMargin()*AccountLeverage()/AccountEquity(),"\n",
+            "Point: ", Digits,"\n",
+            "Freezelevel: ",MarketInfo(Symbol(),MODE_FREEZELEVEL),"\n");
    
 //====================================================================
 //--------------------------------------------------------------- 6 --
@@ -198,6 +246,9 @@ void Trader(){
 
 
 }
+//=================================================================================//
+//===================================== Draw  ==================================//
+//=================================================================================//
 
 void DrawLine(string name, int bar, int bar4){
 
@@ -209,6 +260,12 @@ void DrawLine(string name, int bar, int bar4){
    
 }
 
+
+//=================================================================================//
+//===================================== void buy ==================================//
+//=================================================================================//
+
+
 void Buy(){
 
    dStopLoss = NormalizeDouble(xazz_Buy_signal_Last-30*Point,Digits);
@@ -216,6 +273,8 @@ void Buy(){
    
      dStopLoss = NormalizeDouble(Bid-30*Point,Digits);
      dTakeProfit = NormalizeDouble(Bid+30*Point,Digits);
+     
+   RefreshRates();
          
    iTicket=OrderSend(Symbol(),OP_BUY,dLots,Ask,3,(dStopLoss),(dTakeProfit),"OBV,TVI",0,Red);
    
@@ -227,18 +286,23 @@ void Buy(){
    
 }
 
+
+//==================================================================================//
+//===================================== Void Sell ==================================//
+//==================================================================================//
+
 void Sell(){
 
 
-   dStopLoss = NormalizeDouble(dStop+15*Point,Digits);
-   dTakeProfit = NormalizeDouble(dProfit-15*Point,Digits);
+   dStopLoss = NormalizeDouble(dStop+Spread*Point,Digits);
+   dTakeProfit = NormalizeDouble(dProfit-Spread*Point,Digits);
    
    if(dStopLoss < Ask)dStopLoss = NormalizeDouble(Ask+50*Point,Digits);
    if(dTakeProfit > Ask)dTakeProfit = NormalizeDouble(Ask-75*Point,Digits);
       
    
 
-   iTicket=OrderSend(Symbol(),OP_SELL,dLots,Ask,3,(dStopLoss),dTakeProfit,"OBV,TVI",0,Red);
+   iTicket=OrderSend(Symbol(),OP_SELL,dLots,Bid,3,(dStopLoss),dTakeProfit,"OBV,TVI",0,Red);
    if(iTicket>0){
       DrawLine(IntegerToString(iTicket),iMax1_Bar,iMax2_Bar);
       if(OrderSelect(iTicket,SELECT_BY_TICKET,MODE_TRADES)) Print("SELL order opened : ",OrderOpenPrice());
@@ -248,36 +312,37 @@ void Sell(){
 }
 
 
-int CloseAll(){
+//=================================================================================//
+//===================================== Lot Size ==================================//
+//=================================================================================//
 
-int total = OrdersTotal();
-  for(int i=total-1;i>=0;i--)
+
+double Lot(double dLots)                                     // User-defined function
   {
-    OrderSelect(i, SELECT_BY_POS);
-    int type   = OrderType();
-
-    bool result = false;
-    
-    switch(type)
-    {
-      //Close opened long positions
-      case OP_BUY       : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_BID), 5, Red );
-                          break;
-      
-      //Close opened short positions
-      case OP_SELL      : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_ASK), 5, Red );
-                          
-    }
-    
-    if(result == false)
-    {
-      Alert("Order " , OrderTicket() , " failed to close. Error:" , GetLastError() );
-      Sleep(3000);
-    }  
-  }
   
-  return(0);
-}
+ 
+   double Lots_New;
+   string Symb   =Symbol();                    // Symbol
+   double One_Lot=MarketInfo(Symb,MODE_MARGINREQUIRED);//!-lot cost
+   double Min_Lot=MarketInfo(Symb,MODE_MINLOT);// Min. amount of lots
+   double Step   =MarketInfo(Symb,MODE_LOTSTEP);//Step in volume changing
+   double Free   =AccountFreeMargin()*0.9;         // Free margin
+//----------------------------------------------------------------------------- 3 --
+   if (dLots>0)                                 // Volume is explicitly set..
+     {                                         // ..check it
+      double Money=dLots*One_Lot;               // Order cost
+      if(Money<=AccountFreeMargin()*0.9)           // Free margin covers it..
+         Lots_New=dLots;                        // ..accept the set one
+      else                                     // If free margin is not enough..
+         Lots_New=MathFloor(Free/One_Lot/Step)*Step;// Calculate lots
+     }
+//----------------------------------------------------------------------------- 4 --
 
-
+    
+//----------------------------------------------------------------------------- 5 --
+   if (Lots_New < Min_Lot)                     // If it is less than allowed..
+      Lots_New=Min_Lot;                        // .. then minimum
+   
+   return Lots_New;                               // Exit user-defined function
+  }
 

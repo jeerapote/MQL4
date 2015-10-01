@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
-//|                                        SugarCOG EA_V1.mq4    |
-//|                                              Version 6    | 
+//|                                      SugarCOG EA_V1.mq4   |
+//|                                               Version 1   | 
 //|                                            Date 09/2015   |
 //|                                            By Murat Aka   |
 //+------------------------------------------------------------------+
@@ -9,22 +9,20 @@
 
 extern double  Lots                    = 0.5;
 
-extern int     TakeProfit              = 100;  // In pips
+extern int     StopLoss                = 500;
 
-extern int     StopLoss                = 2000;
+extern int     Tolerance               = 100;
 
 extern bool    RiskManagamentOn        = true;
 
-extern bool    EnableStopLoss          = false;
-
-extern bool    EnableFridayClose       = false;
+extern bool    EmergencyStop           = false;
 
 
 
 
-
-
-//=================================Initialization=======================================//  
+//|.......................................................................................|
+//|......................................  Variables .....................................|
+//|.......................................................................................|  
 
 
 double         InitialBalance;    
@@ -35,7 +33,12 @@ double         InitialLots, LotsFactor;
 
 double         Spread;
 
-double         point;
+
+double         COG_upper_green;
+double         COG_blue ;
+double         COG_lower_green ;
+double         COG_lower_brown; 
+double         COG_upper_brown ;
 
 int            EquityOnMonday;
 
@@ -43,19 +46,29 @@ int            EquityOnFriday;
 
 int            StopLevel;
 
-int            MagicNumber = 2011;
+int            ticket, total;
 
-int            LEVELS      = 1;
 
-int            INCREMENT   = 1;
+int            MagicNumber       = 2015;
 
-datetime       lastTradeTime=0;
+
+int            BarsBack          = 125;
+
+datetime       lastTradeTime     =0;
 
 #define        THIS_BAR 0
 
 
-int init() {
 
+
+/*
+|---------------------------------------------------------------------------------------|
+|-----------------------------------   Initialization   --------------------------------|
+|---------------------------------------------------------------------------------------| 
+*/
+
+
+int init() {
    
    InitialBalance = AccountBalance();
    
@@ -65,31 +78,36 @@ int init() {
    
    Comment(MarketInfo(Symbol(), MODE_STOPLEVEL));
    
-
    return(0);
 }
+
+//----------------------------------------------------------------------------- 5 --
+
 
 int deinit() {
    return(0);
 }
 
-//===================================Broker Recognition=================================//
 
 
-//=====================================Trade Session=====================================//
 
-
-//======================================Time Control=====================================//
-
-
-//====================================EA Start Function==================================//
-
+/*
+|---------------------------------------------------------------------------------------|
+|---------------------------------------------------------------------------------------|
+|---------------------------------------------------------------------------------------|
+*///==================================EA Start Function================================//
 
 
 int start()
   {
 
-
+   COG_upper_green   = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 1, 0); 
+   COG_blue          = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 0, 0);
+   COG_lower_green   = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 2, 0);
+   COG_lower_brown   = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 4, 0);
+   COG_upper_brown   = iCustom(NULL,0,"Market/Center of Gravity",BarsBack, 3, 0);
+    
+    
    Balance = AccountBalance();
    
    LotsFactor = Balance/InitialBalance;
@@ -98,63 +116,53 @@ int start()
    
    Lots = Lot(Lots);
    
-   int cnt, ticket, total;
    
-   point = Point/0.00002;
+   if(EmergencyStop){
+   
+      CloseAll();
+      return 0;
+   
+   }
+   
    
    StopLevel = MarketInfo(Symbol(), MODE_STOPLEVEL);
-   //if (StopLoss < StopLevel) StopLoss = StopLevel;
    
-   if (TakeProfit < StopLevel) TakeProfit = StopLevel;
-   
-   if (INCREMENT < StopLevel) INCREMENT = StopLevel;
-   
-   
-   
-   if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)EquityOnMonday = AccountEquity();
-   if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())==16)EquityOnFriday = AccountEquity();
-  
-   if(EnableFridayClose){
-   
-    if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> 16 && EquityOnMonday/EquityOnFriday<0.95){
-   
-     CloseAll();
-     return(0);
-  
-    }
-  
-    // do not work on holidays.
-    if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> 10 && AccountEquity() >= AccountBalance()){
-  
-     CloseAll();
-     return(0);
-  
-    }
-    
-   }
-  
 
-//====================================Begin Placing Orders================================//
+/*
+|---------------------------------------------------------------------------------------|
+|---------------------------------- Begin Placing Orders -------------------------------|
+|---------------------------------------------------------------------------------------|
+*/
+
+
+
  
-   
-   //Comment(MarketInfo(Symbol(), MODE_STOPLEVEL));
-     
    Spread = MarketInfo(Symbol(),MODE_SPREAD);
    
-  
-  
    total=OrdersTotal(); 
    
     
-   if(total < 1 && lastTradeTime != Time[THIS_BAR])
+   if(lastTradeTime != Time[THIS_BAR])
    {
-   
-      
-    if(EnableStopLoss){
-     for(int cpt=1;cpt<=LEVELS;cpt++)
-     {
-      
-         ticket=OrderSend(Symbol(),OP_BUYSTOP,Lots,NormalizeDouble(Ask+cpt*INCREMENT*Point,Digits),2,0/*NormalizeDouble(Ask-cpt*INCREMENT*Point-StopLoss*Point,Digits)*/,NormalizeDouble(Ask+cpt*INCREMENT*Point+TakeProfit*Point,Digits),DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MagicNumber+2,0);
+    
+    CloseAllPending();
+    if(CountBuySell()>0)return 0;
+    
+    
+         ticket=OrderSend(
+         
+            Symbol()
+            ,OP_BUYLIMIT
+            ,Lots
+            ,StrToDouble(DoubleToStr(COG_lower_green-Tolerance*Point, Digits))//NormalizeDouble(COG_lower_green-Tolerance*Point,Digits)
+            ,2
+            ,0/*NormalizeDouble(Ask-cpt*INCREMENT*Point-StopLoss*Point,Digits)*/
+            ,NormalizeDouble(COG_blue,Digits)
+            ,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MagicNumber
+            ,0
+            
+         );
+         
          if(ticket>0)
            {
             lastTradeTime = Time[THIS_BAR];
@@ -164,7 +172,20 @@ int start()
         
          
          
-         ticket=OrderSend(Symbol(),OP_SELLSTOP,Lots,NormalizeDouble(Bid-cpt*INCREMENT*Point,Digits),2,NormalizeDouble(Bid+cpt*INCREMENT*Point+StopLoss*Point,Digits),NormalizeDouble(Bid-cpt*INCREMENT*Point-TakeProfit*Point,Digits),DoubleToStr(Bid,MarketInfo(Symbol(),MODE_DIGITS)),MagicNumber+3,0);
+         ticket=OrderSend(
+         
+            Symbol()
+            ,OP_SELLLIMIT
+            ,Lots
+            ,StrToDouble(DoubleToStr(COG_upper_green+Tolerance*Point, Digits))//NormalizeDouble(COG_upper_green+Tolerance*Point,Digits)
+            ,2
+            ,NormalizeDouble(COG_upper_green+StopLoss*Point,Digits)
+            ,NormalizeDouble(COG_blue,Digits)
+            ,DoubleToStr(Bid,MarketInfo(Symbol(),MODE_DIGITS)),MagicNumber
+            ,0
+         
+         );
+         
          if(ticket>0)
            {
             lastTradeTime = Time[THIS_BAR];
@@ -172,37 +193,12 @@ int start()
            }
          else Print("Error opening SELLSTOP order : ",GetLastError());
      
-     }
-    }
-     
-    else{
-     
-     for(cpt=1;cpt<=LEVELS;cpt++)
-     {
-      
-         ticket=OrderSend(Symbol(),OP_BUYSTOP,Lots,NormalizeDouble(Ask+cpt*INCREMENT*Point,Digits),2,0,NormalizeDouble(Ask+cpt*INCREMENT*Point+TakeProfit*Point,Digits),DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MagicNumber+2,0);
-         if(ticket>0)
-           {
-            lastTradeTime = Time[THIS_BAR];
-            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUYSTOP order opened : ",OrderOpenPrice());
-           }
-         else Print("Error opening BUYSTOP order : ",GetLastError());
-        
-         
-         
-         ticket=OrderSend(Symbol(),OP_SELLSTOP,Lots,NormalizeDouble(Bid-cpt*INCREMENT*Point,Digits),2,0,NormalizeDouble(Bid-cpt*INCREMENT*Point-TakeProfit*Point,Digits),DoubleToStr(Bid,MarketInfo(Symbol(),MODE_DIGITS)),MagicNumber+3,0);
-         if(ticket>0)
-           {
-            lastTradeTime = Time[THIS_BAR];
-            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("SELLSTOP order opened : ",OrderOpenPrice());
-           }
-         else Print("Error opening SELLSTOP order : ",GetLastError());
-     
-     }
-    }
-      
    }
     
+     
+      
+   
+ //----------------------------------------------------------------------------- 5 --
     
         Comment("GRID BarPriceAction ver 3.0\n",
             "FX Acc Server:",AccountServer(),"\n",
@@ -225,16 +221,13 @@ int start()
    return(0);
    
   }
-  
-//========================================Broker Digit Conversion=============================//
-
-  
 
 
-//===================================== CHECK PROFIT ==================================//
 
+//==========================================================================================//
+//===================================== Emergency Stop =====================================//
+//==========================================================================================//
 
-//===================================== Move to Breakeven ==================================//
 
 
 int CloseAll(){
@@ -244,8 +237,9 @@ int total = OrdersTotal();
   {
     OrderSelect(i, SELECT_BY_POS);
     int type   = OrderType();
-
-    bool result = false;
+    
+    if(OrderMagicNumber() != MagicNumber)continue;
+    bool result = true;
     
     switch(type)
     {
@@ -257,10 +251,10 @@ int total = OrdersTotal();
       case OP_SELL      : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_ASK), 5, Red );
                           break;
       
-      case OP_BUYSTOP   : result =  OrderDelete(OrderTicket());
+      case OP_BUYLIMIT   : result =  OrderDelete(OrderTicket());
                           break;
       
-      case OP_SELLSTOP  : result =  OrderDelete(OrderTicket());
+      case OP_SELLLIMIT  : result =  OrderDelete(OrderTicket());
                           
     }
     
@@ -274,8 +268,83 @@ int total = OrdersTotal();
   return(0);
 }
 
+//===================================== Count Pending ==================================//
 
+int CountBuySell(){
+
+int count = 0;
+
+int total = OrdersTotal();
+  for(int i=total-1;i>=0;i--)
+  {
+    OrderSelect(i, SELECT_BY_POS);
+    int type   = OrderType();
+
+    bool result = true;
+    
+    switch(type)
+    {
+      //Close opened long positions
+      case OP_BUY       : count++;
+                          break;
+      
+      //Close opened short positions
+      case OP_SELL      : count++;
+                          
+    }
+    
+    if(result == false)
+    {
+      Alert("Order " , OrderTicket() , "CloseAll(), failed to close. Error:" , GetLastError() );
+      Sleep(3000);
+    }  
+  }
+  
+  return(count);
+}
+
+//=============================================================================================//
+//===================================== Close Pending Orders ==================================//
+//=============================================================================================//
+
+
+int CloseAllPending(){
+
+int total = OrdersTotal();
+
+for(int i=total-1;i>=0;i--)
+  {
+    OrderSelect(i, SELECT_BY_POS);
+    int type   = OrderType();
+    
+    int Profit = OrderProfit();
+    
+    if(Profit< 0 || Profit > 0)continue;
+
+    bool result = true;
+    
+    switch(type)
+    {
+
+      
+      case OP_BUYLIMIT   : result =  OrderDelete(OrderTicket());
+                          break;
+      
+      case OP_SELLLIMIT  : result =  OrderDelete(OrderTicket());
+                          
+    }
+    
+    if(result == false)
+    {
+      Alert("Order " , OrderTicket() , " failed to close,CloseAllPending. Error:" , GetLastError() );
+      Sleep(3000);
+    }  
+  }
+  
+}
+//=================================================================================//
 //===================================== Lot Size ==================================//
+//=================================================================================//
 
 
 double Lot(double dLots)                                     // User-defined function

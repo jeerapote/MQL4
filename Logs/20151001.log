@@ -1,0 +1,185 @@
+0	00:35:29.139	Center of Gravity SUGARUSD,M1: uninit reason 4
+0	00:35:29.154	Custom indicator Center of Gravity SUGARUSD,M1: removed
+0	00:44:38.485	Custom indicator Market\Center of Gravity EURUSD,M1: loaded successfully
+0	00:44:44.343	Center of Gravity EURUSD,M1: initialized
+0	01:03:52.267	Center of Gravity EURUSD,M1: uninit reason 9
+0	01:03:52.395	Custom indicator Center of Gravity EURUSD,M1: removed
+0	11:36:17.315	Custom indicator Market\Center of Gravity EURUSD,M1: loaded successfully
+0	11:36:17.329	Center of Gravity EURUSD,M1: initialized
+0	14:34:57.901	Custom indicator TVI_v2 GBPUSD,M5: loaded successfully
+0	14:34:59.158	TVI_v2 GBPUSD,M5: initialized
+0	14:35:17.174	TVI_v2 GBPUSD,M5: uninit reason 3
+0	14:35:17.175	TVI_v2 GBPUSD,M15: initialized
+0	14:35:22.709	TVI_v2 GBPUSD,M15: uninit reason 3
+0	14:35:22.709	TVI_v2 GBPUSD,H1: initialized
+0	14:39:15.170	TVI_v2 GBPUSD,H1: uninit reason 3
+0	14:39:15.171	TVI_v2 GBPUSD,M15: initialized
+0	14:39:34.100	TVI_v2 GBPUSD,M15: uninit reason 3
+0	14:39:34.102	TVI_v2 GBPUSD,M5: initialized
+0	14:39:56.707	TVI_v2 GBPUSD,M5: uninit reason 3
+0	14:39:56.809	TVI_v2 GBPUSD,M1: initialized
+0	14:40:11.218	TVI_v2 GBPUSD,M1: uninit reason 3
+0	14:40:11.220	TVI_v2 GBPUSD,M5: initialized
+0	14:40:19.708	TVI_v2 GBPUSD,M5: uninit reason 3
+0	14:40:19.709	TVI_v2 GBPUSD,M15: initialized
+0	14:40:26.721	TVI_v2 GBPUSD,M15: uninit reason 3
+0	14:40:26.722	TVI_v2 GBPUSD,H1: initialized
+0	14:42:10.881	TVI_v2 GBPUSD,H1: uninit reason 3
+0	14:42:10.883	TVI_v2 GBPUSD,M15: initialized
+0	14:42:26.121	TVI_v2 GBPUSD,M15: uninit reason 3
+0	14:42:26.150	TVI_v2 GBPUSD,M30: initialized
+0	14:42:35.388	TVI_v2 GBPUSD,M30: uninit reason 3
+0	14:42:35.388	TVI_v2 GBPUSD,M15: initialized
+0	14:42:43.240	TVI_v2 GBPUSD,M15: uninit reason 3
+0	14:42:43.293	TVI_v2 GBPUSD,H4: initialized
+0	14:43:22.456	TVI_v2 GBPUSD,H4: uninit reason 3
+0	14:43:22.456	TVI_v2 GBPUSD,H1: initialized
+0	14:46:49.613	Custom indicator Heiken_Ashi_Smoothed GBPUSD,H1: loaded successfully
+0	14:46:50.716	Heiken_Ashi_Smoothed GBPUSD,H1: initialized
+0	14:47:02.824	Heiken_Ashi_Smoothed GBPUSD,H1: uninit reason 3
+0	14:47:02.824	TVI_v2 GBPUSD,H1: uninit reason 3
+0	14:47:02.825	Heiken_Ashi_Smoothed GBPUSD,M15: initialized
+0	14:47:02.826	TVI_v2 GBPUSD,M15: initialized
+0	14:47:17.629	Heiken_Ashi_Smoothed GBPUSD,M15: uninit reason 3
+0	14:47:17.629	TVI_v2 GBPUSD,M15: uninit reason 3
+0	14:47:17.631	Heiken_Ashi_Smoothed GBPUSD,M5: initialized
+0	14:47:17.633	TVI_v2 GBPUSD,M5: initialized
+0	14:47:24.178	Heiken_Ashi_Smoothed GBPUSD,M5: uninit reason 3
+0	14:47:24.178	TVI_v2 GBPUSD,M5: uninit reason 3
+0	14:47:24.178	Heiken_Ashi_Smoothed GBPUSD,H1: initialized
+0	14:47:24.179	TVI_v2 GBPUSD,H1: initialized
+0	14:49:23.726	Center of Gravity EURUSD,M1: uninit reason 4
+0	14:49:23.734	Custom indicator Center of Gravity EURUSD,M1: removed
+0	14:54:00.888	Heiken_Ashi_Smoothed GBPUSD,H1: uninit reason 3
+0	14:54:00.888	TVI_v2 GBPUSD,H1: uninit reason 3
+0	14:54:00.889	Heiken_Ashi_Smoothed GBPUSD,M15: initialized
+0	14:54:00.890	TVI_v2 GBPUSD,M15: initialized
+0	14:54:08.047	Heiken_Ashi_Smoothed GBPUSD,M15: uninit reason 3
+0	14:54:08.047	TVI_v2 GBPUSD,M15: uninit reason 3
+0	14:54:08.048	Heiken_Ashi_Smoothed GBPUSD,H1: initialized
+0	14:54:08.049	TVI_v2 GBPUSD,H1: initialized
+0	15:45:37.327	Heiken_Ashi_Smoothed GBPUSD,H1: uninit reason 3
+0	15:45:37.327	TVI_v2 GBPUSD,H1: uninit reason 3
+0	15:45:37.402	Heiken_Ashi_Smoothed GBPUSD,M15: initialized
+0	15:45:37.405	TVI_v2 GBPUSD,M15: initialized
+0	15:45:48.055	Heiken_Ashi_Smoothed GBPUSD,M15: uninit reason 3
+0	15:45:48.056	TVI_v2 GBPUSD,M15: uninit reason 3
+0	15:45:48.056	Heiken_Ashi_Smoothed GBPUSD,H1: initialized
+0	15:45:48.057	TVI_v2 GBPUSD,H1: initialized
+0	16:11:59.427	Expert EA 2015\SugarCOG EA_V1 EURUSD,H1: loaded successfully
+0	16:24:10.254	Custom indicator EJ_CandleTime GBPUSD,H1: loaded successfully
+0	16:24:11.394	EJ_CandleTime GBPUSD,H1: initialized
+0	16:25:12.141	Custom indicator BarTimer GBPUSD,H1: loaded successfully
+0	16:25:13.162	BarTimer GBPUSD,H1: initialized
+0	16:25:31.361	Heiken_Ashi_Smoothed GBPUSD,H1: uninit reason 1
+0	16:25:31.362	Custom indicator Heiken_Ashi_Smoothed GBPUSD,H1: removed
+0	16:34:57.838	EJ_CandleTime GBPUSD,H1: uninit reason 2
+0	16:34:57.838	Custom indicator EJ_CandleTime GBPUSD,H1: removed
+0	16:34:57.840	Custom indicator EJ_CandleTime GBPUSD,H1: loaded successfully
+0	16:34:57.841	EJ_CandleTime GBPUSD,H1: initialized
+0	16:35:28.474	EJ_CandleTime GBPUSD,H1: uninit reason 3
+0	16:35:28.474	BarTimer GBPUSD,H1: uninit reason 3
+0	16:35:28.474	TVI_v2 GBPUSD,H1: uninit reason 3
+0	16:35:28.476	EJ_CandleTime GBPUSD,M15: initialized
+0	16:35:28.476	BarTimer GBPUSD,M15: initialized
+0	16:35:28.477	TVI_v2 GBPUSD,M15: initialized
+0	16:35:38.042	EJ_CandleTime GBPUSD,M15: uninit reason 3
+0	16:35:38.042	BarTimer GBPUSD,M15: uninit reason 3
+0	16:35:38.042	TVI_v2 GBPUSD,M15: uninit reason 3
+0	16:35:38.085	EJ_CandleTime GBPUSD,M30: initialized
+0	16:35:38.085	BarTimer GBPUSD,M30: initialized
+0	16:35:38.085	TVI_v2 GBPUSD,M30: initialized
+0	16:35:44.257	EJ_CandleTime GBPUSD,M30: uninit reason 3
+0	16:35:44.257	BarTimer GBPUSD,M30: uninit reason 3
+0	16:35:44.257	TVI_v2 GBPUSD,M30: uninit reason 3
+0	16:35:44.257	EJ_CandleTime GBPUSD,M15: initialized
+0	16:35:44.257	BarTimer GBPUSD,M15: initialized
+0	16:35:44.257	TVI_v2 GBPUSD,M15: initialized
+0	16:36:01.993	EJ_CandleTime GBPUSD,M15: uninit reason 3
+0	16:36:01.993	BarTimer GBPUSD,M15: uninit reason 3
+0	16:36:01.993	TVI_v2 GBPUSD,M15: uninit reason 3
+0	16:36:02.065	EJ_CandleTime GBPUSD,M5: initialized
+0	16:36:02.066	BarTimer GBPUSD,M5: initialized
+0	16:36:02.066	TVI_v2 GBPUSD,M5: initialized
+0	16:36:21.370	EJ_CandleTime GBPUSD,M5: uninit reason 3
+0	16:36:21.370	BarTimer GBPUSD,M5: uninit reason 3
+0	16:36:21.370	TVI_v2 GBPUSD,M5: uninit reason 3
+0	16:36:21.371	EJ_CandleTime GBPUSD,H1: initialized
+0	16:36:21.371	BarTimer GBPUSD,H1: initialized
+0	16:36:21.371	TVI_v2 GBPUSD,H1: initialized
+0	16:39:14.268	Custom indicator BarTimer EURUSD,M5: loaded successfully
+0	16:39:15.314	BarTimer EURUSD,M5: initialized
+0	16:41:22.577	Custom indicator EJ_CandleTime EURUSD,M5: loaded successfully
+0	16:41:23.597	EJ_CandleTime EURUSD,M5: initialized
+0	16:43:45.635	EJ_CandleTime GBPUSD,H1: uninit reason 3
+0	16:43:45.635	BarTimer GBPUSD,H1: uninit reason 3
+0	16:43:45.635	TVI_v2 GBPUSD,H1: uninit reason 3
+0	16:43:45.636	EJ_CandleTime GBPUSD,M15: initialized
+0	16:43:45.636	BarTimer GBPUSD,M15: initialized
+0	16:43:45.637	TVI_v2 GBPUSD,M15: initialized
+0	16:46:06.825	BarTimer EURUSD,M5: uninit reason 3
+0	16:46:06.825	EJ_CandleTime EURUSD,M5: uninit reason 3
+0	16:46:06.827	BarTimer EURUSD,M15: initialized
+0	16:46:06.827	EJ_CandleTime EURUSD,M15: initialized
+0	16:46:20.788	BarTimer EURUSD,M15: uninit reason 3
+0	16:46:20.788	EJ_CandleTime EURUSD,M15: uninit reason 3
+0	16:46:20.791	BarTimer EURUSD,M5: initialized
+0	16:46:20.791	EJ_CandleTime EURUSD,M5: initialized
+0	16:50:52.336	BarTimer EURUSD,M5: uninit reason 3
+0	16:50:52.336	EJ_CandleTime EURUSD,M5: uninit reason 3
+0	16:50:52.342	BarTimer EURUSD,M1: initialized
+0	16:50:52.343	EJ_CandleTime EURUSD,M1: initialized
+0	16:50:58.366	BarTimer EURUSD,M1: uninit reason 3
+0	16:50:58.366	EJ_CandleTime EURUSD,M1: uninit reason 3
+0	16:50:58.367	BarTimer EURUSD,M5: initialized
+0	16:50:58.367	EJ_CandleTime EURUSD,M5: initialized
+0	16:51:38.605	BarTimer EURUSD,M5: uninit reason 3
+0	16:51:38.605	EJ_CandleTime EURUSD,M5: uninit reason 3
+0	16:51:38.606	BarTimer EURUSD,M15: initialized
+0	16:51:38.606	EJ_CandleTime EURUSD,M15: initialized
+0	16:51:43.405	BarTimer EURUSD,M15: uninit reason 3
+0	16:51:43.405	EJ_CandleTime EURUSD,M15: uninit reason 3
+0	16:51:43.406	BarTimer EURUSD,M5: initialized
+0	16:51:43.406	EJ_CandleTime EURUSD,M5: initialized
+0	16:51:52.181	BarTimer EURUSD,M5: uninit reason 3
+0	16:51:52.181	EJ_CandleTime EURUSD,M5: uninit reason 3
+0	16:51:52.182	BarTimer EURUSD,H1: initialized
+0	16:51:52.182	EJ_CandleTime EURUSD,H1: initialized
+0	16:51:59.070	BarTimer EURUSD,H1: uninit reason 3
+0	16:51:59.070	EJ_CandleTime EURUSD,H1: uninit reason 3
+0	16:51:59.071	BarTimer EURUSD,M15: initialized
+0	16:51:59.071	EJ_CandleTime EURUSD,M15: initialized
+0	16:52:10.694	BarTimer EURUSD,M15: uninit reason 3
+0	16:52:10.694	EJ_CandleTime EURUSD,M15: uninit reason 3
+0	16:52:10.694	BarTimer EURUSD,M5: initialized
+0	16:52:10.694	EJ_CandleTime EURUSD,M5: initialized
+0	16:53:52.635	EJ_CandleTime GBPUSD,M15: uninit reason 3
+0	16:53:52.635	BarTimer GBPUSD,M15: uninit reason 3
+0	16:53:52.635	TVI_v2 GBPUSD,M15: uninit reason 3
+0	16:53:52.638	EJ_CandleTime GBPUSD,M5: initialized
+0	16:53:52.638	BarTimer GBPUSD,M5: initialized
+0	16:53:52.638	TVI_v2 GBPUSD,M5: initialized
+0	16:53:57.500	EJ_CandleTime GBPUSD,M5: uninit reason 3
+0	16:53:57.500	BarTimer GBPUSD,M5: uninit reason 3
+0	16:53:57.500	TVI_v2 GBPUSD,M5: uninit reason 3
+0	16:53:57.501	EJ_CandleTime GBPUSD,M15: initialized
+0	16:53:57.501	BarTimer GBPUSD,M15: initialized
+0	16:53:57.501	TVI_v2 GBPUSD,M15: initialized
+0	16:54:44.931	EJ_CandleTime GBPUSD,M15: uninit reason 9
+0	16:54:44.931	BarTimer GBPUSD,M15: uninit reason 9
+0	16:54:44.931	TVI_v2 GBPUSD,M15: uninit reason 9
+0	16:54:44.931	BarTimer EURUSD,M5: uninit reason 9
+0	16:54:44.931	EJ_CandleTime EURUSD,M5: uninit reason 9
+0	16:54:45.000	Custom indicator EJ_CandleTime GBPUSD,M15: removed
+0	16:54:45.000	Custom indicator BarTimer GBPUSD,M15: removed
+0	16:54:45.001	Custom indicator TVI_v2 GBPUSD,M15: removed
+0	16:54:45.008	Custom indicator BarTimer EURUSD,M5: removed
+0	16:54:45.008	Custom indicator EJ_CandleTime EURUSD,M5: removed
+0	16:54:53.987	Custom indicator EJ_CandleTime GBPUSD,M15: loaded successfully
+0	16:54:53.989	Custom indicator BarTimer GBPUSD,M15: loaded successfully
+0	16:54:53.992	Custom indicator TVI_v2 GBPUSD,M15: loaded successfully
+0	16:54:53.994	EJ_CandleTime GBPUSD,M15: initialized
+0	16:54:53.996	BarTimer GBPUSD,M15: initialized
+0	16:54:53.998	TVI_v2 GBPUSD,M15: initialized
+0	16:54:54.017	Custom indicator BarTimer EURUSD,M5: loaded successfully
+0	16:54:54.019	Custom indicator EJ_CandleTime EURUSD,M5: loaded successfully

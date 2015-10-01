@@ -1,1 +1,53 @@
 0	22:47:11.110	Compiling 'EA 2015\mGRID EA_V6'
+0	23:14:21.186	Custom indicator Market\Center of Gravity SUGARUSD,H1: loaded successfully
+0	23:14:22.688	Center of Gravity SUGARUSD,H1: initialized
+0	23:14:30.110	Center of Gravity SUGARUSD,H1: uninit reason 3
+0	23:14:30.146	Center of Gravity SUGARUSD,H4: initialized
+0	23:14:35.022	Center of Gravity SUGARUSD,H4: uninit reason 3
+0	23:14:35.066	Center of Gravity SUGARUSD,Daily: initialized
+0	23:14:44.366	Center of Gravity SUGARUSD,Daily: uninit reason 3
+0	23:14:44.366	Center of Gravity SUGARUSD,H1: initialized
+0	23:14:46.709	Center of Gravity SUGARUSD,H1: uninit reason 3
+0	23:14:46.710	Center of Gravity SUGARUSD,H4: initialized
+0	23:14:48.325	Center of Gravity SUGARUSD,H4: uninit reason 3
+0	23:14:48.325	Center of Gravity SUGARUSD,Daily: initialized
+0	23:14:51.077	Center of Gravity SUGARUSD,Daily: uninit reason 3
+0	23:14:51.078	Center of Gravity SUGARUSD,M15: initialized
+0	23:15:23.173	Center of Gravity SUGARUSD,M15: uninit reason 3
+0	23:15:23.242	Center of Gravity SUGARUSD,M5: initialized
+0	23:15:28.101	Center of Gravity SUGARUSD,M5: uninit reason 3
+0	23:15:28.105	Center of Gravity SUGARUSD,M1: initialized
+0	23:15:40.973	Center of Gravity SUGARUSD,M1: uninit reason 5
+0	23:15:40.997	Center of Gravity SUGARUSD,M1: initialized
+0	23:17:28.370	Center of Gravity SUGARUSD,M1: uninit reason 3
+0	23:17:28.372	Center of Gravity SUGARUSD,M5: initialized
+0	23:17:38.901	Center of Gravity SUGARUSD,M5: uninit reason 3
+0	23:17:38.902	Center of Gravity SUGARUSD,M15: initialized
+0	23:17:41.676	Center of Gravity SUGARUSD,M15: uninit reason 3
+0	23:17:41.679	Center of Gravity SUGARUSD,M1: initialized
+0	23:18:21.881	Center of Gravity SUGARUSD,M1: uninit reason 5
+0	23:18:21.907	Center of Gravity SUGARUSD,M1: initialized
+0	23:18:44.554	Center of Gravity SUGARUSD,M1: uninit reason 5
+0	23:18:44.574	Center of Gravity SUGARUSD,M1: initialized
+0	23:18:51.770	Center of Gravity SUGARUSD,M1: uninit reason 3
+0	23:18:51.771	Center of Gravity SUGARUSD,M5: initialized
+0	23:18:53.058	Center of Gravity SUGARUSD,M5: uninit reason 3
+0	23:18:53.059	Center of Gravity SUGARUSD,M15: initialized
+0	23:18:53.859	Center of Gravity SUGARUSD,M15: uninit reason 3
+0	23:18:53.859	Center of Gravity SUGARUSD,M30: initialized
+0	23:18:55.554	Center of Gravity SUGARUSD,M30: uninit reason 3
+0	23:18:55.554	Center of Gravity SUGARUSD,H1: initialized
+0	23:18:57.370	Center of Gravity SUGARUSD,H1: uninit reason 3
+0	23:18:57.371	Center of Gravity SUGARUSD,H4: initialized
+0	23:19:01.434	Center of Gravity SUGARUSD,H4: uninit reason 3
+0	23:19:01.434	Center of Gravity SUGARUSD,Daily: initialized
+0	23:19:10.210	Center of Gravity SUGARUSD,Daily: uninit reason 3
+0	23:19:10.227	Center of Gravity SUGARUSD,Weekly: initialized
+0	23:19:14.586	Center of Gravity SUGARUSD,Weekly: uninit reason 3
+0	23:19:14.608	Center of Gravity SUGARUSD,Monthly: initialized
+0	23:19:16.517	Center of Gravity SUGARUSD,Monthly: uninit reason 3
+0	23:19:16.517	Center of Gravity SUGARUSD,Weekly: initialized
+0	23:19:43.945	Center of Gravity SUGARUSD,Weekly: uninit reason 3
+0	23:19:43.948	Center of Gravity SUGARUSD,M1: initialized
+0	23:20:37.880	Center of Gravity SUGARUSD,M1: uninit reason 5
+0	23:20:37.904	Center of Gravity SUGARUSD,M1: initialized
