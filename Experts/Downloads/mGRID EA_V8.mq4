@@ -9,7 +9,7 @@
 
 extern double     UpperLimit              =0.14;  // In pips
 extern double     LowerLimit              =0.08;
-extern double     Lots                    =0.02;
+extern double     Lots                    =20;
 
  
 int               LEVELS;
@@ -71,7 +71,7 @@ int start()
     
     
    
-    LEVELS         = AccountBalance()/10;
+    LEVELS         = AccountBalance()/1000;
     INCREMENT      = (UpperLimit-LowerLimit)/Point/LEVELS;
     
     StopLevel      = MarketInfo(Symbol(), MODE_STOPLEVEL);
