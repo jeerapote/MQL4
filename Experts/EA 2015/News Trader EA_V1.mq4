@@ -20,7 +20,7 @@ int OnInit()
                            ,"CalendarFX-I-A16"
                            ,1
                            ,0
-                        );
+                     );
    
    Comment(news/60," h ", 60*(news%60)/100 );
 //---
