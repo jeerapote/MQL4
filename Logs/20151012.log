@@ -1,0 +1,16 @@
+0	14:21:16.568	Custom indicator CalendarFX-I-A16 EURUSD,M15: loaded successfully
+0	14:21:16.570	Expert EA 2015\News Trader EA_V1 EURUSD,M15: loaded successfully
+0	14:21:16.596	CalendarFX-I-A16 EURUSD,M15: initialized
+0	14:21:17.552	Custom indicator NewsCal-v1 GBPUSD,H1: loaded successfully
+0	14:21:17.561	NewsCal-v1 GBPUSD,H1: initialized
+0	14:21:18.308	Custom indicator CalendarFX-I-A16 EURUSD,M15: loaded successfully
+0	14:21:18.317	CalendarFX-I-A16 EURUSD,M15: initialized
+0	14:21:18.325	News Trader EA_V1 EURUSD,M15: initialized
+3	14:48:55.515	News Trader EA_V1 EURUSD,M15: cannot refresh history [4073]
+3	14:48:55.515	News Trader EA_V1 EURUSD,M15: predefined variables wrong initialization [0 - 17508]
+3	14:54:08.468	News Trader EA_V1 EURUSD,M15: cannot refresh history [4073]
+3	14:54:08.468	News Trader EA_V1 EURUSD,M15: predefined variables wrong initialization [0 - 17508]
+3	14:56:05.242	News Trader EA_V1 EURUSD,M15: cannot refresh history [4073]
+3	14:56:05.242	News Trader EA_V1 EURUSD,M15: predefined variables wrong initialization [0 - 17508]
+3	14:57:27.555	News Trader EA_V1 EURUSD,M15: cannot refresh history [4073]
+3	14:57:27.555	News Trader EA_V1 EURUSD,M15: predefined variables wrong initialization [0 - 17508]

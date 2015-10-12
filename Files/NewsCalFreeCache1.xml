@@ -73,6 +73,15 @@
 		<previous />
 	</event>
 	<event>
+		<title>MPC Member Weale Speaks</title>
+		<country>GBP</country>
+		<date><![CDATA[10-12-2015]]></date>
+		<time><![CDATA[1:00pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
 		<title>CB Leading Index m/m</title>
 		<country>GBP</country>
 		<date><![CDATA[10-12-2015]]></date>
@@ -325,6 +334,15 @@
 		<previous><![CDATA[12.1]]></previous>
 	</event>
 	<event>
+		<title>MPC Member Vlieghe Speaks</title>
+		<country>GBP</country>
+		<date><![CDATA[10-13-2015]]></date>
+		<time><![CDATA[9:00am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
 		<title>NFIB Small Business Index</title>
 		<country>USD</country>
 		<date><![CDATA[10-13-2015]]></date>
@@ -332,6 +350,15 @@
 		<impact><![CDATA[Low]]></impact>
 		<forecast><![CDATA[95.6]]></forecast>
 		<previous><![CDATA[95.9]]></previous>
+	</event>
+	<event>
+		<title>MPC Member McCafferty Speaks</title>
+		<country>GBP</country>
+		<date><![CDATA[10-13-2015]]></date>
+		<time><![CDATA[10:30am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
 	</event>
 	<event>
 		<title>Federal Budget Balance</title>
@@ -654,6 +681,15 @@
 		<date><![CDATA[10-16-2015]]></date>
 		<time><![CDATA[12:30am]]></time>
 		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>BOJ Gov Kuroda Speaks</title>
+		<country>JPY</country>
+		<date><![CDATA[10-16-2015]]></date>
+		<time><![CDATA[6:35am]]></time>
+		<impact><![CDATA[High]]></impact>
 		<forecast />
 		<previous />
 	</event>
