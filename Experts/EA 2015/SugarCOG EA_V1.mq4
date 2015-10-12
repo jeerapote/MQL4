@@ -347,31 +347,3 @@ for(int i=total-1;i>=0;i--)
 //=================================================================================//
 
 
-double Lot(double dLots)                                     // User-defined function
-  {
-  
- 
-   double Lots_New;
-   string Symb   =Symbol();                    // Symbol
-   double One_Lot=MarketInfo(Symb,MODE_MARGINREQUIRED);//!-lot cost
-   double Min_Lot=MarketInfo(Symb,MODE_MINLOT);// Min. amount of lots
-   double Step   =MarketInfo(Symb,MODE_LOTSTEP);//Step in volume changing
-   double Free   =AccountFreeMargin()*0.9;         // Free margin
-//----------------------------------------------------------------------------- 3 --
-   if (dLots>0)                                 // Volume is explicitly set..
-     {                                         // ..check it
-      double Money=dLots*One_Lot;               // Order cost
-      if(Money<=AccountFreeMargin()*0.9)           // Free margin covers it..
-         Lots_New=dLots;                        // ..accept the set one
-      else                                     // If free margin is not enough..
-         Lots_New=MathFloor(Free/One_Lot/Step)*Step;// Calculate lots
-     }
-//----------------------------------------------------------------------------- 4 --
-
-    
-//----------------------------------------------------------------------------- 5 --
-   if (Lots_New < Min_Lot)                     // If it is less than allowed..
-      Lots_New=Min_Lot;                        // .. then minimum
-   
-   return Lots_New;                               // Exit user-defined function
-  }

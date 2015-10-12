@@ -1,0 +1,38 @@
+0	00:05:36.522	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
+0	00:05:36.526	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	00:06:45.705	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
+0	00:06:45.707	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	00:15:32.506	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
+0	00:15:32.508	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	02:43:36.484	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 9
+0	02:43:36.531	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: removed
+0	12:06:18.409	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
+0	12:06:18.461	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	12:07:18.812	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 4
+0	12:07:18.875	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: removed
+0	12:07:19.125	Custom indicator CalendarFX-I-A16 EURUSD,M15: loaded successfully
+0	12:07:19.140	Expert EA 2015\News Trader EA_V1 EURUSD,M15: loaded successfully
+0	12:07:19.265	CalendarFX-I-A16 EURUSD,M15: initialized
+0	12:07:21.517	Custom indicator NewsCal-v1 GBPUSD,H1: loaded successfully
+0	12:07:21.798	NewsCal-v1 GBPUSD,H1: initialized
+0	12:07:22.658	Custom indicator CalendarFX-I-A16 EURUSD,M15: loaded successfully
+0	12:07:22.658	CalendarFX-I-A16 EURUSD,M15: initialized
+0	12:07:22.705	News Trader EA_V1 EURUSD,M15: initialized
+0	13:41:09.721	NewsCal-v1 GBPUSD,H1: deinitialized
+0	13:41:09.721	NewsCal-v1 GBPUSD,H1: uninit reason 3
+0	13:41:09.737	NewsCal-v1 GBPUSD,Daily: initialized
+0	13:41:12.019	NewsCal-v1 GBPUSD,Daily: deinitialized
+0	13:41:12.019	NewsCal-v1 GBPUSD,Daily: uninit reason 3
+0	13:41:12.019	NewsCal-v1 GBPUSD,H1: initialized
+0	22:12:10.232	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
+0	22:12:10.326	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	22:31:54.251	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 4
+0	22:31:54.298	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: removed
+0	22:31:54.486	Custom indicator CalendarFX-I-A16 EURUSD,M15: loaded successfully
+0	22:31:54.486	Expert EA 2015\News Trader EA_V1 EURUSD,M15: loaded successfully
+0	22:31:54.517	CalendarFX-I-A16 EURUSD,M15: initialized
+0	22:31:55.799	Custom indicator NewsCal-v1 GBPUSD,H1: loaded successfully
+0	22:31:55.830	NewsCal-v1 GBPUSD,H1: initialized
+0	22:31:56.978	Custom indicator CalendarFX-I-A16 EURUSD,M15: loaded successfully
+0	22:31:56.993	CalendarFX-I-A16 EURUSD,M15: initialized
+0	22:31:56.993	News Trader EA_V1 EURUSD,M15: initialized
