@@ -172,19 +172,10 @@
 		<previous><![CDATA[1]]></previous>
 	</event>
 	<event>
-		<title>Foreign Direct Investment ytd/y</title>
-		<country>CNY</country>
-		<date><![CDATA[10-13-2015]]></date>
-		<time><![CDATA[3:03am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[9.2%]]></previous>
-	</event>
-	<event>
 		<title>Trade Balance</title>
 		<country>CNY</country>
 		<date><![CDATA[10-13-2015]]></date>
-		<time><![CDATA[4:03am]]></time>
+		<time><![CDATA[3:08am]]></time>
 		<impact><![CDATA[High]]></impact>
 		<forecast><![CDATA[46.9B]]></forecast>
 		<previous><![CDATA[60.2B]]></previous>
@@ -202,7 +193,7 @@
 		<title>Prelim Machine Tool Orders y/y</title>
 		<country>JPY</country>
 		<date><![CDATA[10-13-2015]]></date>
-		<time><![CDATA[6:00am]]></time>
+		<time><![CDATA[5:58am]]></time>
 		<impact><![CDATA[Low]]></impact>
 		<forecast />
 		<previous><![CDATA[-16.5%]]></previous>
@@ -233,24 +224,6 @@
 		<impact><![CDATA[Medium]]></impact>
 		<forecast><![CDATA[-0.1%]]></forecast>
 		<previous><![CDATA[-0.7%]]></previous>
-	</event>
-	<event>
-		<title>New Loans</title>
-		<country>CNY</country>
-		<date><![CDATA[10-13-2015]]></date>
-		<time><![CDATA[8:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[900B]]></forecast>
-		<previous><![CDATA[810B]]></previous>
-	</event>
-	<event>
-		<title>M2 Money Supply y/y</title>
-		<country>CNY</country>
-		<date><![CDATA[10-13-2015]]></date>
-		<time><![CDATA[8:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[13.1%]]></forecast>
-		<previous><![CDATA[13.3%]]></previous>
 	</event>
 	<event>
 		<title>HPI y/y</title>
@@ -355,19 +328,28 @@
 		<title>MPC Member McCafferty Speaks</title>
 		<country>GBP</country>
 		<date><![CDATA[10-13-2015]]></date>
-		<time><![CDATA[10:30am]]></time>
+		<time><![CDATA[10:00am]]></time>
 		<impact><![CDATA[Medium]]></impact>
 		<forecast />
 		<previous />
 	</event>
 	<event>
-		<title>Federal Budget Balance</title>
-		<country>USD</country>
+		<title>MPC Member Haldane Speaks</title>
+		<country>GBP</country>
 		<date><![CDATA[10-13-2015]]></date>
-		<time><![CDATA[6:00pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[93.8B]]></forecast>
-		<previous><![CDATA[-64.4B]]></previous>
+		<time><![CDATA[5:00pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>RBNZ Gov Wheeler Speaks</title>
+		<country>NZD</country>
+		<date><![CDATA[10-13-2015]]></date>
+		<time><![CDATA[8:10pm]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast />
+		<previous />
 	</event>
 	<event>
 		<title>Westpac Consumer Sentiment</title>
@@ -568,6 +550,15 @@
 		<previous><![CDATA[6.2%]]></previous>
 	</event>
 	<event>
+		<title>Foreign Direct Investment ytd/y</title>
+		<country>CNY</country>
+		<date><![CDATA[10-15-2015]]></date>
+		<time><![CDATA[3:03am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[9.2%]]></previous>
+	</event>
+	<event>
 		<title>Revised Industrial Production m/m</title>
 		<country>JPY</country>
 		<date><![CDATA[10-15-2015]]></date>
@@ -584,6 +575,24 @@
 		<impact><![CDATA[Low]]></impact>
 		<forecast><![CDATA[0.0%]]></forecast>
 		<previous><![CDATA[0.2%]]></previous>
+	</event>
+	<event>
+		<title>New Loans</title>
+		<country>CNY</country>
+		<date><![CDATA[10-15-2015]]></date>
+		<time><![CDATA[8:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[900B]]></forecast>
+		<previous><![CDATA[810B]]></previous>
+	</event>
+	<event>
+		<title>M2 Money Supply y/y</title>
+		<country>CNY</country>
+		<date><![CDATA[10-15-2015]]></date>
+		<time><![CDATA[8:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[13.1%]]></forecast>
+		<previous><![CDATA[13.3%]]></previous>
 	</event>
 	<event>
 		<title>Spanish 10-y Bond Auction</title>
@@ -667,6 +676,15 @@
 		<previous><![CDATA[3.1M]]></previous>
 	</event>
 	<event>
+		<title>Federal Budget Balance</title>
+		<country>USD</country>
+		<date><![CDATA[10-15-2015]]></date>
+		<time><![CDATA[6:00pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[93.8B]]></forecast>
+		<previous><![CDATA[-64.4B]]></previous>
+	</event>
+	<event>
 		<title>CPI q/q</title>
 		<country>NZD</country>
 		<date><![CDATA[10-15-2015]]></date>
@@ -728,6 +746,15 @@
 		<impact><![CDATA[Low]]></impact>
 		<forecast><![CDATA[22.2B]]></forecast>
 		<previous><![CDATA[22.4B]]></previous>
+	</event>
+	<event>
+		<title>MPC Member Forbes Speaks</title>
+		<country>GBP</country>
+		<date><![CDATA[10-16-2015]]></date>
+		<time><![CDATA[10:30am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
 	</event>
 	<event>
 		<title>Foreign Securities Purchases</title>

@@ -144,6 +144,11 @@ int start(){
    {
       EquityOnMonday = AccountEquity();
       exitFriday=false;
+      exit = false;
+      GridDisabled=false;
+      retracementDisabled = false;
+      setup = false;
+      lastTradeTime = Time[THIS_BAR];
       
    }
    

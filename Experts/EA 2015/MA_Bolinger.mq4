@@ -11,7 +11,7 @@
 //--- Inputs
 input double               Lots                    =0.1;
 input double               MaximumRisk             =0.02;
-input int                  DistanceInPoints        =500;
+input int                  DistanceInPoints        =300;
 input double               DecreaseFactor          =3;
 input int                  MovingPeriod            =200;
 input int                  MovingShift             =6;

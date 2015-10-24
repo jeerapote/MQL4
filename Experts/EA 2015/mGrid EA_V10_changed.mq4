@@ -14,15 +14,7 @@
 //---- input parameters ---------------------------------------------+
 
 
-extern bool                SLOWKILLSWITCH          =false;
-extern bool                EMERGENCYSTOP_Hedge     =
-extern bool                EMERGENCYSTOP_Close     =
 extern double              LOTS                    =0.2;
-extern bool                EnableDynamicLots       =true;
-extern bool                DynamicEquityUSD        =1000;
-extern bool                DynamicEquityLots       =0.1;
-
-
 extern double              STOPLOSS                =2500;
 extern int                 INCREMENT               =80;
 extern int                 RETRACEMENT             =150;
@@ -32,10 +24,7 @@ extern int                 CloseAtProfit           =40;
 extern bool                EnableRetracement       =true;
 extern bool                EnableBolinAndWpr       =false;
 extern ENUM_TIMEFRAMES     TIMEFRAME               =PERIOD_M1;
-extern bool                EnableFridayClose       =false;
-extern bool                FridayCloseTime         =14;
-extern bool                FridayLoopCloseTime     =18;
-
+extern bool                EnableFridayClose       =true;
 extern int                 MAGIC                   =1803;
 
 
@@ -52,24 +41,18 @@ int           EquityOnMonday;
 int           EquityOnFriday;
 bool          Enter=true;
 
-
 int           Tally, LOrds,
               SOrds, PendBuy, PendSell;
 int           Spread;
 int           StopLevel;
 int           ticket;
 
-double        initialLots;
-double        initialEquity;
-
 double        maxLots=0;
-double        dynamicFactor;
 
 double        lastAskPrice;
 double        lastBidPrice;
 
 bool          setup = false;
-bool          exit = false;
 
 
 
@@ -83,8 +66,6 @@ double        requiredLots            =300*0.01;
 int           TSwap;
 
 double        high,low,difference;
-
-double        old_dynamic_equity_lotsize;
 
 datetime      lastTradeTime=0;
 
@@ -103,10 +84,6 @@ int init()
     
    
   // Comment(wpr+" "+BolingerLowerBand);
-  initialLots = LOTS;
-  initialEquity = AccountEquity();
-  
-  old_dynamic_equity_lotsize = LOTS; 
         
 //+------------------------------------------------------------------+
    return(0);
@@ -132,15 +109,10 @@ int deinit()
 
 int start(){
     
-    
-   if(exit)return 0;
-   
-   DynamicLots();
  
    if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)EquityOnMonday = AccountEquity();
    if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())==16)EquityOnFriday = AccountEquity();
    
-
    
    if(Bid > UpperLimit || Bid < LowerLimit){
     
@@ -168,28 +140,18 @@ int start(){
    // do not work on holidays.
    if(EnableFridayClose){ 
    
-     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayLoopCloseTime && EquityOnMonday/EquityOnFriday<0.95){
-   
-        while(OrdersTotal()!=0){
-      
-         EndSession();
-         
-        }
-        
-       exit = true;
-       return 0; 
-      
-     }
-     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayCloseTime && AccountEquity() >= AccountBalance()){
+     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> 16 && EquityOnMonday/EquityOnFriday<0.95){
+       while(OrdersTotal()!=0){
+       EndSession();}
+       return(0);
   
-        while(OrdersTotal()!=0){
-      
-         EndSession();
-         
-        }
-      
-       exit = true;
-       return 0;
+     }
+  
+     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> 10 && AccountEquity() >= AccountBalance()){
+  
+       while(OrdersTotal()!=0){
+       EndSession();}
+       return(0);
   
      }
     
@@ -253,6 +215,10 @@ int start(){
             Print("sell_stop");
             
             
+            
+         
+
+               
                
             retracementDisabled = true;
             //Print(OrderType());
@@ -283,8 +249,6 @@ int start(){
          EndSession();
          
       }
-      
-      if(SLOWKILLSWITCH)exit=true;
       
       /*
       int x=1;
@@ -357,7 +321,7 @@ int Retracement(){
        
             for(int cpt=1;cpt<=2;cpt++){
 
-               ticket = OrderSend(Symbol(), OP_SELLSTOP, LOTS*LotsFactor, Initial-cpt*INCREMENT*Point, 2, 0, 0, "comment", 1000, 0);
+               ticket = OrderSend(Symbol(), OP_SELLSTOP, LOTS*LotsFactor, Initial-cpt*INCREMENT*Point, 2, 0, 0, "comment", 1000, 0,clrRed);
                if(ticket>0){
                   lastTradeTime = Time[THIS_BAR];
                   if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("SELLSTOP order opened : ",OrderOpenPrice());
@@ -365,7 +329,7 @@ int Retracement(){
                else Print("Error opening SELLSTOP order : ",GetLastError());
                
                
-               ticket = OrderSend(Symbol(), OP_BUYSTOP, LOTS*LotsFactor, Initial+cpt*INCREMENT*Point, 2, 0, 0, "comment", 1000, 0);
+               ticket = OrderSend(Symbol(), OP_BUYSTOP, LOTS*LotsFactor, Initial+cpt*INCREMENT*Point, 2, 0, 0, "comment", 1000, 0,clrBlue);
                if(ticket>0){
                   lastTradeTime = Time[THIS_BAR];
                   if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUYSTOP order opened : ",OrderOpenPrice());
@@ -377,23 +341,6 @@ int Retracement(){
         
        return 0;
 }
-
-
-
-//========== FUNCTION LotCalculation
-int KillSwitch(){
-
-
-
-
-
- return 0;
-
-}
-
-
-
-
 
 //========== FUNCTION LotCalculation
 
@@ -426,34 +373,6 @@ double Lot(double dLots)                         // User-defined function
    return Lots_New;                               // Exit user-defined function
   }
 
-
-
-
-//========== FUNCTION Dynamic Lots
-
-int DynamicLots(){
-
-
- if(AccountBalance() > initialEquity + DynamicEquityUSD){
-     
-     
-    
-     double new_dynamic_equity_lotsize = old_dynamic_equity_lotsize + DynamicEquityLots;
-      
-     LOTS = new_dynamic_equity_lotsize ;
-     
-     dynamicFactor = new_dynamic_equity_lotsize/old_dynamic_equity_lotsize; 
-     
-     old_dynamic_equity_lotsize = LOTS;
-     
-     CloseAtProfit = CloseAtProfit*dynamicFactor;
- 
- }
-
-
-return 0;
-
-}
 
 
 
@@ -591,6 +510,7 @@ int CheckBuyGrid(){
                                  ,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS))
                                  ,MAGIC
                                  ,0
+                                 ,clrBlue
                                  
                                );  
               if(ticket>0){
@@ -647,7 +567,6 @@ for(int i=total-1;i>=0;i--)
 
 bool EndSession()
 {
-
    int cpt, total=OrdersTotal();
    
    
