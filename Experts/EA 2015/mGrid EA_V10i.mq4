@@ -31,6 +31,9 @@ extern int                 RETRACEMENT             =150;
 extern int                 RANGE                   =2000;
 extern double              DIFFERENCE              =150;
 extern int                 LotsFactor              =10; 
+
+extern bool                EnableProfitPips        =true;
+extern int                 CloseAtProfitPips       =40;
 extern int                 CloseAtProfit           =40;
 extern bool                EnableRetracement       =true;
 extern bool                EnableBolinAndWpr       =false;
@@ -52,10 +55,7 @@ extern int                 MAGIC                   =1803;
 //|......................................  Variables .....................................|
 //|.......................................................................................|  
 
-bool          key =false;
-bool          key2 =false;
-bool          key3 =false;
-
+bool          key =true;
 bool          GridDisabled=false;
 bool          retracementDisabled = false;
 
@@ -306,38 +306,15 @@ int start(){
    }
    else{
        
-       if(lastTradeTime != Time[THIS_BAR]){
+       if(lastTradeTime != Time[THIS_BAR] && !GridDisabled){
        
-       //total = OrdersTotal();
-       if(UseEntryTimeFrankfurt && TimeHour(TimeGMT())== EntryTimeFranfurt && TimeMinute(TimeGMT()) == 1 && Enter){
-         key2=true;
-         key = false;
-         key3 = false;
-         Enter = false;
-       }
-       
-       if(UseEntryTimeUS && TimeHour(TimeGMT())== EntryTimeUS && TimeMinute(TimeGMT()) == 1 && Enter){
-         key2=false;
-         key = false;
-         key3 = true;
-         Enter = false;
-       }
-       
-       if(difference > DIFFERENCE && Enter){
+       total = OrdersTotal();
+       if(total<1 &&  difference > DIFFERENCE && Enter && ((UseEntryTimeFrankfurt && TimeHour(TimeGMT())== EntryTimeFranfurt)  || (UseEntryTimeUS && TimeHour(TimeGMT()) == EntryTimeUS))){
     
-         key=true;
-         key2=false;
-         key3 = false;
-         
-         
-       }
-       
-       if(key || key2 || key3 || Enter ){
-       
-          if(lastAskPrice > Ask+INCREMENT/2*Point || lastBidPrice < Bid -INCREMENT/2*Point)Retracement();
-          
-       }
-       
+       //CheckBuyGrid();
+       version4Logic();
+
+       } 
    } 
    
    }  
@@ -365,7 +342,7 @@ int start(){
             
             
                
-           // retracementDisabled = true;
+            retracementDisabled = true;
             //Print(OrderType());
         
 
@@ -381,17 +358,12 @@ int start(){
    
    PrintStats();
                      
-  // if(retracementDisabled && lastTradeTime != Time[THIS_BAR] && (lastAskPrice > Ask+INCREMENT/2*Point || lastBidPrice < Bid -INCREMENT/2*Point))//Retracement();
+   if(retracementDisabled && lastTradeTime != Time[THIS_BAR] && (lastAskPrice > Ask+INCREMENT/2*Point || lastBidPrice < Bid -INCREMENT/2*Point))Retracement();
    
    if(AccountEquity()>AccountBalance()+CloseAtProfit + TSwap){
       
-     // retracementDisabled = true;
+      retracementDisabled = true;
       lastTradeTime = Time[THIS_BAR];
-      
-      key = false;
-      key2 = false;
-      key3 = false;
-      Enter = true;
       
       
       while(OrdersTotal()!=0){
