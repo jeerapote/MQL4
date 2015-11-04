@@ -328,8 +328,7 @@ int start(){
          key=true;
          key2=false;
          key3 = false;
-         
-         
+
        }
        
        if(key || key2 || key3 || Enter ){

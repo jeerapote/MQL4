@@ -14,7 +14,7 @@ input double               MaximumRisk             =0.02;
 input int                  DistanceInPoints        =300;
 input double               DecreaseFactor          =3;
 input int                  MovingPeriod            =200;
-input int                  MovingShift             =6;
+input int                  MovingShift             =0;
 
 extern ENUM_TIMEFRAMES     TIMEFRAME               =PERIOD_H1;
 //+------------------------------------------------------------------+
