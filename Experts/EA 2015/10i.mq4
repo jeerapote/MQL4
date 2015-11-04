@@ -44,6 +44,9 @@ extern bool                EMERGENCYSTOP_Close     =false;
 extern bool                EnableFridayClose       =false;
 extern int                 FridayCloseTime         =16;
 
+extern ENUM_DAY_OF_WEEK    WeekDayStart            =MONDAY;
+extern int                 WeekHourStart           =1;             
+
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 int LMag, SMag, EMag;
@@ -70,6 +73,7 @@ double        old_dynamic_equity_lotsize;
 double        dynamicFactor;
 double        initialLots;
 
+
 bool          exit = false;
 bool          exitFriday = false;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -92,6 +96,14 @@ int start(){
 
 
 if(SLOWKILLSWITCH)exit=true;
+
+   if(DayOfWeek()==WeekDayStart && TimeHour(TimeGMT())==WeekHourStart)
+   {
+     
+      exitFriday=false;
+      exit = false;
+      
+   }
 
 if(exit || exitFriday){
 
