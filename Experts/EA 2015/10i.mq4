@@ -32,6 +32,19 @@ extern double Digs = 10; //Digit multiplier, i.e. for ChfPln etc Digs=1
 extern int v4TakeProfit = 5;
 
 extern double V6pipsProfit = 2;
+
+
+extern bool                EnableDynamicLots       =true;
+extern double              DynamicEquityUSD        =1000;
+extern double              DynamicEquityLots       =0.1;
+extern double              dynamicMAXLOTSIZE              =10;
+extern bool                SLOWKILLSWITCH          =false;
+extern bool                EMERGENCYSTOP_Hedge     =false;
+extern bool                EMERGENCYSTOP_Close     =false;
+extern bool                EnableFridayClose       =false;
+extern int                 FridayCloseTime         =16;
+
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 int LMag, SMag, EMag;
 double HiZ2, LoZ2, EP;
@@ -50,12 +63,25 @@ int           Tally, LOrds,
               SOrds, PendBuy, PendSell;
               
               int           TSwap;
+              
+              
+double        initialEquity;
+double        old_dynamic_equity_lotsize;
+double        dynamicFactor;
+double        initialLots;
+
+bool          exit = false;
+bool          exitFriday = false;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 int init(){
 SSpr=SSpr*Digs*Point; Offset=Offset*10*Point;
 Alert(Symbol()," GoWithLZ Multi LZ/RZ/TF/Lots/SSpr: ",LZ,"/",RZ,"/",tf,"/",Lots,"/",SSpr);
 CheckStatus();
+  initialLots = Lots;
+  initialEquity = AccountEquity();
+  
+  old_dynamic_equity_lotsize = Lots; 
 
 }//init
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -64,6 +90,90 @@ CheckStatus();
 
 int start(){
 
+
+if(SLOWKILLSWITCH)exit=true;
+
+if(exit || exitFriday){
+
+   if(AccountEquity()>AccountBalance()+ 0.5){
+    while(OrdersTotal()>1)EndSession();
+   }
+    
+return 0;
+
+}
+   if(EMERGENCYSTOP_Close){
+   
+        while(OrdersTotal()!=0){
+      
+         EndSession();
+         
+        }
+        
+       exit = true;
+       return 0; 
+      
+   }
+   
+   if(EMERGENCYSTOP_Hedge){
+     
+    
+    double newLot = SOrds*Lots;
+      int ticket=OrderSend(Symbol(),OP_BUY,newLot,Ask,3,0,0,"Hedge",16384,0,clrAqua);
+      if(ticket<0)
+      {
+         ticket=OrderSend(Symbol(),OP_BUY,newLot,Ask,3,0,0,"Hedge",16384,0,clrAqua);
+         Print("OrderSend failed with error #",GetLastError());
+      }
+      else
+         Print("OrderSend placed successfully");
+    
+    newLot = LOrds*Lots;    
+      ticket=OrderSend(Symbol(),OP_SELL,newLot,Bid,3,0,0,"Hedge",16384,0,clrYellow);  
+      if(ticket<0)
+      {
+         ticket=OrderSend(Symbol(),OP_SELL,newLot,Bid,3,0,0,"Hedge",16384,0,clrYellow);
+         Print("OrderSend failed with error #",GetLastError());
+      }
+      else
+         Print("OrderSend placed successfully");        
+      
+       exit = true;
+       return 0; 
+      
+   }
+
+
+if(EnableFridayClose){/* 
+   
+     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayLoopCloseTime && EquityOnMonday/EquityOnFriday<0.95){
+   
+        while(OrdersTotal()!=0){
+      
+         EndSession();
+         
+        }
+        
+       exitFriday = true;
+       
+       return 0; 
+      
+     }*/
+     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayCloseTime && AccountEquity() >= AccountBalance()){
+  
+        while(OrdersTotal()!=0){
+      
+         EndSession();
+         
+        }
+      
+       exitFriday = true;
+       return 0;
+  
+     }
+}
+
+DynamicLots();
 
 if(v4){
    if(AccountEquity()-v4TakeProfit > AccountBalance())KillEverything();
@@ -173,6 +283,51 @@ if(!Trade){KillEverything();}
 }//start
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//+------------------------------------------------------------------+
+//| End of start function                                            |
+//+------------------------------------------------------------------+
+
+
+
+/*
+|---------------------------------------------------------------------------------------|
+|----------------------------------   Custom functions   -------------------------------|
+|---------------------------------------------------------------------------------------|
+*/
+
+
+
+//========== FUNCTION Dynamic Lots
+
+int DynamicLots(){
+
+if (EnableDynamicLots){
+
+ if(AccountBalance() > initialEquity + DynamicEquityUSD){
+          
+     initialEquity=AccountBalance();
+
+     if (old_dynamic_equity_lotsize <= dynamicMAXLOTSIZE)
+     {double new_dynamic_equity_lotsize = old_dynamic_equity_lotsize + DynamicEquityLots;
+      
+     Lots = new_dynamic_equity_lotsize ;
+     
+     dynamicFactor = new_dynamic_equity_lotsize/old_dynamic_equity_lotsize; 
+     
+     old_dynamic_equity_lotsize = Lots;
+     
+     v4TakeProfit = v4TakeProfit*dynamicFactor;}
+ 
+ }
+}
+
+return 0;
+
+}
+
+
+
 
 //========== FUNCTION modify orders
 
@@ -491,7 +646,11 @@ void CheckStatus(){
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 void KillEverything(){
-  int y, total;
+
+while(OrdersTotal()>0){
+EndSession();
+}
+/*  int y, total;
   bool closed=false;
   bool ticket=false;
   
@@ -527,4 +686,46 @@ void KillEverything(){
                      }
                  }
             }//for
+            
+            */
 }//void
+
+
+
+bool EndSession()
+{
+
+   int cpt, total=OrdersTotal();
+   
+   
+   for(cpt=0;cpt<total;cpt++)
+   {
+      //Sleep(3000);
+      OrderSelect(cpt,SELECT_BY_POS);
+      if(OrderSymbol()==Symbol() && OrderType()==OP_BUY && OrderProfit() > 0) OrderClose(OrderTicket(),OrderLots(),Bid,3);
+      if(OrderSymbol()==Symbol() && OrderType()==OP_SELL && OrderProfit() > 0) OrderClose(OrderTicket(),OrderLots(),Ask,3);
+  
+   }
+      
+   for(cpt=0;cpt<total;cpt++)
+   {
+      //Sleep(3000);
+      OrderSelect(cpt,SELECT_BY_POS);
+      if(OrderSymbol()==Symbol() && OrderType()==OP_BUY ) OrderClose(OrderTicket(),OrderLots(),Bid,3);
+ 
+      
+   }
+   
+   
+   for(cpt=0;cpt<total;cpt++)
+   {
+      //Sleep(3000);
+      OrderSelect(cpt,SELECT_BY_POS);
+      if(OrderSymbol()==Symbol() && OrderType()>1 ) OrderDelete(OrderTicket());
+      if(OrderSymbol()==Symbol() && OrderType()==OP_BUY) OrderClose(OrderTicket(),OrderLots(),Bid,3);
+      if(OrderSymbol()==Symbol() && OrderType()==OP_SELL) OrderClose(OrderTicket(),OrderLots(),Ask,3);
+      
+   }
+
+      return(true);
+}
