@@ -28,3 +28,9 @@
 0	14:58:24.601	Compiling 'stdlib'
 0	14:58:26.594	Custom indicator Heiken_Ashi_Smoothed EURUSD,H4: loaded successfully
 0	14:58:26.637	Heiken_Ashi_Smoothed EURUSD,H4: initialized
+0	14:59:45.797	Heiken_Ashi_Smoothed EURUSD,H4: uninit reason 3
+0	14:59:45.831	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	17:13:55.013	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 9
+0	17:13:55.086	Custom indicator Heiken_Ashi_Smoothed EURUSD,M15: removed
+0	19:39:58.958	Custom indicator Heiken_Ashi_Smoothed EURUSD,M15: loaded successfully
+0	19:39:58.965	Heiken_Ashi_Smoothed EURUSD,M15: initialized

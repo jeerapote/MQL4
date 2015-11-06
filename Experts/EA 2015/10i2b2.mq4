@@ -37,8 +37,8 @@ extern bool                EnableFridayClose       = false;
 extern int                 FridayCloseTime         = 16;
 extern double              FridayCloseUSDbuffer    = 0.5;  //thats a 50 cent buffer for friday close
 
-extern ENUM_DAY_OF_WEEK    WeekDayStart            =MONDAY;
-extern int                 WeekHourStart           =1;             
+extern ENUM_DAY_OF_WEEK    WeekDayStart            = MONDAY;
+extern int                 WeekHourStart           = 1;             
 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -52,10 +52,10 @@ int           LMag, SMag, EMag;
 double        HiZ2, LoZ2, EP;
 bool          Long, Short;
 
-bool          v4 = false;
-bool          v6 = true;
-int           buy = 0;
-int           sell = 1;
+bool          v4    = false;
+bool          v6    = true;
+int           buy   = 0;
+int           sell  = 1;
 int           empty = 3;
 
 int           previous = empty;
@@ -71,13 +71,12 @@ double        old_dynamic_equity_lotsize;
 double        dynamicFactor;
 double        initialLots;
 
+bool          exit          = false;
+bool          exitFriday    = false;
+string        weareselling  = "x";
+string        wearebuying   = "x";
+string        presentaction = "x";
 
-double        openpriceforBuy;
-double        version6profitforBuy;
-
-bool          exit = false;
-bool          exitFriday = false;
-bool          key=true;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 int init(){
@@ -95,9 +94,6 @@ old_dynamic_equity_lotsize = Lots;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 int start(){
-
-
-
 
 if(SLOWKILLSWITCH)exit=true;
 
@@ -173,29 +169,20 @@ if(EnableFridayClose){
 DynamicLots();
 
 if(v4){
-
-
-   if(AccountEquity()-(v4TakeProfit) > AccountBalance()){
-   
-      KillEverything();
-      v6 = true;
-      v4 = false;
-      //now = empty;
-      previous = empty;
-     
-   }
-   
-   
+   if(AccountEquity()-(v4TakeProfit) > AccountBalance())KillEverything();
 }
 
 if(OrdersTotal()<1){
 
 v6 = true;
 v4 = false;
-//now = empty;
+now = empty;
 previous = empty;
 
- 
+            presentaction = "x";//now = empty;
+            wearebuying   = "x";
+            weareselling  = "x";//previous = empty;
+
 }
 
 if(Trade){
@@ -217,57 +204,37 @@ if(EMag==0){
          if(Long && LoZ2>0){EMag=LZ*tf; LoZ2=0; HiZ2=0; Alert(Symbol()," Kill Longs");}
       }
    }
-   
-      if((SMag>0 && LMag>0)==false){
-         if(SMag>0)now = sell;
-         else if(LMag>0)now = buy;
-         else now = empty;
-      }
-      
       
       if(v6){
 
-         if(LMag>0 ){    
-                  
-           
-            if( OrdersTotal()<1 ){
-               previous = buy;
-               DoGoLong(LMag);
-            }
-            
-            LMag = 0; 
+         if(LMag>0 && OrdersTotal() < 1){           
+            //previous = buy;
+            DoGoLong(LMag);
+            wearebuying   = "buy";
+            weareselling  = "x";
+            presentaction =  "buy";
          }
-         
-         if(SMag>0 ){         
-            
-            
-            if( OrdersTotal()<1){
-            
-               DoGoShort(SMag);
-               previous = sell;
-            }
-            
-            SMag = 0;           
+         if(SMag>0 && OrdersTotal() < 1){         
+            //previous = sell;
+            DoGoShort(SMag);
+            weareselling  = "sell";
+            wearebuying   = "x";
+            presentaction = "sell";           
          }        
       }
       
+         if(SMag>0)weareselling = "sell";//if(SMag>0)now = sell; 
+         if(LMag>0)wearebuying  = "buy";//if(LMag>0)now = buy;
       
-        if(now!=previous){
-
-         if(previous!= empty || now!=empty){
-            v6 = false;        
+         if ((weareselling == "sell" && presentaction == "buy") || (wearebuying == "buy" && presentaction == "sell")){          // if(now!=previous){  
+            v6 = false;
             v4 = true;
             ModifyOrders();
-            now = empty;
-            previous = empty;
- 
+            presentaction = "x";//now = empty;
+            wearebuying   = "x";
+            weareselling  = "x";//previous = empty;
+            
          }
-         
-        } 
-         
-       // Print(now);
-         
-         
       
       if(v4){
       
@@ -300,7 +267,7 @@ PrintStats();
             
 }
 
-//if(!Trade){KillEverything();}
+if(!Trade){KillEverything();}
 }
 //start
 
@@ -548,12 +515,7 @@ void DoGoLong(int Magix){
 int result;
      
      if(v4)result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,0,"BD "+DoubleToStr(Magix,0),Magix,0,Green);
-     if(v6){
-     
-            result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,NormalizeDouble(Ask+V6pipsProfit*Digs*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green); //if(v6)result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,NormalizeDouble(Ask+V6pipsProfit*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green);
-            openpriceforBuy = Ask;
-            version6profitforBuy = NormalizeDouble(Ask+V6pipsProfit*Digs*Point,Digits);
-           }
+     if(v6)result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,NormalizeDouble(Ask+V6pipsProfit*Digs*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green); //if(v6)result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,NormalizeDouble(Ask+V6pipsProfit*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green);
     // Alert("result: ",result);
      if(result>0){LMag=0;}
 
@@ -674,8 +636,6 @@ void CheckStatus(){
 
 void KillEverything(){
 
-
-//if(Ask > openpriceforBuy && Ask < version6profitforBuy)return 0;
 while(OrdersTotal()>0){
 EndSession();
 }
