@@ -93,6 +93,7 @@
 #define ERR_INDICATOR_CANNOT_LOAD                  4072   // new MQL4
 #define ERR_NO_HISTORY_DATA                        4073   // new MQL4
 #define ERR_NO_MEMORY_FOR_HISTORY                  4074   // new MQL4
+#define ERR_NO_MEMORY_FOR_INDICATOR                4075   // new MQL4
 #define ERR_END_OF_FILE                            4099
 #define ERR_SOME_FILE_ERROR                        4100
 #define ERR_WRONG_FILE_NAME                        4101
