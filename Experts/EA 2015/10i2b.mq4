@@ -80,6 +80,11 @@ bool          exitFriday = false;
 bool          key=true;
 
 datetime      lastradetime;
+
+
+int           magicv4 = 2015;
+int           magicv6 = 2000;
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 int init(){
@@ -221,7 +226,6 @@ if(EMag==0){
             v6 = false;
             v4 = true;
             ModifyOrders();
-            
          }
          if(Long && LoZ2>0){
          
@@ -229,7 +233,8 @@ if(EMag==0){
             v6 = false;
             v4 = true;
             ModifyOrders();
-            
+           
+   
          }
       }
    }
@@ -578,10 +583,31 @@ if(Long){
 void DoGoLong(int Magix){
 int result;
      
-     if(v4)result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,0,"BD "+DoubleToStr(Magix,0),Magix,0,Green);
+     if(v4){
+     
+     
+      result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,0,"BD "+DoubleToStr(Magix,0),magicv4,0,Green);
+      
+       int pos = OrdersTotal()-1;
+      
+       OrderSelect(pos, SELECT_BY_POS);
+     
+       if (OrderType()==OP_BUY && OrderMagicNumber() == magicv4 && Ask>OrderOpenPrice()+SSpr)
+         {
+           
+           result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,0,"BD "+DoubleToStr(Magix,0),magicv4,0,Green);
+            
+            
+         }
+         
+      //  if(OrderType() == OP_SELL) result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,0,"BD "+DoubleToStr(Magix,0),magicv4,0,Green);
+         
+      
+     }
+     
      if(v6){
      
-            result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,NormalizeDouble(Ask+V6pipsProfit*Digs*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green); //if(v6)result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,NormalizeDouble(Ask+V6pipsProfit*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green);
+            result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,NormalizeDouble(Ask+V6pipsProfit*Digs*Point,Digits),"BD "+DoubleToStr(Magix,0),magicv6,0,Green); //if(v6)result=OrderSend(Symbol(),OP_BUY,Lots,Ask,10,0,NormalizeDouble(Ask+V6pipsProfit*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green);
             openpriceforBuy = Ask;
             version6profitforBuy = NormalizeDouble(Ask+V6pipsProfit*Digs*Point,Digits);
            }
@@ -595,8 +621,27 @@ int result;
 void DoGoShort(int Magix){
 int result;
      
-     if(v4)result=OrderSend(Symbol(),OP_SELL,Lots,Bid,10,0,0,"BD "+DoubleToStr(Magix,0),Magix,0,Red);
-     if(v6)result=OrderSend(Symbol(),OP_SELL,Lots,Bid,10,0,NormalizeDouble(Bid-V6pipsProfit*Digs*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Red); //if(v6)result=OrderSend(Symbol(),OP_SELL,Lots,Bid,10,0,NormalizeDouble(Bid-V6pipsProfit*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green);
+     if(v4){
+     
+     result=OrderSend(Symbol(),OP_SELL,Lots,Bid,10,0,0,"BD "+DoubleToStr(Magix,0),magicv4,0,Red);
+      
+       int pos = OrdersTotal()-1;
+      
+       OrderSelect(pos, SELECT_BY_POS);
+     
+       if (OrderType()==OP_SELL && OrderMagicNumber() == magicv4 && Bid<OrderOpenPrice()-SSpr)
+         {
+         
+           
+           
+            
+            
+         }
+         
+      // if (OrderType() == OP_BUY)result=OrderSend(Symbol(),OP_SELL,Lots,Bid,10,0,0,"BD "+DoubleToStr(Magix,0),magicv4,0,Red);
+      
+     }
+     if(v6)result=OrderSend(Symbol(),OP_SELL,Lots,Bid,10,0,NormalizeDouble(Bid-V6pipsProfit*Digs*Point,Digits),"BD "+DoubleToStr(Magix,0),magicv6,0,Red); //if(v6)result=OrderSend(Symbol(),OP_SELL,Lots,Bid,10,0,NormalizeDouble(Bid-V6pipsProfit*Point,Digits),"BD "+DoubleToStr(Magix,0),Magix,0,Green);
     
      //Alert("result: ",result);
      if(result>0){SMag=0;}
