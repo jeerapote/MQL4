@@ -78,6 +78,8 @@ double        version6profitforBuy;
 bool          exit = false;
 bool          exitFriday = false;
 bool          key=true;
+
+datetime      lastradetime;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 int init(){
@@ -172,7 +174,7 @@ if(EnableFridayClose){
 
 DynamicLots();
 
-if(v4){
+if(v4 && lastradetime != Time[0]){
 
 
    if(AccountEquity()-(v4TakeProfit) > AccountBalance()){
@@ -181,7 +183,7 @@ if(v4){
       v6 = true;
       v4 = false;
       //now = empty;
-      previous = empty;
+     // previous = empty;
      
    }
    
@@ -193,7 +195,7 @@ if(OrdersTotal()<1){
 v6 = true;
 v4 = false;
 //now = empty;
-previous = empty;
+//previous = empty;
 
  
 }
@@ -213,26 +215,45 @@ if(EMag==0){
       Handler();
       if(LMag==0 && SMag==0){
          FindUnConfZone2();
-         if(Short && HiZ2>0){EMag=LZ*tf; HiZ2=0; LoZ2=0; Alert(Symbol()," Kill Shorts");}
-         if(Long && LoZ2>0){EMag=LZ*tf; LoZ2=0; HiZ2=0; Alert(Symbol()," Kill Longs");}
+         if(Short && HiZ2>0){
+         
+            EMag=LZ*tf; HiZ2=0; LoZ2=0; Alert(Symbol()," Kill Shorts");
+            v6 = false;
+            v4 = true;
+            ModifyOrders();
+            
+         }
+         if(Long && LoZ2>0){
+         
+            EMag=LZ*tf; LoZ2=0; HiZ2=0; Alert(Symbol()," Kill Longs");
+            v6 = false;
+            v4 = true;
+            ModifyOrders();
+            
+         }
       }
    }
    
-      if((SMag>0 && LMag>0)==false){
+   /*   if((SMag>0 && LMag>0)==false){
+        
          if(SMag>0)now = sell;
          else if(LMag>0)now = buy;
          else now = empty;
-      }
+         
+      }*/
       
       
-      if(v6){
+      if(v6 && lastradetime != Time[0]){
+
+      if((SMag>0 && LMag>0)==false){
 
          if(LMag>0 ){    
                   
            
             if( OrdersTotal()<1 ){
-               previous = buy;
+            //   previous = buy;
                DoGoLong(LMag);
+              // lastradetime = Time[0];
             }
             
             LMag = 0; 
@@ -244,35 +265,45 @@ if(EMag==0){
             if( OrdersTotal()<1){
             
                DoGoShort(SMag);
-               previous = sell;
+             //  previous = sell;
+              // lastradetime = Time[0];
             }
             
             SMag = 0;           
-         }        
+         }  
+         
+        }      
       }
       
       
-        if(now!=previous){
+    /*   if(now!=previous && lastradetime != Time[0]){
 
-         if(previous!= empty || now!=empty){
+    //     if(previous!= empty || now!=empty){
+         
+           if((SMag>0 && LMag>0)==false){
             v6 = false;        
             v4 = true;
             ModifyOrders();
+            //lastradetime = Time[0];
             now = empty;
             previous = empty;
+            
+           }
  
          }
          
         } 
          
        // Print(now);
-         
+         */
          
       
       if(v4){
       
-         if(LMag>0 ){DoGoLong(LMag);}
-         if(SMag>0 ){DoGoShort(SMag);}
+         if((SMag>0 && LMag>0)==false){
+            if(LMag>0 ){DoGoLong(LMag);}
+            if(SMag>0 ){DoGoShort(SMag);}
+         }
       } 
 }
 
