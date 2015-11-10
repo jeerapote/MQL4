@@ -249,7 +249,7 @@ int start(){
    // do not work on holidays.
    if(EnableFridayClose){ 
    
-     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayLoopCloseTime && EquityOnMonday/EquityOnFriday<0.95){
+   /*  if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayLoopCloseTime && EquityOnMonday/EquityOnFriday<0.95){
    
         while(OrdersTotal()!=0){
       
@@ -262,6 +262,8 @@ int start(){
        return 0; 
       
      }
+     
+     */
      if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayCloseTime && AccountEquity() >= AccountBalance()){
   
         while(OrdersTotal()!=0){
@@ -309,21 +311,21 @@ int start(){
        if(lastTradeTime != Time[THIS_BAR]){
        
        //total = OrdersTotal();
-       if(UseEntryTimeFrankfurt && TimeHour(TimeGMT())== EntryTimeFranfurt && TimeMinute(TimeGMT()) == 1 && Enter){
+       if(UseEntryTimeFrankfurt && TimeHour(TimeGMT())== EntryTimeFranfurt  && !key && !key3){
          key2=true;
          key = false;
          key3 = false;
-         Enter = false;
+         
        }
        
-       if(UseEntryTimeUS && TimeHour(TimeGMT())== EntryTimeUS && TimeMinute(TimeGMT()) == 1 && Enter){
+       if(UseEntryTimeUS && TimeHour(TimeGMT())== EntryTimeUS && TimeMinute(TimeGMT()) == 1 && !key && !key2){
          key2=false;
          key = false;
          key3 = true;
-         Enter = false;
+         
        }
        
-       if(difference > DIFFERENCE && Enter){
+       if(difference > DIFFERENCE && !key2 && !key3 ){
     
          key=true;
          key2=false;
@@ -331,7 +333,7 @@ int start(){
 
        }
        
-       if(key || key2 || key3 || Enter ){
+       if(key || key2 || key3 ){
        
           if(lastAskPrice > Ask+INCREMENT/2*Point || lastBidPrice < Bid -INCREMENT/2*Point)Retracement();
           
