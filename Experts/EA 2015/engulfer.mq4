@@ -25,6 +25,12 @@ extern double              MAXLOTSIZE               = 100;
 extern double              stoploss_                = 250;
 extern double              increment_               = 8;
 
+extern double              R                        = 1.5;
+extern int                 sl_offset                = 30;
+extern int                 ma_offset                = 200;
+
+extern int                 MovingPeriod             = 1440;
+
 extern int                 CloseAtProfit            = 40;
 
 extern int                 high_look_back_bars      = 30;
@@ -71,6 +77,7 @@ bool          condition_2  =false;
 bool          condition_3  =false;
 bool          condition_4  =false;
 bool          condition_5  =false;
+bool          condition_6  =false;
 
 
 
@@ -151,12 +158,15 @@ int start(){
    
    difference_last = MathAbs(high_last-low_last)/Point;
    
+    
+   
    
    condition_1 = false;
    condition_2 = false;
    condition_3 = false;
    condition_4 = false;
    condition_5 = false;
+   condition_6 = false;
    
   
    condition_1 = (high_last > high_end) && (low_last < low_end);
@@ -164,12 +174,25 @@ int start(){
    condition_3 = (difference_X_bars());
    condition_4 = (open_last > close_last);
    condition_5 = (Bid < low_last);
+   condition_6 = (Bid - ma_offset*Point > iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0));
    
    
-   if(condition_1 && condition_2 && condition_3 && condition_4 && condition_5 && lastTradeTime!= Time[THIS_BAR]){
-   
-     OrderSend(Symbol(),OP_SELL,LOTS,Bid,2,0,0,0,MAGIC,0);
-     lastTradeTime = Time[THIS_BAR];
+   if(condition_1 && condition_2 /*&& condition_3*/ && condition_4 && condition_5 && condition_6 && lastTradeTime!= Time[THIS_BAR]){
+     
+     
+     //BolingerAndWPR();
+     double StopLoss = high_last + sl_offset*Point;//BolingerUpperBand;
+     double TakeProfit = Ask-(R*(MathAbs(Bid-StopLoss)));
+     ticket = OrderSend(Symbol(),OP_SELL,LOTS,Bid,2,StopLoss,TakeProfit,0,MAGIC,0);
+     
+     
+
+     if(ticket>0){
+      lastTradeTime = Time[THIS_BAR];
+      if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Sell order opened : ",OrderOpenPrice());
+     }
+     else Print("Error opening Sell order : ",GetLastError());     
+     
    
    }
    
@@ -486,7 +509,7 @@ for(int i=total-1;i>=0;i--)
 
 //========== FUNCTION Indicators
 
-double wpr, BolingerLowerBand, BolingerMidBand; 
+double wpr, BolingerLowerBand, BolingerMidBand, BolingerUpperBand; 
 
 int BolingerAndWPR(){
 
@@ -504,10 +527,23 @@ int BolingerAndWPR(){
                                              Symbol(),        // symbol
                                             TIMEFRAME,        // timeframe
                                                    20,        // averaging period
-                                                    2,        // standard deviations
+                                                   10,        // standard deviations
                                                     0,        // bands shift
                                           PRICE_CLOSE,        // applied price
                                            MODE_LOWER,        // line index
+                                                    0         // shift
+                                                    
+                                 );
+                                 
+      BolingerUpperBand = iBands(
+   
+                                             Symbol(),        // symbol
+                                            TIMEFRAME,        // timeframe
+                                                   20,        // averaging period
+                                                   10,        // standard deviations
+                                                    0,        // bands shift
+                                          PRICE_CLOSE,        // applied price
+                                           MODE_UPPER,        // line index
                                                     0         // shift
                                                     
                                  );
@@ -518,7 +554,7 @@ int BolingerAndWPR(){
                                              Symbol(),        // symbol
                                             TIMEFRAME,        // timeframe
                                                    20,        // averaging period
-                                                    2,        // standard deviations
+                                                   10,        // standard deviations
                                                     0,        // bands shift
                                           PRICE_CLOSE,        // applied price
                                             MODE_MAIN,        // line index
