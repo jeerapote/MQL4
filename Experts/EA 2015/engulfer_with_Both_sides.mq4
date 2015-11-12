@@ -35,7 +35,7 @@ extern int                 CloseAtProfit            = 40;
 
 extern int                 BreakEvenAt              = 40;
 extern int                 TakeProfit               = 40;
-extern bool                enableBreakEven          = true;
+extern bool                enableBreakEven          = false;
 extern int                 StopLoss                 = 40;
 extern int                 TrailingStop             = 40;
 extern bool                enableTrailingStop       = false;
@@ -86,6 +86,17 @@ bool          condition_3  =false;
 bool          condition_4  =false;
 bool          condition_5  =false;
 bool          condition_6  =false;
+
+bool   condition_1_buy = false;
+bool   condition_2_buy = false;
+bool   condition_3_buy = false;
+bool   condition_4_buy = false;
+bool   condition_5_buy = false;
+bool   condition_6_buy = false;
+
+
+bool   dont_open_buys  = false;
+bool   dont_open_sells = false;
 
 
 
@@ -176,6 +187,18 @@ int start(){
    condition_5 = false;
    condition_6 = false;
    
+   
+   
+   
+   
+   
+   condition_1_buy = false;
+   condition_2_buy = false;
+   condition_3_buy = false;
+   condition_4_buy = false;
+   condition_5_buy = false;
+   condition_6_buy = false;
+   
   
    condition_1 = (high_last > high_end) && (low_last < low_end);
    condition_2 = (last_X_high_bars());
@@ -185,9 +208,17 @@ int start(){
    condition_6 = (Bid - ma_offset*Point > iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0));
    
    
-   if(condition_1 && condition_2 /*&& condition_3*/ && condition_4 /*&& condition_5*/ && condition_6 && lastTradeTime!= Time[THIS_BAR]){
+   condition_1_buy = (high_last > high_end) && (low_last < low_end);
+   condition_2_buy = (last_X_high_bars_buy());
+   condition_3_buy = (difference_X_bars());
+   condition_4_buy = (open_last < close_last);
+   condition_5_buy = (Ask < low_last);
+   condition_6_buy = (Ask + ma_offset*Point < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0));
+   
+   
+   if(!dont_open_sells && condition_1 && condition_2 /*&& condition_3*/ && condition_4 /*&& condition_5*/ && condition_6 && lastTradeTime!= Time[THIS_BAR]){
      
-     
+     dont_open_buys = true;
      //BolingerAndWPR();
      double StopLoss = high_last + sl_offset*Point;//BolingerUpperBand;
      double TakeProfit = Ask-(R*(MathAbs(Bid-StopLoss)));
@@ -217,7 +248,7 @@ int start(){
      
      }
    
-   
+   /*
      ticket = OrderSend(Symbol(),OP_SELL,LOTS,Bid,2,StopLoss,TakeProfit,0,MAGIC,0);
      
      
@@ -227,7 +258,48 @@ int start(){
       if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Sell order opened : ",OrderOpenPrice());
      }
      else Print("Error opening Sell order : ",GetLastError());     
+     */
+   
+   }
+   
+if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && condition_4_buy /*&& condition_5*/ && condition_6_buy && lastTradeTime!= Time[THIS_BAR]){
+   
+   dont_open_sells = true;
+   
+     for(int cpt=1;cpt<=LEVELS;cpt++)
+     {
+      /*
+         ticket=OrderSend(Symbol(),OP_BUYSTOP,Lots,NormalizeDouble(Ask+cpt*INCREMENT*Point,Digits),2,0,NormalizeDouble(Ask+cpt*INCREMENT*Point+TakeProfit*Point,Digits),DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MagicNumber+2,0);
+         if(ticket>0)
+           {
+            lastTradeTime = Time[THIS_BAR];
+            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUYSTOP order opened : ",OrderOpenPrice());
+           }
+         else Print("Error opening BUYSTOP order : ",GetLastError());
+        
+        */ 
+         
+         ticket=OrderSend(Symbol(),OP_BUYLIMIT,LOTS,NormalizeDouble(Ask-cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Bid,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+3,0);
+         if(ticket>0)
+           {
+            lastTradeTime = Time[THIS_BAR];
+            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("SELLSTOP order opened : ",OrderOpenPrice());
+           }
+         else Print("Error opening SELLSTOP order : ",GetLastError());
      
+     }
+   
+   /*
+     ticket = OrderSend(Symbol(),OP_SELL,LOTS,Bid,2,StopLoss,TakeProfit,0,MAGIC,0);
+     
+     
+
+     if(ticket>0){
+      lastTradeTime = Time[THIS_BAR];
+      if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Sell order opened : ",OrderOpenPrice());
+     }
+     else Print("Error opening Sell order : ",GetLastError());     
+     */
    
    }
    
@@ -241,12 +313,29 @@ int start(){
    DynamicLots();
    
    
-   if(Bid < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && AccountEquity() > AccountBalance()){
+   if(dont_open_buys && Bid < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && AccountEquity() > AccountBalance()){
     
     while(OrdersTotal()>0){
      EndSession();   
     }
+    
+    dont_open_buys = false;
+    dont_open_sells = false;
    }
+   
+  
+   if(dont_open_sells && Ask > iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && AccountEquity() > AccountBalance()){
+    
+    while(OrdersTotal()>0){
+     EndSession();   
+    }
+    
+    dont_open_buys = false;
+    dont_open_sells = false;
+    
+   }
+   
+   
  
    if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)
    {
@@ -479,7 +568,21 @@ bool last_X_high_bars(){
 
 
 
+bool last_X_high_bars_buy(){
 
+  bool con = true;
+  
+  
+  for(int i=3; i <= high_look_back_bars; i++){
+  
+    double low = iLow(Symbol(),TIMEFRAME,i);
+    if(low_last < low)return false;
+  
+  }
+
+
+  return con;
+}
 
 
 
