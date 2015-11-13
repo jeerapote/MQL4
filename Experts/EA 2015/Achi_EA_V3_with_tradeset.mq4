@@ -5,17 +5,15 @@
 //|                                            By Murat Aka   |
 //+------------------------------------------------------------------+
 
-extern int     MagicNumber             = 2011;
 
-extern double  Lots                    = 0.25;
 
-extern int     TakeProfit              = 10000;  // In pips
+extern double  Lots                    = 0.01;
 
-extern int     StopLoss                = 10000;
-           
-bool           EachTickMode            = True;
+extern double  TakeProfit              = 10;    // In £GBP 
 
-extern double  BreakEvenProfit         = 100;    // In £GBP 
+extern bool    EnableFridayClose       = true;
+
+extern int     FridayCloseTime         = 18;
 
 
 
@@ -27,12 +25,16 @@ extern double  BreakEvenProfit         = 100;    // In £GBP
            
 bool           newbuy                  = true;  // locks
 
-bool           newsell                 = false;           
+bool           newsell                 = false; 
+
+int            MagicNumber             = 2011;          
 
 
 int            BarCount;
 
-int            Current;
+int            Current=0;
+
+int            times = 2;
    
 
 double         mPoint                  = 0.0001;
@@ -57,6 +59,8 @@ double         HAClose3;
 double         HAOpen4;
 double         HAClose4;
 
+bool           exitFriday = false;
+
 
 bool             morningHours   = (Hour() >  7 && Hour() < 10),
                  afternoonHours =  Hour() > 14 && Hour() < 18,
@@ -65,9 +69,7 @@ bool             morningHours   = (Hour() >  7 && Hour() < 10),
 int init() {
 
    BarCount = Bars;
-
-   if (EachTickMode) Current = 0; //else Current = -1;
-   
+ 
    mPoint = Point*10;
    
    InitialBalance = AccountBalance();
@@ -99,32 +101,44 @@ int start()
   {
 
 
-           morningHours   = TimeHour(TimeGMT()) >  1 && TimeHour(TimeGMT()) < 12;
-                 afternoonHours =  TimeHour(TimeGMT()) > 14 && TimeHour(TimeGMT()) < 20;
-                 tradingHours   = morningHours || afternoonHours;
+   
 
+   if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)
+   {
+     
+      exitFriday=false;
+      
+   }
+   
+   if( exitFriday)return 0;
 
    Balance = AccountBalance();
    
    LotsFactor = Balance/InitialBalance;
    
-   Lots = InitialLots * LotsFactor; 
+   //Lots = InitialLots * LotsFactor; 
    
-   Lots = Lot(Lots);
+   //Lots = Lot(Lots);
    
    int cnt, ticket, total;
    
-   if(Bars<100)
-     {
-      Print("bars less than 100");
-      return(0);  
+   
+   if(EnableFridayClose){
+
+     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayCloseTime && AccountEquity() >= AccountBalance()){
+  
+        while(OrdersTotal()!=0){
+      
+         CloseAll();
+         
+        }
+      
+       exitFriday = true;
+       return 0;
+  
      }
-     
-   if(TakeProfit<4)
-     {
-      Print("TakeProfit less than 4");
-      return(0); 
-     }
+    
+   }
      
 
 
@@ -145,11 +159,6 @@ int start()
    if( lastTradeTime != Time[THIS_BAR] /*&& tradingHours*/) 
      {
   
-      if(AccountFreeMargin()<(1000*Lots))
-        {
-         Print("We have no money. Free Margin = ", AccountFreeMargin());
-         return(0);  
-        }
         
         //========================================Variables=======================================//
 
@@ -166,7 +175,14 @@ int start()
          newbuy=false;
          newsell=true;
          
-         ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,Ask-(StopLoss*mPoint/10),Ask+TakeProfit*mPoint/10,"LoneWolf",MagicNumber+1,0,Blue);
+         if(AccountEquity()< AccountBalance()){
+            Lots  = Lots * times;
+            times *= 2;
+            if(Lots > 100)Lots=100;
+            
+         }
+         
+         ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,0,0,"LoneWolf",MagicNumber+1,0,Blue);
          if(ticket>0 )
            {
             lastTradeTime = Time[THIS_BAR];
@@ -191,7 +207,15 @@ int start()
         newsell = false;
         newbuy = true;
         
-         ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,Bid+(StopLoss*mPoint/10),Bid-TakeProfit*mPoint/10,"LoneWolf",MagicNumber+2,0,Red);
+        
+         if(AccountEquity()< AccountBalance()){
+            Lots  = Lots * times;
+            times *= 2;
+            if(Lots > 100)Lots=100;
+            
+         }
+        
+         ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,0,0,"LoneWolf",MagicNumber+2,0,Red);
          if(ticket>0)
            {
             lastTradeTime = Time[THIS_BAR];
@@ -214,41 +238,17 @@ int start()
     }
 
   
-   for(cnt=0;cnt<total;cnt++)
-     {
-     
-      OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
- 
-         if(OrderType()==OP_BUY)   // long position is opened
-           {
-            // should it be closed?
-            if (HAOpen4 > HAClose4 && AccountEquity()> AccountBalance()+ BreakEvenProfit)
-                {
-
-                 OrderClose(OrderTicket(),OrderLots(),Bid,3,Violet); // close position
-                 //return(0); // exit
-                newbuy = true;
-               newsell = true;
-                }
-			  }
-       
-         if(OrderType()==OP_SELL) // go to short position
-           {
-            // should it be closed?
-              if (HAOpen4 < HAClose4 && AccountEquity()> AccountBalance()+BreakEvenProfit)//
-              {
-               OrderClose(OrderTicket(),OrderLots(),Ask,3,Violet); // close position
-               newbuy = true;
-               newsell = true;
-             
-              }
-           }
-            
-     }
-     
+        
      
    
-   if(AccountEquity()> AccountBalance()+BreakEvenProfit)CloseAll();
+   if(AccountEquity()> AccountBalance()+TakeProfit)
+   {  
+      while(OrdersTotal()){
+         CloseAll();
+         Lots = InitialLots;
+         times = 2;
+      }
+   }
    
    Comment("                                                                            Profit: ", AccountEquity()- AccountBalance());
    //MoveStopToBreakeven();
@@ -299,7 +299,7 @@ bool MoveStopToBreakeven() {
       
          
         
-         if(  OrderType() == OP_BUY && OrderProfit() >= BreakEvenProfit ){
+         if(  OrderType() == OP_BUY && OrderProfit() >= TakeProfit ){
          
               tsl = OrderStopLoss();   
               //sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
@@ -309,7 +309,7 @@ bool MoveStopToBreakeven() {
               
          }
         
-        if(OrderType() == OP_SELL && OrderProfit() >= BreakEvenProfit ) {
+        if(OrderType() == OP_SELL && OrderProfit() >= TakeProfit ) {
        
               tsl = OrderStopLoss();
               //sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
@@ -336,33 +336,29 @@ bool MoveStopToBreakeven() {
 
 int CloseAll(){
 
-int total = OrdersTotal();
-  for(int i=total-1;i>=0;i--)
-  {
-    OrderSelect(i, SELECT_BY_POS);
-    int type   = OrderType();
-
-    bool result = false;
-    
-    switch(type)
-    {
-      //Close opened long positions
-      case OP_BUY       : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_BID), 5, Red );
-                          break;
-      
-      //Close opened short positions
-      case OP_SELL      : result = OrderClose( OrderTicket(), OrderLots(), MarketInfo(OrderSymbol(), MODE_ASK), 5, Red );
-                          
-    }
-    
-    if(result == false)
-    {
-      Alert("Order " , OrderTicket() , " failed to close. Error:" , GetLastError() );
-      Sleep(3000);
-    }  
-  }
+int cpt, total=OrdersTotal();
+   
+   
+   for(cpt=0;cpt<total;cpt++)
+   {
+      //Sleep(3000);
+      OrderSelect(cpt,SELECT_BY_POS);
+      if(OrderSymbol()==Symbol() && OrderType()==OP_BUY && OrderProfit() > 0) OrderClose(OrderTicket(),OrderLots(),Bid,3);
+      if(OrderSymbol()==Symbol() && OrderType()==OP_SELL && OrderProfit() > 0) OrderClose(OrderTicket(),OrderLots(),Ask,3);
   
-  return(0);
+   }
+      
+  
+   
+   for(cpt=0;cpt<total;cpt++)
+   {
+      //Sleep(3000);
+      OrderSelect(cpt,SELECT_BY_POS);
+      if(OrderSymbol()==Symbol() && OrderType()>1 ) OrderDelete(OrderTicket());
+      if(OrderSymbol()==Symbol() && OrderType()==OP_BUY) OrderClose(OrderTicket(),OrderLots(),Bid,3);
+      if(OrderSymbol()==Symbol() && OrderType()==OP_SELL) OrderClose(OrderTicket(),OrderLots(),Ask,3);
+      
+   }
 }
 
 
