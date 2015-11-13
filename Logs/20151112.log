@@ -4,3 +4,7 @@
 0	15:42:02.598	xaZZ EURUSD,M1: initialized
 0	15:42:42.537	xaZZ EURUSD,M1: uninit reason 4
 0	15:42:42.538	Custom indicator xaZZ EURUSD,M1: removed
+0	18:37:27.530	Custom indicator Heiken_Ashi_Smoothed EURUSD,M15: loaded successfully
+0	18:37:27.591	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	18:38:00.962	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 4
+0	18:38:00.963	Custom indicator Heiken_Ashi_Smoothed EURUSD,M15: removed
