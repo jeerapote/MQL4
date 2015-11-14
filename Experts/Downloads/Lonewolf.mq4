@@ -58,12 +58,12 @@ int deinit() {
 
 //===================================Broker Recognition=================================//
 
-/*int checkorder=1;
+int checkorder=1;
 double Points;
 
 
 // 4 or 5 Digit Broker Account Recognition
-void HandleDigits()
+double GetPoint()
  {
     // Automatically Adjusts to Full-Pip and Sub-Pip Accounts
     if (Digits == 4 || Digits == 2) 
@@ -77,8 +77,10 @@ void HandleDigits()
        SlipPage = SlipPage*10;
        Points = Point*10;
      } 
+     
+     return Points;
  }
-*/
+
 
 //=====================================Trade Session=====================================//
 
@@ -141,11 +143,11 @@ int start()
      
 //========================================Variables=======================================//
 
-double HAOpen3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 1);
-double HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 1);
+double HAOpen3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 1);
+double HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 1);
 
-double HAOpen2 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 2, Current + 2); 
-double HAClose2 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 4, 2, 1, 3, Current + 2);
+double HAOpen2 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 2); 
+double HAClose2 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 2);
 
 //====================================Begin Placing Orders================================//
 
