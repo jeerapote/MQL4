@@ -20,7 +20,7 @@ extern double              LOTS                     = 2;
 extern bool                EnableDynamicLots        = true;
 extern double              DynamicEquityUSD         = 1000;
 extern double              DynamicEquityLots        = 0.1;
-extern double              MAXLOTSIZE               = 100;
+extern double              MAXLOTSIZE               = 1000;
 
 extern double              stoploss_                = 250;
 extern double              increment_               = 8;
@@ -44,6 +44,9 @@ extern int                 INCREMENT                = 100;
 
 extern int                 LEVELS                   = 10 ;
 
+extern double              compensationLowerLimitUSD= 200;
+extern double              compensationProfitUSD    = 300;
+
 
 extern int                 high_look_back_bars      = 30;
 extern int                 range_look_back_bars     = 10;
@@ -62,7 +65,7 @@ extern int                 MAGIC                    = 1803;
 //|.......................................................................................|  
 
 
-int           Tally, LOrds,
+int           Tally, LOrds,send,
               SOrds, PendBuy, PendSell;
 int           Spread;
 int           StopLevel;
@@ -112,6 +115,8 @@ int           TSwap;
 double        high_last,low_last,high_end, low_end, difference_last;
 
 double        open_last, close_last;
+
+bool          trig = true;
 
 
 double        old_dynamic_equity_lotsize;
@@ -164,6 +169,7 @@ int deinit()
 
 int start(){
     
+  
     
    high_last = iHigh(Symbol(),TIMEFRAME,LAST_BAR);
    low_last  = iLow(Symbol(),TIMEFRAME,LAST_BAR);
@@ -215,6 +221,63 @@ int start(){
    condition_5_buy = (Ask < low_last);
    condition_6_buy = (Ask + ma_offset*Point < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0));
    
+   if(OrdersTotal()<1)trig=true;
+   if(OrdersTotal() > 0 && lastTradeTime!= Time[THIS_BAR] && checkProfit() < compensationLowerLimitUSD && trig){
+   
+       
+       
+       
+       
+       Alert("Triggered: ", checkProfit(), "new lots: " + LotsAdded());
+       
+       double newLots_from_MA = LotsAdded();
+       
+       if(newLots_from_MA > 100){
+               
+           send = MathCeil(newLots_from_MA/20 );
+           newLots_from_MA=20;
+       }
+       
+       
+       
+      for(int i=0; i<=send; i++){ 
+       
+       if(checkOrderType()==OP_BUY){
+         
+         ticket = OrderSend(Symbol(),OP_BUY,newLots_from_MA,Ask,2,0,0,0,MAGIC,0);
+
+         if(ticket>0){
+          lastTradeTime = Time[THIS_BAR];
+           if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Buy order opened : ",OrderOpenPrice());
+         }
+         else Print("Error opening Buy order : ",GetLastError()); 
+           
+       }
+       
+       if(checkOrderType()==OP_SELL){
+       
+         
+         
+         ticket = OrderSend(Symbol(),OP_SELL,newLots_from_MA,Bid,2,0,0,0,MAGIC,0);
+
+         if(ticket>0){
+          lastTradeTime = Time[THIS_BAR];
+           if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Sell order opened : ",OrderOpenPrice());
+         }
+         else Print("Error opening Sell order : ",GetLastError()); ;
+           
+       }
+       
+       trig = false;
+       
+       
+       
+      }
+      
+      send = 0;
+   
+   }
+   
    
    if(!dont_open_sells && condition_1 && condition_2 /*&& condition_3*/ && condition_4 /*&& condition_5*/ && condition_6 && lastTradeTime!= Time[THIS_BAR]){
      
@@ -223,7 +286,13 @@ int start(){
      double StopLoss = high_last + sl_offset*Point;//BolingerUpperBand;
      double TakeProfit = Ask-(R*(MathAbs(Bid-StopLoss)));
    
-   
+     ticket = OrderSend(Symbol(),OP_SELL,LOTS,Bid,2,0,0,0,MAGIC,0);
+
+     if(ticket>0){
+      lastTradeTime = Time[THIS_BAR];
+      if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Sell order opened : ",OrderOpenPrice());
+     }
+     else Print("Error opening Sell order : ",GetLastError()); 
    
      for(int cpt=1;cpt<=LEVELS;cpt++)
      {
@@ -265,6 +334,14 @@ int start(){
 if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && condition_4_buy /*&& condition_5*/ && condition_6_buy && lastTradeTime!= Time[THIS_BAR]){
    
    dont_open_sells = true;
+   
+     ticket = OrderSend(Symbol(),OP_BUY,LOTS,Ask,2,0,0,0,MAGIC,0);
+
+     if(ticket>0){
+      lastTradeTime = Time[THIS_BAR];
+      if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Buy order opened : ",OrderOpenPrice());
+     }
+     else Print("Error opening Buy order : ",GetLastError()); 
    
      for(int cpt=1;cpt<=LEVELS;cpt++)
      {
@@ -341,20 +418,20 @@ if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && c
    {
 
       exitFriday=false;
-      exit = false;
+ 
       lastTradeTime = Time[THIS_BAR];
       
    }
    
-   if(exit || exitFriday)return 0;
+   if(exitFriday)return 0;
  
-    
+    /*
   
    if(maxLots < requiredLots){
    
-      Comment("not enough money try lotsize of: ",maxLots/(LEVELS*2) );
+     // Comment("not enough money try lotsize of: ",maxLots/(LEVELS*2) );
       return 0;
-   } 
+   } */
    
 
      
@@ -393,7 +470,7 @@ if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && c
    
    PrintStats();
    
-                     
+       /*              
    if(AccountEquity()>AccountBalance()+CloseAtProfit + TSwap){
       
       lastTradeTime = Time[THIS_BAR];     
@@ -403,27 +480,30 @@ if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && c
       }
       
     }
+    */
    
 //+------------------------------------------------------------------+   
 
     Comment(
             Space(),
-            "mGRID EXPERT ADVISOR ver 2.0",Space(),
+          
             "FX Acc Server:",AccountServer(),Space(),
             "Date: ",Month(),"-",Day(),"-",Year()," Server Time: ",Hour(),":",Minute(),":",Seconds(),Space(),
-            "Minimum Lot Sizing: ",MarketInfo(Symbol(),MODE_MINLOT),Space(),
+            "MA TradeSet Profit: ",checkProfit(),Space(),
+            "MA Compensation Lots Added: ",LotsAdded(),Space(),
             "Account Balance:  $",AccountBalance(),Space(),
             "FreeMargin: $",AccountFreeMargin(),Space(),
             "Total Orders Open: ",OrdersTotal(),Space(),          
-            "Price:  ",NormalizeDouble(Bid,4),Space(),
+            "Lot size in the base currency=",MarketInfo(Symbol(),MODE_LOTSIZE),Space(),
+            "Tick value in the deposit currency=",MarketInfo(Symbol(),MODE_TICKVALUE),Space(),
+            "Point size in the quote currency=",MarketInfo(Symbol(),MODE_POINT),Space(),
             "Pip Spread:  ",MarketInfo("EURUSD",MODE_SPREAD),Space(),
             "Leverage: ",AccountLeverage(),Space(),
-            "Effective Leverage: ",AccountMargin()*AccountLeverage()/AccountEquity(),Space(),
-            "Increment=" + INCREMENT,Space(),
-            "Lots:  ",LOTS,Space(),
-            "Levels: " + LEVELS,Space(),                                                                           
+            "Effective Leverage: ",AccountMargin()*AccountLeverage()/AccountEquity(),Space(),                                                                        
             "Float: ",Tally," Longs: ",LOrds," Shorts: ",SOrds,Space(),
             "SellStops: ",PendSell," BuyStops: ",PendBuy," TotalSwap: ",TSwap );
+            
+            
                        
    return(0);
       
@@ -440,6 +520,175 @@ if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && c
 |----------------------------------   Custom functions   -------------------------------|
 |---------------------------------------------------------------------------------------|
 */
+
+//===================================== CHECK OrderType ==================================//
+
+
+
+ENUM_ORDER_TYPE checkOrderType(){
+
+
+ ENUM_ORDER_TYPE orderType;
+ 
+ 
+ 
+ 
+      for(int cnt=0;cnt<OrdersTotal();cnt++){
+       OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+       if(OrderType()==OP_SELL){
+         
+         orderType = OP_SELL;
+           
+       }
+      
+       
+       if(OrderType()==OP_BUY){
+         
+         orderType = OP_BUY;
+           
+       }
+      } 
+      
+     return orderType; 
+}     
+      
+//===================================== CHECK PROFIT ==================================//
+
+
+
+double checkProfit(){
+
+
+ double profit = 0.01;
+ 
+ 
+ 
+ 
+      for(int cnt=0;cnt<OrdersTotal();cnt++)
+      {
+     
+         OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+         if(OrderType()==OP_BUY){
+         
+           profit += (iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0)
+           -OrderOpenPrice())*OrderLots()*MarketInfo(Symbol(),MODE_LOTSIZE) ;
+         
+           
+        }
+            
+      }
+      
+      
+      
+      for(int cnt=0;cnt<OrdersTotal();cnt++)
+      {
+     
+         OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+         if(OrderType()==OP_SELL){
+         
+           profit += (-1*(iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0)
+           -OrderOpenPrice())*OrderLots()*MarketInfo(Symbol(),MODE_LOTSIZE)) ;
+         
+           
+        }
+            
+      }
+ 
+ 
+ return profit;
+
+}
+
+
+
+//===================================== Lots Added ==================================//
+
+double LotsAdded(){
+
+
+ double lotsCompensation;
+ 
+ double profit = 1;
+
+
+      for(int cnt=0;cnt<OrdersTotal();cnt++){
+       OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+       if(OrderType()==OP_SELL){
+         
+         profit =  Bid - iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0);
+           
+       }
+      
+       
+       if(OrderType()==OP_BUY){
+         
+         profit =  iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) - Ask;
+           
+       }
+      } 
+       
+       lotsCompensation = ( (-1*Tally)+compensationProfitUSD )/(profit*MarketInfo(Symbol(),MODE_LOTSIZE));
+       
+       
+ return lotsCompensation;
+
+}
+
+
+
+
+
+//========================================Profit=============================//
+
+
+double Profit(){
+
+
+ double profit = 0;
+ 
+ 
+ 
+ 
+      for(int cnt=0;cnt<OrdersTotal();cnt++)
+      {
+     
+         OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+         if(OrderType()==OP_BUY){
+         
+           profit += OrderProfit() ;
+         
+           
+        }
+            
+      }
+      
+      
+      
+      for(int cnt=0;cnt<OrdersTotal();cnt++)
+      {
+     
+         OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+         if(OrderType()==OP_SELL){
+         
+           profit +=  OrderProfit();
+         
+           
+        }
+            
+      }
+ 
+ 
+ return profit;
+
+}
+
+
+
+
+
+
+
+
 
 
 //========================================Broker Digit Conversion=============================//

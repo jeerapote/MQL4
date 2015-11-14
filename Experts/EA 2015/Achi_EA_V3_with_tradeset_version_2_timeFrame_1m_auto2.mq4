@@ -7,7 +7,7 @@
 
 
 
-extern double  Lots                    = 1;
+extern double  Lots                    = 0.1;
 
 extern double  IncrementLotsBy         = 2;
 
@@ -29,7 +29,9 @@ bool           newbuy                  = true;  // locks
 
 bool           newsell                 = false; 
 
-int            MagicNumber             = 2011;          
+int            MagicNumber             = 2011;     
+
+double         send                    = 0;     
 
 
 int            BarCount;
@@ -62,6 +64,8 @@ double         HAOpen4;
 double         HAClose4;
 
 bool           exitFriday = false;
+
+bool           stop = false;
 
 
 bool             morningHours   = (Hour() >  7 && Hour() < 10),
@@ -104,7 +108,7 @@ int start()
   {
 
 
-   
+
    
    if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)
    {
@@ -124,7 +128,7 @@ int start()
   // Lots = Lot(Lots);
    
    int cnt, ticket, total;
-   
+   if(OrdersTotal()<1)Lots = InitialLots;
    
    if(EnableFridayClose){
 
@@ -151,25 +155,25 @@ int start()
   
    total=OrdersTotal(); 
    
-       HAOpen3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 1);
-       HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 1);
+         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
+         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
 
-       HAOpen4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 2); 
-       HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 2);
+         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
+         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
          
          
 
-   if( lastTradeTime != Time[THIS_BAR] /*&& tradingHours*/) 
+   if( lastTradeTime != Time[THIS_BAR] && !stop/*&& tradingHours*/) 
      {
   
         
         //========================================Variables=======================================//
 
-       HAOpen3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 1);
-       HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 1);
+         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
+         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
 
-       HAOpen4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 2); 
-       HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 2);
+         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
+         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
          
       // check for long position (BUY) possibility
       if(( HAOpen3 < HAClose3 )&& (newbuy)  )
@@ -178,12 +182,28 @@ int start()
          newbuy=false;
          newsell=true;
          
-         if(AccountEquity()< AccountBalance()){
-          Lots  = Lots * times;
-            //times += 0.01;
-            if(Lots > 100)Lots=100;
+        
+          
+          if(OrdersTotal()>0){
+           Lots =0;
+            for(cnt=0;cnt<OrdersTotal();cnt++)
+            {
+     
+              OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+              Lots += OrderLots();
+        
             
-         }
+            }
+            Lots = Lots*2;
+          }
+            
+            if(Lots > 100){
+               
+              send = MathCeil(Lots/100 );
+              Lots=100;
+            }
+            
+         
          
         
          OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
@@ -194,22 +214,29 @@ int start()
               {
                       while(OrdersTotal()){
                            CloseAll();
-                           Lots = 1;
-                           times = IncrementLotsBy;
+
                       }
+                      
+                    
              
               }
             }
             
+             if(OrdersTotal()<1)Lots = InitialLots;
+         
+         for(int i=0; i<=send; i++){   
             
-         ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,0,0,"LoneWolf",MagicNumber+1,0,Blue);
-         if(ticket>0 )
+          ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,0,0,"LoneWolf",MagicNumber+1,0,Blue);
+          if(ticket>0 )
            {
             lastTradeTime = Time[THIS_BAR];
             if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUY order opened : ",OrderOpenPrice());
            }
-         else Print("Error opening BUY order : ",GetLastError()); 
+          else Print("Error opening BUY order : ",GetLastError()); 
       
+         }
+         send = 0;
+        
         }
         
         
@@ -221,13 +248,28 @@ int start()
         newsell = false;
         newbuy = true;
         
+
+          
+         
+          
+          if(OrdersTotal()>0){
+            Lots =0;
+            for(cnt=0;cnt<OrdersTotal();cnt++)
+            {
+     
+              OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+              Lots += OrderLots();
         
-         if(AccountEquity()< AccountBalance()){
-           Lots  = Lots * times;
             
-            if(Lots > 100)Lots=100;
-            
-         }
+            }
+             Lots = Lots*2;
+          }
+           
+            if(Lots > 100){
+               
+              send = MathCeil(Lots/100 );
+              Lots=100;
+            }
         
 
          
@@ -241,14 +283,17 @@ int start()
               {
                       while(OrdersTotal()){
                            CloseAll();
-                           Lots = 1;
-                           times = IncrementLotsBy;
                       }
              
               }
+              
            }
            
            
+           
+           if(OrdersTotal()<1)Lots = InitialLots;
+           
+         for(i=0; i<=send; i++){  
          ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,0,0,"LoneWolf",MagicNumber+2,0,Red);
          if(ticket>0)
            {
@@ -257,61 +302,17 @@ int start()
            }
          else Print("Error opening SELL order : ",GetLastError()); 
          
-
+          }
+          send=0;
         }
 
      
     }
+   
 
-  /*
-      for(cnt=0;cnt<total;cnt++)
-     {
-     
-      OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
- 
-         if(OrderType()==OP_BUY)   // long position is opened
-           {
-            // should it be closed?
-            if (HAOpen4 > HAClose4 && AccountEquity()> AccountBalance()+2)
-                {
-
-                       while(OrdersTotal()){
-                           CloseAll();
-                           Lots = InitialLots;
-                           times = IncrementLotsBy;
-                       }
-                 
-                }
-			  }
-       
-         if(OrderType()==OP_SELL ) // go to short position
-           {
-            // should it be closed?
-              if (HAOpen4 < HAClose4 && AccountEquity()> AccountBalance()+2)//
-              {
-                      while(OrdersTotal()){
-                           CloseAll();
-                           Lots = InitialLots;
-                           times = IncrementLotsBy;
-                      }
-             
-              }
-           }
-            
-     }
-     */
- /*  
-   if(AccountEquity()> AccountBalance()+TakeProfit)
-   {  
-      while(OrdersTotal()){
-         CloseAll();
-         Lots = InitialLots;
-         times = 2;
-      }
-   }
-   */
+   
    Comment("                                                                            Profit: ", AccountEquity()- AccountBalance());
-  // MoveStopToBreakeven();
+   //MoveStopToBreakeven();
    
    
    return(0);
@@ -359,7 +360,7 @@ bool MoveStopToBreakeven() {
       
          
         
-         if(  OrderType() == OP_BUY && OrderProfit() >= TakeProfit ){
+         if(  OrderType() == OP_BUY && OrderProfit() >= TakeProfit*Lots ){
          
               tsl = OrderStopLoss();   
               sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
@@ -369,7 +370,7 @@ bool MoveStopToBreakeven() {
               
          }
         
-        if(OrderType() == OP_SELL && OrderProfit() >= TakeProfit ) {
+        if(OrderType() == OP_SELL && OrderProfit() >= TakeProfit*Lots ) {
        
               tsl = OrderStopLoss();
               sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);
