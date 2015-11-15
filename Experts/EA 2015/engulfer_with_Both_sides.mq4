@@ -28,6 +28,8 @@ extern double              increment_               = 8;
 extern double              R                        = 1.5;
 extern int                 sl_offset                = 30;
 extern int                 ma_offset                = 200;
+extern double              StrongTrendPips          = 1000;
+extern double              StrongTrendTPBuffer      = 500;
 
 extern int                 MovingPeriod             = 1440;
 
@@ -117,6 +119,8 @@ double        high_last,low_last,high_end, low_end, difference_last;
 double        open_last, close_last;
 
 bool          trig = true;
+
+double        MA_crossPrice;
 
 
 double        old_dynamic_equity_lotsize;
@@ -221,6 +225,43 @@ int start(){
    condition_5_buy = (Ask < low_last);
    condition_6_buy = (Ask + ma_offset*Point < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0));
    
+   double ma;
+
+//--- go trading only for first tiks of new bar
+   if(Volume[0]>1){
+//--- get Moving Average 
+   ma=iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0);
+//--- sell conditions
+   if(Open[1]>ma && Close[1]<ma)
+     {
+          MA_crossPrice = Bid;
+     }
+//--- buy conditions
+   if(Open[1]<ma && Close[1]>ma)
+     {
+          MA_crossPrice = Bid;
+      
+     }
+//---
+  
+   }
+   
+   
+   
+   if(Bid < MA_crossPrice-StrongTrendPips*Point && OrdersTotal()>0 && Tally-StrongTrendTPBuffer > 0){
+   
+   
+     while(OrdersTotal()>0)EndSession();
+   
+   
+   }
+   if(Ask > MA_crossPrice+StrongTrendPips*Point && OrdersTotal()>0 && Tally-StrongTrendTPBuffer > 0){
+   
+   
+     while(OrdersTotal()>0)EndSession();
+   
+   
+   }
    if(OrdersTotal()<1)trig=true;
    if(OrdersTotal() > 0 && lastTradeTime!= Time[THIS_BAR] && checkProfit() < compensationLowerLimitUSD && trig){
    
