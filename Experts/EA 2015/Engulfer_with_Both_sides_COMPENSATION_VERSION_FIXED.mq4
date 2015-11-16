@@ -143,6 +143,9 @@ int deinit()
   }
   
   
+  
+  
+  
 /*
 |---------------------------------------------------------------------------------------|
 |=====================================EA Start Function=================================|
@@ -150,7 +153,46 @@ int deinit()
 */
 
 
-int start(){      
+int start(){     
+
+
+ 
+
+   
+//===================================== DO NOT WORK ON HOLIDAYS LOGIC==================================// 
+   
+   if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)
+   {
+      exitFriday=false;
+      lastTradeTime = Time[THIS_BAR];
+   }
+   
+   if(exitFriday)return 0;
+    
+    /*
+   if(maxLots < requiredLots){   
+     // Comment("not enough money try lotsize of: ",maxLots/(LEVELS*2) );
+      return 0;
+   } */
+
+   // do not work on holidays.
+   if(EnableFridayClose){ 
+   
+     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayCloseTime && AccountEquity() >= AccountBalance()){
+  
+        while(OrdersTotal()!=0){      
+         EndSession();         
+        }
+      
+       exitFriday = true;
+       return 0;
+  
+     }
+    
+   }
+  
+
+
     
    high_last   = iHigh(Symbol(),TIMEFRAME,LAST_BAR);
    low_last    = iLow(Symbol(),TIMEFRAME,LAST_BAR);   
@@ -450,38 +492,6 @@ if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && c
    }
    
 
-//===================================== DO NOT WORK ON HOLIDAYS LOGIC==================================// 
-   
-   if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)
-   {
-      exitFriday=false;
-      lastTradeTime = Time[THIS_BAR];
-   }
-   
-   if(exitFriday)return 0;
-    
-    /*
-   if(maxLots < requiredLots){   
-     // Comment("not enough money try lotsize of: ",maxLots/(LEVELS*2) );
-      return 0;
-   } */
-
-   // do not work on holidays.
-   if(EnableFridayClose){ 
-   
-     if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())> FridayCloseTime && AccountEquity() >= AccountBalance()){
-  
-        while(OrdersTotal()!=0){      
-         EndSession();         
-        }
-      
-       exitFriday = true;
-       return 0;
-  
-     }
-    
-   }
-  
   
 /*
 |---------------------------------------------------------------------------------------|

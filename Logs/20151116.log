@@ -1,0 +1,20 @@
+0	12:27:41.045	Custom indicator CalendarFX-I-A16 EURUSD,H1: loaded successfully
+0	12:27:42.606	Custom indicator CalendarFX-I-A16 EURUSD,H1: removed
+0	12:27:45.046	Custom indicator FFCal EURUSD,H1: loaded successfully
+0	12:27:46.255	FFCal EURUSD,H1: In Init()...
+
+0	12:27:46.255	FFCal EURUSD,H1: RefreshMin  == 26
+0	12:27:46.255	FFCal EURUSD,H1: RefreshHour == 4
+0	12:27:46.255	FFCal EURUSD,H1: initialized
+1	12:27:46.255	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	12:27:46.255	FFCal EURUSD,H1: unresolved import function call
+0	12:27:53.130	FFCal EURUSD,H1: uninit reason 3
+0	12:27:53.273	FFCal EURUSD,M1: In Init()...
+
+0	12:27:53.273	FFCal EURUSD,M1: RefreshMin  == 49
+0	12:27:53.273	FFCal EURUSD,M1: RefreshHour == 5
+0	12:27:53.273	FFCal EURUSD,M1: initialized
+1	12:27:53.277	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	12:27:53.277	FFCal EURUSD,M1: unresolved import function call
+0	12:28:03.856	Custom indicator NewsCal-v1 EURUSD,M1: loaded successfully
+0	12:28:07.728	NewsCal-v1 EURUSD,M1: initialized
