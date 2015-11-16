@@ -194,7 +194,7 @@ int start()
         
             
             }
-            Lots = Lots*2;
+            //Lots = Lots*2;
           }
             
             if(Lots > 100){
@@ -262,7 +262,7 @@ int start()
         
             
             }
-             Lots = Lots*2;
+            // Lots = Lots*2;
           }
            
             if(Lots > 100){

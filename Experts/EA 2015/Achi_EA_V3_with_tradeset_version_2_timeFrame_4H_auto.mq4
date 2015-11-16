@@ -153,11 +153,7 @@ int start()
   
    total=OrdersTotal(); 
    
-         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
-         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
 
-         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
-         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
          
          
 
@@ -167,11 +163,11 @@ int start()
         
         //========================================Variables=======================================//
 
-         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
-         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
+         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 1);
+         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 1);
 
-         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
-         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
+         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 1);
+         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 1);
          
       // check for long position (BUY) possibility
       if(( HAOpen3 < HAClose3 )&& (newbuy)  )
