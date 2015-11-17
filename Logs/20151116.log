@@ -18,3 +18,158 @@
 1	12:27:53.277	FFCal EURUSD,M1: unresolved import function call
 0	12:28:03.856	Custom indicator NewsCal-v1 EURUSD,M1: loaded successfully
 0	12:28:07.728	NewsCal-v1 EURUSD,M1: initialized
+0	14:33:21.837	Custom indicator TVI_v2 EURUSD,H1: loaded successfully
+0	14:33:22.991	TVI_v2 EURUSD,H1: initialized
+0	14:33:33.310	TVI_v2 EURUSD,H1: uninit reason 5
+0	14:33:33.332	TVI_v2 EURUSD,H1: initialized
+0	15:04:30.717	TVI_v2 EURUSD,H1: uninit reason 4
+0	15:04:30.718	Custom indicator TVI_v2 EURUSD,H1: removed
+0	15:24:59.426	Custom indicator Heiken_Ashi_Smoothed EURUSD,H1: loaded successfully
+0	15:25:11.313	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:25:59.186	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 3
+0	15:25:59.188	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:26:32.762	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:26:32.788	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:26:51.001	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:26:51.029	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:27:04.441	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:27:04.467	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:27:13.002	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:27:13.031	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:27:21.057	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:27:21.083	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:27:46.873	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:27:46.897	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:27:57.248	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:27:57.273	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:29:08.808	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:29:08.833	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:29:21.272	Custom indicator Heiken_Ashi_Smoothed EURUSD,M1: loaded successfully
+0	15:29:31.994	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:29:54.839	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:29:54.865	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:30:39.629	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 1
+0	15:30:39.630	Custom indicator Heiken_Ashi_Smoothed EURUSD,M1: removed
+0	15:41:30.071	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:41:30.099	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:41:41.759	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:41:41.783	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:41:50.495	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:41:50.524	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:42:24.439	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 5
+0	15:42:24.462	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	15:43:14.111	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 4
+0	15:43:14.112	Custom indicator Heiken_Ashi_Smoothed EURUSD,M1: removed
+0	15:44:47.477	Custom indicator Heiken_Ashi_Smoothed EURUSD,H1: loaded successfully
+0	15:45:05.857	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:45:20.468	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:45:20.487	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:45:28.502	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:45:28.520	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:45:49.669	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:45:49.688	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:46:01.368	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:46:01.388	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:46:15.653	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:46:15.671	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:46:26.357	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:46:26.375	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:46:39.694	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:46:39.715	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:46:48.493	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:46:48.515	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:46:57.316	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 5
+0	15:46:57.334	Heiken_Ashi_Smoothed EURUSD,H1: initialized
+0	15:50:14.482	Heiken_Ashi_Smoothed EURUSD,H1: uninit reason 4
+0	15:50:14.482	Custom indicator Heiken_Ashi_Smoothed EURUSD,H1: removed
+0	16:49:11.883	FFCal EURUSD,M1: uninit reason 3
+0	16:49:11.883	NewsCal-v1 EURUSD,M1: deinitialized
+0	16:49:11.883	NewsCal-v1 EURUSD,M1: uninit reason 3
+0	16:49:11.883	FFCal EURUSD,H1: In Init()...
+
+0	16:49:11.883	FFCal EURUSD,H1: RefreshMin  == 51
+0	16:49:11.883	FFCal EURUSD,H1: RefreshHour == 2
+0	16:49:11.883	FFCal EURUSD,H1: initialized
+0	16:49:11.883	NewsCal-v1 EURUSD,H1: initialized
+1	16:49:11.883	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	16:49:11.883	FFCal EURUSD,H1: unresolved import function call
+0	16:49:13.493	FFCal EURUSD,H1: uninit reason 3
+0	16:49:13.493	NewsCal-v1 EURUSD,H1: deinitialized
+0	16:49:13.493	NewsCal-v1 EURUSD,H1: uninit reason 3
+0	16:49:13.493	FFCal EURUSD,M15: In Init()...
+
+0	16:49:13.493	FFCal EURUSD,M15: RefreshMin  == 57
+0	16:49:13.493	FFCal EURUSD,M15: RefreshHour == 5
+0	16:49:13.493	FFCal EURUSD,M15: initialized
+0	16:49:13.493	NewsCal-v1 EURUSD,M15: initialized
+1	16:49:13.493	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	16:49:13.493	FFCal EURUSD,M15: unresolved import function call
+0	16:49:15.516	FFCal EURUSD,M15: uninit reason 3
+0	16:49:15.516	NewsCal-v1 EURUSD,M15: deinitialized
+0	16:49:15.516	NewsCal-v1 EURUSD,M15: uninit reason 3
+0	16:49:15.516	FFCal EURUSD,H1: In Init()...
+
+0	16:49:15.516	FFCal EURUSD,H1: RefreshMin  == 4
+0	16:49:15.516	FFCal EURUSD,H1: RefreshHour == 4
+0	16:49:15.516	FFCal EURUSD,H1: initialized
+0	16:49:15.516	NewsCal-v1 EURUSD,H1: initialized
+1	16:49:15.516	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	16:49:15.516	FFCal EURUSD,H1: unresolved import function call
+0	16:49:16.173	FFCal EURUSD,H1: uninit reason 3
+0	16:49:16.173	NewsCal-v1 EURUSD,H1: deinitialized
+0	16:49:16.173	NewsCal-v1 EURUSD,H1: uninit reason 3
+0	16:49:16.173	FFCal EURUSD,M1: In Init()...
+
+0	16:49:16.173	FFCal EURUSD,M1: RefreshMin  == 7
+0	16:49:16.173	FFCal EURUSD,M1: RefreshHour == 4
+0	16:49:16.173	FFCal EURUSD,M1: initialized
+0	16:49:16.173	NewsCal-v1 EURUSD,M1: initialized
+1	16:49:16.173	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	16:49:16.173	FFCal EURUSD,M1: unresolved import function call
+0	16:52:05.190	Custom indicator Heiken_Ashi_Smoothed EURUSD,M15: loaded successfully
+0	16:52:07.081	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:52:16.539	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:52:16.555	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:52:26.177	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:52:26.193	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:52:34.423	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:52:34.438	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:52:43.794	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:52:43.825	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:52:55.839	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:52:55.854	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:53:02.425	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:53:02.440	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:53:08.160	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:53:08.191	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:53:14.180	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:53:14.196	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:53:24.515	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:53:24.531	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:53:30.325	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:53:30.341	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:53:43.205	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:53:43.220	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:53:56.688	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:53:56.704	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:54:03.075	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:54:03.090	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:54:09.931	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:54:09.947	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:54:16.338	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:54:16.369	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:54:25.507	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:54:25.523	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:54:30.351	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:54:30.367	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:54:39.676	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:54:39.692	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:54:44.786	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 5
+0	16:54:44.802	Heiken_Ashi_Smoothed EURUSD,M15: initialized
+0	16:58:15.585	Heiken_Ashi_Smoothed EURUSD,M15: uninit reason 4
+0	16:58:15.585	Custom indicator Heiken_Ashi_Smoothed EURUSD,M15: removed
+0	17:33:17.805	FFCal EURUSD,M1: uninit reason 9
+0	17:33:17.805	NewsCal-v1 EURUSD,M1: deinitialized
+0	17:33:17.805	NewsCal-v1 EURUSD,M1: uninit reason 9
+0	17:33:18.008	Custom indicator FFCal EURUSD,M1: removed
+0	17:33:18.008	Custom indicator NewsCal-v1 EURUSD,M1: removed

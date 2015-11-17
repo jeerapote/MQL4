@@ -7,7 +7,7 @@
 
 
 
-extern double  Lots                    = 0.1;
+extern double  Lots                    = 0.01;
 
 extern double  IncrementLotsBy         = 2;
 
@@ -29,9 +29,7 @@ bool           newbuy                  = true;  // locks
 
 bool           newsell                 = false; 
 
-int            MagicNumber             = 2011;     
-
-double         send                    = 0;     
+int            MagicNumber             = 2011;          
 
 
 int            BarCount;
@@ -154,7 +152,9 @@ int start()
   
   
    total=OrdersTotal(); 
-        
+   
+
+         
          
 
    if( lastTradeTime != Time[THIS_BAR] && !stop/*&& tradingHours*/) 
@@ -163,11 +163,11 @@ int start()
         
         //========================================Variables=======================================//
 
-         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
-         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
+         HAOpen3  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 1);
+         HAClose3 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 1);
 
-         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 2, Current + 1);
-         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 2, 120, 2, 30, 3, Current + 1);
+         HAOpen4  = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 2, Current + 1);
+         HAClose4 = iCustom(NULL, 0, "Heiken_Ashi_Smoothed", 3, 10, 3, 1, 3, Current + 1);
          
       // check for long position (BUY) possibility
       if(( HAOpen3 < HAClose3 )&& (newbuy)  )
@@ -188,14 +188,10 @@ int start()
         
             
             }
-            //Lots = Lots*2;
+            Lots = Lots*2;
           }
             
-            if(Lots > 100){
-               
-              send = MathCeil(Lots/100 );
-              Lots=100;
-            }
+            if(Lots > 100)Lots=100;
             
          
          
@@ -217,20 +213,16 @@ int start()
             }
             
              if(OrdersTotal()<1)Lots = InitialLots;
-         
-         for(int i=0; i<=send; i++){   
             
-          ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,0,0,"LoneWolf",MagicNumber+1,0,Blue);
-          if(ticket>0 )
+            
+         ticket=OrderSend(Symbol(),OP_BUY,Lots,Ask,3,0,0,"LoneWolf",MagicNumber+1,0,Blue);
+         if(ticket>0 )
            {
             lastTradeTime = Time[THIS_BAR];
             if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUY order opened : ",OrderOpenPrice());
            }
-          else Print("Error opening BUY order : ",GetLastError()); 
+         else Print("Error opening BUY order : ",GetLastError()); 
       
-         }
-         send = 0;
-        
         }
         
         
@@ -256,14 +248,12 @@ int start()
         
             
             }
-            // Lots = Lots*2;
+             Lots = Lots*2;
           }
            
-            if(Lots > 100){
-               
-              send = MathCeil(Lots/100 );
-              Lots=100;
-            }
+            if(Lots > 100)Lots=100;
+            
+         
         
 
          
@@ -283,11 +273,7 @@ int start()
               
            }
            
-           
-           
            if(OrdersTotal()<1)Lots = InitialLots;
-           
-         for(i=0; i<=send; i++){  
          ticket=OrderSend(Symbol(),OP_SELL,Lots,Bid,3,0,0,"LoneWolf",MagicNumber+2,0,Red);
          if(ticket>0)
            {
@@ -296,12 +282,20 @@ int start()
            }
          else Print("Error opening SELL order : ",GetLastError()); 
          
-          }
-          send=0;
+
         }
 
      
     }
+
+
+   
+   if(AccountEquity()> AccountBalance() && OrdersTotal()>9)
+   {  
+      while(OrdersTotal()){
+         CloseAll();
+      }
+   }
    
 
    
@@ -311,6 +305,22 @@ int start()
    
    return(0);
   }
+  //============ LOTS ADDED FUNCTION: EXTREME MEASURE TO DETERMINE LOTS TO BE ADDED TO COMPENSATE FOR MISSING TP AT MA HIT ======================//
+//------------------------------------------ WE GUARANTEE PROFIT AT MA HIT WITH THIS EXTREME LOGIC -----------------------------
+
+double LotsAdded(){
+
+ double lotsCompensation;
+ 
+ double profit = 100*Point;
+
+       
+       
+       lotsCompensation = ( (AccountBalance()-AccountEquity())+TakeProfit )/(profit*MarketInfo(Symbol(),MODE_LOTSIZE));
+              
+ return lotsCompensation;
+
+}
   
 //========================================Broker Digit Conversion=============================//
 

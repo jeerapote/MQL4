@@ -64,6 +64,15 @@
 		<previous><![CDATA[5.5%]]></previous>
 	</event>
 	<event>
+		<title>G20 Meetings</title>
+		<country>ALL</country>
+		<date><![CDATA[11-16-2015]]></date>
+		<time><![CDATA[9:15am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
 		<title>Final Core CPI y/y</title>
 		<country>EUR</country>
 		<date><![CDATA[11-16-2015]]></date>
@@ -496,15 +505,6 @@
 		<previous><![CDATA[1.9%]]></previous>
 	</event>
 	<event>
-		<title>Spanish 10-y Bond Auction</title>
-		<country>EUR</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[10:03am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
 		<title>CBI Industrial Order Expectations</title>
 		<country>GBP</country>
 		<date><![CDATA[11-19-2015]]></date>
@@ -565,7 +565,7 @@
 		<time><![CDATA[3:30pm]]></time>
 		<impact><![CDATA[Low]]></impact>
 		<forecast />
-		<previous />
+		<previous><![CDATA[49B]]></previous>
 	</event>
 	<event>
 		<title>FOMC Member Lockhart Speaks</title>

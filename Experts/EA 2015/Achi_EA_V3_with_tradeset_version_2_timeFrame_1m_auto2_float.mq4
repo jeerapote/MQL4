@@ -11,7 +11,7 @@ extern double  Lots                    = 0.1;
 
 extern double  IncrementLotsBy         = 2;
 
-extern double  TakeProfit              = 50;    // In £GBP 
+extern double  TakeProfit              = 500;    // In £GBP 
 
 extern bool    EnableFridayClose       = true;
 
@@ -175,34 +175,11 @@ int start()
         
          newbuy=false;
          newsell=true;
-         
-        
-          
-          if(OrdersTotal()>0){
-           Lots =0;
-            for(cnt=0;cnt<OrdersTotal();cnt++)
-            {
-     
-              OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
-              Lots += OrderLots();
-        
-            
-            }
-            //Lots = Lots*2;
-          }
-            
-            if(Lots > 100){
-               
-              send = MathCeil(Lots/100 );
-              Lots=100;
-            }
-            
+           
          
          
         
-         OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
-            if(OrderType()==OP_SELL) // go to short position
-            {
+
             // should it be closed?
               if ( AccountEquity()> AccountBalance()+2)//
               {
@@ -214,7 +191,26 @@ int start()
                     
              
               }
+              
+          if(OrdersTotal()>0){
+           Lots =0;
+            for(cnt=0;cnt<OrdersTotal();cnt++)
+            {
+     
+              OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+              Lots += OrderLots();
+        
+            
             }
+           Lots = LotsAdded();
+          }
+            
+            if(Lots > 100){
+               
+              send = MathCeil(Lots/100 );
+              Lots=100;
+            }
+            
             
              if(OrdersTotal()<1)Lots = InitialLots;
          
@@ -246,8 +242,22 @@ int start()
           
          
           
-          if(OrdersTotal()>0){
-            Lots =0;
+            // should it be closed?
+              if ( AccountEquity()> AccountBalance()+2)//
+              {
+                      while(OrdersTotal()){
+                           CloseAll();
+
+                      }
+                      
+                    
+             
+              }
+              
+              
+           
+             if(OrdersTotal()>0){
+           Lots =0;
             for(cnt=0;cnt<OrdersTotal();cnt++)
             {
      
@@ -256,7 +266,7 @@ int start()
         
             
             }
-            // Lots = Lots*2;
+           Lots = LotsAdded();
           }
            
             if(Lots > 100){
@@ -265,24 +275,6 @@ int start()
               Lots=100;
             }
         
-
-         
-         OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
-         if(OrderType()==OP_BUY)   // long position is opened
-           {
-           
-           
-              // should it be closed?
-            if ( AccountEquity()> AccountBalance()+2)//
-              {
-                      while(OrdersTotal()){
-                           CloseAll();
-                      }
-             
-              }
-              
-           }
-           
            
            
            if(OrdersTotal()<1)Lots = InitialLots;
@@ -302,15 +294,52 @@ int start()
 
      
     }
+    
+    
+   /*
+   if(AccountEquity()> AccountBalance() && OrdersTotal()>4)
+   {  
+      while(OrdersTotal()){
+         CloseAll();
+      }
+   }
    
-
    
-   Comment("                                                                            Profit: ", AccountEquity()- AccountBalance());
-   //MoveStopToBreakeven();
+   
+   if(AccountEquity()> AccountBalance()+TakeProfit*4)
+   {  
+      while(OrdersTotal()){
+         CloseAll();
+      }
+   }
+    */
+   
+   Comment("                                                                            Profit: ",
+    AccountEquity()- AccountBalance()+" \n                                                                             NewLots: ",
+     LotsAdded());
+  MoveStopToBreakeven();
    
    
    return(0);
   }
+  
+  
+    //============ LOTS ADDED FUNCTION: EXTREME MEASURE TO DETERMINE LOTS TO BE ADDED TO COMPENSATE FOR MISSING TP AT MA HIT ======================//
+//------------------------------------------ WE GUARANTEE PROFIT AT MA HIT WITH THIS EXTREME LOGIC -----------------------------
+
+double LotsAdded(){
+
+ double lotsCompensation;
+ 
+ double profit = 100*Point;
+
+       
+       
+       lotsCompensation = ((AccountBalance()-AccountEquity())+TakeProfit )/(profit*MarketInfo(Symbol(),MODE_LOTSIZE));
+              
+ return lotsCompensation;
+
+}
   
 //========================================Broker Digit Conversion=============================//
 
@@ -354,7 +383,7 @@ bool MoveStopToBreakeven() {
       
          
         
-         if(  OrderType() == OP_BUY && OrderProfit() >= TakeProfit*Lots ){
+         if(  OrderType() == OP_BUY && OrderProfit() >= TakeProfit ){
          
               tsl = OrderStopLoss();   
               sl = NormalizeDouble(OrderOpenPrice() + 10*Point,Digits);
@@ -364,7 +393,7 @@ bool MoveStopToBreakeven() {
               
          }
         
-        if(OrderType() == OP_SELL && OrderProfit() >= TakeProfit*Lots ) {
+        if(OrderType() == OP_SELL && OrderProfit() >= TakeProfit ) {
        
               tsl = OrderStopLoss();
               sl = NormalizeDouble(OrderOpenPrice() - 10*Point,Digits);

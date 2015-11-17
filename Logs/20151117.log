@@ -1,0 +1,28 @@
+0	12:35:23.557	Compiling 'Achi_EA_V3_with_tradeset_version_2_timeFrame_15M_auto'
+0	12:35:32.863	Custom indicator FFCal EURUSD,M1: loaded successfully
+0	12:35:32.866	Custom indicator NewsCal-v1 EURUSD,M1: loaded successfully
+0	12:35:32.993	FFCal EURUSD,M1: In Init()...
+
+0	12:35:32.993	FFCal EURUSD,M1: RefreshMin  == 2
+0	12:35:32.993	FFCal EURUSD,M1: RefreshHour == 5
+0	12:35:32.993	FFCal EURUSD,M1: initialized
+0	12:35:32.993	NewsCal-v1 EURUSD,M1: initialized
+0	12:35:32.994	FFCal EURUSD,M1: News Indicator is disabled because NO CONNECTION to Broker!
+1	12:35:34.610	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	12:35:34.610	FFCal EURUSD,M1: unresolved import function call
+0	13:02:14.602	FFCal EURUSD,M1: uninit reason 3
+0	13:02:14.602	NewsCal-v1 EURUSD,M1: deinitialized
+0	13:02:14.602	NewsCal-v1 EURUSD,M1: uninit reason 3
+0	13:02:14.643	FFCal EURUSD,M15: In Init()...
+
+0	13:02:14.643	FFCal EURUSD,M15: RefreshMin  == 14
+0	13:02:14.643	FFCal EURUSD,M15: RefreshHour == 0
+0	13:02:14.643	FFCal EURUSD,M15: initialized
+0	13:02:14.645	NewsCal-v1 EURUSD,M15: initialized
+1	13:02:14.645	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	13:02:14.645	FFCal EURUSD,M15: unresolved import function call
+0	23:49:56.172	FFCal EURUSD,M15: uninit reason 9
+0	23:49:56.172	NewsCal-v1 EURUSD,M15: deinitialized
+0	23:49:56.172	NewsCal-v1 EURUSD,M15: uninit reason 9
+0	23:49:56.343	Custom indicator FFCal EURUSD,M15: removed
+0	23:49:56.343	Custom indicator NewsCal-v1 EURUSD,M15: removed
