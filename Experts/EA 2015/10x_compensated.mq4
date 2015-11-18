@@ -190,8 +190,7 @@ int start(){
    }
    
    if(exit || exitFriday)return 0;
-   if(DayOfWeek()==FRIDAY && TimeHour(TimeGMT())==16)EquityOnFriday = AccountEquity();
-   
+     
 
    
    if(Bid > UpperLimit || Bid < LowerLimit){
@@ -359,7 +358,7 @@ int start(){
       
        //  if((!retracementDisabled && OrderType() == OP_BUY && Ask < OrderOpenPrice()-(RETRACEMENT+INCREMENT)*Point && lastTradeTime != Time[THIS_BAR])){
          
-       if((!retracementDisabled && OrderType() == OP_BUY && (Ask-  ma_offset*Point) < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && lastTradeTime != Time[THIS_BAR])){
+       if((!retracementDisabled && OrderType() == OP_BUY && (Ask) < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && lastTradeTime != Time[THIS_BAR])){
                  
             CloseGrid();
             CloseAllPending();          
@@ -378,7 +377,7 @@ int start(){
    PrintStats();
                      
   // if(retracementDisabled && lastTradeTime != Time[THIS_BAR] && (lastAskPrice > Ask+INCREMENT*v4_order_freq*Point || lastBidPrice < Bid -INCREMENT*v4_order_freq*Point))Retracement();
-   if(retracementDisabled && lastTradeTime != Time[THIS_BAR] && (HAOpen3 < HAClose3)){
+   if((Ask-ma_offset) < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && retracementDisabled && lastTradeTime != Time[THIS_BAR] && (HAOpen3 < HAClose3)){
    
     double newLots_from_MA = LotsAdded();
      if(newLots_from_MA > compensationMAXLOTSIZE_per_Position){
@@ -406,16 +405,22 @@ int start(){
    if( (Ask) < iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && OrdersTotal()>0 && Tally-StrongTrendTPBuffer > 0){
    
      while(OrdersTotal()>0)EndSession();
+     
    
    }
    
    
      
-   if( Ask > iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && AccountEquity() > AccountBalance()){
+   if( Ask > iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0) && AccountEquity() > AccountBalance() && GridDisabled){
     
     while(OrdersTotal()>0){
      EndSession();   
     }
+    
+      retracementDisabled = true;
+      lastTradeTime = Time[THIS_BAR];
+            GridDisabled = false;
+      retracementDisabled = false;
      
    }
    
@@ -779,7 +784,7 @@ int CheckBuyGrid(){
                                  ,LOTS
                                  ,NormalizeDouble(LowerLimit+cpt*INCREMENT*Point,Digits)
                                  ,2
-                                 ,NormalizeDouble(Bid-STOPLOSS*Point,Digits)
+                                 ,0//NormalizeDouble(Bid-STOPLOSS*Point,Digits)
                                  ,0//NormalizeDouble(LowerLimit+cpt*INCREMENT*Point+INCREMENT*Point,Digits)
                                  ,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS))
                                  ,MAGIC

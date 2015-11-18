@@ -136,6 +136,13 @@ string ErrorDescription(int error_code)
       case 4251: error_string="notification parameter error";                              break;
       case 4252: error_string="notifications disabled";                                    break;
       case 4253: error_string="notification send too frequent";                            break;
+      case 4260: error_string="ftp server is not specified";                               break;
+      case 4261: error_string="ftp login is not specified";                                break;
+      case 4262: error_string="ftp connect failed";                                        break;
+      case 4263: error_string="ftp connect closed";                                        break;
+      case 4264: error_string="ftp change path error";                                     break;
+      case 4265: error_string="ftp file error";                                            break;
+      case 4266: error_string="ftp error";                                                 break;
       case 5001: error_string="too many opened files";                                     break;
       case 5002: error_string="wrong file name";                                           break;
       case 5003: error_string="too long file name";                                        break;

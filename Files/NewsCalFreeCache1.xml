@@ -262,6 +262,15 @@
 		<previous><![CDATA[-0.2%]]></previous>
 	</event>
 	<event>
+		<title>GDT Price Index</title>
+		<country>NZD</country>
+		<date><![CDATA[11-17-2015]]></date>
+		<time><![CDATA[2:07pm]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast />
+		<previous><![CDATA[-7.4%]]></previous>
+	</event>
+	<event>
 		<title>Capacity Utilization Rate</title>
 		<country>USD</country>
 		<date><![CDATA[11-17-2015]]></date>
@@ -280,15 +289,6 @@
 		<previous><![CDATA[-0.2%]]></previous>
 	</event>
 	<event>
-		<title>GDT Price Index</title>
-		<country>NZD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[2:33pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous><![CDATA[-7.4%]]></previous>
-	</event>
-	<event>
 		<title>Mortgage Delinquencies</title>
 		<country>USD</country>
 		<date><![CDATA[11-17-2015]]></date>
@@ -305,6 +305,15 @@
 		<impact><![CDATA[Low]]></impact>
 		<forecast><![CDATA[64]]></forecast>
 		<previous><![CDATA[64]]></previous>
+	</event>
+	<event>
+		<title>FOMC Member Tarullo Speaks</title>
+		<country>USD</country>
+		<date><![CDATA[11-17-2015]]></date>
+		<time><![CDATA[8:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous />
 	</event>
 	<event>
 		<title>TIC Long-Term Purchases</title>
@@ -364,13 +373,13 @@
 		<title>10-y Bond Auction</title>
 		<country>GBP</country>
 		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[11:03am]]></time>
+		<time><![CDATA[10:35am]]></time>
 		<impact><![CDATA[Low]]></impact>
 		<forecast />
 		<previous><![CDATA[1.82|1.7]]></previous>
 	</event>
 	<event>
-		<title>FOMC Member Lockhart Speaks</title>
+		<title>FOMC Member Dudley Speaks</title>
 		<country>USD</country>
 		<date><![CDATA[11-18-2015]]></date>
 		<time><![CDATA[1:00pm]]></time>
@@ -402,7 +411,7 @@
 		<date><![CDATA[11-18-2015]]></date>
 		<time><![CDATA[3:30pm]]></time>
 		<impact><![CDATA[Medium]]></impact>
-		<forecast />
+		<forecast><![CDATA[2.0M]]></forecast>
 		<previous><![CDATA[4.2M]]></previous>
 	</event>
 	<event>
@@ -420,7 +429,7 @@
 		<date><![CDATA[11-18-2015]]></date>
 		<time><![CDATA[9:45pm]]></time>
 		<impact><![CDATA[Medium]]></impact>
-		<forecast />
+		<forecast><![CDATA[0.1%]]></forecast>
 		<previous><![CDATA[-0.3%]]></previous>
 	</event>
 	<event>
@@ -429,7 +438,7 @@
 		<date><![CDATA[11-18-2015]]></date>
 		<time><![CDATA[9:45pm]]></time>
 		<impact><![CDATA[Low]]></impact>
-		<forecast />
+		<forecast><![CDATA[0.2%]]></forecast>
 		<previous><![CDATA[-0.2%]]></previous>
 	</event>
 	<event>
@@ -537,7 +546,7 @@
 		<date><![CDATA[11-19-2015]]></date>
 		<time><![CDATA[1:30pm]]></time>
 		<impact><![CDATA[Medium]]></impact>
-		<forecast />
+		<forecast><![CDATA[0.2%]]></forecast>
 		<previous><![CDATA[-0.1%]]></previous>
 	</event>
 	<event>
@@ -564,8 +573,17 @@
 		<date><![CDATA[11-19-2015]]></date>
 		<time><![CDATA[3:30pm]]></time>
 		<impact><![CDATA[Low]]></impact>
-		<forecast />
+		<forecast><![CDATA[23B]]></forecast>
 		<previous><![CDATA[49B]]></previous>
+	</event>
+	<event>
+		<title>BOC Review</title>
+		<country>CAD</country>
+		<date><![CDATA[11-19-2015]]></date>
+		<time><![CDATA[3:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous />
 	</event>
 	<event>
 		<title>FOMC Member Lockhart Speaks</title>
@@ -581,6 +599,15 @@
 		<country>CHF</country>
 		<date><![CDATA[11-19-2015]]></date>
 		<time><![CDATA[5:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>FOMC Member Fischer Speaks</title>
+		<country>USD</country>
+		<date><![CDATA[11-19-2015]]></date>
+		<time><![CDATA[9:45pm]]></time>
 		<impact><![CDATA[Medium]]></impact>
 		<forecast />
 		<previous />
@@ -694,10 +721,28 @@
 		<previous><![CDATA[-8]]></previous>
 	</event>
 	<event>
+		<title>FOMC Member Dudley Speaks</title>
+		<country>USD</country>
+		<date><![CDATA[11-20-2015]]></date>
+		<time><![CDATA[4:15pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
 		<title>FOMC Member Williams Speaks</title>
 		<country>USD</country>
 		<date><![CDATA[11-21-2015]]></date>
 		<time><![CDATA[5:00pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>German Buba President Weidmann Speaks</title>
+		<country>EUR</country>
+		<date><![CDATA[11-22-2015]]></date>
+		<time><![CDATA[11:00am]]></time>
 		<impact><![CDATA[Medium]]></impact>
 		<forecast />
 		<previous />
