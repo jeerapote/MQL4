@@ -230,7 +230,6 @@ int start()
 
       Sell();
       SellStopGrid();
-      
 
      }
 
@@ -353,7 +352,6 @@ int start()
 |---------------------------------------------------------------------------------------|
 */
 
-
 //===================================== BuyLimit Grid ==================================//
 
 /** 
@@ -410,7 +408,6 @@ void SellLimitGrid()
      }
 
   }
-
 //===================================== BuyStop Grid ==================================//
 
 /** 
@@ -650,7 +647,9 @@ bool check_close_condition()
   {
    bool close=false;
    double ma=MA_indicator();
-   if(AccountEquity()>AccountBalance() && (Bid>ma || Ask<ma))
+   if(AccountEquity()>AccountBalance() && MA_indicator()<day_open_price() && Bid<ma)
+      close=true;
+   if(AccountEquity()>AccountBalance() && MA_indicator()>day_open_price() && Ask>ma)
       close=true;
 
    return close;
