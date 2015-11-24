@@ -1,14 +1,34 @@
 //+------------------------------------------------------------------+
-//|                                                 mGRID EA_V10.mq4 |
-//|                                                   version 10X_v6 |
-//|                                                     by           |
-//|                                                     date 2015/10 |
+//|                                     MA_Daily_Price_with_Grid.mq4 |
+//|                                                    version 0.0.1 |
+//|                                                     by   MA      |
+//|                                                     date 2015/11 |
 //|                                                                  |
 //+------------------------------------------------------------------+
 #property copyright "X"
 #property link      "https://www.mql5.com"
 #property version   "1.00"
 #property strict
+
+
+/** 
+ * 
+ * Expert Advisor based on daily trend.
+ * Buy orders are opened for price above daily open 
+ * when there is retracement to lower Moving Avarage Band.
+ * Sell orders are opened for price below daily open
+ * when there is retracement to upper Moving Avarage Band.
+ *
+ * @param ma_offset             Spacing in points between Moving Avarage and the Bands 
+ * @param RANGE                 Grid size in points above or below current price
+ * @param INCREMENT             Spacing in points between the levels of the grid 
+ * @param DynamicEquityUSD      Amount of profit in USD that will lead to increase of Lots
+ * @param DynamicEquityLots     Increase Lots by this amount when EnableDynamicLots is true.
+ * @param MovingPeriod          Period for calculating the Moving Avarage
+ * @param TIMEFRAME             TimeFrame Moving Avarage is on.  
+ *
+ */
+
 
 //---- input parameters ---------------------------------------------+
 
@@ -43,13 +63,12 @@ extern int                 FridayCloseTime         =16;
 extern int                 FridayLoopCloseTime     =18;
 
 extern int                 MAGIC                   =1803;
-extern bool                EnableRetracement       =true;
 extern bool                EnableBolinAndWpr       =false;
 
 
 extern int                 MovingPeriod             = 15;
 extern double              compensationProfitUSD    = 300;
-extern int                 ma_offset                = 200;
+extern int                 ma_offset                = 100;
 
 
 extern double              compensationMAXLOTSIZE_per_Position  = 38;
@@ -162,7 +181,7 @@ int deinit()
 int start()
   {
 
-   DynamicLots();
+   if(EnableDynamicLots)DynamicLots();
 
    if(DayOfWeek()==MONDAY && TimeHour(TimeGMT())==1)
      {
@@ -215,7 +234,7 @@ int start()
 
      }
 
-/*   if(maxLots<requiredLots)
+   if(maxLots<requiredLots)
      {
 
       Comment("not enough money try lotsize of: ",maxLots/(LEVELS*2));
@@ -223,7 +242,7 @@ int start()
      }
      
      
-     */
+     
 
    if(OrdersTotal()<1 && check_sell_condition())
      {
