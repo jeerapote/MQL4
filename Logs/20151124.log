@@ -1,0 +1,11 @@
+0	10:00:16.610	Custom indicator FFCal EURUSD,M15: loaded successfully
+0	10:00:16.610	Custom indicator NewsCal-v1 EURUSD,M15: loaded successfully
+0	10:00:16.985	FFCal EURUSD,M15: In Init()...
+
+0	10:00:16.985	FFCal EURUSD,M15: RefreshMin  == 10
+0	10:00:16.985	FFCal EURUSD,M15: RefreshHour == 0
+0	10:00:16.985	FFCal EURUSD,M15: initialized
+0	10:00:16.985	NewsCal-v1 EURUSD,M15: initialized
+0	10:00:16.985	FFCal EURUSD,M15: News Indicator is disabled because NO CONNECTION to Broker!
+1	10:00:24.225	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	10:00:24.225	FFCal EURUSD,M15: unresolved import function call

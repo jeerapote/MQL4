@@ -235,7 +235,7 @@ int start()
         newbuy = true;
         
 
-          
+          double maOpen=iMA(NULL,0,MaPeriod,0,MaMetod,MODE_OPEN,pos);
          
           
           if(OrdersTotal()>0){

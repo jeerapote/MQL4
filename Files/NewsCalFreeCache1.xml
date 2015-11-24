@@ -1,735 +1,6 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <weeklyevents>
 	<event>
-		<title>G20 Meetings</title>
-		<country>ALL</country>
-		<date><![CDATA[11-15-2015]]></date>
-		<time><![CDATA[9:15am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Core Retail Sales q/q</title>
-		<country>NZD</country>
-		<date><![CDATA[11-15-2015]]></date>
-		<time><![CDATA[9:45pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[1.4%]]></forecast>
-		<previous><![CDATA[0.1%]]></previous>
-	</event>
-	<event>
-		<title>Retail Sales q/q</title>
-		<country>NZD</country>
-		<date><![CDATA[11-15-2015]]></date>
-		<time><![CDATA[9:45pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[1.0%]]></forecast>
-		<previous><![CDATA[0.1%]]></previous>
-	</event>
-	<event>
-		<title>Prelim GDP Price Index y/y</title>
-		<country>JPY</country>
-		<date><![CDATA[11-15-2015]]></date>
-		<time><![CDATA[11:50pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[1.7%]]></forecast>
-		<previous><![CDATA[1.6%]]></previous>
-	</event>
-	<event>
-		<title>Prelim GDP q/q</title>
-		<country>JPY</country>
-		<date><![CDATA[11-15-2015]]></date>
-		<time><![CDATA[11:50pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[-0.1%]]></forecast>
-		<previous><![CDATA[-0.4%]]></previous>
-	</event>
-	<event>
-		<title>Rightmove HPI m/m</title>
-		<country>GBP</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[12:01am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[0.6%]]></previous>
-	</event>
-	<event>
-		<title>New Motor Vehicle Sales m/m</title>
-		<country>AUD</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[12:30am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[5.5%]]></previous>
-	</event>
-	<event>
-		<title>G20 Meetings</title>
-		<country>ALL</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[9:15am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Final Core CPI y/y</title>
-		<country>EUR</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[10:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[1.0%]]></forecast>
-		<previous><![CDATA[1.0%]]></previous>
-	</event>
-	<event>
-		<title>Final CPI y/y</title>
-		<country>EUR</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[10:00am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[0.0%]]></forecast>
-		<previous><![CDATA[0.0%]]></previous>
-	</event>
-	<event>
-		<title>ECB President Draghi Speaks</title>
-		<country>EUR</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[10:15am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>German Buba Monthly Report</title>
-		<country>EUR</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[11:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Empire State Manufacturing Index</title>
-		<country>USD</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[-5.3]]></forecast>
-		<previous><![CDATA[-11.4]]></previous>
-	</event>
-	<event>
-		<title>Foreign Securities Purchases</title>
-		<country>CAD</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[4.12B]]></forecast>
-		<previous><![CDATA[3.11B]]></previous>
-	</event>
-	<event>
-		<title>Manufacturing Sales m/m</title>
-		<country>CAD</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[0.3%]]></forecast>
-		<previous><![CDATA[-0.2%]]></previous>
-	</event>
-	<event>
-		<title>RBA Assist Gov Kent Speaks</title>
-		<country>AUD</country>
-		<date><![CDATA[11-16-2015]]></date>
-		<time><![CDATA[9:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Monetary Policy Meeting Minutes</title>
-		<country>AUD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[12:30am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Inflation Expectations q/q</title>
-		<country>NZD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[2:00am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous><![CDATA[1.9%]]></previous>
-	</event>
-	<event>
-		<title>Italian Trade Balance</title>
-		<country>EUR</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[9:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[2.24B]]></forecast>
-		<previous><![CDATA[1.85B]]></previous>
-	</event>
-	<event>
-		<title>HPI y/y</title>
-		<country>GBP</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[9:30am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[5.4%]]></forecast>
-		<previous><![CDATA[5.2%]]></previous>
-	</event>
-	<event>
-		<title>Core CPI y/y</title>
-		<country>GBP</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[9:30am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[1.0%]]></forecast>
-		<previous><![CDATA[1.0%]]></previous>
-	</event>
-	<event>
-		<title>CPI y/y</title>
-		<country>GBP</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[9:30am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[-0.1%]]></forecast>
-		<previous><![CDATA[-0.1%]]></previous>
-	</event>
-	<event>
-		<title>PPI Input m/m</title>
-		<country>GBP</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[9:30am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[0.2%]]></forecast>
-		<previous><![CDATA[0.6%]]></previous>
-	</event>
-	<event>
-		<title>PPI Output m/m</title>
-		<country>GBP</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[9:30am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[-0.1%]]></forecast>
-		<previous><![CDATA[-0.1%]]></previous>
-	</event>
-	<event>
-		<title>RPI y/y</title>
-		<country>GBP</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[9:30am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[0.9%]]></forecast>
-		<previous><![CDATA[0.8%]]></previous>
-	</event>
-	<event>
-		<title>ZEW Economic Sentiment</title>
-		<country>EUR</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[10:00am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[35.2]]></forecast>
-		<previous><![CDATA[30.1]]></previous>
-	</event>
-	<event>
-		<title>German ZEW Economic Sentiment</title>
-		<country>EUR</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[10:00am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[6.7]]></forecast>
-		<previous><![CDATA[1.9]]></previous>
-	</event>
-	<event>
-		<title>Core CPI m/m</title>
-		<country>USD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[0.2%]]></forecast>
-		<previous><![CDATA[0.2%]]></previous>
-	</event>
-	<event>
-		<title>CPI m/m</title>
-		<country>USD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[0.2%]]></forecast>
-		<previous><![CDATA[-0.2%]]></previous>
-	</event>
-	<event>
-		<title>GDT Price Index</title>
-		<country>NZD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[2:07pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous><![CDATA[-7.4%]]></previous>
-	</event>
-	<event>
-		<title>Capacity Utilization Rate</title>
-		<country>USD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[2:15pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[77.5%]]></forecast>
-		<previous><![CDATA[77.5%]]></previous>
-	</event>
-	<event>
-		<title>Industrial Production m/m</title>
-		<country>USD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[2:15pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[0.1%]]></forecast>
-		<previous><![CDATA[-0.2%]]></previous>
-	</event>
-	<event>
-		<title>Mortgage Delinquencies</title>
-		<country>USD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[3:00pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous><![CDATA[5.30%]]></previous>
-	</event>
-	<event>
-		<title>NAHB Housing Market Index</title>
-		<country>USD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[3:00pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[64]]></forecast>
-		<previous><![CDATA[64]]></previous>
-	</event>
-	<event>
-		<title>FOMC Member Tarullo Speaks</title>
-		<country>USD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[8:30pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>TIC Long-Term Purchases</title>
-		<country>USD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[9:00pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[20.4B]]></previous>
-	</event>
-	<event>
-		<title>RBA Assist Gov Debelle Speaks</title>
-		<country>AUD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[10:15pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>CB Leading Index m/m</title>
-		<country>AUD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[11:00pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[-0.4%]]></previous>
-	</event>
-	<event>
-		<title>MI Leading Index m/m</title>
-		<country>AUD</country>
-		<date><![CDATA[11-17-2015]]></date>
-		<time><![CDATA[11:30pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[0.1%]]></previous>
-	</event>
-	<event>
-		<title>Wage Price Index q/q</title>
-		<country>AUD</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[12:30am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[0.6%]]></forecast>
-		<previous><![CDATA[0.6%]]></previous>
-	</event>
-	<event>
-		<title>ZEW Economic Expectations</title>
-		<country>CHF</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[10:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[18.3]]></previous>
-	</event>
-	<event>
-		<title>10-y Bond Auction</title>
-		<country>GBP</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[10:35am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[1.82|1.7]]></previous>
-	</event>
-	<event>
-		<title>FOMC Member Dudley Speaks</title>
-		<country>USD</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[1:00pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Building Permits</title>
-		<country>USD</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[1.15M]]></forecast>
-		<previous><![CDATA[1.10M]]></previous>
-	</event>
-	<event>
-		<title>Housing Starts</title>
-		<country>USD</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[1.16M]]></forecast>
-		<previous><![CDATA[1.21M]]></previous>
-	</event>
-	<event>
-		<title>Crude Oil Inventories</title>
-		<country>USD</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[3:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[2.0M]]></forecast>
-		<previous><![CDATA[4.2M]]></previous>
-	</event>
-	<event>
-		<title>FOMC Meeting Minutes</title>
-		<country>USD</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[7:00pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>PPI Input q/q</title>
-		<country>NZD</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[9:45pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[0.1%]]></forecast>
-		<previous><![CDATA[-0.3%]]></previous>
-	</event>
-	<event>
-		<title>PPI Output q/q</title>
-		<country>NZD</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[9:45pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[0.2%]]></forecast>
-		<previous><![CDATA[-0.2%]]></previous>
-	</event>
-	<event>
-		<title>Trade Balance</title>
-		<country>JPY</country>
-		<date><![CDATA[11-18-2015]]></date>
-		<time><![CDATA[11:50pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[-0.38T]]></forecast>
-		<previous><![CDATA[-0.36T]]></previous>
-	</event>
-	<event>
-		<title>Monetary Policy Statement</title>
-		<country>JPY</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[3:03am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>All Industries Activity m/m</title>
-		<country>JPY</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[4:30am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[0.2%]]></forecast>
-		<previous><![CDATA[-0.2%]]></previous>
-	</event>
-	<event>
-		<title>BOJ Press Conference</title>
-		<country>JPY</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[6:33am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Trade Balance</title>
-		<country>CHF</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[7:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[3.18B]]></forecast>
-		<previous><![CDATA[3.05B]]></previous>
-	</event>
-	<event>
-		<title>German Buba President Weidmann Speaks</title>
-		<country>EUR</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[8:00am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Current Account</title>
-		<country>EUR</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[9:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[18.3B]]></forecast>
-		<previous><![CDATA[17.7B]]></previous>
-	</event>
-	<event>
-		<title>Retail Sales m/m</title>
-		<country>GBP</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[9:30am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[-0.4%]]></forecast>
-		<previous><![CDATA[1.9%]]></previous>
-	</event>
-	<event>
-		<title>CBI Industrial Order Expectations</title>
-		<country>GBP</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[11:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[-10]]></forecast>
-		<previous><![CDATA[-18]]></previous>
-	</event>
-	<event>
-		<title>ECB Monetary Policy Meeting Accounts</title>
-		<country>EUR</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[12:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Unemployment Claims</title>
-		<country>USD</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[272K]]></forecast>
-		<previous><![CDATA[276K]]></previous>
-	</event>
-	<event>
-		<title>Wholesale Sales m/m</title>
-		<country>CAD</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[0.2%]]></forecast>
-		<previous><![CDATA[-0.1%]]></previous>
-	</event>
-	<event>
-		<title>Philly Fed Manufacturing Index</title>
-		<country>USD</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[3:00pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast><![CDATA[0.1]]></forecast>
-		<previous><![CDATA[-4.5]]></previous>
-	</event>
-	<event>
-		<title>CB Leading Index m/m</title>
-		<country>USD</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[3:00pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[0.5%]]></forecast>
-		<previous><![CDATA[-0.2%]]></previous>
-	</event>
-	<event>
-		<title>Natural Gas Storage</title>
-		<country>USD</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[3:30pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[23B]]></forecast>
-		<previous><![CDATA[49B]]></previous>
-	</event>
-	<event>
-		<title>BOC Review</title>
-		<country>CAD</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[3:30pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>FOMC Member Lockhart Speaks</title>
-		<country>USD</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[5:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Gov Board Member Maechler Speaks</title>
-		<country>CHF</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[5:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>FOMC Member Fischer Speaks</title>
-		<country>USD</country>
-		<date><![CDATA[11-19-2015]]></date>
-		<time><![CDATA[9:45pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Credit Card Spending y/y</title>
-		<country>NZD</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[2:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[7.3%]]></previous>
-	</event>
-	<event>
-		<title>CB Leading Index m/m</title>
-		<country>CNY</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[2:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous><![CDATA[1.6%]]></previous>
-	</event>
-	<event>
-		<title>BOJ Monthly Report</title>
-		<country>JPY</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[5:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>German PPI m/m</title>
-		<country>EUR</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[7:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[-0.2%]]></forecast>
-		<previous><![CDATA[-0.4%]]></previous>
-	</event>
-	<event>
-		<title>ECB President Draghi Speaks</title>
-		<country>EUR</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[8:00am]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Public Sector Net Borrowing</title>
-		<country>GBP</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[9:30am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast><![CDATA[5.5B]]></forecast>
-		<previous><![CDATA[8.6B]]></previous>
-	</event>
-	<event>
-		<title>German Buba President Weidmann Speaks</title>
-		<country>EUR</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[10:15am]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
-		<title>Core CPI m/m</title>
-		<country>CAD</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous><![CDATA[0.2%]]></previous>
-	</event>
-	<event>
-		<title>CPI m/m</title>
-		<country>CAD</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous><![CDATA[-0.2%]]></previous>
-	</event>
-	<event>
-		<title>Core Retail Sales m/m</title>
-		<country>CAD</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[High]]></impact>
-		<forecast />
-		<previous><![CDATA[0.0%]]></previous>
-	</event>
-	<event>
-		<title>Retail Sales m/m</title>
-		<country>CAD</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[1:30pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous><![CDATA[0.5%]]></previous>
-	</event>
-	<event>
-		<title>Consumer Confidence</title>
-		<country>EUR</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[3:00pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[-7]]></forecast>
-		<previous><![CDATA[-8]]></previous>
-	</event>
-	<event>
-		<title>FOMC Member Dudley Speaks</title>
-		<country>USD</country>
-		<date><![CDATA[11-20-2015]]></date>
-		<time><![CDATA[4:15pm]]></time>
-		<impact><![CDATA[Medium]]></impact>
-		<forecast />
-		<previous />
-	</event>
-	<event>
 		<title>FOMC Member Williams Speaks</title>
 		<country>USD</country>
 		<date><![CDATA[11-21-2015]]></date>
@@ -746,5 +17,644 @@
 		<impact><![CDATA[Medium]]></impact>
 		<forecast />
 		<previous />
+	</event>
+	<event>
+		<title>Visitor Arrivals m/m</title>
+		<country>NZD</country>
+		<date><![CDATA[11-22-2015]]></date>
+		<time><![CDATA[9:45pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[4.2%]]></previous>
+	</event>
+	<event>
+		<title>Bank Holiday</title>
+		<country>JPY</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[12:00am]]></time>
+		<impact><![CDATA[Holiday]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>French Flash Manufacturing PMI</title>
+		<country>EUR</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[8:00am]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[50.7]]></forecast>
+		<previous><![CDATA[50.7]]></previous>
+	</event>
+	<event>
+		<title>French Flash Services PMI</title>
+		<country>EUR</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[8:00am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[52.1]]></forecast>
+		<previous><![CDATA[52.3]]></previous>
+	</event>
+	<event>
+		<title>German Flash Manufacturing PMI</title>
+		<country>EUR</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[8:30am]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[52.2]]></forecast>
+		<previous><![CDATA[51.6]]></previous>
+	</event>
+	<event>
+		<title>German Flash Services PMI</title>
+		<country>EUR</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[8:30am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[54.3]]></forecast>
+		<previous><![CDATA[55.2]]></previous>
+	</event>
+	<event>
+		<title>Flash Manufacturing PMI</title>
+		<country>EUR</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[9:00am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[52.3]]></forecast>
+		<previous><![CDATA[52.0]]></previous>
+	</event>
+	<event>
+		<title>Flash Services PMI</title>
+		<country>EUR</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[9:00am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[54.2]]></forecast>
+		<previous><![CDATA[54.2]]></previous>
+	</event>
+	<event>
+		<title>Eurogroup Meetings</title>
+		<country>EUR</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[10:15am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>Flash Manufacturing PMI</title>
+		<country>USD</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[2:45pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[54.0]]></forecast>
+		<previous><![CDATA[54.0]]></previous>
+	</event>
+	<event>
+		<title>Existing Home Sales</title>
+		<country>USD</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[3:00pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[5.39M]]></forecast>
+		<previous><![CDATA[5.55M]]></previous>
+	</event>
+	<event>
+		<title>Fed Announcement</title>
+		<country>USD</country>
+		<date><![CDATA[11-23-2015]]></date>
+		<time><![CDATA[5:35pm]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>Flash Manufacturing PMI</title>
+		<country>JPY</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[1:35am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[52.1]]></forecast>
+		<previous><![CDATA[52.5]]></previous>
+	</event>
+	<event>
+		<title>German Final GDP q/q</title>
+		<country>EUR</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[7:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0.3%]]></forecast>
+		<previous><![CDATA[0.3%]]></previous>
+	</event>
+	<event>
+		<title>German Ifo Business Climate</title>
+		<country>EUR</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[9:00am]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[108.3]]></forecast>
+		<previous><![CDATA[108.2]]></previous>
+	</event>
+	<event>
+		<title>RBA Gov Stevens Speaks</title>
+		<country>AUD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[9:05am]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>Inflation Report Hearings</title>
+		<country>GBP</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[10:00am]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>CBI Realized Sales</title>
+		<country>GBP</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[11:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[25]]></forecast>
+		<previous><![CDATA[19]]></previous>
+	</event>
+	<event>
+		<title>Prelim GDP Price Index q/q</title>
+		<country>USD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[1.2%]]></forecast>
+		<previous><![CDATA[1.2%]]></previous>
+	</event>
+	<event>
+		<title>Prelim GDP q/q</title>
+		<country>USD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[2.0%]]></forecast>
+		<previous><![CDATA[1.5%]]></previous>
+	</event>
+	<event>
+		<title>Goods Trade Balance</title>
+		<country>USD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[-61.8B]]></forecast>
+		<previous><![CDATA[-58.6B]]></previous>
+	</event>
+	<event>
+		<title><![CDATA[S&P/CS Composite-20 HPI y/y]]></title>
+		<country>USD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[2:00pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[5.2%]]></forecast>
+		<previous><![CDATA[5.1%]]></previous>
+	</event>
+	<event>
+		<title>Belgian NBB Business Climate</title>
+		<country>EUR</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[2:00pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[-3.2]]></forecast>
+		<previous><![CDATA[-4.0]]></previous>
+	</event>
+	<event>
+		<title>CB Consumer Confidence</title>
+		<country>USD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[3:00pm]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[99.3]]></forecast>
+		<previous><![CDATA[97.6]]></previous>
+	</event>
+	<event>
+		<title>Richmond Manufacturing Index</title>
+		<country>USD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[3:00pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0]]></forecast>
+		<previous><![CDATA[-1]]></previous>
+	</event>
+	<event>
+		<title>Gov Council Member Patterson Speaks</title>
+		<country>CAD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[8:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>SPPI y/y</title>
+		<country>JPY</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[11:50pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0.6%]]></forecast>
+		<previous><![CDATA[0.6%]]></previous>
+	</event>
+	<event>
+		<title>Monetary Policy Meeting Minutes</title>
+		<country>JPY</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[11:50pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>Construction Work Done q/q</title>
+		<country>AUD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[12:30am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[-1.8%]]></forecast>
+		<previous><![CDATA[1.6%]]></previous>
+	</event>
+	<event>
+		<title>UBS Consumption Indicator</title>
+		<country>CHF</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[7:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[1.65]]></previous>
+	</event>
+	<event>
+		<title>BBA Mortgage Approvals</title>
+		<country>GBP</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[9:30am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[45.5K]]></forecast>
+		<previous><![CDATA[44.5K]]></previous>
+	</event>
+	<event>
+		<title>Italian Retail Sales m/m</title>
+		<country>EUR</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[10:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0.5%]]></forecast>
+		<previous><![CDATA[0.3%]]></previous>
+	</event>
+	<event>
+		<title>German 10-y Bond Auction</title>
+		<country>EUR</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[10:03am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[0.44|1.2]]></previous>
+	</event>
+	<event>
+		<title>RBA Assist Gov Debelle Speaks</title>
+		<country>AUD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[10:20am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>Autumn Forecast Statement</title>
+		<country>GBP</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[12:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>Unemployment Claims</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[273K]]></forecast>
+		<previous><![CDATA[271K]]></previous>
+	</event>
+	<event>
+		<title>Core Durable Goods Orders m/m</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[0.5%]]></forecast>
+		<previous><![CDATA[-0.4%]]></previous>
+	</event>
+	<event>
+		<title>Durable Goods Orders m/m</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[1.6%]]></forecast>
+		<previous><![CDATA[-1.2%]]></previous>
+	</event>
+	<event>
+		<title>Personal Income m/m</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0.4%]]></forecast>
+		<previous><![CDATA[0.1%]]></previous>
+	</event>
+	<event>
+		<title>Personal Spending m/m</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[0.3%]]></forecast>
+		<previous><![CDATA[0.1%]]></previous>
+	</event>
+	<event>
+		<title>Core PCE Price Index m/m</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[0.1%]]></forecast>
+		<previous><![CDATA[0.1%]]></previous>
+	</event>
+	<event>
+		<title>HPI m/m</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[2:00pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0.5%]]></forecast>
+		<previous><![CDATA[0.3%]]></previous>
+	</event>
+	<event>
+		<title>Flash Services PMI</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[2:45pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[55.2]]></forecast>
+		<previous><![CDATA[54.4]]></previous>
+	</event>
+	<event>
+		<title>Revised UoM Consumer Sentiment</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[3:00pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[93.2]]></forecast>
+		<previous><![CDATA[93.1]]></previous>
+	</event>
+	<event>
+		<title>Revised UoM Inflation Expectations</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[3:00pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[2.5%]]></previous>
+	</event>
+	<event>
+		<title>New Home Sales</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[3:00pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[500K]]></forecast>
+		<previous><![CDATA[468K]]></previous>
+	</event>
+	<event>
+		<title>Crude Oil Inventories</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[3:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous><![CDATA[0.3M]]></previous>
+	</event>
+	<event>
+		<title>Natural Gas Storage</title>
+		<country>USD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[5:00pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[15B]]></previous>
+	</event>
+	<event>
+		<title>Trade Balance</title>
+		<country>NZD</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[9:45pm]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[-1000M]]></forecast>
+		<previous><![CDATA[-1222M]]></previous>
+	</event>
+	<event>
+		<title>Private Capital Expenditure q/q</title>
+		<country>AUD</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[12:30am]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[-2.8%]]></forecast>
+		<previous><![CDATA[-4.0%]]></previous>
+	</event>
+	<event>
+		<title>M3 Money Supply y/y</title>
+		<country>EUR</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[9:00am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[4.9%]]></forecast>
+		<previous><![CDATA[4.9%]]></previous>
+	</event>
+	<event>
+		<title>Private Loans y/y</title>
+		<country>EUR</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[9:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[1.2%]]></forecast>
+		<previous><![CDATA[1.1%]]></previous>
+	</event>
+	<event>
+		<title>GfK German Consumer Climate</title>
+		<country>EUR</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[12:00pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[9.2]]></forecast>
+		<previous><![CDATA[9.4]]></previous>
+	</event>
+	<event>
+		<title>Bank Holiday</title>
+		<country>USD</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[1:00pm]]></time>
+		<impact><![CDATA[Holiday]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>Corporate Profits q/q</title>
+		<country>CAD</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[12.9%]]></previous>
+	</event>
+	<event>
+		<title>Tokyo Core CPI y/y</title>
+		<country>JPY</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[11:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[-0.1%]]></forecast>
+		<previous><![CDATA[-0.2%]]></previous>
+	</event>
+	<event>
+		<title>Household Spending y/y</title>
+		<country>JPY</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[11:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[0.0%]]></forecast>
+		<previous><![CDATA[-0.4%]]></previous>
+	</event>
+	<event>
+		<title>Unemployment Rate</title>
+		<country>JPY</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[11:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[3.4%]]></forecast>
+		<previous><![CDATA[3.4%]]></previous>
+	</event>
+	<event>
+		<title>National Core CPI y/y</title>
+		<country>JPY</country>
+		<date><![CDATA[11-26-2015]]></date>
+		<time><![CDATA[11:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[-0.1%]]></forecast>
+		<previous><![CDATA[-0.1%]]></previous>
+	</event>
+	<event>
+		<title>GfK Consumer Confidence</title>
+		<country>GBP</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[12:05am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[2]]></forecast>
+		<previous><![CDATA[2]]></previous>
+	</event>
+	<event>
+		<title>Nationwide HPI m/m</title>
+		<country>GBP</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[7:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[0.6%]]></previous>
+	</event>
+	<event>
+		<title>German Import Prices m/m</title>
+		<country>EUR</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[7:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[-0.1%]]></forecast>
+		<previous><![CDATA[-0.7%]]></previous>
+	</event>
+	<event>
+		<title>French Consumer Spending m/m</title>
+		<country>EUR</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[7:45am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0.2%]]></forecast>
+		<previous><![CDATA[0.0%]]></previous>
+	</event>
+	<event>
+		<title>Spanish Flash CPI y/y</title>
+		<country>EUR</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[8:00am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[-0.5%]]></forecast>
+		<previous><![CDATA[-0.7%]]></previous>
+	</event>
+	<event>
+		<title>Index of Services 3m/3m</title>
+		<country>GBP</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[9:30am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0.8%]]></forecast>
+		<previous><![CDATA[0.9%]]></previous>
+	</event>
+	<event>
+		<title>Second Estimate GDP q/q</title>
+		<country>GBP</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[9:30am]]></time>
+		<impact><![CDATA[High]]></impact>
+		<forecast><![CDATA[0.5%]]></forecast>
+		<previous><![CDATA[0.5%]]></previous>
+	</event>
+	<event>
+		<title>Prelim Business Investment q/q</title>
+		<country>GBP</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[9:30am]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast><![CDATA[1.5%]]></forecast>
+		<previous><![CDATA[2.9%]]></previous>
+	</event>
+	<event>
+		<title>Italian 10-y Bond Auction</title>
+		<country>EUR</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[10:03am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[1.48|1.7]]></previous>
+	</event>
+	<event>
+		<title>ECB Financial Stability Review</title>
+		<country>EUR</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[11:00am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous />
+	</event>
+	<event>
+		<title>IPPI m/m</title>
+		<country>CAD</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[-0.3%]]></previous>
+	</event>
+	<event>
+		<title>RMPI m/m</title>
+		<country>CAD</country>
+		<date><![CDATA[11-27-2015]]></date>
+		<time><![CDATA[1:30pm]]></time>
+		<impact><![CDATA[Medium]]></impact>
+		<forecast />
+		<previous><![CDATA[3.0%]]></previous>
 	</event>
 </weeklyevents>

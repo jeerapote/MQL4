@@ -1,0 +1,7 @@
+0	00:06:54.118	Heiken Ashi EURUSD,M1: uninit reason 1
+0	00:06:54.125	Custom indicator Heiken Ashi EURUSD,M1: removed
+0	01:17:30.119	FFCal EURUSD,M15: uninit reason 9
+0	01:17:30.119	NewsCal-v1 EURUSD,M15: deinitialized
+0	01:17:30.119	NewsCal-v1 EURUSD,M15: uninit reason 9
+0	01:17:30.170	Custom indicator FFCal EURUSD,M15: removed
+0	01:17:30.170	Custom indicator NewsCal-v1 EURUSD,M15: removed

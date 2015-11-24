@@ -1,0 +1,24 @@
+0	00:10:16.203	FFCal EURUSD,M15: uninit reason 9
+0	00:10:16.204	NewsCal-v1 EURUSD,M15: deinitialized
+0	00:10:16.204	NewsCal-v1 EURUSD,M15: uninit reason 9
+0	00:10:16.302	Custom indicator FFCal EURUSD,M15: removed
+0	00:10:16.302	Custom indicator NewsCal-v1 EURUSD,M15: removed
+0	14:47:11.916	Custom indicator FFCal EURUSD,M15: loaded successfully
+0	14:47:11.916	Custom indicator NewsCal-v1 EURUSD,M15: loaded successfully
+0	14:47:12.010	FFCal EURUSD,M15: In Init()...
+
+0	14:47:12.010	FFCal EURUSD,M15: RefreshMin  == 28
+0	14:47:12.010	FFCal EURUSD,M15: RefreshHour == 3
+0	14:47:12.010	FFCal EURUSD,M15: initialized
+0	14:47:12.010	NewsCal-v1 EURUSD,M15: initialized
+0	14:47:12.010	FFCal EURUSD,M15: News Indicator is disabled because NO CONNECTION to Broker!
+1	14:47:14.195	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	14:47:14.195	FFCal EURUSD,M15: unresolved import function call
+0	20:08:33.042	Compiling 'EA 2015\HA_EXpert'
+3	20:08:37.143	'EA 2015\HA_EXpert' is not expert and cannot be executed
+3	20:08:37.990	'EA 2015\HA_EXpert' is not expert and cannot be executed
+3	20:08:40.344	'EA 2015\HA_EXpert' is not expert and cannot be executed
+3	20:08:42.552	'EA 2015\HA_EXpert' is not expert and cannot be executed
+3	20:08:44.385	'EA 2015\HA_EXpert' is not expert and cannot be executed
+0	20:22:38.086	Expert EA 2015\HA_EXpert EURUSD,H1: loaded successfully
+0	20:22:44.151	Expert HA_EXpert EURUSD,H1: removed

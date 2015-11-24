@@ -1,0 +1,18 @@
+0	23:32:37.188	Compiling 'Achi_EA_V3_with_tradeset_version_2_timeFrame_4H_auto'
+0	23:32:45.062	Custom indicator FFCal EURUSD,M15: loaded successfully
+0	23:32:45.065	Custom indicator NewsCal-v1 EURUSD,M15: loaded successfully
+0	23:32:45.160	FFCal EURUSD,M15: In Init()...
+
+0	23:32:45.160	FFCal EURUSD,M15: RefreshMin  == 8
+0	23:32:45.160	FFCal EURUSD,M15: RefreshHour == 0
+0	23:32:45.160	FFCal EURUSD,M15: initialized
+0	23:32:45.160	NewsCal-v1 EURUSD,M15: initialized
+0	23:32:45.161	FFCal EURUSD,M15: News Indicator is disabled because NO CONNECTION to Broker!
+1	23:32:48.696	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	23:32:48.696	FFCal EURUSD,M15: unresolved import function call
+0	23:36:04.500	Custom indicator Heiken_Ashi_Smoothed XAUUSD,M1: loaded successfully
+0	23:36:05.666	Heiken_Ashi_Smoothed XAUUSD,M1: initialized
+0	23:43:27.239	Heiken_Ashi_Smoothed XAUUSD,M1: uninit reason 4
+0	23:43:27.242	Custom indicator Heiken_Ashi_Smoothed XAUUSD,M1: removed
+0	23:53:52.343	Custom indicator Heiken Ashi EURUSD,M1: loaded successfully
+0	23:53:56.564	Heiken Ashi EURUSD,M1: initialized
