@@ -229,7 +229,7 @@ int start()
      {
 
       Sell();
-      //SellGrid();
+      SellStopGrid();
       
 
      }
@@ -238,7 +238,7 @@ int start()
      {
 
       Buy();
-      //BuyGrid();
+      BuyLimitGrid();
 
      }
 
@@ -358,7 +358,7 @@ int start()
 
 /** 
  * 
- * Lays buy stop orders above current price given the incremment.
+ * Lays buy limit orders below current price given the incremment.
  *
  */
 
@@ -369,15 +369,15 @@ void BuyLimitGrid()
    CloseAllPending();
    for(int cpt=1;cpt<=LEVELS;cpt++)
      {
-      if(NormalizeDouble(initial_price+cpt*INCREMENT*Point,Digits)>Ask+(3+INCREMENT+StopLevel)*Point)
+      if(NormalizeDouble(initial_price-cpt*INCREMENT*Point,Digits)<Ask-(3+INCREMENT+StopLevel)*Point)
         {
-         ticket=OrderSend(Symbol(),OP_BUYSTOP,LOTS,NormalizeDouble(initial_price+cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+2,0);
+         ticket=OrderSend(Symbol(),OP_BUYLIMIT,LOTS,NormalizeDouble(initial_price-cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+2,0);
          if(ticket>0)
            {
             lastTradeTime=Time[THIS_BAR];
-            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUYSTOP order opened : ",OrderOpenPrice());
+            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUYLIMIT order opened : ",OrderOpenPrice());
            }
-         else Print("Error opening BUYSTOP order : ",GetLastError());
+         else Print("Error opening BUYLIMIT order : ",GetLastError());
         }
      }
 
@@ -386,7 +386,7 @@ void BuyLimitGrid()
 
 /** 
  * 
- * Lays sell stop orders below current price given the incremment.
+ * Lays sell limit orders above current price given the incremment.
  *
  */
 
@@ -397,15 +397,15 @@ void SellLimitGrid()
    CloseAllPending();
    for(int cpt=1;cpt<=LEVELS;cpt++)
      {
-      if(NormalizeDouble(initial_price-cpt*INCREMENT*Point,Digits)<Bid+(3+INCREMENT+StopLevel)*Point)
+      if(NormalizeDouble(initial_price+cpt*INCREMENT*Point,Digits)>Bid+(3+INCREMENT+StopLevel)*Point)
         {
-         ticket=OrderSend(Symbol(),OP_SELLSTOP,LOTS,NormalizeDouble(initial_price-cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+2,0);
+         ticket=OrderSend(Symbol(),OP_SELLLIMIT,LOTS,NormalizeDouble(initial_price+cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+2,0);
          if(ticket>0)
            {
             lastTradeTime=Time[THIS_BAR];
-            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("SELLSTOP order opened : ",OrderOpenPrice());
+            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("SELLLIMIT order opened : ",OrderOpenPrice());
            }
-         else Print("Error opening SELLSTOP order : ",GetLastError());
+         else Print("Error opening SELLLIMIT order : ",GetLastError());
         }
      }
 
