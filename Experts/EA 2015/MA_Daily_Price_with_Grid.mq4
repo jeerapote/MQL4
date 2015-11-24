@@ -91,7 +91,7 @@ bool          exitFriday=false;
 double        UpperLimit              =1.14;  /*// In pips*/
 double        LowerLimit              =1.08;
 
-int           LEVELS=300;
+int           LEVELS=4;
 
 double        requiredLots=300*0.01;
 
@@ -229,6 +229,8 @@ int start()
      {
 
       Sell();
+      SellGrid();
+      
 
      }
 
@@ -236,6 +238,7 @@ int start()
      {
 
       Buy();
+      BuyGrid();
 
      }
 
@@ -350,6 +353,62 @@ int start()
 |---------------------------------------------------------------------------------------|
 */
 
+//===================================== Buy Grid ==================================//
+
+/** 
+ * 
+ * Lays buy stop orders given the incremment.
+ *
+ */
+
+void BuyGrid()
+  {
+
+   double initial_price=Ask;
+   CloseAllPending();
+   for(int cpt=1;cpt<=LEVELS;cpt++)
+     {
+      if(NormalizeDouble(initial_price+cpt*INCREMENT*Point,Digits)>Ask+(3+INCREMENT+StopLevel)*Point)
+        {
+         ticket=OrderSend(Symbol(),OP_BUYSTOP,LOTS,NormalizeDouble(initial_price+cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+2,0);
+         if(ticket>0)
+           {
+            lastTradeTime=Time[THIS_BAR];
+            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUYSTOP order opened : ",OrderOpenPrice());
+           }
+         else Print("Error opening BUYSTOP order : ",GetLastError());
+        }
+     }
+
+  }
+//===================================== Sell Grid ==================================//
+
+/** 
+ * 
+ * Lays sell stop orders given the incremment.
+ *
+ */
+
+void SellGrid()
+  {
+
+   double initial_price=Bid;
+   CloseAllPending();
+   for(int cpt=1;cpt<=LEVELS;cpt++)
+     {
+      if(NormalizeDouble(initial_price-cpt*INCREMENT*Point,Digits)<Bid+(3+INCREMENT+StopLevel)*Point)
+        {
+         ticket=OrderSend(Symbol(),OP_SELLSTOP,LOTS,NormalizeDouble(initial_price-cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+2,0);
+         if(ticket>0)
+           {
+            lastTradeTime=Time[THIS_BAR];
+            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("SELLSTOP order opened : ",OrderOpenPrice());
+           }
+         else Print("Error opening SELLSTOP order : ",GetLastError());
+        }
+     }
+
+  }
 //===================================== MA_Indicator ==================================//
 
 /** 
@@ -486,7 +545,9 @@ void Sell()
   {
 
    int ticket=OrderSend(Symbol(),OP_SELL,LOTS,Bid,2,0,0,0,MAGIC,0);
-
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
    if(ticket>0)
      {
       lastTradeTime=Time[THIS_BAR];
@@ -508,7 +569,9 @@ void Buy()
   {
 
    ticket=OrderSend(Symbol(),OP_BUY,LOTS,Ask,2,0,0,0,MAGIC,0);
-
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
    if(ticket>0)
      {
       lastTradeTime=Time[THIS_BAR];
@@ -543,7 +606,9 @@ double checkProfit()
    double profit=0.01;
 
    for(int cnt=0;cnt<OrdersTotal();cnt++)
-
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
 
       OrderSelect(cnt,SELECT_BY_POS,MODE_TRADES);
@@ -558,7 +623,9 @@ double checkProfit()
      }
 
    for(int cnt=0;cnt<OrdersTotal();cnt++)
-
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
 
       OrderSelect(cnt,SELECT_BY_POS,MODE_TRADES);
@@ -586,6 +653,9 @@ double LotsAdded()
    double profit=1;
 
    for(int cnt=0;cnt<OrdersTotal();cnt++)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
 
       OrderSelect(cnt,SELECT_BY_POS,MODE_TRADES);
@@ -619,7 +689,6 @@ void MA_Crossing()
   {
 
    double ma;
-
 //--- go trading only for first ticks of new bar
    if(Volume[0]>1)
      {
@@ -660,6 +729,9 @@ int Retracement()
    if(EnableDynamicLotsFactor  &&  LOTS*BUYLotsFactor>v4_BUYMAXLOTSIZE){BUYLotsFactor=BUYLotsFactor/2;Print("RECTIFIED LotsFactor : ",BUYLotsFactor);}
 
    for(int cpt=1;cpt<=2;cpt++)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
 
       ticket=OrderSend(Symbol(),OP_SELLSTOP,LOTS*SELLLotsFactor,Initial-cpt*INCREMENT*v4_sellgridspace_factor*Point,2,0,0,"comment",1000,0);
@@ -760,6 +832,9 @@ int CloseGrid()
    int total=OrdersTotal();
 
    for(int i=total-1;i>=0;i--)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
       OrderSelect(i,SELECT_BY_POS);
       int type=OrderType();
@@ -843,6 +918,9 @@ int CheckBuyGrid()
    int total=OrdersTotal();
 
    for(int cpt=1;cpt<=LEVELS;cpt++)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
       bool foundbuy=false;
 
@@ -901,6 +979,9 @@ int CloseAllPending()
    int total=OrdersTotal();
 
    for(int i=total-1;i>=0;i--)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
       OrderSelect(i,SELECT_BY_POS);
       int type=OrderType();
@@ -937,6 +1018,9 @@ bool EndSession()
    int cpt,total=OrdersTotal();
 
    for(cpt=0;cpt<total;cpt++)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
       //Sleep(3000);
       OrderSelect(cpt,SELECT_BY_POS);
@@ -946,6 +1030,9 @@ bool EndSession()
      }
 
    for(cpt=0;cpt<total;cpt++)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
       //Sleep(3000);
       OrderSelect(cpt,SELECT_BY_POS);
@@ -954,6 +1041,9 @@ bool EndSession()
      }
 
    for(cpt=0;cpt<total;cpt++)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
       //Sleep(3000);
       OrderSelect(cpt,SELECT_BY_POS);
@@ -981,6 +1071,9 @@ void PrintStats()
    total=OrdersTotal();
 
    for(y=0;y<total;y++)
+      //+------------------------------------------------------------------+
+      //|                                                                  |
+      //+------------------------------------------------------------------+
      {
       OrderSelect(y,SELECT_BY_POS);
       if(OrderSymbol()==Symbol())
