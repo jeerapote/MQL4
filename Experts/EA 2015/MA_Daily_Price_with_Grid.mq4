@@ -229,7 +229,7 @@ int start()
      {
 
       Sell();
-      SellGrid();
+      //SellGrid();
       
 
      }
@@ -238,7 +238,7 @@ int start()
      {
 
       Buy();
-      BuyGrid();
+      //BuyGrid();
 
      }
 
@@ -353,15 +353,16 @@ int start()
 |---------------------------------------------------------------------------------------|
 */
 
-//===================================== Buy Grid ==================================//
+
+//===================================== BuyLimit Grid ==================================//
 
 /** 
  * 
- * Lays buy stop orders given the incremment.
+ * Lays buy stop orders above current price given the incremment.
  *
  */
 
-void BuyGrid()
+void BuyLimitGrid()
   {
 
    double initial_price=Ask;
@@ -381,15 +382,72 @@ void BuyGrid()
      }
 
   }
-//===================================== Sell Grid ==================================//
+//===================================== SellLimit Grid ==================================//
 
 /** 
  * 
- * Lays sell stop orders given the incremment.
+ * Lays sell stop orders below current price given the incremment.
  *
  */
 
-void SellGrid()
+void SellLimitGrid()
+  {
+
+   double initial_price=Bid;
+   CloseAllPending();
+   for(int cpt=1;cpt<=LEVELS;cpt++)
+     {
+      if(NormalizeDouble(initial_price-cpt*INCREMENT*Point,Digits)<Bid+(3+INCREMENT+StopLevel)*Point)
+        {
+         ticket=OrderSend(Symbol(),OP_SELLSTOP,LOTS,NormalizeDouble(initial_price-cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+2,0);
+         if(ticket>0)
+           {
+            lastTradeTime=Time[THIS_BAR];
+            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("SELLSTOP order opened : ",OrderOpenPrice());
+           }
+         else Print("Error opening SELLSTOP order : ",GetLastError());
+        }
+     }
+
+  }
+
+//===================================== BuyStop Grid ==================================//
+
+/** 
+ * 
+ * Lays buy stop orders above current price given the incremment.
+ *
+ */
+
+void BuyStopGrid()
+  {
+
+   double initial_price=Ask;
+   CloseAllPending();
+   for(int cpt=1;cpt<=LEVELS;cpt++)
+     {
+      if(NormalizeDouble(initial_price+cpt*INCREMENT*Point,Digits)>Ask+(3+INCREMENT+StopLevel)*Point)
+        {
+         ticket=OrderSend(Symbol(),OP_BUYSTOP,LOTS,NormalizeDouble(initial_price+cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Ask,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+2,0);
+         if(ticket>0)
+           {
+            lastTradeTime=Time[THIS_BAR];
+            if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("BUYSTOP order opened : ",OrderOpenPrice());
+           }
+         else Print("Error opening BUYSTOP order : ",GetLastError());
+        }
+     }
+
+  }
+//===================================== SellStop Grid ==================================//
+
+/** 
+ * 
+ * Lays sell stop orders below current price given the incremment.
+ *
+ */
+
+void SellStopGrid()
   {
 
    double initial_price=Bid;
