@@ -37,7 +37,7 @@ extern double              v4_order_freq           =0.5;
 extern double              v4_buygridspace_factor  =1;
 extern double              v4_sellgridspace_factor =1;
 
-extern ENUM_TIMEFRAMES     TIMEFRAME               =PERIOD_M1;
+extern ENUM_TIMEFRAMES     TIMEFRAME               =PERIOD_M5;
 extern bool                EnableFridayClose       =false;
 extern int                 FridayCloseTime         =16;
 extern int                 FridayLoopCloseTime     =18;
@@ -47,7 +47,7 @@ extern bool                EnableRetracement       =true;
 extern bool                EnableBolinAndWpr       =false;
 
 
-extern int                 MovingPeriod             = 1440;
+extern int                 MovingPeriod             = 15;
 extern double              compensationProfitUSD    = 300;
 extern int                 ma_offset                = 200;
 
@@ -239,7 +239,15 @@ int start()
 
      }
 
-   check_close_condition();
+   if(check_close_condition())
+     {
+      while(OrdersTotal()>0)
+        {
+         EndSession();
+
+        }
+
+     }
 
    if(EMERGENCYSTOP_Close)
      {
@@ -361,7 +369,7 @@ double MA_indicator()
                  0,                // MA shift
                  MODE_SMA,         // averaging method
                  PRICE_CLOSE,      // applied price
-                 0                 // shift
+                 1                 // shift
                  );
 
    return ma;
@@ -458,7 +466,7 @@ bool check_buy_condition()
 
    bool condition=false;
 
-   if(MA_indicator()>day_open_price() && Ask>day_open_price() && Ask<MA_LowerBand(ma_offset))
+   if(MA_indicator()>day_open_price() && Ask>day_open_price() && Bid<MA_LowerBand(ma_offset))
       condition=true;
 
    return condition;
@@ -513,7 +521,7 @@ void Buy()
 
 /** 
  * 
- * checks whether a close condition exists for current open order.
+ * checks whether a close condition exists for the current open order.
  * closes the orders if the current ask or bid price reaches the ma price
  * and there is a positive balance.
  */
@@ -525,8 +533,6 @@ bool check_close_condition()
       close=true;
 
    return close;
-
-
 
   }
 //===================================== CHECK PROFIT ==================================//

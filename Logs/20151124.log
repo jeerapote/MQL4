@@ -9,3 +9,27 @@
 0	10:00:16.985	FFCal EURUSD,M15: News Indicator is disabled because NO CONNECTION to Broker!
 1	10:00:24.225	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
 1	10:00:24.225	FFCal EURUSD,M15: unresolved import function call
+0	10:05:35.918	Custom indicator Heiken_Ashi_Smoothed EURUSD,M5: loaded successfully
+0	10:05:37.295	Heiken_Ashi_Smoothed EURUSD,M5: initialized
+0	10:05:51.408	Heiken_Ashi_Smoothed EURUSD,M5: uninit reason 1
+0	10:05:51.408	Custom indicator Heiken_Ashi_Smoothed EURUSD,M5: removed
+0	10:10:52.870	Compiling 'EA 2015\MA_Daily_Price'
+0	10:10:58.801	Custom indicator daily_open_line EURUSD,M1: loaded successfully
+0	10:11:03.177	daily_open_line EURUSD,M1: initialized
+0	10:11:29.875	daily_open_line EURUSD,M1: uninit reason 5
+0	10:11:29.906	daily_open_line EURUSD,M1: initialized
+0	10:12:39.856	daily_open_line EURUSD,M1: uninit reason 3
+0	10:12:39.872	daily_open_line EURUSD,M5: initialized
+0	11:36:52.726	Expert EA 2015\MA_Daily_Price EURUSD,M5: loaded successfully
+0	11:37:02.235	Expert MA_Daily_Price EURUSD,M5: removed
+0	11:37:03.391	Automated trading enabled
+0	11:37:04.937	Expert EA 2015\MA_Daily_Price EURUSD,M5: loaded successfully
+0	11:37:17.384	MA_Daily_Price EURUSD,M5 inputs: SLOWKILLSWITCH=false; EMERGENCYSTOP_Hedge=false; EMERGENCYSTOP_Close=false; LOTS=0.25; SELLLotsFactor=10.0; BUYLotsFactor=10.0; v6_MAXLOTSIZE=10.0; v4_BUYMAXLOTSIZE=10.0; v4_SELLMAXLOTSIZE=10.0; EnableDynamicLots=true; EnableDynamicLotsFactor=true; DynamicEquityUSD=1000.0; DynamicEquityLots=0.1; STOPLOSS=2500.0; INCREMENT=20; RETRACEMENT=200; RANGE=200; CloseAtProfit=50; v4_order_freq=0.5; v4_buygridspace_factor=1.0; v4_sellgridspace_factor=1.0; TIMEFRAME=15; EnableFridayClose=false; FridayCloseTime=16; FridayLoopCloseTime=18; MAGIC=1803; EnableRetracement=true; EnableBolinAndWpr=false; MovingPeriod=1440; compensationProfitUSD=300.0; ma_offset=200; compensationMAXLOTSIZE_per_Position=38.0; compensationUNITLOTSIZE_per_Position=20.0; StrongTrendTPBuffer=500.0; compensationLowerLimitUSD=100.0; 
+0	11:37:17.399	MA_Daily_Price EURUSD,M5: initialized
+0	11:37:47.399	MA_Daily_Price EURUSD,M5: uninit reason 2
+0	11:37:47.399	Expert MA_Daily_Price EURUSD,M5: removed
+0	11:37:47.618	Expert EA 2015\MA_Daily_Price EURUSD,M5: loaded successfully
+0	11:37:47.618	MA_Daily_Price EURUSD,M5: initialized
+0	11:39:11.754	MA_Daily_Price EURUSD,M5: uninit reason 1
+0	11:39:11.770	Expert MA_Daily_Price EURUSD,M5: removed
+0	11:39:12.848	Automated trading disabled
