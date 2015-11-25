@@ -45,3 +45,13 @@
 0	18:26:04.023	Custom indicator Heiken_Ashi_Smoothed SUGARUSD,M5: removed
 0	19:00:15.504	Custom indicator Heiken_Ashi_Smoothed EURUSD,M5: loaded successfully
 0	19:00:16.743	Heiken_Ashi_Smoothed EURUSD,M5: initialized
+0	20:57:40.284	daily_open_line EURUSD,M5: uninit reason 3
+0	20:57:40.284	Heiken_Ashi_Smoothed EURUSD,M5: uninit reason 3
+0	20:57:40.295	daily_open_line EURUSD,M1: initialized
+0	20:57:40.296	Heiken_Ashi_Smoothed EURUSD,M1: initialized
+0	22:43:33.237	Custom indicator daily_open_line EURUSD,Monthly: loaded successfully
+0	22:43:34.463	daily_open_line EURUSD,Monthly: initialized
+0	23:24:52.427	daily_open_line EURUSD,M1: uninit reason 4
+0	23:24:52.427	Heiken_Ashi_Smoothed EURUSD,M1: uninit reason 4
+0	23:24:52.429	Custom indicator daily_open_line EURUSD,M1: removed
+0	23:24:52.429	Custom indicator Heiken_Ashi_Smoothed EURUSD,M1: removed

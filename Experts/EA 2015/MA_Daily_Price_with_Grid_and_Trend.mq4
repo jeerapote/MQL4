@@ -29,7 +29,6 @@
  *
  */
 
-
 //---- input parameters ---------------------------------------------+
 
 extern bool                SLOWKILLSWITCH          =false;
@@ -50,17 +49,18 @@ extern double              DynamicEquityLots       =0.1;
 extern double              STOPLOSS                =2500;
 extern int                 INCREMENT               =20;
 extern int                 RETRACEMENT             =200;
-extern int                 RANGE                   =200;
+extern int                 RANGE                   =1000;
 extern int                 CloseAtProfit           =50;
 
 extern double              v4_order_freq           =0.5;
 extern double              v4_buygridspace_factor  =1;
 extern double              v4_sellgridspace_factor =1;
 
-extern ENUM_TIMEFRAMES     TIMEFRAME               =PERIOD_M5;
-extern bool                EnableFridayClose       =false;
-extern int                 FridayCloseTime         =16;
+extern ENUM_TIMEFRAMES     TIMEFRAME               =PERIOD_CURRENT;
+extern bool                EnableFridayClose       =true;
+extern int                 FridayCloseTime         =18;
 extern int                 FridayLoopCloseTime     =18;
+extern int                 DailyStartTime          =6;           
 
 extern int                 MAGIC                   =1803;
 extern bool                EnableBolinAndWpr       =false;
@@ -69,13 +69,14 @@ extern bool                EnableBolinAndWpr       =false;
 extern int                 MovingPeriod             = 15;
 extern double              compensationProfitUSD    = 300;
 extern int                 ma_offset                = 100;
-
+extern double              relay_pips               = 200;
 
 extern double              compensationMAXLOTSIZE_per_Position  = 38;
 extern double              compensationUNITLOTSIZE_per_Position = 20;
 extern double              StrongTrendTPBuffer                  = 500;
 extern double              compensationLowerLimitUSD            = 100;
 
+extern double              StrongTrendPips=1000;
 
 //|.......................................................................................|
 //|......................................  Variables .....................................|
@@ -93,6 +94,9 @@ SOrds,PendBuy,PendSell;
 int           Spread;
 int           StopLevel;
 int           ticket;
+
+bool          trig_1=true;
+bool          trig_2=false;
 
 double        initialLots;
 double        initialEquity;
@@ -134,11 +138,13 @@ double         HAClose4;
 int            Current=0;
 
 double        MA_crossPrice;
+double        dailyOpenPrice;
 
 bool          trig1 = true;
 bool          trig2 = false;
 bool          trig3 = true;
 bool          trig4 = false;
+bool          relay = false;
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
@@ -190,7 +196,7 @@ int start()
 
      }
 
-   if(exit || exitFriday)return 0;
+//   if(exit || exitFriday)return 0;
 
 
 
@@ -240,25 +246,166 @@ int start()
       Comment("not enough money try lotsize of: ",maxLots/(LEVELS*2));
       return 0;
      }
-     
-     
-     
 
-   if(OrdersTotal()<1 && check_sell_condition())
+//===================================== STRONG TREND EXIT LOGIC==================================//   
+
+   double ma;
+
+//--- go trading only for first ticks of new bar
+   if(Volume[0]>1)
+     {
+      //--- get Moving Average 
+      ma=iMA(NULL,0,MovingPeriod,0,MODE_SMA,PRICE_CLOSE,0);
+      //--- get Moving Average Cross Price
+      if(Open[1]>ma && Close[1]<ma)
+        {
+         MA_crossPrice=Bid;
+        }
+      //--- get Moving Average Cross Price
+      if(Open[1]<ma && Close[1]>ma)
+        {
+         MA_crossPrice=Bid;
+        }
+      //---
+     }
+
+/*
+//--------------------------STRONG TREND MA TAKE PROFIT RE-CALC EXIT LOGIC-----------------------------
+
+//if(OrdersTotal()<1)trig_1 =true;
+   if((LOrds>0 || SOrds>0) && lastTradeTime!=Time[THIS_BAR] && checkProfit()<compensationLowerLimitUSD && trig_1)
      {
 
-      Sell();
+      Alert("Compensation Triggered: ",checkProfit(),"new lots: "+LotsAdded());
+      double newLots_from_MA=LotsAdded();
+
+      if(newLots_from_MA>compensationMAXLOTSIZE_per_Position)
+        {
+
+         send=MathCeil(newLots_from_MA/compensationUNITLOTSIZE_per_Position);
+         newLots_from_MA=compensationUNITLOTSIZE_per_Position;
+        }
+
+      for(int i=0; i<=send; i++)
+        {
+
+         if(checkOrderType()==OP_BUY)
+           {
+
+            ticket=OrderSend(Symbol(),OP_BUY,newLots_from_MA,Ask,2,0,0,0,MAGIC,0);
+
+            if(ticket>0)
+              {
+               lastTradeTime=Time[THIS_BAR];
+               if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Buy order opened : ",OrderOpenPrice());
+              }
+            else Print("Error opening Buy order : ",GetLastError());
+
+           }
+
+         if(checkOrderType()==OP_SELL)
+           {
+
+            ticket=OrderSend(Symbol(),OP_SELL,newLots_from_MA,Bid,2,0,0,0,MAGIC,0);
+
+            if(ticket>0)
+              {
+               lastTradeTime=Time[THIS_BAR];
+               if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Sell order opened : ",OrderOpenPrice());
+              }
+            else Print("Error opening Sell order : ",GetLastError());;
+
+           }
+
+         trig_1 = false;
+         trig_2 = true;
+
+        }
+
+      send=0;
+
+     }
+
+//if(OrdersTotal()<1)trig=true;
+   if((LOrds>0 || SOrds>0) && lastTradeTime!=Time[THIS_BAR] && checkProfit()<compensationLowerLimitUSD && trig_2)
+     {
+
+      Alert("Compensation Triggered: ",checkProfit(),"new lots: "+LotsAdded());
+      double newLots_from_MA=LotsAdded();
+
+      if(newLots_from_MA>compensationMAXLOTSIZE_per_Position)
+        {
+
+         send=MathCeil(newLots_from_MA/compensationUNITLOTSIZE_per_Position);
+         newLots_from_MA=compensationUNITLOTSIZE_per_Position;
+        }
+
+      for(int i=0; i<=send; i++)
+        {
+
+         if(checkOrderType()==OP_BUY)
+           {
+
+            ticket=OrderSend(Symbol(),OP_BUY,newLots_from_MA,Ask,2,0,0,0,MAGIC,0);
+
+            if(ticket>0)
+              {
+               lastTradeTime=Time[THIS_BAR];
+               if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Buy order opened : ",OrderOpenPrice());
+              }
+            else Print("Error opening Buy order : ",GetLastError());
+
+           }
+
+         if(checkOrderType()==OP_SELL)
+           {
+
+            ticket=OrderSend(Symbol(),OP_SELL,newLots_from_MA,Bid,2,0,0,0,MAGIC,0);
+
+            if(ticket>0)
+              {
+               lastTradeTime=Time[THIS_BAR];
+               if(OrderSelect(ticket,SELECT_BY_TICKET,MODE_TRADES)) Print("Sell order opened : ",OrderOpenPrice());
+              }
+            else Print("Error opening Sell order : ",GetLastError());;
+
+           }
+
+         trig_2 = false;
+         trig_1 = true;
+
+        }
+
+      send=0;
+
+     }
+*/
+   if(OrdersTotal()<1 && TimeHour(TimeGMT())==DailyStartTime && TimeMinute(TimeGMT()) == 1 /*&& TimeSeconds(TimeGMT()) == 1*/)
+     {
+
+      dailyOpenPrice = Ask;
       SellStopGrid();
+      BuyStopGrid();
+      relay = true;
+      
 
      }
-
-   if(OrdersTotal()<1 && check_buy_condition())
-     {
-
-      Buy();
-      BuyLimitGrid();
-
-     }
+     
+   if((LOrds>10 || SOrds>10) && Ask == dailyOpenPrice && relay)
+   {
+   
+      relay = false;
+      SellStopGrid();
+      BuyStopGrid();
+      
+   
+   }
+   
+   if( MathAbs(Ask - dailyOpenPrice)>relay_pips*Point)
+   {
+      
+     relay = true;
+   }
 
    if(check_close_condition())
      {
@@ -338,23 +485,21 @@ int start()
 
    Comment(
            Space(),
-           "mGRID EXPERT ADVISOR ver 2.0",Space(),
+           "Daily_Open_Line_COMPENSATION EXPERT ADVISOR",Space(),
            "FX Acc Server:",AccountServer(),Space(),
            "Date: ",Month(),"-",Day(),"-",Year()," Server Time: ",Hour(),":",Minute(),":",Seconds(),Space(),
-           "Minimum Lot Sizing: ",MarketInfo(Symbol(),MODE_MINLOT),Space(),
+           "MA TradeSet Profit: ",checkProfit(),Space(),
+           /*"MA Compensation Lots Added: ",LotsAdded(),Space(),*/
            "Account Balance:  $",AccountBalance(),Space(),
            "FreeMargin: $",AccountFreeMargin(),Space(),
            "Total Orders Open: ",OrdersTotal(),Space(),
-           "Day Open Price:  ",NormalizeDouble(day_open_price(),4),Space(),
-           "Pip Spread:  ",MarketInfo(Symbol(),MODE_SPREAD),Space(),
+           "Lot size in the base currency=",MarketInfo(Symbol(),MODE_LOTSIZE),Space(),
+           "Lots:  ",LOTS,Space(),
+           "Pip Spread:  ",MarketInfo("EURUSD",MODE_SPREAD),Space(),
            "Leverage: ",AccountLeverage(),Space(),
            "Effective Leverage: ",AccountMargin()*AccountLeverage()/AccountEquity(),Space(),
-           "Increment="+INCREMENT,Space(),
-           "Lots:  ",LOTS,Space(),
-           "Levels: "+LEVELS,Space(),
            "Float: ",Tally," Longs: ",LOrds," Shorts: ",SOrds,Space(),
            "SellStops: ",PendSell," BuyStops: ",PendBuy," TotalSwap: ",TSwap);
-
    return(0);
 
 
@@ -371,6 +516,31 @@ int start()
 |---------------------------------------------------------------------------------------|
 */
 
+//===================================== CHECK OrderType ==================================//
+
+ENUM_ORDER_TYPE checkOrderType()
+  {
+
+   ENUM_ORDER_TYPE orderType;
+
+   for(int cnt=0;cnt<OrdersTotal();cnt++)
+     {
+
+      OrderSelect(cnt,SELECT_BY_POS,MODE_TRADES);
+
+      if(OrderType()==OP_SELL)
+        {
+         orderType=OP_SELL;
+        }
+
+      if(OrderType()==OP_BUY)
+        {
+         orderType=OP_BUY;
+        }
+     }
+
+   return orderType;
+  }
 //===================================== BuyLimit Grid ==================================//
 
 /** 
@@ -577,7 +747,8 @@ bool check_sell_condition()
 
    bool condition=false;
 
-   if(MA_indicator()<day_open_price() && Bid<day_open_price() && Bid>MA_UpperBand(ma_offset))
+   if(MA_indicator()<day_open_price() && Bid<day_open_price() && Bid>=MA_UpperBand(ma_offset)
+      && day_open_price()>MA_UpperBand(ma_offset))
       condition=true;
 
    return condition;
@@ -599,7 +770,8 @@ bool check_buy_condition()
 
    bool condition=false;
 
-   if(MA_indicator()>day_open_price() && Ask>day_open_price() && Bid<MA_LowerBand(ma_offset))
+   if(MA_indicator()>day_open_price() && Ask>day_open_price() && Ask<=MA_LowerBand(ma_offset)
+      && day_open_price()<MA_LowerBand(ma_offset))
       condition=true;
 
    return condition;
@@ -662,14 +834,35 @@ void Buy()
  * closes the orders if the current ask or bid price reaches the ma price
  * and there is a positive balance.
  */
+
+double initialCloseAtProfit = CloseAtProfit;
+double retracementLimit = CloseAtProfit;
+bool   retracement = false;
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
 bool check_close_condition()
   {
    bool close=false;
-   double ma=MA_indicator();
-   if(AccountEquity()>AccountBalance() && MA_indicator()<day_open_price() && Bid<ma)
+
+   if(AccountEquity()>AccountBalance() + (2*initialCloseAtProfit) + TSwap)
+     {
+
+      //initialBalance = AccountEquity();     
+      retracementLimit= initialCloseAtProfit;
+      initialCloseAtProfit*=1.1;
+      retracement = true;
+
+     }
+
+   if(AccountEquity() < AccountBalance() + retracementLimit + TSwap && retracement )
+     {
       close=true;
-   if(AccountEquity()>AccountBalance() && MA_indicator()>day_open_price() && Ask>ma)
-      close=true;
+      retracementLimit = CloseAtProfit;
+      initialCloseAtProfit = CloseAtProfit;
+      retracement = false;
+     }
 
    return close;
 
