@@ -1,0 +1,40 @@
+0	01:40:17.169	FFCal EURUSD,M15: uninit reason 9
+0	01:40:17.170	NewsCal-v1 EURUSD,M15: deinitialized
+0	01:40:17.170	NewsCal-v1 EURUSD,M15: uninit reason 9
+0	01:40:17.170	daily_open_line EURUSD,Monthly: uninit reason 9
+0	01:40:17.364	Custom indicator FFCal EURUSD,M15: removed
+0	01:40:17.365	Custom indicator NewsCal-v1 EURUSD,M15: removed
+0	01:40:17.366	Custom indicator daily_open_line EURUSD,Monthly: removed
+0	15:17:44.951	Custom indicator FFCal EURUSD,M15: loaded successfully
+0	15:17:44.955	Custom indicator NewsCal-v1 EURUSD,M15: loaded successfully
+0	15:17:45.048	FFCal EURUSD,M15: In Init()...
+
+0	15:17:45.048	FFCal EURUSD,M15: RefreshMin  == 54
+0	15:17:45.048	FFCal EURUSD,M15: RefreshHour == 2
+0	15:17:45.048	FFCal EURUSD,M15: initialized
+0	15:17:45.048	NewsCal-v1 EURUSD,M15: initialized
+0	15:17:45.048	FFCal EURUSD,M15: News Indicator is disabled because NO CONNECTION to Broker!
+0	15:17:45.514	Custom indicator daily_open_line EURUSD,Monthly: loaded successfully
+0	15:17:45.534	daily_open_line EURUSD,Monthly: initialized
+1	15:17:47.194	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	15:17:47.194	FFCal EURUSD,M15: unresolved import function call
+0	16:35:13.656	FFCal EURUSD,M15: uninit reason 9
+0	16:35:13.656	NewsCal-v1 EURUSD,M15: deinitialized
+0	16:35:13.656	NewsCal-v1 EURUSD,M15: uninit reason 9
+0	16:35:13.656	daily_open_line EURUSD,Monthly: uninit reason 9
+0	16:35:13.766	Custom indicator FFCal EURUSD,M15: removed
+0	16:35:13.766	Custom indicator NewsCal-v1 EURUSD,M15: removed
+0	16:35:13.766	Custom indicator daily_open_line EURUSD,Monthly: removed
+0	22:45:25.409	Custom indicator FFCal EURUSD,M15: loaded successfully
+0	22:45:25.412	Custom indicator NewsCal-v1 EURUSD,M15: loaded successfully
+0	22:45:25.432	FFCal EURUSD,M15: In Init()...
+
+0	22:45:25.432	FFCal EURUSD,M15: RefreshMin  == 24
+0	22:45:25.432	FFCal EURUSD,M15: RefreshHour == 5
+0	22:45:25.432	FFCal EURUSD,M15: initialized
+0	22:45:25.432	NewsCal-v1 EURUSD,M15: initialized
+0	22:45:25.432	FFCal EURUSD,M15: News Indicator is disabled because NO CONNECTION to Broker!
+0	22:45:25.648	Custom indicator daily_open_line EURUSD,Monthly: loaded successfully
+0	22:45:25.653	daily_open_line EURUSD,Monthly: initialized
+1	22:45:27.261	Cannot call 'wininet.dll::InternetOpenA', DLL is not allowed
+1	22:45:27.261	FFCal EURUSD,M15: unresolved import function call

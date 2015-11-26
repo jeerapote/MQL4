@@ -226,6 +226,15 @@
 		<previous><![CDATA[-4.0]]></previous>
 	</event>
 	<event>
+		<title>Richmond Manufacturing Index</title>
+		<country>USD</country>
+		<date><![CDATA[11-24-2015]]></date>
+		<time><![CDATA[2:59pm]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast><![CDATA[0]]></forecast>
+		<previous><![CDATA[-1]]></previous>
+	</event>
+	<event>
 		<title>CB Consumer Confidence</title>
 		<country>USD</country>
 		<date><![CDATA[11-24-2015]]></date>
@@ -235,19 +244,10 @@
 		<previous><![CDATA[97.6]]></previous>
 	</event>
 	<event>
-		<title>Richmond Manufacturing Index</title>
-		<country>USD</country>
-		<date><![CDATA[11-24-2015]]></date>
-		<time><![CDATA[3:00pm]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast><![CDATA[0]]></forecast>
-		<previous><![CDATA[-1]]></previous>
-	</event>
-	<event>
 		<title>Gov Council Member Patterson Speaks</title>
 		<country>CAD</country>
 		<date><![CDATA[11-24-2015]]></date>
-		<time><![CDATA[8:30pm]]></time>
+		<time><![CDATA[10:35pm]]></time>
 		<impact><![CDATA[Low]]></impact>
 		<forecast />
 		<previous />
@@ -307,13 +307,13 @@
 		<previous><![CDATA[0.3%]]></previous>
 	</event>
 	<event>
-		<title>German 10-y Bond Auction</title>
+		<title>ECB Financial Stability Review</title>
 		<country>EUR</country>
 		<date><![CDATA[11-25-2015]]></date>
-		<time><![CDATA[10:03am]]></time>
+		<time><![CDATA[10:00am]]></time>
 		<impact><![CDATA[Low]]></impact>
 		<forecast />
-		<previous><![CDATA[0.44|1.2]]></previous>
+		<previous />
 	</event>
 	<event>
 		<title>RBA Assist Gov Debelle Speaks</title>
@@ -323,6 +323,15 @@
 		<impact><![CDATA[Medium]]></impact>
 		<forecast />
 		<previous />
+	</event>
+	<event>
+		<title>German 10-y Bond Auction</title>
+		<country>EUR</country>
+		<date><![CDATA[11-25-2015]]></date>
+		<time><![CDATA[10:35am]]></time>
+		<impact><![CDATA[Low]]></impact>
+		<forecast />
+		<previous><![CDATA[0.44|1.2]]></previous>
 	</event>
 	<event>
 		<title>Autumn Forecast Statement</title>
@@ -438,7 +447,7 @@
 		<date><![CDATA[11-25-2015]]></date>
 		<time><![CDATA[3:30pm]]></time>
 		<impact><![CDATA[Medium]]></impact>
-		<forecast />
+		<forecast><![CDATA[1.2M]]></forecast>
 		<previous><![CDATA[0.3M]]></previous>
 	</event>
 	<event>
@@ -447,7 +456,7 @@
 		<date><![CDATA[11-25-2015]]></date>
 		<time><![CDATA[5:00pm]]></time>
 		<impact><![CDATA[Low]]></impact>
-		<forecast />
+		<forecast><![CDATA[5B]]></forecast>
 		<previous><![CDATA[15B]]></previous>
 	</event>
 	<event>
@@ -629,15 +638,6 @@
 		<impact><![CDATA[Low]]></impact>
 		<forecast />
 		<previous><![CDATA[1.48|1.7]]></previous>
-	</event>
-	<event>
-		<title>ECB Financial Stability Review</title>
-		<country>EUR</country>
-		<date><![CDATA[11-27-2015]]></date>
-		<time><![CDATA[11:00am]]></time>
-		<impact><![CDATA[Low]]></impact>
-		<forecast />
-		<previous />
 	</event>
 	<event>
 		<title>IPPI m/m</title>

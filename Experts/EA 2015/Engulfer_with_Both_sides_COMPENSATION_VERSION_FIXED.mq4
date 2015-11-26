@@ -168,6 +168,9 @@ int start(){
    }
    
    if(exitFriday)return 0;
+   
+   
+   
     
     /*
    if(maxLots < requiredLots){   
@@ -269,7 +272,7 @@ int start(){
 //--------------------------STRONG TREND MA TAKE PROFIT RE-CALC EXIT LOGIC-----------------------------
    
 //if(OrdersTotal()<1)trig_1 =true;
-   if(OrdersTotal() > 0 && lastTradeTime!= Time[THIS_BAR] && checkProfit() < compensationLowerLimitUSD && trig_1){
+   if(!checkExternalAlgos() && OrdersTotal() > 0 && lastTradeTime!= Time[THIS_BAR] && checkProfit() < compensationLowerLimitUSD && trig_1){
    
        Alert("Compensation Triggered: ", checkProfit(), "new lots: " + LotsAdded());       
        double newLots_from_MA = LotsAdded();
@@ -316,7 +319,7 @@ int start(){
    }
    
 //if(OrdersTotal()<1)trig=true;
-   if(OrdersTotal() > 0 && lastTradeTime!= Time[THIS_BAR] && checkProfit() < compensationLowerLimitUSD && trig_2){
+   if(!checkExternalAlgos() && OrdersTotal() > 0 && lastTradeTime!= Time[THIS_BAR] && checkProfit() < compensationLowerLimitUSD && trig_2){
    
        Alert("Compensation Triggered: ", checkProfit(), "new lots: " + LotsAdded());       
        double newLots_from_MA = LotsAdded();
@@ -370,7 +373,7 @@ int start(){
 |---------------------------------------------------------------------------------------|
 */
    
-   if(!dont_open_sells && condition_1 && condition_2 /*&& condition_3*/ && condition_4 /*&& condition_5*/ && condition_6 && lastTradeTime!= Time[THIS_BAR]){
+   if(!checkExternalAlgos() && !dont_open_sells && condition_1 && condition_2 /*&& condition_3*/ && condition_4 /*&& condition_5*/ && condition_6 && lastTradeTime!= Time[THIS_BAR]){
      
      dont_open_buys = true;
      //double StopLoss = high_last + sl_offset*Point;//BolingerUpperBand;
@@ -396,7 +399,7 @@ int start(){
          else Print("Error opening BUYSTOP order : ",GetLastError());        
         */ 
          
-         ticket = OrderSend(Symbol(),OP_SELLLIMIT,LOTS,NormalizeDouble(Bid+cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Bid,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+3,0);
+         ticket = OrderSend(Symbol(),OP_SELLLIMIT,LOTS,NormalizeDouble(Bid+cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Bid,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
          
          if(ticket>0)
            {
@@ -415,7 +418,7 @@ int start(){
      */   
    }
    
-if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && condition_4_buy /*&& condition_5*/ && condition_6_buy && lastTradeTime!= Time[THIS_BAR]){
+if(!checkExternalAlgos() && !dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && condition_4_buy /*&& condition_5*/ && condition_6_buy && lastTradeTime!= Time[THIS_BAR]){
    
    dont_open_sells = true;
    
@@ -439,7 +442,7 @@ if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && c
          else Print("Error opening BUYSTOP order : ",GetLastError());
         */ 
          
-         ticket = OrderSend(Symbol(),OP_BUYLIMIT,LOTS,NormalizeDouble(Ask-cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Bid,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC+3,0);
+         ticket = OrderSend(Symbol(),OP_BUYLIMIT,LOTS,NormalizeDouble(Ask-cpt*INCREMENT*Point,Digits),2,0,0,DoubleToStr(Bid,MarketInfo(Symbol(),MODE_DIGITS)),MAGIC,0);
          
          if(ticket>0)
            {
@@ -550,6 +553,30 @@ if(!dont_open_buys && condition_1_buy && condition_2_buy /*&& condition_3*/ && c
 |----------------------------------   Custom functions   -------------------------------|
 |---------------------------------------------------------------------------------------|
 */
+
+
+//===================================== CHECK OrderType ==================================//
+
+
+bool checkExternalAlgos(){
+
+      bool external = false;
+
+      for(int cnt=0;cnt<OrdersTotal();cnt++)
+      {
+     
+         OrderSelect(cnt, SELECT_BY_POS, MODE_TRADES);
+         if(OrderMagicNumber()!= MAGIC){         
+           external = true; 
+           break;                   
+        }
+            
+      }
+      
+     return external; 
+}     
+
+
 
 //===================================== CHECK OrderType ==================================//
 
