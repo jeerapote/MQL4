@@ -1,0 +1,7 @@
+0	01:27:38.444	FFCal EURUSD,M15: uninit reason 9
+0	01:27:38.444	NewsCal-v1 EURUSD,M15: deinitialized
+0	01:27:38.444	NewsCal-v1 EURUSD,M15: uninit reason 9
+0	01:27:38.444	daily_open_line EURUSD,Monthly: uninit reason 9
+0	01:27:38.491	Custom indicator FFCal EURUSD,M15: removed
+0	01:27:38.491	Custom indicator NewsCal-v1 EURUSD,M15: removed
+0	01:27:38.507	Custom indicator daily_open_line EURUSD,Monthly: removed
